@@ -1,0 +1,882 @@
+
+==================== FINAL INTERFACE ====================
+2016-09-12 00:35:05.954924 UTC
+
+interface goodg_DmvfzrsRlTTEG4TgbQ9uXe:Conduits 7103
+  interface hash: 12aa13a812a7244281ff01adecadbda8
+  ABI hash: f6985511b634bda5e029814f8f74bbb6
+  export-list hash: 489f3f8d13b58ebd86c3a7ee1760c2aa
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: a15922da834f2f01f7a0695d98ce9660
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Conduits.banner
+  Conduits.cap
+  Conduits.eval
+  Conduits.linesOn
+  Conduits.logNum
+  Conduits.logi
+  Conduits.logm
+  Conduits.openFile
+  Conduits.run
+  Conduits.shardFile
+  Conduits.sourceDirectories
+  Conduits.sourceFileE
+  Conduits.untarSaveAs
+  Conduits.FileOp
+  Conduits.FileOpS
+  Conduits.Op
+module dependencies:
+package dependencies: StateVar-1.1.0.4@State_IOvB80WkYNkEizdt0JVpzy
+                      adjunctions-4.3@adjun_HUA1si0oygHIohE6wWvtj8
+                      array-0.5.1.0@array_67iodizgJQIIxYVTp4emlA base-4.8.2.0
+                      base16-bytestring-0.1.1.6@base1_LuxBhYgEONMHJnKTOPc7Oy
+                      base64-bytestring-1.0.0.1@base6_AkCk8zInckjJsyQ4AIFHPN
+                      base-orphans-0.5.4@baseo_0gFtKFBT26OGSKHmmdqdfx
+                      bifunctors-5.2@bifun_FaZUwfD8a9f4Qa0UcHfTzx
+                      binary-0.7.5.0@binar_3uXFWMoAGBg0xKP9MHKRwi
+                      blaze-builder-0.4.0.2@blaze_5LQurmvTy7l9rPlWgPlNE4
+                      bytestring-0.10.6.0@bytes_6VWy06pWzJq9evDvK2d4w6
+                      chunked-data-0.2.0@chunk_9sFQnevMt1h0cKlKzGg6j9
+                      comonad-4.2.7.2@comon_5wEqfQVXg9MGfIPxSKfS4M
+                      conduit-1.2.7@condu_6OSrnRI6RqIGBv7ZPG9IV6
+                      conduit-combinators-1.0.4@condu_7Sl3OMpnWsVLWFpLSSxlOn
+                      conduit-extra-1.1.13.2@condu_ErVEtE0OOPvEOsJa6HCflV
+                      containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU
+                      contravariant-1.4@contr_7gFjdZ6ciei9744gjZQMHp
+                      data-default-class-0.0.1@datad_K91y8NcZUJI9yaBI61rgdD
+                      deepseq-1.4.1.1@deeps_6vMKxt5sPFR0XsbRWvvq59
+                      directory-1.2.2.0@direc_0hFG6ZxK1nk4zsyOqbNHfm
+                      distributive-0.5.0.2@distr_55SIdsoyihS4jXBaaVvPQX
+                      dlist-0.7.1.2@dlist_AO7XAasbAeyL0XLKeq1Aui
+                      dlist-instances-0.1.1.1@dlist_Fd4HoN0wfg6JUJW6l75mr9
+                      exceptions-0.8.3@excep_BEih2K3eMGTE4cg5iulra8
+                      filepath-1.4.0.0@filep_Ey7a1in9roBAE8bUFJ5R9m
+                      free-4.12.4@free_D8pop1Lncn7BkE4zjJTjla ghc-prim-0.4.0.0
+                      hashable-1.2.4.0@hasha_EalUWgp8NarBYWPbvYAD8I integer-gmp-1.0.0.0
+                      kan-extensions-4.2.3@kanex_8yLFa561sPQJZ5XPOmzMGi
+                      keys-3.11@keys_ISfE7aax3NK7g9j8vHODvp
+                      lifted-base-0.2.3.8@lifte_27kQ9DytVyu5Pw2So1Igy3
+                      mmorph-1.0.6@mmorp_42KUkOfzC6q3qCtAMiSHam
+                      monad-control-1.0.1.0@monad_7Tqv3C2ASZP4J7swGaIkqS
+                      mono-traversable-0.10.2@monot_0dkMOYm8fHd9L9cwfTpxhR
+                      mtl-2.2.1@mtl_Aue4leSeVkpKLsfHIV51E8
+                      mwc-random-0.13.4.0@mwcra_0lrQ1SkkNA85sa8eZ98xQk
+                      pointed-4.2.0.2@point_GCsPRSrANuo0hdJRNI2bbb
+                      prelude-extras-0.4.0.3@prelu_1gQpKVfMHul71LsAFgGRhv
+                      primitive-0.6.1.0@primi_EphY2c7CCxSCBKjAN0YTR3
+                      profunctors-5.2@profu_LHFqrYSAR0z1HJQ4sjj1Mu
+                      resourcet-1.1.7.5@resou_165wgeXO1n8BEqynSK393U
+                      semigroupoids-5.0.1@semig_GRN7TOS9fx09tFw63gc4EK
+                      semigroups-0.18.1@semig_LaeT7FLzCl4KIQUoVrPYl1
+                      split-0.2.3.1@split_2IxbOPGrTSq7kFrJA7odmE
+                      stm-2.4.4.1@stm_EyxFXFfnfY05IrjGaqCxeD
+                      streaming-commons-0.1.15.5@strea_2a9C3L0IVZc79BZaLNwyzG
+                      tagged-0.8.4@tagge_LPeicl3HxVfGUMMwMEsAE6 template-haskell-2.10.0.0
+                      text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne
+                      time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn
+                      transformers-base-0.4.4@trans_74WedXVmfaHHDJItmBRTVp
+                      transformers-0.4.2.0@trans_GZTjP9K5WFq01xC9BAGQpF
+                      unix-2.7.1.0@unix_KZL8h98IqDM57kQSPo1mKx
+                      unordered-containers-0.2.7.1@unord_5iWC5HdL16JGHXLbsgBJnw
+                      vector-algorithms-0.7.0.1@vecto_2O3XZ6glbAwDmJCc3dC3Ee
+                      vector-instances-3.3.1@vecto_2T0r79ha7oGAyaK2s9EYKN
+                      vector-0.11.0.0@vecto_LmZ3LQW4ivu8MsQuVgukln
+                      zlib-0.6.1.1@zlib_7LjT7TSHX8U3VTy3t378Vu
+orphans: base-4.8.2.0:GHC.Base base-4.8.2.0:GHC.Float
+         base-orphans-0.5.4@baseo_0gFtKFBT26OGSKHmmdqdfx:Data.Orphans
+         binary-0.7.5.0@binar_3uXFWMoAGBg0xKP9MHKRwi:Data.Binary.Generic
+         bytestring-0.10.6.0@bytes_6VWy06pWzJq9evDvK2d4w6:Data.ByteString.Builder
+         dlist-instances-0.1.1.1@dlist_Fd4HoN0wfg6JUJW6l75mr9:Data.DList.Instances
+         hashable-1.2.4.0@hasha_EalUWgp8NarBYWPbvYAD8I:Data.Hashable.Generic
+         stm-2.4.4.1@stm_EyxFXFfnfY05IrjGaqCxeD:Control.Monad.STM
+         text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text
+         text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text.Lazy
+         text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text.Show
+         time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn:Data.Time.Calendar.Gregorian
+         time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn:Data.Time.Format.Parse
+         time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn:Data.Time.LocalTime.LocalTime
+         transformers-0.4.2.0@trans_GZTjP9K5WFq01xC9BAGQpF:Control.Monad.Trans.Error
+         vector-instances-3.3.1@vecto_2T0r79ha7oGAyaK2s9EYKN:Data.Vector.Instances
+         vector-0.11.0.0@vecto_LmZ3LQW4ivu8MsQuVgukln:Data.Vector.Fusion.Bundle
+         vector-0.11.0.0@vecto_LmZ3LQW4ivu8MsQuVgukln:Data.Vector.Unboxed
+family instance modules: adjunctions-4.3@adjun_HUA1si0oygHIohE6wWvtj8:Data.Functor.Rep
+                         base-4.8.2.0:Control.Applicative base-4.8.2.0:Data.Either
+                         base-4.8.2.0:Data.Functor.Identity base-4.8.2.0:Data.Monoid
+                         base-4.8.2.0:Data.Type.Equality base-4.8.2.0:Data.Void
+                         base-4.8.2.0:GHC.Exts base-4.8.2.0:GHC.Generics
+                         base-4.8.2.0:GHC.TypeLits
+                         bifunctors-5.2@bifun_FaZUwfD8a9f4Qa0UcHfTzx:Data.Bifunctor.Biff
+                         bifunctors-5.2@bifun_FaZUwfD8a9f4Qa0UcHfTzx:Data.Bifunctor.Clown
+                         bifunctors-5.2@bifun_FaZUwfD8a9f4Qa0UcHfTzx:Data.Bifunctor.Flip
+                         bifunctors-5.2@bifun_FaZUwfD8a9f4Qa0UcHfTzx:Data.Bifunctor.Join
+                         bifunctors-5.2@bifun_FaZUwfD8a9f4Qa0UcHfTzx:Data.Bifunctor.Joker
+                         bifunctors-5.2@bifun_FaZUwfD8a9f4Qa0UcHfTzx:Data.Bifunctor.Product
+                         bifunctors-5.2@bifun_FaZUwfD8a9f4Qa0UcHfTzx:Data.Bifunctor.Sum
+                         bifunctors-5.2@bifun_FaZUwfD8a9f4Qa0UcHfTzx:Data.Bifunctor.Tannen
+                         bifunctors-5.2@bifun_FaZUwfD8a9f4Qa0UcHfTzx:Data.Bifunctor.Wrapped
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.IntMap.Base
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.IntSet.Base
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.Map.Base
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.Sequence
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.Set.Base
+                         dlist-0.7.1.2@dlist_AO7XAasbAeyL0XLKeq1Aui:Data.DList
+                         keys-3.11@keys_ISfE7aax3NK7g9j8vHODvp:Data.Key
+                         monad-control-1.0.1.0@monad_7Tqv3C2ASZP4J7swGaIkqS:Control.Monad.Trans.Control
+                         mono-traversable-0.10.2@monot_0dkMOYm8fHd9L9cwfTpxhR:Data.MinLen
+                         mono-traversable-0.10.2@monot_0dkMOYm8fHd9L9cwfTpxhR:Data.MonoTraversable
+                         mono-traversable-0.10.2@monot_0dkMOYm8fHd9L9cwfTpxhR:Data.Sequences
+                         mwc-random-0.13.4.0@mwcra_0lrQ1SkkNA85sa8eZ98xQk:System.Random.MWC
+                         primitive-0.6.1.0@primi_EphY2c7CCxSCBKjAN0YTR3:Control.Monad.Primitive
+                         resourcet-1.1.7.5@resou_165wgeXO1n8BEqynSK393U:Control.Monad.Trans.Resource.Internal
+                         semigroups-0.18.1@semig_LaeT7FLzCl4KIQUoVrPYl1:Data.List.NonEmpty
+                         semigroups-0.18.1@semig_LaeT7FLzCl4KIQUoVrPYl1:Data.Semigroup
+                         tagged-0.8.4@tagge_LPeicl3HxVfGUMMwMEsAE6:Data.Tagged
+                         template-haskell-2.10.0.0:Language.Haskell.TH.Syntax
+                         text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text
+                         text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text.Lazy
+                         unordered-containers-0.2.7.1@unord_5iWC5HdL16JGHXLbsgBJnw:Data.HashMap.Base
+                         unordered-containers-0.2.7.1@unord_5iWC5HdL16JGHXLbsgBJnw:Data.HashSet
+                         vector-instances-3.3.1@vecto_2T0r79ha7oGAyaK2s9EYKN:Data.Vector.Instances
+                         vector-0.11.0.0@vecto_LmZ3LQW4ivu8MsQuVgukln:Data.Vector
+                         vector-0.11.0.0@vecto_LmZ3LQW4ivu8MsQuVgukln:Data.Vector.Primitive
+                         vector-0.11.0.0@vecto_LmZ3LQW4ivu8MsQuVgukln:Data.Vector.Storable
+                         vector-0.11.0.0@vecto_LmZ3LQW4ivu8MsQuVgukln:Data.Vector.Unboxed
+                         vector-0.11.0.0@vecto_LmZ3LQW4ivu8MsQuVgukln:Data.Vector.Unboxed.Base
+                         zlib-0.6.1.1@zlib_7LjT7TSHX8U3VTy3t378Vu:Codec.Compression.Zlib.Stream
+import  -/  base-4.8.2.0:Control.Exception.Base b99410eaf0cc6bb119b1d45a497c1b10
+import  -/  base-4.8.2.0:Control.Monad 480c5067477275068c9b98be08410df9
+import  -/  base-4.8.2.0:Data.Foldable 2ce969969ad5231eb40bd713f94f05ad
+import  -/  base-4.8.2.0:Data.Functor 5c701b0af1708f0192a25dfe14ce6274
+import  -/  base-4.8.2.0:GHC.Base 1db77db5dae73d8c424c85b09fbadb89
+import  -/  base-4.8.2.0:GHC.Enum debc6de3086023a15993ab0cecffb90b
+import  -/  base-4.8.2.0:GHC.Exception 18c46fe9c5c0c3a120035f264ef32d41
+import  -/  base-4.8.2.0:GHC.IO bb5b81adcea33b14bd4abe16d7dde45f
+import  -/  base-4.8.2.0:GHC.Num 9f42750c866f5832ca565146bd660c60
+import  -/  base-4.8.2.0:GHC.Show 0e1d8380a8fb0cfb07ebeda3b70cbf38
+import  -/  base-4.8.2.0:Prelude 694dcaf039efe62df1c44834e2dbd2fb
+import  -/  base-4.8.2.0:System.IO 0899686bfc1d9ef72dff3de85e99862a
+import  -/  bytestring-0.10.6.0@bytes_6VWy06pWzJq9evDvK2d4w6:Data.ByteString db2e56635ed30ff269e1492b64605a38
+import  -/  bytestring-0.10.6.0@bytes_6VWy06pWzJq9evDvK2d4w6:Data.ByteString.Internal b99858e89f19feddd3dcb9e9d523065e
+import  -/  bytestring-0.10.6.0@bytes_6VWy06pWzJq9evDvK2d4w6:Data.ByteString.Lazy 7b1dd178b3666e14ba91381002b4b4e3
+import  -/  bytestring-0.10.6.0@bytes_6VWy06pWzJq9evDvK2d4w6:Data.ByteString.Lazy.Internal 372874e1a7c751c0cb07b7dc746f232b
+import  -/  conduit-1.2.7@condu_6OSrnRI6RqIGBv7ZPG9IV6:Data.Conduit 832bd308f7a4f46a4a795dd0f59d7486
+import  -/  conduit-1.2.7@condu_6OSrnRI6RqIGBv7ZPG9IV6:Data.Conduit.Internal.Conduit 572af216b06adf88170fc100f37394a4
+import  -/  conduit-combinators-1.0.4@condu_7Sl3OMpnWsVLWFpLSSxlOn:Conduit 1cae890bd91c177648cc8d24c7794b1c
+import  -/  conduit-combinators-1.0.4@condu_7Sl3OMpnWsVLWFpLSSxlOn:Data.Conduit.Combinators.Unqualified f4495c8a679b5757f0fc784c920e8466
+import  -/  conduit-extra-1.1.13.2@condu_ErVEtE0OOPvEOsJa6HCflV:Data.Conduit.Binary 21aab48aadca7ed153f690c5bd318ae3
+import  -/  conduit-extra-1.1.13.2@condu_ErVEtE0OOPvEOsJa6HCflV:Data.Conduit.Filesystem 2ef24e14ede66552558ec4cda5ada6cc
+import  -/  conduit-extra-1.1.13.2@condu_ErVEtE0OOPvEOsJa6HCflV:Data.Conduit.Text d3bf92cbb1501548eef313b83348e07c
+import  -/  directory-1.2.2.0@direc_0hFG6ZxK1nk4zsyOqbNHfm:System.Directory a90331b0d3a954e7d46e510cba448504
+import  -/  exceptions-0.8.3@excep_BEih2K3eMGTE4cg5iulra8:Control.Monad.Catch 3ebeae2e3432388271b50d4d1f8acf4e
+import  -/  filepath-1.4.0.0@filep_Ey7a1in9roBAE8bUFJ5R9m:System.FilePath 6a7eafb8f3ea5de45bf8aaade5c8108e
+import  -/  filepath-1.4.0.0@filep_Ey7a1in9roBAE8bUFJ5R9m:System.FilePath.Posix da2bfc0e51fee241a6f2334547c9597d
+import  -/  ghc-prim-0.4.0.0:GHC.Classes e1f4ff80f7b5262008a595d29986fb18
+import  -/  ghc-prim-0.4.0.0:GHC.Types 6b27fb3fdbd0e3f0925a4496c66513bb
+import  -/  monad-control-1.0.1.0@monad_7Tqv3C2ASZP4J7swGaIkqS:Control.Monad.Trans.Control 06a5741c02976aa209a111ee6fe71b8d
+import  -/  mtl-2.2.1@mtl_Aue4leSeVkpKLsfHIV51E8:Control.Monad.Except a48c40e49a1635a6f6c139e86212e5c9
+import  -/  mtl-2.2.1@mtl_Aue4leSeVkpKLsfHIV51E8:Control.Monad.State 3c8114545920fee1e57c3d7a07c2d0d7
+import  -/  mtl-2.2.1@mtl_Aue4leSeVkpKLsfHIV51E8:Control.Monad.State.Class 71cb030be928f92f7d8f2a86db6e1cae
+import  -/  resourcet-1.1.7.5@resou_165wgeXO1n8BEqynSK393U:Control.Monad.Trans.Resource 402556b2576bc19d6ff927705d58bc2f
+import  -/  resourcet-1.1.7.5@resou_165wgeXO1n8BEqynSK393U:Control.Monad.Trans.Resource.Internal c8d81d6b177ce3a37599a727d5155690
+import  -/  split-0.2.3.1@split_2IxbOPGrTSq7kFrJA7odmE:Data.List.Split 487cc1966f0f25916f1ba58bdff4b0ee
+import  -/  split-0.2.3.1@split_2IxbOPGrTSq7kFrJA7odmE:Data.List.Split.Internals ec8cf5264ec78ab060cadb7ee5b994f0
+import  -/  text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text b53ae191632883b10562be5cbaa0b22b
+import  -/  text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text.Internal d9b6b9a9dd535595b612aea5738b7466
+import  -/  text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text.Lazy d56c3c35d79a41dc20bfa8069cdab871
+import  -/  text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text.Lazy.IO abf7cd1de9918458fce987206a0349b6
+import  -/  transformers-0.4.2.0@trans_GZTjP9K5WFq01xC9BAGQpF:Control.Monad.IO.Class 37487179a2f5eb2ea7922b911abcae56
+import  -/  transformers-0.4.2.0@trans_GZTjP9K5WFq01xC9BAGQpF:Control.Monad.Trans.Class f629605e4c93de7ab5f6a3350107b4d1
+import  -/  transformers-0.4.2.0@trans_GZTjP9K5WFq01xC9BAGQpF:Control.Monad.Trans.State.Lazy a0ae9990521f3719d0ffc837d271b7a5
+import  -/  zlib-0.6.1.1@zlib_7LjT7TSHX8U3VTy3t378Vu:Codec.Compression.GZip f01f83cce0cfe4cc9420fb4062158e77
+8c55e468e0f66a956027b9c977df390f
+  $wa ::
+    Control.Monad.IO.Class.MonadIO m =>
+    forall b.
+    (()
+     -> Data.Conduit.Internal.Pipe.Pipe
+          GHC.IO.FilePath
+          GHC.IO.FilePath
+          Data.ByteString.Internal.ByteString
+          ()
+          m
+          b)
+    -> Data.Conduit.Internal.Pipe.Pipe
+         GHC.IO.FilePath
+         GHC.IO.FilePath
+         Data.ByteString.Internal.ByteString
+         ()
+         m
+         b
+  {- Arity: 2, Strictness: <L,U(U,C(U))><L,U>, Inline: [0],
+     Unfolding: (\ @ (m :: * -> *)
+                   w :: Control.Monad.IO.Class.MonadIO m
+                   @ b
+                   w1 :: ()
+                         -> Data.Conduit.Internal.Pipe.Pipe
+                              GHC.IO.FilePath
+                              GHC.IO.FilePath
+                              Data.ByteString.Internal.ByteString
+                              ()
+                              m
+                              b ->
+                 let {
+                   $dMonad :: GHC.Base.Monad m
+                   = Control.Monad.IO.Class.$p1MonadIO @ m w
+                 } in
+                 let {
+                   lvl15 :: m () = GHC.Base.return @ m $dMonad @ () GHC.Tuple.()
+                 } in
+                 letrec {
+                   a14 :: GHC.IO.FilePath
+                          -> Data.Conduit.Internal.Pipe.Pipe
+                               GHC.IO.FilePath
+                               GHC.IO.FilePath
+                               Data.ByteString.Internal.ByteString
+                               ()
+                               m
+                               b
+                     {- Arity: 1, Strictness: <L,U> -}
+                   = \ i1 :: GHC.IO.FilePath ->
+                     Data.Conduit.Internal.Pipe.PipeM
+                       @ [GHC.Types.Char]
+                       @ [GHC.Types.Char]
+                       @ Data.ByteString.Internal.ByteString
+                       @ ()
+                       @ m
+                       @ b
+                       (GHC.Base.>>=
+                          @ m
+                          $dMonad
+                          @ Data.ByteString.Internal.ByteString
+                          @ (Data.Conduit.Internal.Pipe.Pipe
+                               [GHC.Types.Char]
+                               [GHC.Types.Char]
+                               Data.ByteString.Internal.ByteString
+                               ()
+                               m
+                               b)
+                          (Control.Monad.IO.Class.liftIO
+                             @ m
+                             w
+                             @ Data.ByteString.Internal.ByteString
+                             (Data.ByteString.readFile1 i1)
+                               `cast`
+                             (Sym (GHC.Types.NTCo:IO[0]
+                                       <Data.ByteString.Internal.ByteString>_R)))
+                          lvl16)
+                   go2 :: Data.Conduit.Internal.Pipe.Pipe
+                            GHC.IO.FilePath
+                            GHC.IO.FilePath
+                            Data.ByteString.Internal.ByteString
+                            ()
+                            m
+                            b
+                   = Data.Conduit.Internal.Pipe.NeedInput
+                       @ GHC.IO.FilePath
+                       @ GHC.IO.FilePath
+                       @ Data.ByteString.Internal.ByteString
+                       @ ()
+                       @ m
+                       @ b
+                       a14
+                       w1
+                   lvl16 :: Data.ByteString.Internal.ByteString
+                            -> m (Data.Conduit.Internal.Pipe.Pipe
+                                    [GHC.Types.Char]
+                                    [GHC.Types.Char]
+                                    Data.ByteString.Internal.ByteString
+                                    ()
+                                    m
+                                    b)
+                     {- Arity: 1 -}
+                   = \ x1 :: Data.ByteString.Internal.ByteString ->
+                     GHC.Base.return
+                       @ m
+                       $dMonad
+                       @ (Data.Conduit.Internal.Pipe.Pipe
+                            [GHC.Types.Char]
+                            [GHC.Types.Char]
+                            Data.ByteString.Internal.ByteString
+                            ()
+                            m
+                            b)
+                       (Data.Conduit.Internal.Pipe.HaveOutput
+                          @ GHC.IO.FilePath
+                          @ GHC.IO.FilePath
+                          @ Data.ByteString.Internal.ByteString
+                          @ ()
+                          @ m
+                          @ b
+                          go2
+                          lvl15
+                          x1)
+                 } in
+                 go2) -}
+97e4f1201e980f86f3a4ae0686f03c4c
+  $wlogNum ::
+    Conduits.FileOpS m GHC.Types.Int =>
+    Data.Conduit.Internal.Conduit.ConduitM i i m ()
+  {- Arity: 1, Strictness: <L,U(1*U,A,1*U,1*U)>, Inline: [0] -}
+45dfb867f45c64f2df43920ed47ba070
+  type FileOp (m :: * -> *) = Conduits.FileOpS m ()
+bf52de68f605b29c5eca7b3534f48c1f
+  type FileOpS (m :: * -> *) s =
+    (Control.Monad.State.Class.MonadState s m,
+     Control.Monad.IO.Class.MonadIO m,
+     Control.Monad.Trans.Resource.Internal.MonadResource m,
+     Control.Monad.Trans.Control.MonadBaseControl GHC.Types.IO m)
+ad0f51756a8eaf1e4bfe0cd2e304b730
+  type Op (m :: * -> *) =
+    (Control.Monad.Trans.Control.MonadBaseControl GHC.Types.IO m,
+     Control.Monad.Catch.MonadThrow m,
+     Control.Monad.IO.Class.MonadIO m)
+b53d9ee74e03147f39752caebec748ec
+  banner :: GHC.Types.IO ()
+  {- Arity: 1, Strictness: <L,U>,
+     Unfolding: InlineRule (0, True, True)
+                Conduits.banner1 `cast` (Sym (GHC.Types.NTCo:IO[0] <()>_R)) -}
+ad164cb31e49d968428a94358cfb21b4
+  banner1 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 1, Strictness: <L,U>,
+     Unfolding: (\ eta :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
+                 GHC.IO.Handle.Text.hPutStr2
+                   GHC.IO.Handle.FD.stdout
+                   Conduits.banner2
+                   GHC.Types.True
+                   eta) -}
+cc747ff887fa4f1faacce515fba56435
+  banner2 :: [GHC.Types.Char]
+  {- Unfolding: (Conduits.banner_go Conduits.banner3) -}
+d3324bfaccef44c47995bcd27bc7d2b1
+  banner3 :: GHC.Integer.Type.Integer
+  {- HasNoCafRefs, Unfolding: (__integer 1) -}
+ccbeaaa57ca65fbc82d120202eaaa236
+  banner_go :: GHC.Integer.Type.Integer -> [GHC.Types.Char]
+  {- Arity: 1, Strictness: <S,U> -}
+3110b757e7c4085419a43f8e34687a0b
+  cap ::
+    Control.Monad.IO.Class.MonadIO m =>
+    Data.Conduit.Internal.Conduit.Consumer i m ()
+  {- Arity: 1, Strictness: <L,U(U,C(U))> -}
+908292d6bb457b3a2815afad532ff114
+  eval ::
+    (Conduits.Op m, GHC.Base.Monoid s) =>
+    Control.Monad.Trans.Resource.Internal.ResourceT
+      (Control.Monad.Trans.State.Lazy.StateT s m) a
+    -> m (a, s)
+  {- Arity: 2, Strictness: <L,U(1*U,A,1*U)><L,1*U(1*U,A,A)>,
+     Unfolding: (\ @ s
+                   @ (m :: * -> *)
+                   @ a1
+                   tup :: Conduits.Op m
+                   $dMonoid :: GHC.Base.Monoid s ->
+                 let {
+                   lvl15 :: s = GHC.Base.mempty @ s $dMonoid
+                 } in
+                 let {
+                   $dMonadIO :: Control.Monad.IO.Class.MonadIO m
+                   = case tup of wild { (,,) tpl tpl1 tpl2 -> tpl2 }
+                 } in
+                 let {
+                   $dMonad :: GHC.Base.Monad m
+                   = Control.Monad.IO.Class.$p1MonadIO @ m $dMonadIO
+                 } in
+                 let {
+                   $dApplicative :: GHC.Base.Applicative m
+                   = GHC.Base.$p1Monad @ m $dMonad
+                 } in
+                 let {
+                   $dFunctor :: GHC.Base.Functor m
+                   = GHC.Base.$p1Applicative @ m $dApplicative
+                 } in
+                 let {
+                   $dFunctor1 :: GHC.Base.Functor
+                                   (Control.Monad.Trans.State.Lazy.StateT s m)
+                   = Control.Monad.Trans.State.Lazy.$fFunctorStateT @ s @ m $dFunctor
+                 } in
+                 let {
+                   $dApplicative1 :: GHC.Base.Applicative
+                                       (Control.Monad.Trans.State.Lazy.StateT s m)
+                   = Control.Monad.Trans.State.Lazy.$fApplicativeStateT
+                       @ s
+                       @ m
+                       $dFunctor1
+                       $dFunctor
+                       $dMonad
+                 } in
+                 let {
+                   $dMonad1 :: GHC.Base.Monad
+                                 (Control.Monad.Trans.State.Lazy.StateT s m)
+                   = Control.Monad.Trans.State.Lazy.$fMonadStateT
+                       @ s
+                       @ m
+                       $dApplicative1
+                       $dMonad
+                 } in
+                 let {
+                   $dMonadBaseControl :: Control.Monad.Trans.Control.MonadBaseControl
+                                           GHC.Types.IO m
+                   = case tup of wild { (,,) tpl tpl1 tpl2 -> tpl }
+                 } in
+                 let {
+                   $dMonadBase :: Control.Monad.Base.MonadBase GHC.Types.IO m
+                   = Control.Monad.Trans.Control.$p1MonadBaseControl
+                       @ GHC.Types.IO
+                       @ m
+                       $dMonadBaseControl
+                 } in
+                 let {
+                   $dMonad2 :: GHC.Base.Monad GHC.Types.IO
+                   = Control.Monad.Base.$p3MonadBase @ GHC.Types.IO @ m $dMonadBase
+                 } in
+                 let {
+                   $dApplicative2 :: GHC.Base.Applicative GHC.Types.IO
+                   = GHC.Base.$p1Monad @ GHC.Types.IO $dMonad2
+                 } in
+                 let {
+                   $dMonadBase1 :: Control.Monad.Base.MonadBase
+                                     GHC.Types.IO (Control.Monad.Trans.State.Lazy.StateT s m)
+                   = Control.Monad.Base.$fMonadBasebStateT0
+                       @ GHC.Types.IO
+                       @ s
+                       @ m
+                       $dApplicative2
+                       $dApplicative1
+                       $dMonad2
+                       $dMonad1
+                       $dMonadBase
+                 } in
+                 let {
+                   $dMonadBaseControl1 :: Control.Monad.Trans.Control.MonadBaseControl
+                                            GHC.Types.IO (Control.Monad.Trans.State.Lazy.StateT s m)
+                   = Control.Monad.Trans.Control.$fMonadBaseControlbStateT
+                       @ GHC.Types.IO
+                       @ s
+                       @ m
+                       $dMonadBase1
+                       $dMonadBaseControl
+                 } in
+                 \ m1 :: Control.Monad.Trans.Resource.Internal.ResourceT
+                           (Control.Monad.Trans.State.Lazy.StateT s m) a1 ->
+                 (Control.Monad.Trans.Resource.runResourceT
+                    @ (Control.Monad.Trans.State.Lazy.StateT s m)
+                    @ a1
+                    $dMonadBaseControl1
+                    m1)
+                   `cast`
+                 (Control.Monad.Trans.State.Lazy.NTCo:StateT[0] <s>_N <m>_R <a1>_N)
+                   lvl15) -}
+40437ad6176f8f9cfd3715337f5e1c27
+  linesOn ::
+    Conduits.FileOpS m s =>
+    GHC.Base.String
+    -> Data.Conduit.Internal.Conduit.Conduit
+         Data.ByteString.Internal.ByteString m [Data.Text.Internal.Text]
+  {- Arity: 2,
+     Strictness: <L,U(A,A,1*U(1*U(U(U,U,U,U,U),C(U)),A,A,A,A),1*U)><L,1*U> -}
+1e2fe0b2aaef45e5aa8309c74d2332da
+  logNum ::
+    (GHC.Show.Show i, Conduits.FileOpS m GHC.Types.Int) =>
+    Data.Conduit.Internal.Conduit.Conduit i m i
+  {- Arity: 2, Strictness: <L,A><L,U(1*U,A,1*U,1*U)>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, True)
+                (\ @ i
+                   @ (m :: * -> *)
+                   w :: GHC.Show.Show i
+                   w1 :: Conduits.FileOpS m GHC.Types.Int ->
+                 Conduits.$wlogNum @ i @ m w1) -}
+a4e875d67b3ab32ccc0491fa0bf93065
+  logi ::
+    (GHC.Show.Show i, Conduits.FileOpS m s) =>
+    Data.Conduit.Internal.Conduit.Conduit i m i
+  {- Arity: 2, Strictness: <L,U(A,U,A)><L,U(1*U,A,1*U,1*U)> -}
+0a43aabb270087b7624d408fd3662928
+  logm ::
+    Conduits.FileOpS m s =>
+    GHC.Base.String -> Data.Conduit.Internal.Conduit.Conduit i m i
+  {- Arity: 1, Strictness: <L,U(A,A,1*U,1*U)>,
+     Unfolding: (\ @ i
+                   @ (m :: * -> *)
+                   @ s
+                   tup :: Conduits.FileOpS m s ->
+                 let {
+                   $dMonadResource :: Control.Monad.Trans.Resource.Internal.MonadResource
+                                        m
+                   = case tup of wild { (,,,) tpl tpl1 tpl2 tpl3 -> tpl2 }
+                 } in
+                 let {
+                   $dMonadIO :: Control.Monad.IO.Class.MonadIO m
+                   = Control.Monad.Trans.Resource.Internal.$p2MonadResource
+                       @ m
+                       $dMonadResource
+                 } in
+                 let {
+                   a1 :: GHC.Base.Monad m
+                   = Control.Monad.IO.Class.$p1MonadIO @ m $dMonadIO
+                 } in
+                 let {
+                   a2 :: m ()
+                   = Control.Monad.IO.Class.liftIO
+                       @ m
+                       $dMonadIO
+                       @ ()
+                       Conduits.banner1 `cast` (Sym (GHC.Types.NTCo:IO[0] <()>_R))
+                 } in
+                 let {
+                   m1 :: m ()
+                   = case tup of wild { (,,,) tpl tpl1 tpl2 tpl3 ->
+                     GHC.Base.return
+                       @ m
+                       (Control.Monad.Base.$p4MonadBase
+                          @ GHC.Types.IO
+                          @ m
+                          (Control.Monad.Trans.Control.$p1MonadBaseControl
+                             @ GHC.Types.IO
+                             @ m
+                             tpl3))
+                       @ ()
+                       GHC.Tuple.() }
+                 } in
+                 \ xs :: GHC.Base.String ->
+                 let {
+                   a3 :: m ()
+                   = Control.Monad.IO.Class.liftIO
+                       @ m
+                       $dMonadIO
+                       @ ()
+                       (\ eta :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
+                        GHC.IO.Handle.Text.hPutStr2
+                          GHC.IO.Handle.FD.stdout
+                          (GHC.Show.$fShow[]_$s$cshow1 xs)
+                          GHC.Types.True
+                          eta)
+                         `cast`
+                       (Sym (GHC.Types.NTCo:IO[0] <()>_R))
+                 } in
+                 (\ @ b
+                    rest :: () -> Data.Conduit.Internal.Pipe.Pipe i i i () m b ->
+                  letrec {
+                    a14 :: i -> Data.Conduit.Internal.Pipe.Pipe i i i () m b
+                      {- Arity: 1, Strictness: <L,U> -}
+                    = \ i1 :: i ->
+                      Data.Conduit.Internal.Pipe.PipeM
+                        @ i
+                        @ i
+                        @ i
+                        @ ()
+                        @ m
+                        @ b
+                        (let {
+                           lvl15 :: m (Data.Conduit.Internal.Pipe.Pipe i i i () m b)
+                           = GHC.Base.return
+                               @ m
+                               a1
+                               @ (Data.Conduit.Internal.Pipe.Pipe i i i () m b)
+                               (Data.Conduit.Internal.Pipe.PipeM
+                                  @ i
+                                  @ i
+                                  @ i
+                                  @ ()
+                                  @ m
+                                  @ b
+                                  (let {
+                                     lvl16 :: m (Data.Conduit.Internal.Pipe.Pipe i i i () m b)
+                                     = GHC.Base.return
+                                         @ m
+                                         a1
+                                         @ (Data.Conduit.Internal.Pipe.Pipe i i i () m b)
+                                         (Data.Conduit.Internal.Pipe.PipeM
+                                            @ i
+                                            @ i
+                                            @ i
+                                            @ ()
+                                            @ m
+                                            @ b
+                                            (let {
+                                               lvl17 :: m (Data.Conduit.Internal.Pipe.Pipe
+                                                             i i i () m b)
+                                               = GHC.Base.return
+                                                   @ m
+                                                   a1
+                                                   @ (Data.Conduit.Internal.Pipe.Pipe i i i () m b)
+                                                   (Data.Conduit.Internal.Pipe.HaveOutput
+                                                      @ i
+                                                      @ i
+                                                      @ i
+                                                      @ ()
+                                                      @ m
+                                                      @ b
+                                                      go2
+                                                      m1
+                                                      i1)
+                                             } in
+                                             GHC.Base.>>=
+                                               @ m
+                                               a1
+                                               @ ()
+                                               @ (Data.Conduit.Internal.Pipe.Pipe i i i () m b)
+                                               a2
+                                               (\ x1 :: () -> lvl17)))
+                                   } in
+                                   GHC.Base.>>=
+                                     @ m
+                                     a1
+                                     @ ()
+                                     @ (Data.Conduit.Internal.Pipe.Pipe i i i () m b)
+                                     a3
+                                     (\ x1 :: () -> lvl16)))
+                         } in
+                         GHC.Base.>>=
+                           @ m
+                           a1
+                           @ ()
+                           @ (Data.Conduit.Internal.Pipe.Pipe i i i () m b)
+                           a2
+                           (\ x1 :: () -> lvl15))
+                    go2 :: Data.Conduit.Internal.Pipe.Pipe i i i () m b
+                    = Data.Conduit.Internal.Pipe.NeedInput
+                        @ i
+                        @ i
+                        @ i
+                        @ ()
+                        @ m
+                        @ b
+                        a14
+                        rest
+                  } in
+                  go2)
+                   `cast`
+                 (Sym (Data.Conduit.Internal.Conduit.NTCo:ConduitM[0]
+                           <i>_N <i>_N <m>_N <()>_R))) -}
+ec21a64fbd1b17ff6f9178f03a0c7806
+  openFile ::
+    (GHC.Base.Monad m, Control.Monad.IO.Class.MonadIO m) =>
+    Data.Conduit.Internal.Conduit.Conduit
+      GHC.IO.FilePath m Data.ByteString.Internal.ByteString
+  {- Arity: 3, Strictness: <L,A><L,U(U,C(U))><L,U>,
+     Unfolding: InlineRule (0, True, True)
+                Conduits.openFile1
+                  `cast`
+                (forall (m :: * -> *).
+                 <GHC.Base.Monad m>_R
+                 ->_R <Control.Monad.IO.Class.MonadIO m>_R
+                 ->_R Sym (Data.Conduit.Internal.Conduit.NTCo:ConduitM[0]
+                               <GHC.IO.FilePath>_N
+                               <Data.ByteString.Internal.ByteString>_N
+                               <m>_N
+                               <()>_R)) -}
+26a7d35f158c68fab4759f93ebf58c84
+  openFile1 ::
+    (GHC.Base.Monad m, Control.Monad.IO.Class.MonadIO m) =>
+    forall b.
+    (()
+     -> Data.Conduit.Internal.Pipe.Pipe
+          GHC.IO.FilePath
+          GHC.IO.FilePath
+          Data.ByteString.Internal.ByteString
+          ()
+          m
+          b)
+    -> Data.Conduit.Internal.Pipe.Pipe
+         GHC.IO.FilePath
+         GHC.IO.FilePath
+         Data.ByteString.Internal.ByteString
+         ()
+         m
+         b
+  {- Arity: 3, Strictness: <L,A><L,U(U,C(U))><L,U>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (3, True, True)
+                (\ @ (m :: * -> *)
+                   w :: GHC.Base.Monad m
+                   w1 :: Control.Monad.IO.Class.MonadIO m
+                   @ b
+                   w2 :: ()
+                         -> Data.Conduit.Internal.Pipe.Pipe
+                              GHC.IO.FilePath
+                              GHC.IO.FilePath
+                              Data.ByteString.Internal.ByteString
+                              ()
+                              m
+                              b ->
+                 Conduits.$wa @ m w1 @ b w2) -}
+a42f16105c614c0f840fe9e09d1d013a
+  run ::
+    Control.Monad.Trans.Control.MonadBaseControl GHC.Types.IO m =>
+    Control.Monad.Trans.Resource.Internal.ResourceT
+      (Control.Monad.Trans.State.Lazy.StateT () m) a
+    -> m a
+  {- Arity: 1, Strictness: <L,U(U,U,U)>,
+     Unfolding: (\ @ (m :: * -> *)
+                   @ a1
+                   $dMonadBaseControl :: Control.Monad.Trans.Control.MonadBaseControl
+                                           GHC.Types.IO m ->
+                 let {
+                   $dMonadBase :: Control.Monad.Base.MonadBase GHC.Types.IO m
+                   = Control.Monad.Trans.Control.$p1MonadBaseControl
+                       @ GHC.Types.IO
+                       @ m
+                       $dMonadBaseControl
+                 } in
+                 let {
+                   $dMonad :: GHC.Base.Monad GHC.Types.IO
+                   = Control.Monad.Base.$p3MonadBase @ GHC.Types.IO @ m $dMonadBase
+                 } in
+                 let {
+                   $dApplicative :: GHC.Base.Applicative GHC.Types.IO
+                   = GHC.Base.$p1Monad @ GHC.Types.IO $dMonad
+                 } in
+                 let {
+                   $dMonad1 :: GHC.Base.Monad m
+                   = Control.Monad.Base.$p4MonadBase @ GHC.Types.IO @ m $dMonadBase
+                 } in
+                 let {
+                   $dApplicative1 :: GHC.Base.Applicative m
+                   = GHC.Base.$p1Monad @ m $dMonad1
+                 } in
+                 let {
+                   $dFunctor :: GHC.Base.Functor m
+                   = GHC.Base.$p1Applicative @ m $dApplicative1
+                 } in
+                 let {
+                   $dFunctor1 :: GHC.Base.Functor
+                                   (Control.Monad.Trans.State.Lazy.StateT () m)
+                   = Control.Monad.Trans.State.Lazy.$fFunctorStateT @ () @ m $dFunctor
+                 } in
+                 let {
+                   $dApplicative2 :: GHC.Base.Applicative
+                                       (Control.Monad.Trans.State.Lazy.StateT () m)
+                   = Control.Monad.Trans.State.Lazy.$fApplicativeStateT
+                       @ ()
+                       @ m
+                       $dFunctor1
+                       $dFunctor
+                       $dMonad1
+                 } in
+                 let {
+                   $dMonad2 :: GHC.Base.Monad
+                                 (Control.Monad.Trans.State.Lazy.StateT () m)
+                   = Control.Monad.Trans.State.Lazy.$fMonadStateT
+                       @ ()
+                       @ m
+                       $dApplicative2
+                       $dMonad1
+                 } in
+                 let {
+                   $dMonadBase1 :: Control.Monad.Base.MonadBase
+                                     GHC.Types.IO (Control.Monad.Trans.State.Lazy.StateT () m)
+                   = Control.Monad.Base.$fMonadBasebStateT0
+                       @ GHC.Types.IO
+                       @ ()
+                       @ m
+                       $dApplicative
+                       $dApplicative2
+                       $dMonad
+                       $dMonad2
+                       $dMonadBase
+                 } in
+                 let {
+                   $dMonadBaseControl1 :: Control.Monad.Trans.Control.MonadBaseControl
+                                            GHC.Types.IO
+                                            (Control.Monad.Trans.State.Lazy.StateT () m)
+                   = Control.Monad.Trans.Control.$fMonadBaseControlbStateT
+                       @ GHC.Types.IO
+                       @ ()
+                       @ m
+                       $dMonadBase1
+                       $dMonadBaseControl
+                 } in
+                 let {
+                   lvl15 :: (a1, ()) -> m a1 {- Arity: 1 -}
+                   = \ ds :: (a1, ()) ->
+                     GHC.Base.return
+                       @ m
+                       $dMonad1
+                       @ a1
+                       (case ds of wild { (,) a2 ds2 -> a2 })
+                 } in
+                 \ m1 :: Control.Monad.Trans.Resource.Internal.ResourceT
+                           (Control.Monad.Trans.State.Lazy.StateT () m) a1 ->
+                 GHC.Base.>>=
+                   @ m
+                   $dMonad1
+                   @ (a1, ())
+                   @ a1
+                   ((Control.Monad.Trans.Resource.runResourceT
+                       @ (Control.Monad.Trans.State.Lazy.StateT () m)
+                       @ a1
+                       $dMonadBaseControl1
+                       m1)
+                      `cast`
+                    (Control.Monad.Trans.State.Lazy.NTCo:StateT[0] <()>_N <m>_R <a1>_N)
+                      GHC.Tuple.())
+                   lvl15) -}
+2a45221f0e7507344765a1321251d4a7
+  shardFile ::
+    Conduits.FileOpS m s =>
+    GHC.Base.String
+    -> GHC.IO.FilePath
+    -> GHC.Types.Int
+    -> Data.Conduit.Internal.Conduit.Conduit GHC.IO.FilePath m ()
+  {- Arity: 5, Strictness: <L,U(A,A,1*U,1*U)><L,U><L,U><L,U(U)><L,U>,
+     Unfolding: InlineRule (0, True, True)
+                Conduits.shardFile1
+                  `cast`
+                (forall (m :: * -> *) s.
+                 <Conduits.FileOpS m s>_R
+                 ->_R <GHC.Base.String>_R
+                 ->_R <GHC.IO.FilePath>_R
+                 ->_R <GHC.Types.Int>_R
+                 ->_R Sym (Data.Conduit.Internal.Conduit.NTCo:ConduitM[0]
+                               <GHC.IO.FilePath>_N <()>_N <m>_N <()>_R)) -}
+92c450fc676e92cf6bba6c18a0f425b5
+  shardFile1 ::
+    Conduits.FileOpS m s =>
+    GHC.Base.String
+    -> GHC.IO.FilePath
+    -> GHC.Types.Int
+    -> forall b.
+       (()
+        -> Data.Conduit.Internal.Pipe.Pipe
+             GHC.IO.FilePath GHC.IO.FilePath () () m b)
+       -> Data.Conduit.Internal.Pipe.Pipe
+            GHC.IO.FilePath GHC.IO.FilePath () () m b
+  {- Arity: 5,
+     Strictness: <L,U(A,A,1*U,1*U)><L,U><L,U><L,U(U)><L,U> -}
+340d235998aaeefc8c8abd10cba62a5c
+  sourceDirectories ::
+    Conduits.FileOpS m s =>
+    [GHC.IO.FilePath]
+    -> GHC.Base.String
+    -> Data.Conduit.Internal.Conduit.Source m GHC.IO.FilePath
+  {- Arity: 3, Strictness: <L,U(A,A,1*U,1*U)><L,1*U><L,U> -}
+5289c03e017818de3cceb953ec59852d
+  sourceFileE ::
+    Conduits.FileOpS m s =>
+    GHC.IO.FilePath
+    -> Data.Conduit.Internal.Conduit.Source
+         m Data.ByteString.Internal.ByteString
+  {- Arity: 2, Strictness: <L,U(A,A,1*U(A,U,A,U,C(U)),1*U)><L,U> -}
+7ee9693e3cab68e25787055edeb6bfdf
+  untarSaveAs ::
+    Conduits.FileOpS m s =>
+    GHC.Base.String
+    -> Data.Conduit.Internal.Conduit.Conduit
+         GHC.IO.FilePath
+         m
+         (GHC.IO.FilePath, Data.ByteString.Lazy.Internal.ByteString)
+  {- Arity: 1, Strictness: <L,U(A,A,1*U,1*U)> -}
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: none
+require own pkg trusted: False
+

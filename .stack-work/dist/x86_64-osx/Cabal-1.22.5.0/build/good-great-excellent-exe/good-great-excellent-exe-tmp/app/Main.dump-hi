@@ -1,0 +1,193 @@
+
+==================== FINAL INTERFACE ====================
+2016-09-12 00:35:32.99814 UTC
+
+interface main@main:Main 7103
+  interface hash: 0c0e7bb9c3ea80156b983e2366394548
+  ABI hash: dbd3e85e20cf33837df4902065638f46
+  export-list hash: ed776e14085e8ec8fe783fd9b5631d3e
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: f8c694548b2debe1f8faf3f9ee47371f
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Main.main
+module dependencies:
+package dependencies: StateVar-1.1.0.4@State_IOvB80WkYNkEizdt0JVpzy
+                      adjunctions-4.3@adjun_HUA1si0oygHIohE6wWvtj8
+                      array-0.5.1.0@array_67iodizgJQIIxYVTp4emlA
+                      attoparsec-0.13.0.2@attop_F2JR8EcnzjH8eSBi5YocsE base-4.8.2.0
+                      base16-bytestring-0.1.1.6@base1_LuxBhYgEONMHJnKTOPc7Oy
+                      base64-bytestring-1.0.0.1@base6_AkCk8zInckjJsyQ4AIFHPN
+                      base-orphans-0.5.4@baseo_0gFtKFBT26OGSKHmmdqdfx
+                      bifunctors-5.2@bifun_FaZUwfD8a9f4Qa0UcHfTzx
+                      binary-0.7.5.0@binar_3uXFWMoAGBg0xKP9MHKRwi
+                      blaze-builder-0.4.0.2@blaze_5LQurmvTy7l9rPlWgPlNE4
+                      bytestring-0.10.6.0@bytes_6VWy06pWzJq9evDvK2d4w6
+                      chunked-data-0.2.0@chunk_9sFQnevMt1h0cKlKzGg6j9
+                      comonad-4.2.7.2@comon_5wEqfQVXg9MGfIPxSKfS4M
+                      conduit-1.2.7@condu_6OSrnRI6RqIGBv7ZPG9IV6
+                      conduit-combinators-1.0.4@condu_7Sl3OMpnWsVLWFpLSSxlOn
+                      conduit-extra-1.1.13.2@condu_ErVEtE0OOPvEOsJa6HCflV
+                      containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU
+                      contravariant-1.4@contr_7gFjdZ6ciei9744gjZQMHp
+                      data-default-class-0.0.1@datad_K91y8NcZUJI9yaBI61rgdD
+                      deepseq-1.4.1.1@deeps_6vMKxt5sPFR0XsbRWvvq59
+                      directory-1.2.2.0@direc_0hFG6ZxK1nk4zsyOqbNHfm
+                      distributive-0.5.0.2@distr_55SIdsoyihS4jXBaaVvPQX
+                      dlist-0.7.1.2@dlist_AO7XAasbAeyL0XLKeq1Aui
+                      dlist-instances-0.1.1.1@dlist_Fd4HoN0wfg6JUJW6l75mr9
+                      exceptions-0.8.3@excep_BEih2K3eMGTE4cg5iulra8
+                      filepath-1.4.0.0@filep_Ey7a1in9roBAE8bUFJ5R9m
+                      free-4.12.4@free_D8pop1Lncn7BkE4zjJTjla ghc-prim-0.4.0.0
+                      good-great-excellent-0.1.0.0@goodg_DmvfzrsRlTTEG4TgbQ9uXe
+                      hashable-1.2.4.0@hasha_EalUWgp8NarBYWPbvYAD8I integer-gmp-1.0.0.0
+                      kan-extensions-4.2.3@kanex_8yLFa561sPQJZ5XPOmzMGi
+                      keys-3.11@keys_ISfE7aax3NK7g9j8vHODvp
+                      lifted-base-0.2.3.8@lifte_27kQ9DytVyu5Pw2So1Igy3
+                      mmorph-1.0.6@mmorp_42KUkOfzC6q3qCtAMiSHam
+                      monad-control-1.0.1.0@monad_7Tqv3C2ASZP4J7swGaIkqS
+                      mono-traversable-0.10.2@monot_0dkMOYm8fHd9L9cwfTpxhR
+                      mtl-2.2.1@mtl_Aue4leSeVkpKLsfHIV51E8
+                      mwc-random-0.13.4.0@mwcra_0lrQ1SkkNA85sa8eZ98xQk
+                      pointed-4.2.0.2@point_GCsPRSrANuo0hdJRNI2bbb
+                      prelude-extras-0.4.0.3@prelu_1gQpKVfMHul71LsAFgGRhv
+                      primitive-0.6.1.0@primi_EphY2c7CCxSCBKjAN0YTR3
+                      profunctors-5.2@profu_LHFqrYSAR0z1HJQ4sjj1Mu
+                      resourcet-1.1.7.5@resou_165wgeXO1n8BEqynSK393U
+                      scientific-0.3.4.9@scien_1WVNjGUftkQ9QzH4DOM2n1
+                      semigroupoids-5.0.1@semig_GRN7TOS9fx09tFw63gc4EK
+                      semigroups-0.18.1@semig_LaeT7FLzCl4KIQUoVrPYl1
+                      split-0.2.3.1@split_2IxbOPGrTSq7kFrJA7odmE
+                      stm-2.4.4.1@stm_EyxFXFfnfY05IrjGaqCxeD
+                      streaming-commons-0.1.15.5@strea_2a9C3L0IVZc79BZaLNwyzG
+                      tagged-0.8.4@tagge_LPeicl3HxVfGUMMwMEsAE6 template-haskell-2.10.0.0
+                      text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne
+                      time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn
+                      transformers-base-0.4.4@trans_74WedXVmfaHHDJItmBRTVp
+                      transformers-0.4.2.0@trans_GZTjP9K5WFq01xC9BAGQpF
+                      unix-2.7.1.0@unix_KZL8h98IqDM57kQSPo1mKx
+                      unordered-containers-0.2.7.1@unord_5iWC5HdL16JGHXLbsgBJnw
+                      vector-algorithms-0.7.0.1@vecto_2O3XZ6glbAwDmJCc3dC3Ee
+                      vector-instances-3.3.1@vecto_2T0r79ha7oGAyaK2s9EYKN
+                      vector-0.11.0.0@vecto_LmZ3LQW4ivu8MsQuVgukln
+                      zlib-0.6.1.1@zlib_7LjT7TSHX8U3VTy3t378Vu
+orphans: attoparsec-0.13.0.2@attop_F2JR8EcnzjH8eSBi5YocsE:Data.Attoparsec.Text.Internal
+         base-4.8.2.0:GHC.Base base-4.8.2.0:GHC.Float
+         base-orphans-0.5.4@baseo_0gFtKFBT26OGSKHmmdqdfx:Data.Orphans
+         binary-0.7.5.0@binar_3uXFWMoAGBg0xKP9MHKRwi:Data.Binary.Generic
+         bytestring-0.10.6.0@bytes_6VWy06pWzJq9evDvK2d4w6:Data.ByteString.Builder
+         dlist-instances-0.1.1.1@dlist_Fd4HoN0wfg6JUJW6l75mr9:Data.DList.Instances
+         hashable-1.2.4.0@hasha_EalUWgp8NarBYWPbvYAD8I:Data.Hashable.Generic
+         stm-2.4.4.1@stm_EyxFXFfnfY05IrjGaqCxeD:Control.Monad.STM
+         text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text
+         text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text.Lazy
+         text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text.Show
+         time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn:Data.Time.Calendar.Gregorian
+         time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn:Data.Time.Format.Parse
+         time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn:Data.Time.LocalTime.LocalTime
+         transformers-0.4.2.0@trans_GZTjP9K5WFq01xC9BAGQpF:Control.Monad.Trans.Error
+         vector-instances-3.3.1@vecto_2T0r79ha7oGAyaK2s9EYKN:Data.Vector.Instances
+         vector-0.11.0.0@vecto_LmZ3LQW4ivu8MsQuVgukln:Data.Vector.Fusion.Bundle
+         vector-0.11.0.0@vecto_LmZ3LQW4ivu8MsQuVgukln:Data.Vector.Unboxed
+family instance modules: adjunctions-4.3@adjun_HUA1si0oygHIohE6wWvtj8:Data.Functor.Rep
+                         attoparsec-0.13.0.2@attop_F2JR8EcnzjH8eSBi5YocsE:Data.Attoparsec.Internal.Types
+                         base-4.8.2.0:Control.Applicative base-4.8.2.0:Data.Either
+                         base-4.8.2.0:Data.Functor.Identity base-4.8.2.0:Data.Monoid
+                         base-4.8.2.0:Data.Type.Equality base-4.8.2.0:Data.Void
+                         base-4.8.2.0:GHC.Exts base-4.8.2.0:GHC.Generics
+                         base-4.8.2.0:GHC.TypeLits
+                         bifunctors-5.2@bifun_FaZUwfD8a9f4Qa0UcHfTzx:Data.Bifunctor.Biff
+                         bifunctors-5.2@bifun_FaZUwfD8a9f4Qa0UcHfTzx:Data.Bifunctor.Clown
+                         bifunctors-5.2@bifun_FaZUwfD8a9f4Qa0UcHfTzx:Data.Bifunctor.Flip
+                         bifunctors-5.2@bifun_FaZUwfD8a9f4Qa0UcHfTzx:Data.Bifunctor.Join
+                         bifunctors-5.2@bifun_FaZUwfD8a9f4Qa0UcHfTzx:Data.Bifunctor.Joker
+                         bifunctors-5.2@bifun_FaZUwfD8a9f4Qa0UcHfTzx:Data.Bifunctor.Product
+                         bifunctors-5.2@bifun_FaZUwfD8a9f4Qa0UcHfTzx:Data.Bifunctor.Sum
+                         bifunctors-5.2@bifun_FaZUwfD8a9f4Qa0UcHfTzx:Data.Bifunctor.Tannen
+                         bifunctors-5.2@bifun_FaZUwfD8a9f4Qa0UcHfTzx:Data.Bifunctor.Wrapped
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.IntMap.Base
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.IntSet.Base
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.Map.Base
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.Sequence
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.Set.Base
+                         dlist-0.7.1.2@dlist_AO7XAasbAeyL0XLKeq1Aui:Data.DList
+                         keys-3.11@keys_ISfE7aax3NK7g9j8vHODvp:Data.Key
+                         monad-control-1.0.1.0@monad_7Tqv3C2ASZP4J7swGaIkqS:Control.Monad.Trans.Control
+                         mono-traversable-0.10.2@monot_0dkMOYm8fHd9L9cwfTpxhR:Data.MinLen
+                         mono-traversable-0.10.2@monot_0dkMOYm8fHd9L9cwfTpxhR:Data.MonoTraversable
+                         mono-traversable-0.10.2@monot_0dkMOYm8fHd9L9cwfTpxhR:Data.Sequences
+                         mwc-random-0.13.4.0@mwcra_0lrQ1SkkNA85sa8eZ98xQk:System.Random.MWC
+                         primitive-0.6.1.0@primi_EphY2c7CCxSCBKjAN0YTR3:Control.Monad.Primitive
+                         resourcet-1.1.7.5@resou_165wgeXO1n8BEqynSK393U:Control.Monad.Trans.Resource.Internal
+                         semigroups-0.18.1@semig_LaeT7FLzCl4KIQUoVrPYl1:Data.List.NonEmpty
+                         semigroups-0.18.1@semig_LaeT7FLzCl4KIQUoVrPYl1:Data.Semigroup
+                         tagged-0.8.4@tagge_LPeicl3HxVfGUMMwMEsAE6:Data.Tagged
+                         template-haskell-2.10.0.0:Language.Haskell.TH.Syntax
+                         text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text
+                         text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text.Lazy
+                         unordered-containers-0.2.7.1@unord_5iWC5HdL16JGHXLbsgBJnw:Data.HashMap.Base
+                         unordered-containers-0.2.7.1@unord_5iWC5HdL16JGHXLbsgBJnw:Data.HashSet
+                         vector-instances-3.3.1@vecto_2T0r79ha7oGAyaK2s9EYKN:Data.Vector.Instances
+                         vector-0.11.0.0@vecto_LmZ3LQW4ivu8MsQuVgukln:Data.Vector
+                         vector-0.11.0.0@vecto_LmZ3LQW4ivu8MsQuVgukln:Data.Vector.Primitive
+                         vector-0.11.0.0@vecto_LmZ3LQW4ivu8MsQuVgukln:Data.Vector.Storable
+                         vector-0.11.0.0@vecto_LmZ3LQW4ivu8MsQuVgukln:Data.Vector.Unboxed
+                         vector-0.11.0.0@vecto_LmZ3LQW4ivu8MsQuVgukln:Data.Vector.Unboxed.Base
+                         zlib-0.6.1.1@zlib_7LjT7TSHX8U3VTy3t378Vu:Codec.Compression.Zlib.Stream
+import  -/  base-4.8.2.0:Prelude 694dcaf039efe62df1c44834e2dbd2fb
+import  -/  base-4.8.2.0:System.IO 0899686bfc1d9ef72dff3de85e99862a
+import  -/  ghc-prim-0.4.0.0:GHC.Types 6b27fb3fdbd0e3f0925a4496c66513bb
+import  -/  good-great-excellent-0.1.0.0@goodg_DmvfzrsRlTTEG4TgbQ9uXe:Lib 3d8f84f013736fa862878daac25979c2
+f7839983491f45e3f164026beea762eb
+  main :: GHC.Types.IO ()
+  {- Arity: 1, Strictness: <L,U>,
+     Unfolding: InlineRule (0, True, True)
+                Main.main1 `cast` (Sym (GHC.Types.NTCo:IO[0] <()>_R)) -}
+e50e7533caf02b892d576183d176b065
+  main1 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 1, Strictness: <L,U>,
+     Unfolding: (\ eta :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
+                 GHC.IO.Handle.Text.hPutStr2
+                   GHC.IO.Handle.FD.stdout
+                   Main.main2
+                   GHC.Types.True
+                   eta) -}
+6442df1e451a2ea0949be13ad79cb32e
+  main2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.Types.:
+                   @ GHC.Types.Char
+                   GHC.Show.shows6
+                   Main.main3) -}
+b3f14699dffa9968df033a5da25e86e4
+  main3 :: GHC.Base.String
+  {- Unfolding: (GHC.Show.showLitString Main.main5 Main.main4) -}
+ecdee84562df037d1ce3c4bd0e87ae9b
+  main4 :: [GHC.Types.Char]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ GHC.Types.Char
+                   GHC.Show.shows6
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+6b0589b41530734b52246f99bb73a5f9
+  main5 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "hello world"#) -}
+52b34595d107055637c53322e8f2bf7b
+  main6 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 1,
+     Unfolding: (GHC.TopHandler.runMainIO1
+                   @ ()
+                   Main.main1 `cast` (Sym (GHC.Types.NTCo:IO[0] <()>_R))) -}
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: none
+require own pkg trusted: False
+
