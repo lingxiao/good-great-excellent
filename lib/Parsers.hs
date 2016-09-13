@@ -13,6 +13,7 @@
 module Parsers (
 
     (<**)
+  , (<**?)
   , (<+>)
   , pzero
   , name
@@ -71,7 +72,7 @@ name :: Show a => Parser a -> String
 name p = case (p >> mzero) <** empty of
   Left n  -> n
 
--- * Preprocess text `t` and parse with `p`
+-- * parse text `t` using parser `p`
 infixr 8 <**
 (<**) :: Parser a -> Text -> Either String a
 p <** t = case parse p t of
@@ -82,6 +83,14 @@ p <** t = case parse p t of
         Done _ r    -> Right r
         Fail _ [] _ -> Left ""
         Fail _ m _  -> Left . head $ m
+
+-- * check if parser `p` recognized text `t`
+infixr 8 <**?
+(<**?) :: Parser a -> Text -> Bool
+p <**? t = case p <** t of
+  Right _ -> True
+  _       -> False
+
 
 {-----------------------------------------------------------------------------
    Basic parsers

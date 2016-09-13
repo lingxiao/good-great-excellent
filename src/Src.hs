@@ -1,26 +1,18 @@
 -----------------------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------------
 -- | 
--- | Module  : Export library modules
+-- | Module  : Export src modules
 -- | Author  : Xiao Ling
--- | Date    : 8/10/2016
+-- | Date    : 9/12/2016
 -- |             
 ---------------------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------------
  
 
-module Lib (
-      module Parsers
-    , module Conduits
-    , module Preprocess
-    , module PatternCompiler
-    , module Utils
+module Src (
+	  module Core
+	, module PreprocessData
 ) where
 
-
-
-import Parsers
-import Conduits
-import Preprocess
-import PatternCompiler
-import Utils
+import Core
+import PreprocessData

@@ -108,7 +108,9 @@ openFile = awaitForever $ \p -> do
 -- * Awaits bytestring and convert to list of text,
 -- * splitting on token char
 linesOn :: FileOpS m s => String -> Conduit B.ByteString m [Text]
-linesOn tok = decode utf8 =$= lines =$= mapC (splitOn . pack $ tok)
+linesOn tok =  decode utf8 
+           =$= lines 
+           =$= mapC (splitOn . pack $ tok)
 
 
 -- * TODO: swap out the L.readFile for something more safe
