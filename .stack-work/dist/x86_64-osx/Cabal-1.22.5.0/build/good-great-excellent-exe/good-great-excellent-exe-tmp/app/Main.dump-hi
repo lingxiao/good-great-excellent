@@ -1,9 +1,9 @@
 
 ==================== FINAL INTERFACE ====================
-2016-09-12 00:35:32.99814 UTC
+2016-09-13 18:26:40.86787 UTC
 
 interface main@main:Main 7103
-  interface hash: 0c0e7bb9c3ea80156b983e2366394548
+  interface hash: 1c3a16ed273b39b98e3e2f60501e916c
   ABI hash: dbd3e85e20cf33837df4902065638f46
   export-list hash: ed776e14085e8ec8fe783fd9b5631d3e
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
@@ -139,7 +139,7 @@ family instance modules: adjunctions-4.3@adjun_HUA1si0oygHIohE6wWvtj8:Data.Funct
 import  -/  base-4.8.2.0:Prelude 694dcaf039efe62df1c44834e2dbd2fb
 import  -/  base-4.8.2.0:System.IO 0899686bfc1d9ef72dff3de85e99862a
 import  -/  ghc-prim-0.4.0.0:GHC.Types 6b27fb3fdbd0e3f0925a4496c66513bb
-import  -/  good-great-excellent-0.1.0.0@goodg_DmvfzrsRlTTEG4TgbQ9uXe:Lib 3d8f84f013736fa862878daac25979c2
+import  -/  good-great-excellent-0.1.0.0@goodg_DmvfzrsRlTTEG4TgbQ9uXe:Lib a0452606bd9d7427787362113cec2045
 f7839983491f45e3f164026beea762eb
   main :: GHC.Types.IO ()
   {- Arity: 1, Strictness: <L,U>,
