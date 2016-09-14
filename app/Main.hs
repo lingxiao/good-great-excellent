@@ -22,28 +22,30 @@ import Subroutines
 
 main :: IO ()
 main = do
-    -- ps <- main_filterByPattern inpath_sw p_sw
-    -- ps <- main_filterByPattern inpath_ws p_ws
-
-    -- * do your parser over a very general item 
-    ps <- main_filterByPattern (replicate 100 nbase) p_sw
-
-    mapM print ps
+    --ps <- filter_weakStrong con_local_ws
+    ps <- filter_strongWeak con_remote_not
+    -- mapM print ps
     return ()
 
 {-----------------------------------------------------------------------------
     Paths
 ------------------------------------------------------------------------------}
 
-base, tbase :: DirectoryPath
-base  = "/Users/lingxiao/Documents/research/data/ngrams/"
-tbase = "/Users/lingxiao/Documents/research/code/good-great-excellent/test/assets/"
+root_local, root_remote, data_local :: DirectoryPath
+root_local  = "/Users/lingxiao/Documents/research/code/good-great-excellent"
+root_remote = "/home1/l/lingxiao/xiao/good-great-excellent"
+data_local  = "/Users/lingxiao/Documents/research/data/ngrams"
 
-nbase :: FilePath
-nbase = "/Users/lingxiao/Documents/research/data/ngrams/raw-not/not-star.txt"
 
-inpath_ws :: [FilePath]
-inpath_ws = ((++) (base ++ "raw-strong-weak/"))
+con_local_ws, con_local_sw, con_remote_not :: Config
+con_local_ws   = config root_local  $ inpath_ws data_local
+con_local_sw   = config root_local  $ inpath_sw data_local
+con_remote_not = config root_remote
+               $ replicate 100 "/nlp/data/xiao/ngrams/raw-not/not-star.txt"
+
+
+inpath_ws :: DirectoryPath -> [FilePath]
+inpath_ws d = ((++) (d ++ "/raw-weak-strong/"))
         <$> [ "but-not.txt"
             , "if-not.txt"
             , "although-not.txt"
@@ -54,8 +56,8 @@ inpath_ws = ((++) (base ++ "raw-strong-weak/"))
             , "not-just.txt"
             ]
  
-inpath_sw :: [FilePath]
-inpath_sw = ((++) (base ++ "raw-strong-weak/"))
+inpath_sw :: DirectoryPath -> [FilePath]
+inpath_sw d = ((++) (d ++ "/raw-strong-weak/"))
         <$> [ "not-*-just-*.txt"
             , "not-*-but-just-*.txt"
             , "not-*-still-*.txt"
@@ -64,14 +66,6 @@ inpath_sw = ((++) (base ++ "raw-strong-weak/"))
             , "not-*-though-still-*.txt"
             , "*-or-very-*.txt"
             ]
-
-p_ws :: FilePath
-p_ws = "/Users/lingxiao/Documents/research/code/good-great-excellent/inputs/weak-strong-patterns.txt"
-
-p_sw :: FilePath
-p_sw = "/Users/lingxiao/Documents/research/code/good-great-excellent/inputs/strong-weak-patterns.txt"
-
-
 
 
 
