@@ -11,8 +11,10 @@
 
 module Src (
 	  module Core
+	, module Query
 	, module PreprocessData
 ) where
 
 import Core
+import Query
 import PreprocessData
