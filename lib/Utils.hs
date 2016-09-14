@@ -14,7 +14,7 @@ module Utils (
 
       takeN
     , sourceDirs
-    , makeDirAtTop
+    , makeDirUnder
 
     , untarFiles
     , shardFiles
@@ -75,13 +75,12 @@ sourceDir ext d = do
   Write to Disk
 ------------------------------------------------------------------------------}
 
--- * create directory `f` at top of project folder
-makeDirAtTop :: FilePath -> IO FilePath
-makeDirAtTop f = do
+-- * create directory `f` under `project` folder named: `name`
+makeDirUnder :: String -> String -> IO FilePath
+makeDirUnder project name = do
       xs <- getCurrentDirectory
-      let project = "GoodGreatIntensity"
       let top:_   = splitOn project xs
-      let dir     = top ++ project ++ "/" ++ takeBaseName f
+      let dir     = top ++ project ++ "/" ++ name
       createDirectoryIfMissing False dir
       return dir
 

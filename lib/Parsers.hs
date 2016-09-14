@@ -65,7 +65,7 @@ addName p q = case (name p, name q) of
   ("", "") -> ""
   ("", _ ) -> name q
   (_, "" ) -> name p
-  (_, _  ) -> name p ++ "_" ++ name q
+  (_, _  ) -> name p ++ "-" ++ name q
 
 
 name :: Show a => Parser a -> String

@@ -10,7 +10,9 @@
 
 module Main where
 
+import Src
 import Lib
+import Subroutines
 
 main :: IO ()
 main = print "hello world"

@@ -36,7 +36,6 @@ library
                      , resourcet
                      , transformers
                      , bytestring
-                     , directory
                      , attoparsec
                      , HUnit
                      , time
@@ -50,11 +49,25 @@ executable good-great-excellent-exe
   main-is:             Main.hs
 
   other-modules  :    PreprocessData
+                    , Core
+                    , Src
+                    , Subroutines
 
 
   ghc-options:         -threaded -rtsopts -with-rtsopts=-N
   build-depends:       base
                      , good-great-excellent
+                     , text
+                     , split
+                     , conduit
+                     , conduit-extra 
+                     , conduit-combinators
+                     , filepath
+                     , bytestring
+                     , directory
+                     , attoparsec
+                     , time
+
   default-language:    Haskell2010
 
 test-suite good-great-excellent-test

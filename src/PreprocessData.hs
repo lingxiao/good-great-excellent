@@ -12,6 +12,7 @@
  
 module PreprocessData (
 
+  filterByPattern
 
   ) where
 
@@ -33,9 +34,8 @@ import qualified Data.Conduit.Combinators as C
 import Lib 
 import Core
 
-p      = compile "* (,) or very *" Star Star
+p      = compile "not * (,) although still *" Star Star
 psw    = "/Users/lingxiao/Documents/research/data/ngrams/subset/strong-weak-input.txt"
-pshort = "/Users/lingxiao/Documents/research/data/ngrams/dummy/ws_short.txt"
 
 
 {-----------------------------------------------------------------------------
@@ -50,15 +50,9 @@ type Raw = (Text, Text, Text)
 
 -- * Given parser `p` and `inpath` to ngrams file, take all lines
 -- * in file recognized by `p` and save to output file in `outpath`
-filterByPattern :: Parser Text -> FilePath -> IO ()
-filterByPattern p inpath = do
-  let outpath = takeDirectory inpath ++ "/" ++ name p ++ ".txt"
-  run $ filterByPattern' p inpath outpath
-
-
--- * try again with conduit
-filterByPattern' :: FileOp m => Parser Text -> FilePath -> FilePath -> m ()
-filterByPattern' p inpath outpath =  sourceFileE inpath 
+filterByPattern :: FilePath -> FilePath -> Parser Text ->  IO ()
+filterByPattern inpath outpath p  =  run 
+                                  $  sourceFileE inpath 
                                   $= toRaw
                                   $= C.filter (\(t,_,_) -> p <**? preprocess t)
                                   $= fromRaw
