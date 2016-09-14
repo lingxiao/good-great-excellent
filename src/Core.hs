@@ -23,8 +23,6 @@ module Core (
 
 import Data.Text (Text, unpack)
 
-
-
 {-----------------------------------------------------------------------------
   Output of query ngrams
 ------------------------------------------------------------------------------}
@@ -43,8 +41,7 @@ type QueryResult   = (Text,Text,Integer,Text)
 ------------------------------------------------------------------------------}
 
 data Config = Con {
-      onegram    :: FilePath
-    , ngrams     :: [FilePath]
+      dataRoot   :: DirectoryPath
     , strongWeak :: FilePath
     , weakStrong :: FilePath
 } deriving (Show, Eq)

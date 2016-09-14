@@ -23,7 +23,7 @@ set -x
 
 
 # make sure I set my $CWD (current working directory)
-cd $HOME/xiao/good-great-excellent
+cd $HOME/xiao/good-great-excellent/shell
 
 # You must set the error and output locations, as the default log output
 # location is the directory you qsub'ed from. For instance, say I cd to

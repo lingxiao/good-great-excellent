@@ -33,7 +33,6 @@ import Core
   Query using list streaming solution build from Data.Conduit
 ------------------------------------------------------------------------------}
 
-
 query :: Op m => FilePath -> Parser Text -> m Output
 query f p = eval $ openFile' f $$ queryFile p
 

@@ -110,7 +110,6 @@ shardFiles :: Op m
 shardFiles ext n p o = run
                 $   [p] `sourceDirectories` ext
                 $$  shardFile ext o n
-                -- =$= logm "Sharded all files!"
                 =$= cap                
 
 

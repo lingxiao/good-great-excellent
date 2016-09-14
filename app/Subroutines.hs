@@ -8,9 +8,12 @@
 ---------------------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------------
  
-module Subroutines where
+module Subroutines (
+      main_filterByPattern
+  ) where
 
 import System.IO
+import System.Directory
 import System.FilePath.Posix
 
 import Data.Text (Text)
@@ -20,10 +23,8 @@ import Data.Attoparsec.Text
 import Src
 import Lib 
 
-
-
 base :: FilePath
-base     = "/Users/lingxiao/Documents/research/data/ngrams/search/"
+base = "/Users/lingxiao/Documents/research/code/good-great-excellent/raw/"
 
 inpath_ws :: [FilePath]
 inpath_ws = ((++) base) <$> [ "but-not.txt"
@@ -32,30 +33,16 @@ inpath_ws = ((++) base) <$> [ "but-not.txt"
                             , "though-not.txt"
                             , "andor-even.txt"
                             , "andor-almost.txt"
-                            , "not-just.txt"
                             , "not-only.txt"   
+                            , "not-just.txt"
                             ]
- 
-inpath_sw :: [FilePath]
-inpath_sw = ((++) base ) <$> [ "not-just.txt"
-                             , "but-just.txt"
-                             , "not-still.txt"
-                             , "but-still.txt"
-                             , "although-still.txt"
-                             , "though-still.txt"
-                             , "or-very.txt"
-                             ]
 
-p_ws :: FilePath
-p_ws = "/Users/lingxiao/Documents/research/code/good-great-excellent/inputs/weak-strong-patterns.txt"
-
-p_sw :: FilePath
-p_sw = "/Users/lingxiao/Documents/research/code/good-great-excellent/inputs/strong-weak-patterns.txt"
-
+p = compile "* (,) but not *"  Star Star                          
 
 {-----------------------------------------------------------------------------
   preprocesss data
 ------------------------------------------------------------------------------}
+
 
 -- * @Use : main_filterByPattern ["path/to/data.txt"] "path/to/patterns.txt"
 -- *        filters each data.txt by corresponding pattern found in patter.txt and
@@ -65,23 +52,23 @@ p_sw = "/Users/lingxiao/Documents/research/code/good-great-excellent/inputs/stro
 main_filterByPattern :: [FilePath] 
                      -> FilePath 
                      -> IO [(FilePath, String)]
-main_filterByPattern fs patterns = do
+main_filterByPattern dataPath patterns = do
   fs <- lines <$> readFile patterns
   let ps  = (\f -> compile f Star Star) <$> fs
-  let fps = zip fs ps
-  uncurry filterByPattern' `mapM` fps
+  let fps = zip dataPath ps
+  uncurry filterSave `mapM` fps
   return $ (\(f,p) -> (f, name p)) <$> fps
 
 
--- @Use : filterByPattern' "path/to/pattern-data.txt" p
+-- @Use : go "path/to/pattern-data.txt" p
 -- *      save lines of patter-data.txt recongized by p 
 -- *      in output directory "path/to/pattern-data_filtered.txt"
-filterByPattern' :: FilePath -> Parser Text -> IO FilePath
-filterByPattern' inp p = do
-  let outp =  takeDirectory inp
-          ++ "/" 
-          ++ takeBaseName inp
-          ++ "_filtered"
+filterSave :: FilePath -> Parser Text -> IO FilePath
+filterSave inp p = do
+  let root = takeDirectory inp ++ "/filtered/"
+  createDirectoryIfMissing False root
+  let outp =  root
+          ++ name p
           ++ ".txt"
 
   is <- lines <$> readFile inp
