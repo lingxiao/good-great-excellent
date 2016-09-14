@@ -22,8 +22,6 @@ import Lib
 
 
 
-
-
 base :: FilePath
 base     = "/Users/lingxiao/Documents/research/data/ngrams/search/"
 
@@ -59,7 +57,6 @@ p_sw = "/Users/lingxiao/Documents/research/code/good-great-excellent/inputs/stro
   preprocesss data
 ------------------------------------------------------------------------------}
 
-
 -- * @Use : main_filterByPattern ["path/to/data.txt"] "path/to/patterns.txt"
 -- *        filters each data.txt by corresponding pattern found in patter.txt and
 -- * Note : input data.txt must correspond to the appropriate pattern
@@ -74,6 +71,7 @@ main_filterByPattern fs patterns = do
   let fps = zip fs ps
   uncurry filterByPattern' `mapM` fps
   return $ (\(f,p) -> (f, name p)) <$> fps
+
 
 -- @Use : filterByPattern' "path/to/pattern-data.txt" p
 -- *      save lines of patter-data.txt recongized by p 
