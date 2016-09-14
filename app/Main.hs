@@ -22,20 +22,25 @@ import Subroutines
 
 main :: IO ()
 main = do
-    ps <- main_filterByPattern inpath_sw p_sw
+    -- ps <- main_filterByPattern inpath_sw p_sw
+    -- ps <- main_filterByPattern inpath_ws p_ws
+
+    -- * do your parser over a very general item 
+    ps <- main_filterByPattern (replicate 100 nbase) p_sw
+
     mapM print ps
     return ()
 
-
 {-----------------------------------------------------------------------------
-    Pathss  
+    Paths
 ------------------------------------------------------------------------------}
 
-
-
-base :: FilePath
+base, tbase :: DirectoryPath
 base  = "/Users/lingxiao/Documents/research/data/ngrams/"
-tbase = "/Users/lingxiao/Documents/research/code/good-great-excellent/test/assets/r"
+tbase = "/Users/lingxiao/Documents/research/code/good-great-excellent/test/assets/"
+
+nbase :: FilePath
+nbase = "/Users/lingxiao/Documents/research/data/ngrams/raw-not/not-star.txt"
 
 inpath_ws :: [FilePath]
 inpath_ws = ((++) (base ++ "raw-strong-weak/"))
@@ -65,4 +70,13 @@ p_ws = "/Users/lingxiao/Documents/research/code/good-great-excellent/inputs/weak
 
 p_sw :: FilePath
 p_sw = "/Users/lingxiao/Documents/research/code/good-great-excellent/inputs/strong-weak-patterns.txt"
+
+
+
+
+
+
+
+
+
 

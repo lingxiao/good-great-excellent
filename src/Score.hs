@@ -46,11 +46,11 @@ import Query
 ------------------------------------------------------------------------------}
 
 -- * @Use : pathToData "path/to/data" "path/to/pattern.txt" someParser
--- * Given path to data directory `d`, path to patterns `f`, and parser `p`
+-- * Given path to data directory `d`, and parser `p`
 -- * Build path to data to be queried by parser `p`
 --* Note  : This is *tightly coupled* to naming conventions of this project
-pathToData :: DirectoryPath -> FilePath -> Parser Name -> FilePath
-pathToData d f = undefined
+pathToData :: DirectoryPath -> Parser Name -> FilePath
+pathToData d p = ""
 
 
 

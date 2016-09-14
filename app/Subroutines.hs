@@ -10,6 +10,7 @@
  
 module Subroutines (
       main_filterByPattern
+    , filterSave
   ) where
 
 import System.IO
@@ -22,22 +23,7 @@ import Data.Attoparsec.Text
 
 import Src
 import Lib 
-
-base :: FilePath
-base = "/Users/lingxiao/Documents/research/code/good-great-excellent/raw/"
-
-inpath_ws :: [FilePath]
-inpath_ws = ((++) base) <$> [ "but-not.txt"
-                            , "if-not.txt"
-                            , "although-not.txt"
-                            , "though-not.txt"
-                            , "andor-even.txt"
-                            , "andor-almost.txt"
-                            , "not-only.txt"   
-                            , "not-just.txt"
-                            ]
-
-p = compile "* (,) but not *"  Star Star                          
+                      
 
 {-----------------------------------------------------------------------------
   preprocesss data
@@ -61,7 +47,7 @@ main_filterByPattern dataPath patterns = do
 
 
 -- @Use : go "path/to/pattern-data.txt" p
--- *      save lines of patter-data.txt recongized by p 
+-- *      save lines of pattern-data.txt recongized by p 
 -- *      in output directory "path/to/pattern-data_filtered.txt"
 filterSave :: FilePath -> Parser Text -> IO FilePath
 filterSave inp p = do

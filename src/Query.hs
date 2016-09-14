@@ -24,7 +24,6 @@ import Data.Text            (Text, unpack, pack, splitOn)
 import qualified Data.ByteString as B
 import qualified Data.Conduit.Combinators as C
 
-
 import Lib
 import Core
 
@@ -47,11 +46,10 @@ openFile' f =   sourceFileE f
                                    , read . unpack $ b
                                    , c))
 
-
 queryFile :: FileOpS m [QueryResult]
           => Parser Text
           -> Consumer QueryResult m Integer
-queryFile p = C.filter (\(t,_,_,_) -> p <**? t)
+queryFile p = C.filter     (\(t,_,_,_) -> p <**? t)
            $= awaitForever (\t@(_,_,n,_) -> do
                        ts <- lift get
                        let ts' = t:ts
