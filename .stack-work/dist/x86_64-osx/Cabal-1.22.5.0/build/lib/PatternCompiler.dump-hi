@@ -1,9 +1,9 @@
 
 ==================== FINAL INTERFACE ====================
-2016-09-13 18:26:39.697853 UTC
+2016-09-13 21:13:08.355321 UTC
 
 interface goodg_DmvfzrsRlTTEG4TgbQ9uXe:PatternCompiler 7103
-  interface hash: 833e7b19de497ddb8c0ca9b56214c95c
+  interface hash: 6a386adc432034c804ead23c5e489586
   ABI hash: 2abea622097f074d48e18d548543a762
   export-list hash: 18b166c027b36ff5088d368e1041ed57
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
@@ -68,8 +68,8 @@ import  -/  base-4.8.2.0:GHC.List 0c736920522bbd14b770342776012ab6
 import  -/  base-4.8.2.0:GHC.Show 0e1d8380a8fb0cfb07ebeda3b70cbf38
 import  -/  base-4.8.2.0:Prelude 694dcaf039efe62df1c44834e2dbd2fb
 import  -/  ghc-prim-0.4.0.0:GHC.Classes e1f4ff80f7b5262008a595d29986fb18
-import  -/  Parsers 4840b18273934d1e39ae879c3dd980eb
-  exports: 8ce4788c864704b19cbd8e2b72a178d9
+import  -/  Parsers e78610cb398b3ef377da8aec3f8920e7
+  exports: bc4e9fe2079013b7551ba5348cfc1d0e
   <** 2b98d8326fa30380f1cf9bad5e2a907d
   <+> 668d7c8b1fecffe257ac8125341eca20
   comma 3c2c5714006b6eca746638ffd5e58ca4

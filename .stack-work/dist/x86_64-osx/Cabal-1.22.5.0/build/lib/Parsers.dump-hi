@@ -1,11 +1,11 @@
 
 ==================== FINAL INTERFACE ====================
-2016-09-13 18:26:39.003389 UTC
+2016-09-14 02:02:25.646664 UTC
 
 interface goodg_DmvfzrsRlTTEG4TgbQ9uXe:Parsers 7103
-  interface hash: 64ad4aeb78411a51dfb06dda90692816
-  ABI hash: 4840b18273934d1e39ae879c3dd980eb
-  export-list hash: 8ce4788c864704b19cbd8e2b72a178d9
+  interface hash: 8d277a6208738af36136bae29d9c0187
+  ABI hash: e78610cb398b3ef377da8aec3f8920e7
+  export-list hash: bc4e9fe2079013b7551ba5348cfc1d0e
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: a15922da834f2f01f7a0695d98ce9660
   sig of: Nothing
@@ -13,7 +13,7 @@ interface goodg_DmvfzrsRlTTEG4TgbQ9uXe:Parsers 7103
   where
 exports:
   Parsers.<**
-  Parsers.<***
+  Parsers.<**?
   Parsers.<+>
   Parsers.anyWord
   Parsers.comma
@@ -81,7 +81,7 @@ import  -/  ghc-prim-0.4.0.0:GHC.Classes e1f4ff80f7b5262008a595d29986fb18
 import  -/  text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text b53ae191632883b10562be5cbaa0b22b
 import  -/  text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text.Internal d9b6b9a9dd535595b612aea5738b7466
 import  -/  text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text.Show 081cc243e944015e37c793c3b0ebfefd
-fixities infixr 9 <+>, infixr 8 <**, infixr 8 <***
+fixities infixr 9 <+>, infixr 8 <**?, infixr 8 <**
 0c2cfc55ec7c6def5f9f699f6718d132
   $wa ::
     Data.Attoparsec.Internal.Types.State Data.Text.Internal.Text
@@ -496,8 +496,22 @@ a2f9622acd00f2991b739728731d7864
                         -> Data.Either.Right @ GHC.Base.String @ a9 r }
                    Data.Attoparsec.Internal.Types.Done ds r
                    -> Data.Either.Right @ GHC.Base.String @ a9 r }) -}
-a2731245e545a3c1a5d595761de65ebe
-  (<***) ::
+0481918ccb1c1573cf7ffd3e163bb5f9
+  <**1 :: Data.Either.Either GHC.Base.String a
+  {- Strictness: b -}
+94be13373b56265f2a13574c41b939ea
+  <**2 :: Data.Either.Either GHC.Base.String a
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (\ @ a9 ->
+                 Data.Either.Left
+                   @ GHC.Base.String
+                   @ a9
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+7634ab5a2269084810664eea0247fb21
+  <**3 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 0) -}
+a2b5b19bbabb8631070ed00afe7f772b
+  (<**?) ::
     Data.Attoparsec.Text.Internal.Parser a
     -> Data.Text.Internal.Text -> GHC.Types.Bool
   {- Arity: 2,
@@ -543,20 +557,6 @@ a2731245e545a3c1a5d595761de65ebe
                         -> case Parsers.<**1 ret_ty GHC.Types.Bool of {}
                         Data.Attoparsec.Internal.Types.Done ds r -> GHC.Types.True }
                    Data.Attoparsec.Internal.Types.Done ds r -> GHC.Types.True }) -}
-0481918ccb1c1573cf7ffd3e163bb5f9
-  <**1 :: Data.Either.Either GHC.Base.String a
-  {- Strictness: b -}
-94be13373b56265f2a13574c41b939ea
-  <**2 :: Data.Either.Either GHC.Base.String a
-  {- HasNoCafRefs, Strictness: m1,
-     Unfolding: (\ @ a9 ->
-                 Data.Either.Left
-                   @ GHC.Base.String
-                   @ a9
-                   (GHC.Types.[] @ GHC.Types.Char)) -}
-7634ab5a2269084810664eea0247fb21
-  <**3 :: GHC.Types.Int
-  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 0) -}
 668d7c8b1fecffe257ac8125341eca20
   (<+>) ::
     Data.Attoparsec.Text.Internal.Parser Data.Text.Internal.Text
