@@ -1,24 +1,26 @@
 
 ==================== FINAL INTERFACE ====================
-2016-09-14 14:08:02.734472 UTC
+2016-09-14 19:59:19.192054 UTC
 
 interface main@main:Main 7103
-  interface hash: 4f23f32931900f0132a9fc903806cf31
-  ABI hash: e7b509f28a0a0c769f2931ac153cd798
-  export-list hash: 4a17a57af882e8130b0a617738de7592
-  orphan hash: 606cc606f9bcd4fd32a3333e42689a80
+  interface hash: f29d27fbc858a8b67ee7aeafbc360010
+  ABI hash: 3d6c80eb15c60381b4641eb545b4ec2c
+  export-list hash: 8b979e82c52ad96ea9588793ed795529
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: f8c694548b2debe1f8faf3f9ee47371f
   sig of: Nothing
   used TH splices: False
   where
 exports:
-  Main.base
+  Main.con_local_sw
+  Main.con_local_ws
+  Main.con_remote_not
+  Main.data_local
   Main.inpath_sw
   Main.inpath_ws
   Main.main
-  Main.p_sw
-  Main.p_ws
-  Main.tbase
+  Main.root_local
+  Main.root_remote
 module dependencies: Core PreprocessData Query Src Subroutines
 package dependencies: StateVar-1.1.0.4@State_IOvB80WkYNkEizdt0JVpzy
                       adjunctions-4.3@adjun_HUA1si0oygHIohE6wWvtj8
@@ -143,259 +145,310 @@ family instance modules: adjunctions-4.3@adjun_HUA1si0oygHIohE6wWvtj8:Data.Funct
                          vector-0.11.0.0@vecto_LmZ3LQW4ivu8MsQuVgukln:Data.Vector.Unboxed.Base
                          zlib-0.6.1.1@zlib_7LjT7TSHX8U3VTy3t378Vu:Codec.Compression.Zlib.Stream
 import  -/  base-4.8.2.0:Data.Functor 5c701b0af1708f0192a25dfe14ce6274
-import  -/  base-4.8.2.0:Data.Traversable 7576318f4ef8587ad947f87012b65abf
 import  -/  base-4.8.2.0:GHC.Base 1db77db5dae73d8c424c85b09fbadb89
 import  -/  base-4.8.2.0:GHC.IO bb5b81adcea33b14bd4abe16d7dde45f
+import  -/  base-4.8.2.0:GHC.List 0c736920522bbd14b770342776012ab6
 import  -/  base-4.8.2.0:Prelude 694dcaf039efe62df1c44834e2dbd2fb
-import  -/  base-4.8.2.0:System.IO 0899686bfc1d9ef72dff3de85e99862a
 import  -/  ghc-prim-0.4.0.0:GHC.Types 6b27fb3fdbd0e3f0925a4496c66513bb
 import  -/  good-great-excellent-0.1.0.0@goodg_DmvfzrsRlTTEG4TgbQ9uXe:Lib f4e6c10a828c9f1fcecd21b607eba522
-import  -/  Src 4754146f3f6111a17d4d7d998597d8df
-  exports: a96eadb5580244b10bb0049ce92e0c92
-import  -/  Subroutines d8c60387733d026dc0d5746e10d0a368
-  exports: aae92758b24bc6da96b169ffeb5e7f0a
-  main_filterByPattern 765fd41150f7dde496f849895e5256b5
-394c25613888b04cc643417e5daac704
-  $s$fShow(,)1 :: GHC.Show.Show [GHC.Types.Char]
+import  -/  Core d7abe07aff466b0f347499babac8dc9d
+  Config bc0639f586f22c3939491780b28a22a2
+  DirectoryPath d5c28258b354fd92c19a39b0e15fb216
+  config b2daa995c3a32750ebc824e58d88e1d2
+import  -/  Src aa9f909621bad19ee0c597f4e37b6d29
+  exports: 184c18159ec58a9c3487848da0d532b5
+import  -/  Subroutines 73eba5f18f44c018cc7b91ac45f1f46f
+  exports: 975df3a49757a70773b2582d3c4e987f
+  filter_strongWeak 242aaf01f541de8375bbfadca26fd617
+c5949c86a5fb4b49f564c8b82a582e04
+  $wxs :: GHC.Prim.Int# -> (# GHC.IO.FilePath, [GHC.IO.FilePath] #)
+  {- Arity: 1, Strictness: <S,1*U>, Inline: [0] -}
+c50fdca7f2d6817c2c418385399ea039
+  con_local_sw :: Core.Config
   {- Strictness: m,
-     Unfolding: InlineRule (0, True, True)
-                GHC.Show.$fShow[]_$s$fShow[]1 -}
-d45c569119e2759bf5ec2a5c00065e6c
-  $s$fShow(,)_$s$fShow(,)_$cshow ::
-    ([GHC.Types.Char], [GHC.Types.Char]) -> GHC.Base.String
-  {- Arity: 1, Strictness: <S,1*U(1*U,U)>m2,
-     Unfolding: InlineRule (1, True, False)
-                (\ x :: ([GHC.Types.Char], [GHC.Types.Char]) ->
-                 GHC.Show.$fShow(,)_$cshowsPrec
-                   @ [GHC.Types.Char]
-                   @ [GHC.Types.Char]
-                   Main.$s$fShow(,)1
-                   Main.$s$fShow(,)1
-                   GHC.Show.shows18
-                   x
-                   (GHC.Types.[] @ GHC.Types.Char)) -}
-72c4e059ba3a25d398fe25197a83c3b3
-  base :: GHC.IO.FilePath
-  {- Unfolding: (GHC.CString.unpackCString#
-                   "/Users/lingxiao/Documents/research/data/ngrams/"#) -}
-e3373d9a036c09b745c00a5fdae2574c
-  inpath_sw :: [GHC.IO.FilePath]
-  {- Unfolding: (GHC.Base.map
-                   @ [GHC.Types.Char]
-                   @ [GHC.Types.Char]
-                   Main.inpath_sw15
-                   Main.inpath_sw1) -}
-786fff6cb5b96834e44bf900c3796659
-  inpath_sw1 :: [[GHC.Types.Char]]
-  {- Unfolding: (GHC.Types.:
-                   @ [GHC.Types.Char]
-                   Main.inpath_sw14
-                   Main.inpath_sw2) -}
-76ad361faa5005cc7537125a9dc06de3
-  inpath_sw10 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString#
-                   "not-*-although-still-*.txt"#) -}
-ff666e89d46402ce110a858b0cb88f40
-  inpath_sw11 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString#
-                   "not-*-but-still-*.txt"#) -}
-7b393cfbf4c2ae45584d115c2852c1b9
-  inpath_sw12 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString# "not-*-still-*.txt"#) -}
-7ab97c9bdecdf0e7c3801029b8f6890d
-  inpath_sw13 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString#
-                   "not-*-but-just-*.txt"#) -}
-04d02140a8deb8b7a1b76f1ae5345ec4
-  inpath_sw14 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString# "not-*-just-*.txt"#) -}
-9091df9169352266e77a5f0524cdbfd8
-  inpath_sw15 :: [GHC.Types.Char] -> [GHC.Types.Char]
-  {- Arity: 1,
-     Unfolding: (GHC.Base.++ @ GHC.Types.Char Main.inpath_sw16) -}
-d95828b5ae0add82d281ea1ec590fe44
-  inpath_sw16 :: [GHC.Types.Char]
+     Unfolding: (Core.Con
+                   Main.con_local_sw3
+                   Main.con_local_sw2
+                   Main.con_local_sw1) -}
+3a1bf42e3d22cffe63e233fac2d92c7c
+  con_local_sw1 :: [GHC.Types.Char]
   {- Unfolding: (GHC.Base.++
                    @ GHC.Types.Char
-                   Main.base
-                   Main.inpath_sw17) -}
-0cf1c3e027d329eaae485e883b3ea697
-  inpath_sw17 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString# "raw-strong-weak/"#) -}
-759f43aaf1241ccf0b695808d2b1e070
-  inpath_sw2 :: [[GHC.Types.Char]]
-  {- Unfolding: (GHC.Types.:
+                   Main.root_local
+                   Core.config1) -}
+1bb5abc01bb3e346e7adffaec770d605
+  con_local_sw10 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
                    @ [GHC.Types.Char]
-                   Main.inpath_sw13
-                   Main.inpath_sw3) -}
-e5b651f45796df2f7a4028d59950dde5
-  inpath_sw3 :: [[GHC.Types.Char]]
-  {- Unfolding: (GHC.Types.:
-                   @ [GHC.Types.Char]
-                   Main.inpath_sw12
-                   Main.inpath_sw4) -}
-1b92fe756a2dd911c5641c85db1f3504
-  inpath_sw4 :: [[GHC.Types.Char]]
-  {- Unfolding: (GHC.Types.:
-                   @ [GHC.Types.Char]
-                   Main.inpath_sw11
-                   Main.inpath_sw5) -}
-d707afec1e591dd10289dd95d3ac88d9
-  inpath_sw5 :: [[GHC.Types.Char]]
-  {- Unfolding: (GHC.Types.:
-                   @ [GHC.Types.Char]
-                   Main.inpath_sw10
-                   Main.inpath_sw6) -}
-37e10d3a89779c7ab9137cdfcb644857
-  inpath_sw6 :: [[GHC.Types.Char]]
-  {- Unfolding: (GHC.Types.:
-                   @ [GHC.Types.Char]
-                   Main.inpath_sw9
-                   Main.inpath_sw7) -}
-0deb421509b3d691dfc76affc7f86c9e
-  inpath_sw7 :: [[GHC.Types.Char]]
-  {- Unfolding: (GHC.Types.:
-                   @ [GHC.Types.Char]
-                   Main.inpath_sw8
+                   Main.con_local_sw11
                    (GHC.Types.[] @ [GHC.Types.Char])) -}
-8426054beb59cd7b3107fc52b197461c
-  inpath_sw8 :: [GHC.Types.Char]
+849c612bbb9ed0d24890535cf40558ba
+  con_local_sw11 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "*-or-very-*.txt"#) -}
-5d26ba484c04cc9e76cbcf5e02495b16
-  inpath_sw9 :: [GHC.Types.Char]
+455830e5e0e897c3c603baed8454c1c5
+  con_local_sw12 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString#
                    "not-*-though-still-*.txt"#) -}
-ac600424134effe8051b663f40167d7a
-  inpath_ws :: [GHC.IO.FilePath]
+c5f9b119cbebdcd1ad26b4ddc70e8cc2
+  con_local_sw13 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "not-*-although-still-*.txt"#) -}
+2f50203972c9e097d06ad26f5dca2cb5
+  con_local_sw14 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "not-*-but-still-*.txt"#) -}
+a9dfcdfd45de7d0213a0ef885504fe07
+  con_local_sw15 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "not-*-still-*.txt"#) -}
+d4c9ed2254601e3a980bac1c914cbe68
+  con_local_sw16 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "not-*-but-just-*.txt"#) -}
+800b4fdbb18b55dbe89e4209c5f7e005
+  con_local_sw17 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "not-*-just-*.txt"#) -}
+692dfe7e827fa5f73a6a079aaeffe176
+  con_local_sw18 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "/raw-strong-weak/"#) -}
+1971e72c3132a3b73892d44b1bb1eedb
+  con_local_sw2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.Base.++
+                   @ GHC.Types.Char
+                   Main.root_local
+                   Core.config2) -}
+ad190fa8ab469d3b2637c617f6deac72
+  con_local_sw3 :: [GHC.IO.FilePath]
   {- Unfolding: (GHC.Base.map
                    @ [GHC.Types.Char]
                    @ [GHC.Types.Char]
-                   Main.inpath_sw15
-                   Main.inpath_ws1) -}
-ee92bb4781e4177673e3b90858b96525
-  inpath_ws1 :: [[GHC.Types.Char]]
-  {- Unfolding: (GHC.Types.:
+                   (GHC.Base.++
+                      @ GHC.Types.Char
+                      (GHC.Base.++ @ GHC.Types.Char Main.data_local Main.con_local_sw18))
+                   Main.con_local_sw4) -}
+dba1b34b08bba660eef68bf60fad0c5d
+  con_local_sw4 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
                    @ [GHC.Types.Char]
-                   Main.inpath_ws16
-                   Main.inpath_ws2) -}
-47ee193c7f3fa461e8b6baabc1193b26
-  inpath_ws10 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString# "not-only.txt"#) -}
-97156d98c3c399b4124f0983d972b8b6
-  inpath_ws11 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString# "andor-almost.txt"#) -}
-3ee435bd749ba84f353ce03904ae0942
-  inpath_ws12 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString# "andor-even.txt"#) -}
-eff157e8280d3e20a7547b1f6ababa18
-  inpath_ws13 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString# "though-not.txt"#) -}
-d99dfef132255db7fcd865dc37dd0ffb
-  inpath_ws14 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString# "although-not.txt"#) -}
-44a8b7e5371d849f434de450fbba5fd9
-  inpath_ws15 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString# "if-not.txt"#) -}
-c2b65a04cabe5dfdf460e1390488c4ae
-  inpath_ws16 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString# "but-not.txt"#) -}
-13170038f2408ac2faf9936801d0d309
-  inpath_ws2 :: [[GHC.Types.Char]]
-  {- Unfolding: (GHC.Types.:
+                   Main.con_local_sw17
+                   Main.con_local_sw5) -}
+aa4f90923fc73532c0654d65f34c0383
+  con_local_sw5 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
                    @ [GHC.Types.Char]
-                   Main.inpath_ws15
-                   Main.inpath_ws3) -}
-0feac4b9cf02575827d0ad30d7734e0c
-  inpath_ws3 :: [[GHC.Types.Char]]
-  {- Unfolding: (GHC.Types.:
+                   Main.con_local_sw16
+                   Main.con_local_sw6) -}
+53bb20acf334375986d9680626e68069
+  con_local_sw6 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
                    @ [GHC.Types.Char]
-                   Main.inpath_ws14
-                   Main.inpath_ws4) -}
-806b41e5ba9f4df62c2200eb7284a080
-  inpath_ws4 :: [[GHC.Types.Char]]
-  {- Unfolding: (GHC.Types.:
+                   Main.con_local_sw15
+                   Main.con_local_sw7) -}
+65312df4f52d1c27153042d65219b8da
+  con_local_sw7 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
                    @ [GHC.Types.Char]
-                   Main.inpath_ws13
-                   Main.inpath_ws5) -}
-737ec5d0f3756ceff62b21abc92e1a87
-  inpath_ws5 :: [[GHC.Types.Char]]
-  {- Unfolding: (GHC.Types.:
+                   Main.con_local_sw14
+                   Main.con_local_sw8) -}
+bf9a803bbe11a2d155cacd19616dfe03
+  con_local_sw8 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
                    @ [GHC.Types.Char]
-                   Main.inpath_ws12
-                   Main.inpath_ws6) -}
-3ea0bbcd491553abb94cf8825bff543f
-  inpath_ws6 :: [[GHC.Types.Char]]
-  {- Unfolding: (GHC.Types.:
+                   Main.con_local_sw13
+                   Main.con_local_sw9) -}
+5b3a7d058aa1da7674803e2120d1fb7d
+  con_local_sw9 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
                    @ [GHC.Types.Char]
-                   Main.inpath_ws11
-                   Main.inpath_ws7) -}
-3b00469ecbb55e0b9826674ff011279f
-  inpath_ws7 :: [[GHC.Types.Char]]
-  {- Unfolding: (GHC.Types.:
+                   Main.con_local_sw12
+                   Main.con_local_sw10) -}
+2fb687b24ee518b3d6e3c299613fe6c8
+  con_local_ws :: Core.Config
+  {- Strictness: m,
+     Unfolding: (Core.Con
+                   Main.con_local_ws1
+                   Main.con_local_sw2
+                   Main.con_local_sw1) -}
+18efa0247d8276fe036a8269517f584f
+  con_local_ws1 :: [GHC.IO.FilePath]
+  {- Unfolding: (GHC.Base.map
                    @ [GHC.Types.Char]
-                   Main.inpath_ws10
-                   Main.inpath_ws8) -}
-25698e1ac802c7556a981d889e760f8f
-  inpath_ws8 :: [[GHC.Types.Char]]
-  {- Unfolding: (GHC.Types.:
                    @ [GHC.Types.Char]
-                   Main.inpath_ws9
-                   (GHC.Types.[] @ [GHC.Types.Char])) -}
-e6676e679ad998189f35e0ec2e0332c0
-  inpath_ws9 :: [GHC.Types.Char]
+                   (GHC.Base.++
+                      @ GHC.Types.Char
+                      (GHC.Base.++ @ GHC.Types.Char Main.data_local Main.con_local_ws18))
+                   Main.con_local_ws2) -}
+d2ddc4d6c61f2c5023f0130a1124bd0b
+  con_local_ws10 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "not-just.txt"#) -}
-c18beb39105e852c975d82d34229bd17
+2f3b2550bc4c4af72d05132f5295b5b9
+  con_local_ws11 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "not-only.txt"#) -}
+1ef9a5b801c7893e82b6a784953dccd1
+  con_local_ws12 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "andor-almost.txt"#) -}
+5966dbd03e735dbb5a9393255d4ce49e
+  con_local_ws13 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "andor-even.txt"#) -}
+35298959efd3176c232603e300071e90
+  con_local_ws14 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "though-not.txt"#) -}
+f970f9600ada0ce6f922ead69bd6e45b
+  con_local_ws15 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "although-not.txt"#) -}
+7c177d032a758c7f2c6b9f4669bdce03
+  con_local_ws16 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "if-not.txt"#) -}
+196c43a0b8399436b3ddb2a68d41b1ef
+  con_local_ws17 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "but-not.txt"#) -}
+6e1c89f1b6a0a29c0f0a3d84526df487
+  con_local_ws18 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "/raw-weak-strong/"#) -}
+9e1f7756f0847a79c2bfad418c85d019
+  con_local_ws2 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Main.con_local_ws17
+                   Main.con_local_ws3) -}
+e64e047aabb7ddeeb37c158d2dfd3a2e
+  con_local_ws3 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Main.con_local_ws16
+                   Main.con_local_ws4) -}
+37f94301752451388e891e97de3ef2e8
+  con_local_ws4 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Main.con_local_ws15
+                   Main.con_local_ws5) -}
+0be2ff8a72b92443a4ca56a170292baf
+  con_local_ws5 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Main.con_local_ws14
+                   Main.con_local_ws6) -}
+477e53c1ea0a318d0eaad8cde090f585
+  con_local_ws6 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Main.con_local_ws13
+                   Main.con_local_ws7) -}
+9e1d64ec486b576ed5fec77f137668ad
+  con_local_ws7 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Main.con_local_ws12
+                   Main.con_local_ws8) -}
+144e8f50c75947dcff65e60dad978e98
+  con_local_ws8 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Main.con_local_ws11
+                   Main.con_local_ws9) -}
+d0e1c6608047ccda6b67a0c503f75563
+  con_local_ws9 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Main.con_local_ws10
+                   (GHC.Types.[] @ [GHC.Types.Char])) -}
+bb8e1fdea9cd7b86fc43e53f7d98591a
+  con_remote_not :: Core.Config
+  {- Strictness: m,
+     Unfolding: (Core.Con
+                   Main.con_remote_not3
+                   Main.con_remote_not2
+                   Main.con_remote_not1) -}
+f13bc08313b82696d378be5298485a79
+  con_remote_not1 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.Base.++
+                   @ GHC.Types.Char
+                   Main.root_remote
+                   Core.config1) -}
+22866e3982f698baf5d82a72912c221e
+  con_remote_not2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.Base.++
+                   @ GHC.Types.Char
+                   Main.root_remote
+                   Core.config2) -}
+850a70125a786322e1f7e910215d0c28
+  con_remote_not3 :: [GHC.IO.FilePath]
+  {- Unfolding: (case Main.$wxs 100 of ww { (#,#) ww1 ww2 ->
+                 GHC.Types.: @ GHC.IO.FilePath ww1 ww2 }) -}
+51f0bdc0ee383079c3f3cf35aeb08553
+  data_local :: Core.DirectoryPath
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "/Users/lingxiao/Documents/research/data/ngrams"#) -}
+1151fc627c94d10720b060b68e670ed1
+  inpath_sw :: Core.DirectoryPath -> [GHC.IO.FilePath]
+  {- Arity: 1, Strictness: <L,1*U>,
+     Unfolding: (\ d :: Core.DirectoryPath ->
+                 GHC.Base.map
+                   @ [GHC.Types.Char]
+                   @ [GHC.Types.Char]
+                   (GHC.Base.++
+                      @ GHC.Types.Char
+                      (GHC.Base.++ @ GHC.Types.Char d Main.con_local_sw18))
+                   Main.con_local_sw4) -}
+ce8f24cc3d5d40213ad01a1492ec0fb0
+  inpath_ws :: Core.DirectoryPath -> [GHC.IO.FilePath]
+  {- Arity: 1, Strictness: <L,1*U>,
+     Unfolding: (\ d :: Core.DirectoryPath ->
+                 GHC.Base.map
+                   @ [GHC.Types.Char]
+                   @ [GHC.Types.Char]
+                   (GHC.Base.++
+                      @ GHC.Types.Char
+                      (GHC.Base.++ @ GHC.Types.Char d Main.con_local_ws18))
+                   Main.con_local_ws2) -}
+34529cb67ca9895aa131ab5656dd8d79
   main :: GHC.Types.IO ()
   {- Arity: 1, Strictness: <L,U>,
      Unfolding: InlineRule (0, True, True)
                 Main.main1 `cast` (Sym (GHC.Types.NTCo:IO[0] <()>_R)) -}
-9757880be12a236c98963cf26aa0fa98
+a51017a6c6f8d945736c54e029e70aa5
   main1 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
   {- Arity: 1, Strictness: <L,U>,
-     Unfolding: (\ s :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
-                 case Subroutines.main_filterByPattern1
-                        Main.inpath_sw
-                        Main.p_sw
+     Unfolding: InlineRule (1, True, False)
+                (\ s :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
+                 case Subroutines.filter_strongWeak2
+                        Main.con_remote_not3
+                        Main.con_remote_not1
                         s of ds1 { (#,#) ipv ipv1 ->
-                 case Main.main2 ipv1 ipv of ds2 { (#,#) ipv2 ipv3 ->
-                 (# ipv2, GHC.Tuple.() #) } }) -}
-5b9edb7001b747dcd0fbec0f06d77c79
+                 (# ipv, GHC.Tuple.() #) }) -}
+7c81e0ac8a4223e2b85f97f5a435b9f7
   main2 ::
-    [(GHC.IO.FilePath, GHC.Base.String)]
-    -> GHC.Prim.State# GHC.Prim.RealWorld
-    -> (# GHC.Prim.State# GHC.Prim.RealWorld, [()] #)
-  {- Arity: 2, Strictness: <S,1*U><L,U> -}
-fcefe9c749771bc684fd1d3144563464
-  main3 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
   {- Arity: 1,
      Unfolding: (GHC.TopHandler.runMainIO1
                    @ ()
                    Main.main1 `cast` (Sym (GHC.Types.NTCo:IO[0] <()>_R))) -}
-146b81c14ce0f9486f1aad4bfbc13512
-  p_sw :: GHC.IO.FilePath
+380d901dceffa39cc1553000a9fed293
+  root_local :: Core.DirectoryPath
   {- Unfolding: (GHC.CString.unpackCString#
-                   "/Users/lingxiao/Documents/research/code/good-great-excellent/inputs/strong-weak-patterns.txt"#) -}
-d633e2f7738b6d8071bf4981f63c9e97
-  p_ws :: GHC.IO.FilePath
+                   "/Users/lingxiao/Documents/research/code/good-great-excellent"#) -}
+3122aabe1ef3b93e207b8264de392058
+  root_remote :: Core.DirectoryPath
   {- Unfolding: (GHC.CString.unpackCString#
-                   "/Users/lingxiao/Documents/research/code/good-great-excellent/inputs/weak-strong-patterns.txt"#) -}
-209ed596c248d5bacb82ebb2b23d083a
-  tbase :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString#
-                   "/Users/lingxiao/Documents/research/code/good-great-excellent/test/assets/r"#) -}
-"SPEC/Main $fShow(,)_$cshow @ [Char] @ [Char]" [ALWAYS] forall $dShow :: GHC.Show.Show
-                                                                           [GHC.Types.Char]
-                                                               $dShow1 :: GHC.Show.Show
-                                                                            [GHC.Types.Char]
-  GHC.Show.$fShow(,)_$cshow @ [GHC.Types.Char]
-                            @ [GHC.Types.Char]
-                            $dShow
-                            $dShow1
-  = Main.$s$fShow(,)_$s$fShow(,)_$cshow
+                   "/home1/l/lingxiao/xiao/good-great-excellent"#) -}
 vectorised variables:
 vectorised tycons:
 vectorised reused tycons:

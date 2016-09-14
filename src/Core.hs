@@ -17,10 +17,11 @@ module Core (
   , Output
   , QueryResult
   , Config (..)
+  , config
 
   ) where 
 
-
+import System.FilePath.Posix
 import Data.Text (Text, unpack)
 
 {-----------------------------------------------------------------------------
@@ -41,7 +42,19 @@ type QueryResult   = (Text,Text,Integer,Text)
 ------------------------------------------------------------------------------}
 
 data Config = Con {
-      dataRoot   :: DirectoryPath
-    , strongWeak :: FilePath
+      inputs     :: [FilePath]
     , weakStrong :: FilePath
+    , strongWeak :: FilePath
 } deriving (Show, Eq)
+
+
+baser = "/home1/l/lingxiao/xiao/good-great-excellent/"
+
+-- * @USE: config "path/to/project-name" ["path/to/data.txt"] 
+-- *       given path to project and path to data,
+-- *       output Config 
+-- * Note: this makes strong assumptions on the directory structure of the project
+config :: FilePath -> [FilePath] -> Config
+config p fs = Con fs 
+                 (p ++ "/patterns/weak-strong-patterns.txt") 
+                 (p ++ "/patterns/strong-weak-patterns.txt")
