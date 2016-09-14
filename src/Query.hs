@@ -45,7 +45,7 @@ openFile' f =   sourceFileE f
              $= C.map (splitOn $ pack "\t")
              $= C.map (\[a,b,c] -> ( preprocess a
                                    , a
-                                   , read . unpack $ b :: Integer
+                                   , read . unpack $ b
                                    , c))
 
 
@@ -53,13 +53,13 @@ queryFile :: FileOpS m [QueryResult]
           => Parser Text
           -> Consumer QueryResult m Integer
 queryFile p = C.filter (\(t,_,_,_) -> p <**? t)
-             $= awaitForever (\t@(_,_,n,_) -> do
-                        ts <- lift get
-                        let ts' = t:ts
-                        lift . put $ ts'
-                        yield n
-                )     
-             =$= foldlC (+) 0
+           $= awaitForever (\t@(_,_,n,_) -> do
+                       ts <- lift get
+                       let ts' = t:ts
+                       lift . put $ ts'
+                       yield n
+            )     
+            =$= foldlC (+) 0
 
 
 

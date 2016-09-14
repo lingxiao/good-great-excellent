@@ -20,14 +20,9 @@ module Core (
 
   ) where 
 
-import System.Directory
-import System.FilePath.Posix
-import qualified System.IO as S
 
-import Data.Time.Clock
 import Data.Text (Text, unpack)
-import Data.List.Split (splitOn)
-import Data.Attoparsec.Text 
+
 
 
 {-----------------------------------------------------------------------------
