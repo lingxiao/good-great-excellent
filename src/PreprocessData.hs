@@ -16,9 +16,6 @@ module PreprocessData (
 
   ) where
 
-import System.IO
-import System.Directory
-import System.FilePath.Posix
 
 import Data.Text.Encoding
 import Data.Text (Text, unpack, pack, splitOn, append)
@@ -26,51 +23,42 @@ import Data.Attoparsec.Text hiding (count)
 import qualified Data.Text as T
 import qualified Data.ByteString as B
 
-
 import Conduit
 import qualified Data.Conduit.Combinators as C
-
 
 import Lib 
 import Core
 
-p      = compile "not * (,) although still *" Star Star
-psw    = "/Users/lingxiao/Documents/research/data/ngrams/subset/strong-weak-input.txt"
-
-
-{-----------------------------------------------------------------------------
-  Types
-------------------------------------------------------------------------------}
-
-type Raw = (Text, Text, Text)
 
 {-----------------------------------------------------------------------------
   Code
 ------------------------------------------------------------------------------}
+
 
 -- * Given parser `p` and `inpath` to ngrams file, take all lines
 -- * in file recognized by `p` and save to output file in `outpath`
 filterByPattern :: FilePath -> FilePath -> Parser Text ->  IO ()
 filterByPattern inpath outpath p  =  run 
                                   $  sourceFileE inpath 
-                                  $= toRaw
+                                  $= toInput
+                                  $= logi
                                   $= C.filter (\(t,_,_) -> p <**? preprocess t)
-                                  $= fromRaw
-                                  $= sinkFile outpath
-                                  $$ cap
+                                  $= fromInput
+                                  $$ sinkFile outpath
 
-toRaw :: FileOp m => Conduit B.ByteString m Raw
-toRaw = linesOn "\n" 
+
+toInput :: FileOp m => Conduit B.ByteString m Input
+toInput = linesOn "\n" 
      $= C.map head
-     $= C.map    (splitOn (pack ":")) 
+     $= C.map    (splitOn $ pack ":") 
      $= C.filter ((==2) . length)
      $= C.map    (\[a,b]   -> (a:splitOn (pack "\t") b))
      $= C.filter ((==3) . length)
      $= C.map    (\[s,t,n] -> (t, n, s)                )
 
 
-fromRaw :: FileOp m => Conduit Raw m B.ByteString
-fromRaw = C.map (\(a,b,c) -> encodeUtf8 
+fromInput :: FileOp m => Conduit Input m B.ByteString
+fromInput = C.map (\(a,b,c) -> encodeUtf8 
                           $  T.concat [ a
                                       , pack "\t"
                                       , b

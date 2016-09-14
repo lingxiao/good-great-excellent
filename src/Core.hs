@@ -13,6 +13,7 @@
 module Core (
 
     DirectoryPath
+  , Input
   , Output
   , QueryResult
   , Config (..)
@@ -38,9 +39,9 @@ type DirectoryPath = FilePath
 -- * Results from a single `Query` to ngram documents
 -- * the first field is preprocess text, second field is orginal text
 -- * the third field is number of results
-type QueryResult   = (Text,Text,Integer)
+type Input         = (Text, Text, Text)
 type Output        = (Integer, [QueryResult])
-
+type QueryResult   = (Text,Text,Integer,Text)
 
 {-----------------------------------------------------------------------------
     Filepath configuration

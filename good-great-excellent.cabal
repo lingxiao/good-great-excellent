@@ -48,9 +48,10 @@ executable good-great-excellent-exe
                      , src
   main-is:             Main.hs
 
-  other-modules  :    PreprocessData
-                    , Core
+  other-modules  :    Core
                     , Src
+                    , PreprocessData
+                    , Query
                     , Subroutines
 
 
