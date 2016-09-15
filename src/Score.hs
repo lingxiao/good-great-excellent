@@ -34,7 +34,8 @@ import Query
 w1 :: String -> String -> ReaderT Config IO Output
 w1 a1 a2 = do
   path_ws <- weakStrong <$> ask 
-  
+  return (0,[])
+
 
   --p_ws <- pattern weakStrong
   --sumCount $ (\p -> p (S a1) (S a2)) <$> p_ws

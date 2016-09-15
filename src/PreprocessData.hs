@@ -18,6 +18,9 @@ module PreprocessData (
   ) where
 
 
+import System.Directory
+import System.FilePath.Posix
+
 import Data.Text.Encoding
 import Data.Text (Text, unpack, pack, splitOn, append)
 import Data.Attoparsec.Text hiding (count)
@@ -34,7 +37,6 @@ import Core
 {-----------------------------------------------------------------------------
   Filter grepped files
 ------------------------------------------------------------------------------}
-
 
 -- * Given parser `p` and `inpath` to ngrams file, take all lines
 -- * in file recognized by `p` and save to output file in `outpath`
