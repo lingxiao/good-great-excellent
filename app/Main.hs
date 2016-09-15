@@ -27,7 +27,6 @@ import Subroutines
   Main
 ------------------------------------------------------------------------------}
 
-
 p1 = compile "not * (,) just *"           
 p2 = compile "not * (,) but just *"       
 p3 = compile "not * (,) still *"          
@@ -41,7 +40,7 @@ p  = compile "* (,) but not *" Star Star
 
 
 corpus_l   = "/Users/lingxiao/Documents/research/data/ngrams/corpus/"
-patterns_l = "/Users/lingxiao/Documents/research/code/good-great-excellent/patterns/"
+patterns_l = "/Users/lingxiao/Documents/research/code/good-great-excellent/inputs/"
 
 main :: IO ()
 main = do

@@ -1,0 +1,382 @@
+=== cardinal, ordinal **
+first
+second
+third
+fourth
+fifth
+sixth
+seventh
+eighth
+=== ** known, unknown
+known
+famous
+legendary
+=== light, dark **
+dim
+gloomy
+dark
+black
+=== distant, close **
+close
+near
+intimate
+=== far, close **
+nearby, near
+close
+adjacent
+=== ** ample, meager
+sufficient
+good, wide
+full
+=== ** serious, frivolous
+real
+solemn
+serious
+grave
+=== ** interesting, uninteresting
+interesting
+intriguing
+amusing, entertaining
+fascinating, exciting
+=== ** far, close
+far
+further, farther
+removed
+=== ** satisfactory, unsatisfactory
+acceptable, okay, alright
+right
+=== smooth, rough **
+cracked
+broken
+crushed
+=== ** full, empty
+full
+stuffed
+overloaded
+overflowing
+=== ** tasty, tasteless
+flavorful
+zesty
+hot, spicy
+=== sane, insane **
+unstable
+crazy
+insane
+=== ** echt, counterfeit
+good
+real
+authentic
+=== ** clean, dirty
+clean
+spotless, immaculate
+=== ** possible, impossible
+possible
+realistic
+feasible
+practical
+=== fit, unfit **
+sick, ill
+impaired
+disabled
+=== common, uncommon **
+uncommon
+unusual
+rare
+extraordinary
+exceptional
+=== realistic, unrealistic **
+impractical
+unrealistic
+impossible
+=== national, international **
+transnational
+international
+global
+=== ** concerned, unconcerned
+concerned
+preoccupied
+obsessed
+=== ** stimulating, unexciting
+interesting
+moving
+exciting
+thrilling
+=== loud, soft **
+low
+subdued
+quiet
+=== ** sugary, nonsweet
+sweet
+sugary
+syrupy
+=== mild, intense **
+strong
+intense
+terrible
+overwhelming
+violent
+=== hopeful, hopeless **
+bleak, desperate
+hopeless
+=== fortunate, unfortunate **
+unfortunate
+disastrous
+fatal
+=== careful, careless **
+negligent
+careless
+reckless
+=== ** strange, familiar
+strange, funny
+unusual
+weird
+eerie
+=== ** valid, invalid
+reasonable
+valid
+sound
+=== expensive, cheap **
+affordable
+inexpensive
+cheap
+=== ** available, unavailable
+available
+accessible
+visible
+=== hot, cold **
+cool, refrigerated, chilly
+cold
+frigid
+icy, frozen
+=== ** content, discontent
+content, satisfied
+pleased, happy
+=== honest, dishonest **
+misleading
+deceptive, fraudulent
+false
+=== ** necessary, unnecessary
+needed
+necessary
+required, essential
+indispensable
+=== ** many, few
+some
+many
+numerous
+galore
+=== audible, inaudible **
+quiet
+inaudible, imperceptible
+silent
+=== virtuous, wicked **
+wrong
+immoral
+sinful
+evil
+=== fat, lean **
+lean
+slim
+thin
+skinny
+gaunt
+emaciated
+skeletal
+=== ** comprehensive, incomprehensive
+statewide
+nationwide
+worldwide
+=== ** hot, cold
+warm
+hot
+overheated
+stifling, sultry
+=== difficult, easy **
+easy, simple, smooth
+painless
+effortless
+=== attractive, unattractive **
+plain
+unattractive
+ugly
+=== ** like, unlike
+like
+equal
+same
+=== ** general, specific
+broad, widespread
+general
+universal
+=== superior, inferior **
+cheap, mediocre
+bad
+worst
+=== ** beautiful, ugly
+handsome, lovely, gorgeous
+beautiful, pretty, attractive
+=== ** thick, thin
+thick
+dense
+impenetrable
+=== ** quiet, noisy
+soft
+quiet
+inaudible
+silent
+=== friendly, unfriendly **
+cool, chilly
+unfriendly
+hostile
+=== ** big, little
+sizeable
+big, large
+huge
+colossal
+=== single, multiple **
+dual, double, doubled
+triple, treble
+quadruple
+=== ** alarming, unalarming
+creepy
+scary, frightening
+terrifying
+sinister
+=== many, few **
+some
+few
+fewer
+=== noticed, unnoticed **
+neglected
+ignored, overlooked
+forgotten
+=== current, noncurrent **
+old
+obsolete, outdated
+=== dispensable, indispensable **
+necessary
+vital
+indispensable
+critical
+=== ** attractive, unattractive
+attractive
+beautiful
+mesmerizing, seductive
+=== open, closed **
+closed
+shut
+sealed
+=== ** surprising, unsurprising
+unexpected
+astonishing, stunning
+=== clean, dirty **
+indecent
+profane
+obscene
+=== ** seductive, unseductive
+attractive
+sexy
+seductive
+=== proud, humble **
+humbled
+humiliated
+crushed
+=== ** intelligent, stupid
+bright, intelligent, smart, clever
+brilliant
+=== ** bloody, bloodless
+violent
+homicidal, murderous
+=== ** private, public
+personal
+private
+secret
+=== ** high, low
+high
+higher
+soaring
+=== ** noxious, innocuous
+harmful
+toxic
+deadly
+=== big, little **
+small
+smaller
+midget
+minute
+tiny, minuscule
+micro, microscopic
+=== possible, impossible **
+impractical, impracticable
+unrealistic
+infeasible
+impossible
+=== ** mature, green
+mature
+ripe
+overripe
+=== ** fat, lean
+overweight
+chubby
+fat
+obese
+=== comfortable, uncomfortable **
+uncomfortable
+uneasy
+painful
+=== ** friendly, unfriendly
+friendly, cordial
+warm
+intimate
+=== hot, cold **
+cool
+cold
+frigid
+icy, frozen
+=== successful, unsuccessful **
+disappointed
+frustrated
+defeated
+=== loose, tight **
+close
+tight
+snug
+=== cardinal, ordinal **
+1st
+2nd
+3rd
+4th
+5th
+6th
+7th
+=== ** comprehensive, incomprehensive
+general
+extensive
+complete, comprehensive
+universal
+=== ** aware, incognizant
+alive
+awake
+aware, conscious
+=== ** involved, uninvolved
+interested
+concerned
+involved
+=== favorable, unfavorable **
+critical
+negative
+hostile
+=== good, bad **
+hard
+painful
+hopeless
+=== ** happy, unhappy
+happy, content
+euphoric
+=== ** composed, discomposed
+calm, cool
+serene
+=== safe, dangerous **
+unreliable
+dangerous, risky
+suicidal
+=== END

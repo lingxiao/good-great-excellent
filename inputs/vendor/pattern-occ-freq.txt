@@ -1,0 +1,9 @@
+x-----x
+(good, great)
+totalCnt_weakStrong --> 61294.0
+totalCnt_strongWeak --> 73.0
+x-----x
+(amphibiotic, amphibious)
+totalCnt_weakStrong --> 0.0
+totalCnt_strongWeak --> 0.0
+x-----x

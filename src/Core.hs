@@ -61,12 +61,12 @@ data Config = Con {
 -- * Construct a legal System config by ensuring that all filepaths are valid
 -- * read in weakstrong and strongweak patterns from disk if exists
 config :: DirectoryPath -> DirectoryPath -> IO (Maybe Config)
-config corpusD patternD = do
+config corpusD inputD = do
   b1 <- doesDirectoryExist corpusD
-  b2 <- doesDirectoryExist patternD
+  b2 <- doesDirectoryExist inputD
   if b1 && b2 then do
-    let ws = patternD ++ "weak-strong-patterns.txt"
-    let sw = patternD ++ "strong-weak-patterns.txt"
+    let ws = inputD ++ "weak-strong-patterns.txt"
+    let sw = inputD ++ "strong-weak-patterns.txt"
     ws' <- lines <$> readFile ws
     sw' <- lines <$> readFile sw
     return . Just $ Con corpusD ws' sw'

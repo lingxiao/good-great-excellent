@@ -39,7 +39,6 @@ main = do
     return ()
 
 
-
 right :: String -> Either String Text
 right = Right . pack
 

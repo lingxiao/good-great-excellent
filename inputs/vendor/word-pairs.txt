@@ -1,0 +1,44 @@
+:% format:
+% === antonym-headword-1, antonym-headword-1
+% ranked list of words from less intense to more intense on separate lines
+% words on the same lines (comma-separated) are of (near-)equal intensity
+% comments with "%"
+% special comment "%! " followed by an adjective to mark that adjective as not
+%   properly fitting on the same scale as the rest of the adjectives in the cluster
+=== good, bad
+%! better
+%! best
+acceptable, satisfactory
+good
+great, solid
+superb
+% note: cannot really decide whether to group solid with good or great or in between
+=== wet, dry
+%! muddy
+%! sticky
+humid, tacky, moist, damp
+steamy
+wet, drippy
+watery, boggy, soggy, rainy, waterlogged
+=== good, bad
+%! evil
+%! negative
+mediocre
+poor
+bad
+worse
+awful
+worst
+terrible
+=== sophisticated, naif
+%! innocent
+simple
+naive
+childlike
+=== characteristic, uncharacteristic
+%! limited
+special
+peculiar
+specific, particular
+unique
+=== END

@@ -12,7 +12,7 @@
 
 module Query (
     query
-  , queryAll
+  , queryIn
   ) where
 
 
@@ -32,23 +32,22 @@ import Core
   Query all files in directory
 ------------------------------------------------------------------------------}
 
-queryAll :: Op m => DirectoryPath -> Parser Text -> m Output
-queryAll f p = eval 
+query :: Op m => Parser Text -> DirectoryPath -> m Output
+query p f = eval 
               $ [f] `sourceDirectories` ".txt" 
               $= openFile 
               $= prepFile 
               $$ queryFile p
-
 
 {-----------------------------------------------------------------------------
   Query one file
 ------------------------------------------------------------------------------}
 
 -- * query preprocessed text file
-query :: Op m => FilePath -> Parser Text -> m Output
-query f p = eval $ sourceFileE f $= prepFile $$ queryFile p
+queryIn :: Op m => Parser Text -> FilePath -> m Output
+queryIn p f = eval $ sourceFileE f $= prepFile $$ queryFile p
 
---linesFile :: FileOpS m s => FilePath -> Source m QueryResult
+
 prepFile :: FileOpS m s => Conduit B.ByteString m QueryResult
 prepFile =  linesOn "\n"
              $= C.map head

@@ -1,0 +1,2775 @@
+=== cooked, raw
+rare
+raw
+=== loose, tight
+loose
+baggy
+=== righteous, unrighteous
+% evil
+% immoral
+=== happy, unhappy
+sad
+depressing
+=== awake, asleep
+% awake
+% aware
+=== dejected, elated
+% depressed
+% unhappy
+=== abstract, concrete
+% tangible
+% real
+=== restricted, unrestricted
+% free
+% open
+=== inclined, disinclined
+reluctant
+unwilling
+=== infected, antiseptic
+% infected
+% infectious
+=== efficient, inefficient
+% efficient
+% effective
+=== backward, forward
+smart
+wise
+=== continual, sporadic
+irregular
+infrequent
+=== eligible, ineligible
+% legal
+% suitable
+=== sexy, unsexy
+erotic
+pornographic
+=== mild, intense
+% profound
+% deep
+=== comprehendible, incomprehensible
+dark
+opaque 
+=== dignified, undignified
+% humbling
+% humiliating
+=== audible, inaudible
+audible
+loud
+=== sexy, unsexy
+% hot
+% spicy
+=== full, empty
+% empty
+% blank
+=== employed, unemployed
+employed
+working
+=== palpable, impalpable
+% imperceptible
+% subtle
+=== loving, unloving
+cold
+frigid
+=== certain, uncertain
+% certain
+% sure
+=== concerned, unconcerned
+% unconcerned
+% indifferent
+=== one-sided, many-sided
+bilateral
+multilateral
+=== proud, humble
+proud
+arrogant
+=== positive, negative
+% positive
+% constructive
+=== maximal, minimal
+minimal
+negligible
+=== positive, neutral
+% positive
+% constructive
+=== authorised, unauthorised
+% authorised
+% official
+=== big, little
+% great
+% grand
+=== healthy, unhealthy
+% sick
+% ill
+=== agitated, unagitated
+% quiet
+% steady
+=== adroit, maladroit
+clever
+ingenious
+=== correct, incorrect
+inaccurate
+wrong
+=== warm, cool
+% cool
+% cold
+=== cardinal, ordinal
+% nineteenth
+% twentieth
+=== credulous, incredulous
+% unbelievable
+% incredible
+=== infectious, noninfectious
+% infectious
+% contagious
+=== susceptible, insusceptible
+% vulnerable
+% open
+=== characteristic, uncharacteristic
+% characteristic
+% diagnostic
+=== sound, unsound
+damaged
+broken
+=== fashionable, unfashionable
+old
+antique
+=== tense, lax
+% taut
+% tight
+=== understood, ununderstood
+% understood
+% appreciated
+=== heavy, light
+% heavy
+% big
+=== bound, unbound
+% bound
+% tied
+=== nice, awful
+nice
+good
+=== separate, joint
+% divided
+% separated
+=== elastic, inelastic
+% elastic
+% flexible
+=== colorful, colorless
+% brilliant
+% iridescent
+=== commercial, noncommercial
+% commercial
+% technical
+=== happy, unhappy
+contented
+cheerful
+=== attractive, unattractive
+% charismatic
+% hypnotic
+=== solid, gaseous
+% dry
+% hard
+=== hospitable, inhospitable
+% unfriendly
+% hostile
+=== operative, inoperative
+% dead
+% down
+=== mild, intense
+% cold
+% extreme
+=== fixed, unfixed
+% fast
+% secure
+=== long, short
+% long
+% far
+=== single, multiple
+fivefold
+tenfold
+=== up, down
+% up
+% high
+=== vulnerable, invulnerable
+% endangered
+% threatened
+=== dignified, undignified
+silly
+ridiculous
+=== clear, cloudy
+% cloudy
+% overcast
+=== chromatic, achromatic
+% rosy
+% ruddy
+=== well, ill
+% faint
+% dizzy
+=== correct, incorrect
+% wrong
+% inaccurate
+=== emotional, unemotional
+% lyrical
+% passionate
+=== bold, timid
+bold
+reckless
+=== dejected, elated
+happy
+euphoric
+=== lowercase, uppercase
+%small
+%minuscule
+=== pure, unsaturated
+% pure
+% vivid
+=== live, recorded
+% recorded
+% transcribed
+=== modest, immodest
+% modest
+% humble
+=== angry, unangry
+angry
+furious
+=== powerful, powerless
+% powerful
+% omnipotent
+=== immediate, mediate
+% immediate
+% direct
+=== present, absent
+% present
+% here
+=== natural, artificial
+% colored
+% bleached
+=== obedient, disobedient
+% intractable
+% difficult
+=== harmless, harmful
+% bad
+% catastrophic
+=== horizontal, inclined
+% flat
+% level
+=== maximal, minimal
+% maximal
+% maximum
+=== adaptable, unadaptable
+% flexible
+% elastic
+=== accompanied, unaccompanied
+% lonely
+% alone
+=== maternal, filial
+% maternal
+% paternal
+=== clear, opaque
+% opaque
+% cloudy
+=== changeable, unchangeable
+% stable
+% static
+=== familiar, unfamiliar
+% familiar
+% old
+=== finished, unfinished
+% polished
+% smooth
+=== offensive, inoffensive
+% hateful
+% objectionable
+=== right, left
+% left
+% liberal
+=== effortful, effortless
+% difficult
+% tiring
+=== dependable, undependable
+% certain
+% sure
+=== related, unrelated
+% paternal
+% maternal
+=== loyal, disloyal
+% treasonous
+% unpatriotic
+=== democratic, undemocratic
+% authoritarian
+% totalitarian
+=== sufficient, deficient
+% light
+% poor
+=== formal, informal
+% informal
+% conversational
+=== superior, inferior
+% humble
+% modest
+=== existent, unreal
+% real
+% actual
+=== progressive, regressive
+% advanced
+% modern
+=== believable, incredible
+% incredible
+% unbelievable
+=== one-dimensional, multidimensional
+% multidimensional
+% dimensional
+=== difficult, easy
+% rough
+% rugged
+=== coarse, fine
+fine
+powdery
+=== reverent, irreverent
+% respectful
+% reverential
+=== assertive, unassertive
+% assertive
+% aggressive
+=== clean-handed, guilty
+% innocent
+% exculpatory
+=== noble, lowborn
+% grand
+% imperial
+=== positive, negative
+% negative
+% destructive
+=== constituted, unestablished
+% recognized
+% official
+=== senior, junior
+% older
+% old
+=== hot, cold
+% passionate
+% heated
+=== surprising, unsurprising
+% surprising
+% amazing
+=== tall, little
+% little
+% low
+=== temperate, intemperate
+% moderate
+% mild
+=== wet, dry
+% baked
+% dried
+=== manipulable, intractable
+% intractable
+% difficult
+=== humorous, humorless
+% funny
+% hilarious
+=== injured, uninjured
+% safe
+% sound
+=== dull, sharp
+% sharp
+% pointed
+=== emotional, unemotional
+% chilly
+% cool
+=== explicable, incomprehensible
+% inexplicable
+% unexplained
+=== alarming, unalarming
+% alarming
+% horrifying
+=== foreign, native
+% strange
+% alien
+=== tense, relaxed
+% relaxed
+% mellow
+=== peaceable, unpeaceful
+% hostile
+% violent
+=== equitable, inequitable
+% fair
+% honest
+=== major, minor
+% minor
+% insignificant
+=== sealed, unsealed
+% sealed
+% closed
+=== relevant, irrelevant
+% relevant
+% applicable
+=== stable, unstable
+% lasting
+% permanent
+=== horizontal, perpendicular
+% flat
+% level
+=== existent, unreal
+% legendary
+% mythical
+=== afraid, fearless
+% afraid
+% cowardly
+=== curly, straight
+% curly
+% wavy
+=== good, bad
+% tough
+% pretty
+=== thick, thin
+% thick
+% fat
+=== on, off
+% on
+% connected
+=== willing, unwilling
+% unwilling
+% reluctant
+=== lasting, impermanent
+% unchangeable
+% eternal
+=== light, dark
+% dark
+% black
+=== dependent, independent
+% independent
+% separate
+=== smart, stupid
+% dull
+% witless
+=== maximal, minimal
+% minimal
+% negligible
+=== old, immature
+% aged
+% elderly
+=== tame, wild
+% quiet
+% subdued
+=== broad, narrow
+% slender
+% thin
+=== conscious, unconscious
+% aware
+% awake
+=== far, close
+% hot
+% warm
+=== rising, falling
+% falling
+% soft
+=== dramatic, undramatic
+% dramatic
+% melodramatic
+=== skilled, unskilled
+% expert
+% competent
+=== afraid, fearless
+% shocked
+% scared
+=== pointed, pointless
+% pointed
+% sharp
+=== acknowledged, unacknowledged
+% recognized
+% known
+=== indulgent, nonindulgent
+% severe
+% monkish
+=== palatable, unpalatable
+% tasty
+% edible
+=== important, unimportant
+alpha
+beta
+=== real, unreal
+% dreamlike
+% surreal
+=== active, inactive
+% active
+% proactive
+=== cardinal, ordinal
+% quaternary
+% tertiary
+=== violent, nonviolent
+% violent
+% hostile
+=== resolute, irresolute
+% stiff
+% firm
+=== heritable, nonheritable
+% innate
+% acquired
+=== sharp, dull
+% sharp
+% cutting
+=== comfortable, uncomfortable
+% comfortable
+% homey
+=== healthy, unhealthy
+% ruddy
+% rosy
+=== homosexual, bisexual
+% homosexual
+% gay
+=== bold, timid
+% brave
+% foolhardy
+=== confident, diffident
+% confident
+% overconfident
+=== tired, rested
+% tired
+% exhausted
+=== breakable, unbreakable
+% fragile
+% delicate
+=== sweet, dry
+% sweet
+% sugary
+=== honorable, dishonorable
+% black
+% yellow
+=== precocious, retarded
+% stupid
+% simple
+=== explorative, nonexplorative
+% alpha
+% beta
+=== important, unimportant
+% serious
+% grave
+=== brave, cowardly
+% valorous
+% desperate
+=== flexible, inflexible
+% flexible
+% elastic
+=== important, insignificant
+% insignificant
+% slight
+=== modern, nonmodern
+% contemporary
+% new
+=== similar, dissimilar
+% similar
+% same
+=== cheerful, cheerless
+% gay
+% happy
+=== conscious, unconscious
+% innocent
+% unaware
+=== organized, disorganised
+% disorganized
+% chaotic
+=== best, worst
+% worst
+% bad
+=== senior, junior
+% younger
+% young
+=== intended, unintended
+conscious
+deliberate
+=== epidemic, ecdemic
+% epidemic
+% pandemic
+=== trustful, distrustful
+% skeptical
+% cynical
+=== fore, aft
+% back
+% after
+=== dignified, undignified
+% elegant
+% formal
+=== strange, familiar
+% gothic
+% exotic
+=== certain, uncertain
+% certain
+% sure
+=== sound, unsound
+% long
+% bad
+=== safe, out
+% out
+% down
+=== deep, shallow
+% deep
+% profound
+=== loud, soft
+% soft
+% gentle
+=== kind, unkind
+% gentle
+% soft
+=== offensive, inoffensive
+% revolting
+% repellent
+=== heterogeneous, homogeneous
+% different
+% disparate
+=== related, unrelated
+% indirect
+% direct
+=== mitigated, unmitigated
+% perfect
+% complete
+=== active, inactive
+% slow
+% dead
+=== proud, humble
+% humble
+% modest
+=== big, little
+% great
+% grand
+=== competent, incompetent
+% efficient
+% effective
+=== predictable, unpredictable
+% predictable
+% inevitable
+=== first, last
+% prototypical
+% archetypical
+=== glorious, inglorious
+% unknown
+% obscure
+=== tangible, intangible
+% tangible
+% real
+=== direct, indirect
+% honest
+% brutal
+=== surprised, not surprised
+% startled
+% astonished
+=== graceful, awkward
+% beautiful
+% elegant
+=== diversified, undiversified
+% unanimous
+% general
+=== pleasing, displeasing
+% attractive
+% beautiful
+=== humorous, humorless
+% laughable
+% ridiculous
+=== chromatic, achromatic
+% crimson
+% brownish
+=== strong, weak
+% weak
+% sick
+=== crowded, uncrowded
+% crowded
+% packed
+=== solid, liquid
+% dry
+% hard
+=== calculable, incalculable
+% computable
+% enumerable
+=== optimistic, pessimistic
+% optimistic
+% hopeful
+=== original, unoriginal
+% original
+% fresh
+=== fair, unfair
+% unfair
+% unjust
+=== charged, uncharged
+% negative
+% positive
+=== psychoactive, nonpsychoactive
+% psychoactive
+% hallucinogenic
+=== settled, unsettled
+% set
+% firm
+=== open, closed
+% open
+% wide
+=== impressible, unimpressionable
+% waxy
+% plastic
+=== broken, unbroken
+% broken
+% damaged
+=== infected, antiseptic
+% sterile
+% clean
+=== effortful, effortless
+% effortless
+% easy
+=== natural, supernatural
+% supernatural
+% eerie
+=== loved, unloved
+% loved
+% admired
+=== frequent, infrequent
+% frequent
+% regular
+=== early, middle
+% early
+% first
+=== useful, useless
+% useful
+% profitable
+=== warm, cool
+warm
+hot
+=== processed, unprocessed
+% cured
+% treated
+=== smooth, rough
+% hilly
+% mountainous
+=== profitable, unprofitable
+% profitable
+% useful
+=== mature, immature
+% mature
+% old
+=== heterosexual, homosexual
+% homosexual
+% gay
+=== loving, unloving
+% loving
+% warm
+=== active, inactive
+% active
+% open
+=== high, low
+% last
+% full
+=== first, last
+% first
+% early
+=== susceptible, insusceptible
+% immune
+% resistant
+=== constructive, destructive
+% destructive
+% negative
+=== dependable, undependable
+% certain
+% sure
+=== distant, close
+% close
+% adjacent
+=== cooked, raw
+% done
+% overdone
+=== conventional, unconventional
+% formal
+% stuffy
+=== free, unfree
+% free
+% available
+=== commensurate, incommensurate
+% equal
+% proportionate
+=== generous, stingy
+% tight
+% close
+=== hard, soft
+% soft
+% tender
+=== pure, impure
+% light
+% clear
+=== qualified, unqualified
+% unlimited
+% clean
+=== perishable, imperishable
+% durable
+% indestructible
+=== vulnerable, invulnerable
+% vulnerable
+% open
+=== legal, illegal
+% illegal
+% criminal
+=== conservative, liberal
+% conservative
+% right
+=== replaceable, irreplaceable
+% similar
+% interchangeable
+=== basic, incident
+% radical
+% fundamental
+=== warm, cool
+% cool
+% cold
+=== hurried, unhurried
+% deliberate
+% careful
+=== epidemic, endemic
+% epidemic
+% pandemic
+=== healthy, unhealthy
+% unhealthy
+% dropsical
+=== changeable, unchangeable
+% lasting
+% permanent
+=== rising, falling
+% up
+% improving
+=== calm, stormy
+% angry
+% furious
+=== offensive, inoffensive
+% evil
+% unpleasant
+=== destroyed, preserved
+% preserved
+% protected
+=== more than, less
+% less
+% little
+=== self-generated, induced
+% instinctive
+% natural
+=== foreign, native
+% foreign
+% exotic
+=== leaky, tight
+% tight
+% snug
+=== fit, unfit
+% fit
+% well
+=== full, thin
+% rich
+% heavy
+=== functioning, malfunctioning
+% bad
+% wrong
+=== opportune, inopportune
+% right
+% good
+=== elegant, inelegant
+% refined
+% sophisticated
+=== coarse, fine
+% close
+% tight
+=== bright, dull
+% sleek
+% slick
+=== ashamed, unashamed
+% ashamed
+% embarrassed
+=== accurate, inaccurate
+% inaccurate
+% wrong
+=== superior, inferior
+% small
+% low
+=== rounded, angular
+% round
+% oval
+=== direct, indirect
+% direct
+% blunt
+=== fit, unfit
+% flabby
+% soft
+=== increased, decreased
+% reduced
+% cut
+=== simple, compound
+% smooth
+% complex
+=== fast, slow
+% smart
+% swift
+=== existent, nonexistent
+% active
+% alive
+=== wise, foolish
+% unwise
+% asinine
+=== warm, cool
+% cordial
+% friendly
+=== temperate, intemperate
+% big
+% heavy
+=== realistic, unrealistic
+% surreal
+% fantastic
+=== mild, intense
+% gentle
+% soft
+=== profound, superficial
+% profound
+% deep
+=== chromatic, achromatic
+% colored
+% rose
+=== metal, nonmetal
+% gold
+% silver
+=== experienced, inexperienced
+% old
+% older
+=== merciful, merciless
+% unkind
+% hard
+=== smooth, rough
+% rough
+% rugged
+=== black, white
+% black
+% dark
+=== awake, asleep
+% asleep
+% sleepy
+=== exculpatory, inculpative
+% exculpatory
+% innocent
+=== manageable, difficult
+% difficult
+% intractable
+=== tasty, tasteless
+% sour
+% bitter
+=== tolerable, intolerable
+% intolerable
+% bitter
+=== free, unfree
+% sovereign
+% unrestricted
+=== acknowledged, unacknowledged
+% unknown
+% unappreciated
+=== open, closed
+% closed
+% shut
+=== true, false
+% actual
+% real
+=== drunk, sober
+% soaked
+% wet
+=== lasting, impermanent
+% lasting
+% permanent
+=== eradicable, ineradicable
+% lasting
+% permanent
+=== troubled, untroubled
+% worried
+% concerned
+=== calm, stormy
+% calm
+% still
+=== agitated, unagitated
+% rippled
+% ruffled
+=== direct, indirect
+% straight
+% pointed
+=== pure, impure
+% pure
+% white
+=== joyous, joyless
+% festive
+% jubilant
+=== noble, lowborn
+% blue
+% purple
+=== heavy, light
+% light
+% lightweight
+=== brave, cowardly
+% cowardly
+% afraid
+=== partial, impartial
+% unfair
+% unjust
+=== sophisticated, naif
+% sophisticated
+% refined
+=== constructive, destructive
+% constructive
+% positive
+=== plausible, implausible
+% unbelievable
+% incredible
+=== joyous, joyless
+% gay
+% happy
+=== used, misused
+% used
+% abused
+=== black, white
+% white
+% light
+=== tough, tender
+% tender
+% soft
+=== abundant, scarce
+% thick
+% long
+=== tough, tender
+% tender
+% soft
+=== united, divided
+% unitary
+% unified
+=== just, unjust
+% unjust
+% unfair
+=== awake, asleep
+% drowsy
+% unconscious
+=== moving, unmoving
+% haunting
+% stirring
+=== current, noncurrent
+% new
+% contemporary
+=== old, immature
+% boyish
+% youthful
+=== joyful, sorrowful
+% overjoyed
+% happy
+=== outward, inward
+% private
+% secret
+=== important, insignificant
+% significant
+% large
+=== well, ill
+% well
+% fit
+=== ordinary, extraordinary
+% average
+% mediocre
+=== conventional, unconventional
+% formal
+% stuffy
+=== early, late
+% new
+% young
+=== defiant, compliant
+% difficult
+% intractable
+=== well, ill
+% ill
+% sick
+=== orthodox, unorthodox
+% traditional
+% conservative
+=== accessible, inaccessible
+% inaccessible
+% remote
+=== united, divided
+% merged
+% incorporated
+=== adorned, unadorned
+% bare
+% spare
+=== effective, ineffective
+% effective
+% efficient
+=== ordinary, extraordinary
+% ordinary
+% mundane
+=== masculine, feminine
+% masculine
+% macho
+=== pleasant, unpleasant
+% unpleasant
+% painful
+=== more, fewer
+% more
+% many
+=== sociable, unsociable
+% social
+% outgoing
+=== broken, unbroken
+% sound
+% perfect
+=== covered, bare
+% covered
+% sealed
+=== perceptible, imperceptible
+% imperceptible
+% invisible
+=== early, late
+% early
+% first
+=== playful, serious
+% playful
+% mischievous
+=== tough, tender
+% experienced
+% hardened
+=== conservative, liberal
+% liberal
+% left
+=== connected, unconnected
+% separate
+% unrelated
+=== sacred, profane
+% spiritual
+% religious
+=== pleased, displeased
+% pleased
+% content
+=== glorious, inglorious
+% divine
+% sublime
+=== rational, irrational
+% reasonable
+% sane
+=== noble, lowborn
+% plebeian
+% common
+=== running, standing
+% standing
+% still
+=== absolute, comparative
+% infinite
+% direct
+=== important, insignificant
+% important
+% fundamental
+=== logical, illogical
+% consistent
+% reasonable
+=== regular, irregular
+% illegal
+% improper
+=== warm, cool
+% cool
+% cold
+=== bold, timid
+% afraid
+% cowardly
+=== believable, incredible
+% plausible
+% likely
+=== moving, nonmoving
+% motionless
+% sitting
+=== important, unimportant
+% big
+% heavy
+=== sacred, profane
+% divine
+% sublime
+=== modern, nonmodern
+% old
+% past
+=== professional, nonprofessional
+% paid
+% professed
+=== perceptible, imperceptible
+% palpable
+% visible
+=== afraid, fearless
+alarmed
+terrified
+=== fresh, stale
+% hot
+% warm
+=== susceptible, insusceptible
+% allergic
+% sensitive
+=== shared, unshared
+% single
+% individual
+=== negative, neutral
+% negative
+% destructive
+=== attractive, unattractive
+% magnetic
+% irresistible
+=== mild, intense
+% mild
+% moderate
+=== hopeful, hopeless
+% hopeful
+% optimistic
+=== moral, immoral
+% immoral
+% evil
+=== exciting, unexciting
+% heady
+% intoxicating
+=== predictable, unpredictable
+% certain
+% sure
+=== pleasant, unpleasant
+% pleasant
+% enjoyable
+=== likely, unlikely
+% unlikely
+% farfetched
+=== decent, indecent
+% indecent
+% obscene
+=== impaired, unimpaired
+% damaged
+% broken
+=== good-natured, ill-natured
+% misanthropic
+% saturnine
+=== offensive, defensive
+% hostile
+% aggressive
+=== certain, uncertain
+% doomed
+% destined
+=== articulate, inarticulate
+% articulate
+% eloquent
+=== euphoric, distressed
+% euphoric
+% happy
+=== more than, less
+% more
+% much
+=== long, short
+% extended
+% lifelong
+=== worn, new
+% old
+% decrepit
+=== functional, nonfunctional
+% functional
+% structural
+=== likely, improbable
+% likely
+% probable
+=== ready, unready
+% ready
+% willing
+=== mature, immature
+% premature
+% young
+=== extinct, active
+% active
+% alive
+=== existent, unreal
+% realistic
+% documentary
+=== social, unsocial
+% lonely
+% alone
+=== open, closed
+% closed
+% shut
+=== due, undue
+% due
+% delinquent
+=== organized, unorganised
+% corporate
+% structured
+=== excited, unexcited
+% excited
+% nervous
+=== original, unoriginal
+% groundbreaking
+% innovative
+=== noticed, unnoticed
+% unnoticed
+% unremarked
+=== glad, sad
+% sad
+% tragic
+=== alike, dissimilar
+% like
+% similar
+=== maximal, minimal
+% maximal
+% maximum
+=== official, unofficial
+% official
+% authorised
+=== convincing, flimsy
+% unbelievable
+% incredible
+=== left, center
+% left
+% liberal
+=== valuable, worthless
+% worth
+% important
+% expensive
+=== some, all
+% all
+% every
+% each
+=== registered, unregistered
+% registered
+% certified
+% qualified
+=== ** like, unlike
+like
+equal
+same
+=== ** concerned, unconcerned
+concerned
+preoccupied
+obsessed
+=== high, low
+% high
+% up
+% top
+=== concentrated, distributed
+% separated
+% divided
+% broken
+=== toxic, atoxic
+%harmful
+%toxic
+%deadly
+=== classified, unclassified
+% classified
+% sensitive
+% confidential
+=== loose, tight **
+close
+tight
+snug
+=== sufficient, deficient
+% comfortable
+% enough
+% decent
+=== correct, incorrect
+% precise
+% accurate
+% true
+=== no, all
+% all
+% every
+% each
+=== aggressive, nonaggressive
+% aggressive
+% hostile
+% assertive
+=== tall, little
+% tall
+% long
+% large
+=== ** comprehensive, incomprehensive
+statewide
+nationwide
+worldwide
+=== plain, fancy
+% simple
+% austere
+% dry
+=== wise, foolish
+% silly
+% ridiculous
+% laughable
+=== harmless, harmful
+% harmful
+% toxic
+% counterproductive
+=== good, bad **
+hard
+painful
+hopeless
+=== joyful, sorrowful
+% bitter
+% heartbreaking
+% sad
+=== ** echt, counterfeit
+good
+real
+authentic
+=== big, little
+% deep
+% wide
+% broad
+=== monolingual, multilingual
+%! multilingual
+% bilingual
+% trilingual
+=== attractive, unattractive **
+plain
+unattractive
+ugly
+=== blond, brunet
+% dark
+% brown
+% swarthy
+=== sane, insane **
+unstable
+crazy
+insane
+=== common, uncommon
+% common
+% popular
+% standard
+=== considerable, inconsiderable
+% large
+% significant
+% substantial
+=== ** involved, uninvolved
+interested
+concerned
+involved
+=== heavy, light
+% light
+% soft
+% gentle
+=== open, closed **
+closed
+shut
+sealed
+=== broad, narrow
+% broad
+% deep
+% wide
+=== big, little
+% deep
+% wide
+% broad
+=== fortunate, unfortunate **
+unfortunate
+disastrous
+fatal
+=== fresh, stale
+% cold
+% old
+% bad
+=== right, wrong
+% right
+% good
+% just
+=== alcoholic, nonalcoholic
+% hard
+% dry
+% wet
+=== separate, joint
+% separate
+% distinct
+% independent
+=== cardinal, ordinal
+% 8th
+% 9th
+% 10th
+=== colorful, colorless
+% colorless
+% pale
+% colourless
+=== fresh, stale
+% good
+% strong
+% new
+=== favorable, unfavorable **
+critical
+negative
+hostile
+=== separate, joint
+% other
+% single
+% individual
+=== social, unsocial
+% social
+% cultural
+% ethnic
+=== thinkable, unthinkable
+% possible
+% imaginable
+% conceivable
+=== likely, unlikely
+% likely
+% possible
+% probable
+=== ** sugary, nonsweet
+sweet
+sugary 
+syrupy
+=== horizontal, perpendicular
+% perpendicular
+% steep
+% vertical
+=== ** known, unknown
+known
+famous
+legendary
+=== full, empty
+% clean
+% stripped
+% bare
+=== smooth, rough **
+cracked
+broken
+crushed
+=== gradual, steep
+% steep
+% perpendicular
+% vertical
+=== fair, unfair
+% fair
+% sporting
+% reasonable
+=== perpendicular, inclined
+% perpendicular
+% steep
+% vertical
+=== ample, meager
+% minimal
+% spare
+% bare
+=== steady, unsteady
+% sure
+% even
+% level
+=== delicate, rugged
+% delicate
+% ethereal
+% fragile
+=== prepared, unprepared
+% spread
+% up
+% ready
+=== ** noxious, innocuous
+harmful
+toxic
+deadly
+=== personal, impersonal
+% personal
+% private
+% individual
+=== ** high, low
+high
+higher
+soaring
+=== hurried, unhurried
+% quick
+% fast
+% rushed
+=== ** clean, dirty
+clean
+spotless, immaculate
+=== experienced, inexperienced
+% young
+% new
+% untested
+=== careful, careless **
+negligent
+careless
+reckless
+=== ** bloody, bloodless
+violent
+homicidal, murderous
+=== right, center
+% right
+% conservative
+% reactionary
+=== loud, soft
+% loud
+% deafening
+% audible
+=== smooth, rough
+% smooth
+% slippery
+% velvety
+=== clear, opaque
+% clear
+% transparent
+% translucent
+=== pregnant, nonpregnant
+% big
+% heavy
+% large
+=== colorful, colorless
+% colorless
+% pale
+% colourless
+=== correct, incorrect
+% precise
+% accurate
+% true
+=== ** valid, invalid
+reasonable
+valid
+sound
+=== practical, impractical
+% practical
+% possible
+% realistic
+=== seeable, invisible
+% invisible
+% imperceptible
+% hidden
+=== simple, complex
+% complex
+% complicated
+% difficult
+=== right, left
+% right
+% conservative
+% reactionary
+=== drunk, sober
+% drunk
+% high
+% tipsy
+=== fortunate, unfortunate
+% lucky
+% good
+% well
+=== rich, poor
+% rich
+% comfortable
+% wealthy
+=== careful, careless
+% careful
+% sure
+% certain
+=== clean, dirty **
+indecent
+profane
+obscene
+=== inevitable, avertable
+% inevitable
+% necessary
+% unavoidable
+=== ** composed, discomposed
+calm, cool 
+serene
+=== worthy, unworthy
+% worthy
+% good
+% worth
+=== consistent, inconsistent
+% inconsistent
+% contradictory
+% conflicting
+=== superior, inferior
+% less
+% common
+% bush
+=== ** mature, green
+mature
+ripe
+overripe
+=== many, few **
+some
+few
+fewer
+=== willing, unwilling
+% willing
+% ready
+% happy
+=== slippery, nonslippery
+% slippery
+% smooth
+% slick
+=== national, international **
+transnational
+international
+global
+=== careful, careless
+% casual
+% sloppy
+% offhand
+=== light, dark
+% light
+% white
+% pale
+=== even, uneven
+% level
+% flat
+% smooth
+=== simple, complex
+% simple
+% easy
+% simplistic
+=== penetrable, impenetrable
+% impenetrable
+% thick
+% dense
+=== more, fewer
+% fewer
+% few
+% less
+=== cardinal, ordinal
+% 19th
+% 20th
+% 18th
+=== warm, cool
+% warm
+% hot
+% tepid
+=== thinkable, unthinkable
+% impossible
+% incredible
+% unbelievable
+=== frozen, unfrozen
+% frozen
+% cold
+% icy
+=== like, different
+% like
+% similar
+% same
+=== just, unjust
+% just
+% right
+% fair
+=== certain, incertain
+% certain
+% sure
+% positive
+=== certain, incertain
+% certain
+% sure
+% positive
+=== good, evil
+% black
+% dark
+% sinister
+=== sound, unsound
+% sound
+% safe
+% good
+=== functioning, malfunctioning
+% running
+% working
+% up
+=== sexy, unsexy
+% sexy
+% sexual
+% provocative
+=== deep, shallow
+% deep
+% profound
+% heavy
+=== ** surprising, unsurprising
+unexpected
+astonishing, stunning
+=== expensive, cheap **
+affordable
+inexpensive
+cheap 
+=== ** stimulating, unexciting
+interesting
+moving
+exciting
+thrilling
+=== comfortable, uncomfortable **
+%! warm
+uncomfortable
+uneasy
+painful
+=== thick, thin
+% heavy
+% deep
+% wide
+% broad
+=== friendly, unfriendly **
+cool, chilly
+unfriendly
+hostile
+=== far, close **
+nearby, near
+close
+adjacent
+=== virtuous, wicked **
+wrong
+immoral
+sinful
+evil
+=== colored, uncolored
+% colored
+% black
+% coloured
+% red
+=== incoming, outgoing
+% !in
+%succeeding, next
+%future
+=== good, evil
+% good
+% right
+% white
+% worthy
+=== common, individual
+% individual
+% single
+% several
+% idiosyncratic
+=== audible, inaudible **
+quiet
+inaudible, imperceptible
+silent
+=== ** far, close
+far
+further, farther
+removed
+=== ** ample, meager
+sufficient
+good, wide
+full
+=== superior, inferior **
+cheap, mediocre
+bad
+worst
+=== true, false
+% sure
+% right
+% honest
+% correct
+=== fit, unfit **
+sick, ill
+impaired
+disabled
+=== noticed, unnoticed **
+neglected
+ignored, overlooked
+forgotten
+=== same, other
+% same
+% identical
+% said
+% very
+=== surprised, not surprised
+%! surprised
+%amazed
+%stunned
+%flabbergasted
+=== safe, dangerous **
+unreliable
+dangerous, risky
+suicidal
+=== ** content, discontent
+content, satisfied
+pleased, happy
+=== ** friendly, unfriendly
+friendly, cordial
+warm
+intimate
+=== proud, humble **
+%! broken
+humbled
+humiliated
+crushed
+=== ** happy, unhappy
+%! blessed
+happy, content
+euphoric
+=== dispensable, indispensable **
+necessary
+vital
+indispensable
+critical
+=== righteous, unrighteous
+% worthy
+% good
+% just
+% sound
+=== skilled, unskilled
+% complete
+% good
+% mean
+% experienced
+=== light, dark **
+dim
+gloomy
+dark
+black
+=== honest, dishonest **
+misleading
+deceptive, fraudulent
+false
+=== distant, close **
+%! good
+close
+near
+intimate
+=== colorful, colorless
+% vibrant
+% fluorescent
+% deep
+% bright
+=== even, uneven
+% even
+% justified
+% true
+% plane
+=== much, little
+% much
+% some
+% more
+% such
+=== cheerful, cheerless
+% depressing
+% dark
+% blue
+% dingy
+=== ** full, empty
+full
+stuffed
+overloaded
+overflowing
+=== black, white
+% black
+% colored
+% coloured
+% dark
+=== decisive, indecisive
+% decisive
+% crucial
+% important
+% determinative
+=== realistic, unrealistic
+% realistic
+% possible
+% practical
+% real
+=== injured, uninjured
+% wounded
+% broken
+% damaged
+% torn
+=== ** private, public
+%! insular
+personal
+private
+secret
+=== lost, found
+% lost
+% gone
+% missing
+% misplaced
+=== compatible, incompatible
+% different
+% incompatible
+% contradictory
+% antagonistic
+=== fresh, preserved
+% salted
+% smoked
+% dried
+% cured
+=== exact, inexact
+% mathematical
+% precise
+% accurate
+% perfect
+=== respectable, unrespectable
+% decent
+% good
+% nice
+% worthy
+=== sophisticated, naif
+% naive
+% simple
+% childlike
+% innocent
+=== protected, unprotected
+% vulnerable
+% naked
+% exposed
+% open
+=== ** attractive, unattractive
+attractive
+beautiful
+mesmerizing, seductive
+=== ** seductive, unseductive
+attractive
+sexy
+seductive
+% beguiling
+=== ** tasty, tasteless
+flavorful
+zesty
+hot, spicy
+=== ** aware, incognizant
+alive
+awake
+aware, conscious
+=== ** satisfactory, unsatisfactory
+acceptable, okay, alright
+right
+=== erect, unerect
+% erect
+% standing
+% upright
+% straight
+=== ** serious, frivolous
+real
+solemn
+serious 
+grave
+=== hopeful, hopeless **
+bleak, desperate
+hopeless
+%! helpless
+=== ** general, specific
+broad, widespread
+general
+universal
+=== alive, dead
+% dead
+% asleep
+% gone
+% departed
+=== much, little
+% little
+% less
+% small
+% slight
+=== optional, obligatory
+% necessary
+% required
+% prerequisite
+% indispensable
+=== advisable, inadvisable
+% well
+% best
+% better
+% wise
+=== reasonable, unreasonable
+% reasonable
+% sound
+% valid
+% just
+% fair
+=== difficult, easy **
+easy, simple, smooth
+painless
+effortless
+=== difficult, easy
+% difficult
+% embarrassing
+% challenging
+% serious
+% tricky
+=== loud, soft **
+%! small
+%! little
+low
+subdued
+quiet
+=== ** many, few
+%! more
+some
+many
+numerous
+galore
+=== ** alarming, unalarming
+creepy
+scary, frightening
+terrifying
+sinister
+=== old, new
+% old
+% past
+% antique
+% used
+% worn
+=== old, immature
+% old
+% mature
+% older
+% ancient
+% grey
+=== old, immature
+% young
+% new
+% small
+% girlish
+% newborn
+=== ** hot, cold
+warm
+hot
+overheated
+stifling, sultry
+=== ** available, unavailable
+%! easy
+%! open
+available
+accessible
+visible
+=== common, uncommon **
+uncommon
+unusual
+rare
+extraordinary
+exceptional
+=== sweet, sour
+% sweet
+% sugary
+% syrupy
+% saccharine
+% cloying
+=== ** fat, lean
+%! thick
+overweight
+chubby
+fat 
+obese
+=== some, no
+% some
+% any
+% few
+% several
+% many
+=== usual, unusual
+% unusual
+% uncommon
+% unique
+% different
+% peculiar
+=== hard, soft
+% soft
+% spongelike
+% mushy
+% velvety
+% padded
+=== ** necessary, unnecessary
+needed
+necessary
+required, essential
+indispensable
+=== hostile, amicable
+% hostile
+% violent
+% aggressive
+% bitter
+% unfriendly
+=== successful, unsuccessful **
+%! out
+%! sunk
+disappointed
+frustrated
+defeated
+=== esoteric, exoteric
+% secret
+% mysterious
+% mystical
+% deep
+% private
+=== realistic, unrealistic **
+%! false
+%! unreal
+impractical
+unrealistic
+impossible
+=== ** possible, impossible
+%! likely
+possible
+realistic
+feasible
+practical
+=== clad, unclothed
+% stripped
+% naked
+% nude
+% exposed
+% bare
+=== comparable, incomparable
+% unique
+% one
+% alone
+% best
+% unrivalled
+=== some, all
+% some
+% any
+% few
+% several
+% many
+=== superior, inferior
+% best
+% excellent
+% brilliant
+% greatest
+% surpassing
+=== ** quiet, noisy
+%! still
+soft
+quiet
+inaudible
+silent
+=== tasty, tasteless
+% sweet
+% fruity
+% rich
+% salty
+% nutty
+=== hot, cold **
+cool
+cold
+frigid
+icy, frozen
+=== high, low
+% low
+% little
+% down
+% under
+% short
+=== ** thick, thin
+%! syrupy
+%! heavy
+thick
+dense
+impenetrable
+=== healthy, unhealthy
+% good
+% sound
+% well
+% whole
+% fit
+=== ** intelligent, stupid
+bright, intelligent, smart, clever
+brilliant
+=== light, dark
+% light
+% bright
+% lit
+% white
+% fluorescent
+=== possible, impossible **
+%! out
+impractical, impracticable
+unrealistic
+infeasible
+impossible
+=== specific, nonspecific
+% specific
+% limited
+% particular
+% peculiar
+% unique
+% special
+=== ** strange, familiar
+%! quaint
+strange, funny
+unusual
+weird
+eerie
+=== practical, impractical
+% impractical
+% impossible
+% crazy
+% romantic
+% unwieldy
+% unrealistic
+=== emotional, unemotional
+% emotional
+% sentimental
+% moving
+% little
+% moody
+% moved
+=== ** interesting, uninteresting
+interesting
+intriguing
+amusing, entertaining
+fascinating, exciting
+=== colorful, colorless
+% colorless
+% pale
+% colourless
+% white
+% faded
+% bleached
+=== general, specific
+% specific
+% limited
+% particular
+% peculiar
+% unique
+% special
+=== best, worst
+% best
+% first
+% top
+% good
+% superior
+% optimal
+=== right, wrong
+% wrong
+% immoral
+% criminal
+% unethical
+% evil
+% misguided
+=== exciting, unexciting
+% exciting
+% exhilarating
+% thrilling
+% interesting
+% provocative
+% sexy
+=== hard, soft
+% hard
+% set
+% firm
+% steely
+% unyielding
+% solid
+=== destroyed, preserved
+% destroyed
+% damaged
+% shattered
+% ruined
+% wrecked
+% broken
+=== finished, unfinished
+% finished
+% up
+% over
+% complete
+% done
+% through
+=== pleasing, displeasing
+% pleasant
+% charming
+% easy
+% gratifying
+% good
+% fabulous
+=== ** beautiful, ugly
+handsome, lovely, gorgeous
+beautiful, pretty, attractive
+=== crucial, noncrucial
+% crucial
+% important
+% decisive
+% essential
+% pivotal
+% critical
+=== bright, dull
+% bright
+% glaring
+% blinding
+% brilliant
+% iridescent
+% lustrous
+=== fashionable, unfashionable
+% fashionable
+% in
+% stylish
+% latest
+% modern
+% cool
+=== mild, intense **
+%! big
+%! bad
+strong
+intense
+terrible
+overwhelming
+violent
+=== essential, inessential
+% essential
+% important
+% primary
+% vital
+% necessary
+% indispensable
+% crucial
+=== damaged, undamaged
+% damaged
+% destroyed
+% battered
+% broken
+% bent
+% weakened
+% impaired
+=== cardinal, ordinal **
+1st
+2nd
+3rd
+4th
+5th
+6th
+7th
+=== big, little
+% big
+% huge
+% large
+% larger
+% bigger
+% sizeable
+% colossal
+=== accurate, inaccurate
+% accurate
+% true
+% close
+% right
+% exact
+% correct
+% precise
+=== current, noncurrent **
+%! obsolescent
+%! back
+%! dead
+%! past
+old
+obsolete, outdated
+=== critical, noncritical
+% critical
+% serious
+% desperate
+% dangerous
+% grave
+% important
+% crucial
+=== good, evil
+% evil
+% bad
+% wrong
+% immoral
+% monstrous
+% ugly
+% offensive
+=== ** big, little
+%! larger
+%! bigger
+sizeable
+big, large
+huge, 
+colossal
+=== same, other
+% other
+% opposite
+% different
+% another
+% separate
+% otherwise
+% new
+=== single, multiple **
+% !multiple
+dual, double, doubled
+triple, treble
+quadruple
+=== equal, unequal
+% equal
+% same
+% even
+% tied
+% close
+% level
+% tight
+% equivalent
+=== ** comprehensive, incomprehensive
+%! wide
+%! broad
+%! large
+general
+extensive
+complete, comprehensive
+universal
+=== moderate, immoderate
+% moderate
+% conservative
+% reasonable
+% average
+% small
+% medium
+% fair
+% mild
+=== hot, cold **
+% crisp
+cool, refrigerated, chilly
+cold
+frigid
+icy, frozen
+=== thick, thin
+% thin
+% slender
+% light
+% transparent
+% sheer
+% fine
+% flat
+% gossamer
+=== fast, slow
+% fast
+% immediate
+% speedy
+% rapid
+% instantaneous
+% sudden
+% quick
+% instant
+=== precise, imprecise
+% precise
+% accurate
+% very
+% fine
+% microscopic
+% specific
+% nice
+% dead
+=== same, different
+% same
+% like
+% similar
+% duplicate
+% one
+% equal
+% identical
+% comparable
+=== periodic, aperiodic
+% fortnightly
+% weekly
+% hourly
+% daily
+% monthly
+% bimonthly
+% yearly
+% annual
+=== big, little
+% small
+% minuscule
+% smaller
+% midget
+% minute
+% microscopic
+% tiny
+% micro
+=== good, bad
+% good
+% best
+% solid
+% great
+% acceptable
+% better
+% superb
+% satisfactory
+=== old, new
+% new
+% recent
+% current
+% radical
+% revolutionary
+% untested
+% young
+% newborn
+=== cardinal, ordinal **
+first
+second
+third
+fourth
+fifth
+sixth
+seventh
+eighth
+=== big, little **
+small
+smaller
+midget
+minute
+tiny, minuscule
+micro, microscopic
+=== perfect, imperfect
+% perfect
+% clean
+% immaculate
+% ideal
+% complete
+% flawless
+% down
+% exact
+% mint
+=== past, future
+% past
+% last
+% ago
+% then
+% other
+% late
+% early
+% gone
+% old
+% ancient
+% recent
+=== same, different
+% different
+% opposite
+% distinct
+% several
+% disparate
+% incompatible
+% diverse
+% contrary
+% contrasting
+=== cardinal, ordinal
+% sixty
+% fifty
+% thirty
+% fifteen
+% ten
+% four
+% billion
+% trillion
+% three
+% nine
+% six
+% eight
+% one
+% hundred
+% thousand
+% million
+% five
+% seven
+% two
+% dozen
+% eighteen
+% seventeen
+% sixteen
+% fourteen
+% thirteen
+% twelve
+% eleven
+% twenty
+% forty
+% zero
+% cd
+% il
+% seventy
+% eighty
+% ninety
+=== successful, unsuccessful
+% successful
+% in
+% productive
+% made
+% flourishing
+% booming
+% thriving
+% victorious
+% winning
+=== complete, incomplete
+% complete
+% all
+% realized
+% accomplished
+% completed
+% full
+% good
+% comprehensive
+% exhaustive
+% thorough
+% sound
+% clean
+% whole
+% total
+% dead
+=== important, unimportant
+% important
+% strategic
+% essential
+% valuable
+% significant
+% crucial
+% measurable
+% primary
+% great
+% grand
+% historic
+% main
+% fundamental
+% key
+% central
+=== fat, lean **
+%! spare
+lean
+slim
+thin 
+skinny
+gaunt
+emaciated
+skeletal
+=== chromatic, achromatic
+% amber
+% brown
+% golden
+% blue
+% red
+% pink
+% yellow
+% pinkish
+% greenish
+% green
+% purple
+% orange
+% maroon
+% violet
+=== ordinary, extraordinary
+% extraordinary
+% impressive
+% great
+% surpassing
+% fantastic
+% terrible
+% special
+% uncanny
+% grand
+% uncommon
+% rare
+% exceptional
+% unusual
+% some
+% exceeding
+% one
+% awful
+=== wet, dry
+% wet
+% humid
+% steamy
+% tacky
+% sticky
+% moist
+% watery
+% boggy
+% soggy
+% damp
+% rainy
+% muddy
+% waterlogged
+% drippy
+=== good, bad
+% bad
+% evil
+% worst
+% worse
+% poor
+% negative
+% mediocre
+% awful
+% terrible
+=== past, present
+% past
+% last
+% ago
+% then
+% other
+% late
+% early
+% gone
+% old
+% ancient
+% recent
+=== END

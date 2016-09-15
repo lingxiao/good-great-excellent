@@ -69,7 +69,12 @@ sumCnt ps = do
   return (sum ns, concat rs)
 
 cnt :: Parser Text -> ReaderT Config IO Output
-cnt p = do
-  d  <- corpus <$> ask
-  queryAll d p
+cnt parser = do
+  dir <- corpus <$> ask
+  parser `query` dir
+
+
+
+
+  
   

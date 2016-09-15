@@ -1,0 +1,84 @@
+totalCnt_weakStrong --> 4.15502394E8
+totalCnt_strongWeak --> 3260968.0
+indivCnts_weakStrong:
+<*> almost a <*> --> 1458491.0
+<*> , almost the <*> --> 7673.0
+<*> though not an <*> --> 5283.0
+<*> though not the <*> --> 32994.0
+<*> although not an <*> --> 7845.0
+<*> and even the <*> --> 507839.0
+<*> almost an <*> --> 168170.0
+<*> and almost an <*> --> 689.0
+<*> , almost an <*> --> 1233.0
+<*> and almost a <*> --> 9601.0
+<*> , but not <*> --> 1.0079648E7
+<*> or almost <*> --> 191700.0
+<*> if not <*> --> 1.3445618E7
+<*> but not <*> --> 2.9947598E7
+<*> but not the <*> --> 1046877.0
+<*> or even the <*> --> 247869.0
+<*> , even an <*> --> 10271.0
+<*> , though not <*> --> 219781.0
+<*> or even a <*> --> 506475.0
+<*> even an <*> --> 474251.0
+<*> but not an <*> --> 62622.0
+<*> even a <*> --> 4834406.0
+not just <*> but <*> --> 46810.0
+<*> if not the <*> --> 375155.0
+<*> and even <*> --> 1.1966885E7
+<*> or almost a <*> --> 679.0
+<*> or even an <*> --> 57435.0
+<*> and even a <*> --> 370182.0
+<*> although not <*> --> 1421292.0
+<*> , or almost <*> --> 25602.0
+<*> though not <*> --> 1478813.0
+<*> , even the <*> --> 353327.0
+<*> , or even <*> --> 1637789.0
+<*> , although not <*> --> 134912.0
+<*> , if not <*> --> 2209894.0
+<*> and even an <*> --> 38066.0
+<*> even <*> --> 2.22807371E8
+<*> although not the <*> --> 30443.0
+<*> , almost a <*> --> 23840.0
+<*> but not a <*> --> 450444.0
+<*> and almost the <*> --> 9121.0
+<*> , and even <*> --> 2371122.0
+<*> if not an <*> --> 22352.0
+<*> or almost the <*> --> 3098.0
+<*> almost <*> --> 5.599874E7
+<*> or almost an <*> --> 54.0
+<*> , almost <*> --> 1475212.0
+<*> almost the <*> --> 823729.0
+<*> , even a <*> --> 106614.0
+not only <*> but <*> --> 395335.0
+<*> even the <*> --> 8896776.0
+<*> , even <*> --> 2.8522547E7
+<*> though not a <*> --> 34780.0
+<*> , and almost <*> --> 115599.0
+<*> or even <*> --> 8907356.0
+<*> if not a <*> --> 149106.0
+<*> and almost <*> --> 921646.0
+<*> although not a <*> --> 53334.0
+indivCnts_strongWeak:
+not the <*> still <*> --> 243.0
+not <*> but still <*> --> 7947.0
+not the <*> just <*> --> 10150.0
+not <*> just <*> --> 1852207.0
+not <*> just the <*> --> 23462.0
+not <*> still the <*> --> 198.0
+not <*> , just <*> --> 150699.0
+not <*> still an <*> --> 185.0
+not <*> still a <*> --> 787.0
+<*> or very <*> --> 934215.0
+not an <*> still <*> --> 0.0
+not <*> just an <*> --> 1436.0
+not <*> but just <*> --> 4171.0
+not a <*> still <*> --> 41.0
+not <*> although still <*> --> 0.0
+<*> , or very <*> --> 42290.0
+not <*> though still <*> --> 0.0
+not <*> , still <*> --> 6533.0
+not a <*> just <*> --> 4399.0
+not an <*> just <*> --> 851.0
+not <*> just a <*> --> 38215.0
+not <*> still <*> --> 182939.0
