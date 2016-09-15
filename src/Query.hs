@@ -12,7 +12,7 @@
 
 module Query (
     query
-  , query'
+  , queryAll
   ) where
 
 
@@ -28,33 +28,41 @@ import qualified Data.Conduit.Combinators as C
 import Lib
 import Core
 
-
 {-----------------------------------------------------------------------------
-  Query using list streaming solution build from Data.Conduit
+  Query all files in directory
 ------------------------------------------------------------------------------}
 
+queryAll :: Op m => DirectoryPath -> Parser Text -> m Output
+queryAll f p = eval 
+              $ [f] `sourceDirectories` ".txt" 
+              $= openFile 
+              $= prepFile 
+              $$ queryFile p
+
+
+{-----------------------------------------------------------------------------
+  Query one file
+------------------------------------------------------------------------------}
+
+-- * query preprocessed text file
 query :: Op m => FilePath -> Parser Text -> m Output
-query f p = eval $ openFile' f $$ queryFile p
+query f p = eval $ sourceFileE f $= prepFile $$ queryFile p
 
-
-query' :: FileOpS m [QueryResult] => FilePath -> Parser Text -> m Integer
-query' f p = openFile' f $$ queryFile p
-
-
-openFile' :: FileOpS m s => FilePath -> Source m QueryResult
-openFile' f =   sourceFileE f
-             $= linesOn "\n"
+--linesFile :: FileOpS m s => FilePath -> Source m QueryResult
+prepFile :: FileOpS m s => Conduit B.ByteString m QueryResult
+prepFile =  linesOn "\n"
              $= C.map head
-             $= C.map (splitOn $ pack "\t")
-             $= C.map (\[a,b,c] -> ( preprocess a
-                                   , a
-                                   , read . unpack $ b
-                                   , c))
+             $= C.map    (splitOn $ pack "\t")
+             $= C.filter (\x -> length x == 3)
+             $= C.map    (\[a,b,c] -> ( preprocess a
+                                      , a
+                                      , read . unpack $ b
+                                      , c))
 
 queryFile :: FileOpS m [QueryResult]
           => Parser Text
           -> Consumer QueryResult m Integer
-queryFile p = C.filter     (\(t,_,_,_) -> p <**? t)
+queryFile p = C.filter     (\(t,_,_,_)  -> p <**? t)
            $= awaitForever (\t@(_,_,n,_) -> do
                        ts <- lift get
                        let ts' = t:ts

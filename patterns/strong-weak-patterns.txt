@@ -1,7 +1,7 @@
 not * (,) just *
 not * (,) but just *
 not * (,) still *
-not * (,) but still
+not * (,) but still *
 not * (,) although still *
 not * (,) though still *
 * (,) or very *

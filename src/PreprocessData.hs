@@ -72,7 +72,6 @@ fromInput = C.map (\(a,b,c) -> encodeUtf8
   Filter raw ngram files
 ------------------------------------------------------------------------------}
 
-
 filterByPattern' :: FilePath -> FilePath -> Parser Text -> IO ()
 filterByPattern' inpath outpath p =  run 
                                   $  sourceFile inpath

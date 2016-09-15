@@ -11,10 +11,12 @@
 
 module Src (
       module Core
+    , module Score
     , module Query
     , module PreprocessData
 ) where
 
 import Core
+import Score
 import Query
 import PreprocessData

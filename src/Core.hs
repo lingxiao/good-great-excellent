@@ -16,11 +16,18 @@ module Core (
   , Input
   , Output
   , QueryResult
-  , Config (..)
+
+  , Config
+  , config
+  , corpus
+  , weakStrong
+  , strongWeak
 
   ) where 
 
 import System.FilePath.Posix
+import System.Directory
+
 import Data.Text (Text, unpack)
 
 {-----------------------------------------------------------------------------
@@ -41,11 +48,58 @@ type QueryResult   = (Text,Text,Integer,Text)
 ------------------------------------------------------------------------------}
 
 
-
 data Config = Con {
-      dataDir       :: DirectoryPath
-    , weakStrong    :: FilePath
-    , strongWeak    :: FilePath
+      corpus         :: DirectoryPath
+    , weakStrong     :: [String]
+    , strongWeak     :: [String]
 } deriving (Show, Eq)
+
+
+-- * @USE : config "path/to/data.txt" "path/to/patterns"
+-- * First line in main is to ensure the filestructure is appropriately set up
+-- * and the necessary patterns and data are present
+-- * Construct a legal System config by ensuring that all filepaths are valid
+-- * read in weakstrong and strongweak patterns from disk if exists
+config :: DirectoryPath -> DirectoryPath -> IO (Maybe Config)
+config corpusD patternD = do
+  b1 <- doesDirectoryExist corpusD
+  b2 <- doesDirectoryExist patternD
+  if b1 && b2 then do
+    let ws = patternD ++ "weak-strong-patterns.txt"
+    let sw = patternD ++ "strong-weak-patterns.txt"
+    ws' <- lines <$> readFile ws
+    sw' <- lines <$> readFile sw
+    return . Just $ Con corpusD ws' sw'
+  else 
+    return Nothing
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
