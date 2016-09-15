@@ -1,11 +1,11 @@
 
 ==================== FINAL INTERFACE ====================
-2016-09-14 19:59:19.192054 UTC
+2016-09-15 14:05:09.393476 UTC
 
 interface main@main:Main 7103
-  interface hash: f29d27fbc858a8b67ee7aeafbc360010
-  ABI hash: 3d6c80eb15c60381b4641eb545b4ec2c
-  export-list hash: 8b979e82c52ad96ea9588793ed795529
+  interface hash: 31efd4137443f2c4728db75584d1a740
+  ABI hash: a0c0d370a2e3747281667a2872fa93ab
+  export-list hash: ef163cd11fff74eee37a1e9fe42a96f8
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: f8c694548b2debe1f8faf3f9ee47371f
   sig of: Nothing
@@ -16,9 +16,11 @@ exports:
   Main.con_local_ws
   Main.con_remote_not
   Main.data_local
-  Main.inpath_sw
-  Main.inpath_ws
+  Main.inpath_raw_sw
+  Main.inpath_raw_ws
   Main.main
+  Main.not_star_l
+  Main.not_star_r
   Main.root_local
   Main.root_remote
 module dependencies: Core PreprocessData Query Src Subroutines
@@ -49,7 +51,7 @@ package dependencies: StateVar-1.1.0.4@State_IOvB80WkYNkEizdt0JVpzy
                       exceptions-0.8.3@excep_BEih2K3eMGTE4cg5iulra8
                       filepath-1.4.0.0@filep_Ey7a1in9roBAE8bUFJ5R9m
                       free-4.12.4@free_D8pop1Lncn7BkE4zjJTjla ghc-prim-0.4.0.0
-                      good-great-excellent-0.1.0.0@goodg_DmvfzrsRlTTEG4TgbQ9uXe
+                      good-great-excellent-0.1.0.0@goodg_H90TC5DRfXfJF7pQf276VX
                       hashable-1.2.4.0@hasha_EalUWgp8NarBYWPbvYAD8I integer-gmp-1.0.0.0
                       kan-extensions-4.2.3@kanex_8yLFa561sPQJZ5XPOmzMGi
                       keys-3.11@keys_ISfE7aax3NK7g9j8vHODvp
@@ -150,16 +152,18 @@ import  -/  base-4.8.2.0:GHC.IO bb5b81adcea33b14bd4abe16d7dde45f
 import  -/  base-4.8.2.0:GHC.List 0c736920522bbd14b770342776012ab6
 import  -/  base-4.8.2.0:Prelude 694dcaf039efe62df1c44834e2dbd2fb
 import  -/  ghc-prim-0.4.0.0:GHC.Types 6b27fb3fdbd0e3f0925a4496c66513bb
-import  -/  good-great-excellent-0.1.0.0@goodg_DmvfzrsRlTTEG4TgbQ9uXe:Lib f4e6c10a828c9f1fcecd21b607eba522
+import  -/  good-great-excellent-0.1.0.0@goodg_H90TC5DRfXfJF7pQf276VX:Lib 5d0ab4bfcd7e6dab686fbf696f2f2861
+import  -/  good-great-excellent-0.1.0.0@goodg_H90TC5DRfXfJF7pQf276VX:PatternCompiler 3fde339644d830cda0c67bd5fb92a410
 import  -/  Core d7abe07aff466b0f347499babac8dc9d
   Config bc0639f586f22c3939491780b28a22a2
   DirectoryPath d5c28258b354fd92c19a39b0e15fb216
   config b2daa995c3a32750ebc824e58d88e1d2
-import  -/  Src aa9f909621bad19ee0c597f4e37b6d29
-  exports: 184c18159ec58a9c3487848da0d532b5
-import  -/  Subroutines 73eba5f18f44c018cc7b91ac45f1f46f
-  exports: 975df3a49757a70773b2582d3c4e987f
-  filter_strongWeak 242aaf01f541de8375bbfadca26fd617
+import  -/  Src fa65780b830309c6eb9ae942faf5e6e8
+  exports: e90c2664b84d975d195073c5a5dc360e
+import  -/  Subroutines b70ca5a5faabd59e6b27db2b9d58df12
+  exports: ca114ef1c02c506c9bdc52c812c0b295
+  filterPattern 7958c3c006017ac7518b8b132c99c69c
+import  -/  text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text b53ae191632883b10562be5cbaa0b22b
 c5949c86a5fb4b49f564c8b82a582e04
   $wxs :: GHC.Prim.Int# -> (# GHC.IO.FilePath, [GHC.IO.FilePath] #)
   {- Arity: 1, Strictness: <S,1*U>, Inline: [0] -}
@@ -394,8 +398,8 @@ f13bc08313b82696d378be5298485a79
   data_local :: Core.DirectoryPath
   {- Unfolding: (GHC.CString.unpackCString#
                    "/Users/lingxiao/Documents/research/data/ngrams"#) -}
-1151fc627c94d10720b060b68e670ed1
-  inpath_sw :: Core.DirectoryPath -> [GHC.IO.FilePath]
+e2bf824a9ffcdb37ba8d7997cf198036
+  inpath_raw_sw :: Core.DirectoryPath -> [GHC.IO.FilePath]
   {- Arity: 1, Strictness: <L,1*U>,
      Unfolding: (\ d :: Core.DirectoryPath ->
                  GHC.Base.map
@@ -405,8 +409,8 @@ f13bc08313b82696d378be5298485a79
                       @ GHC.Types.Char
                       (GHC.Base.++ @ GHC.Types.Char d Main.con_local_sw18))
                    Main.con_local_sw4) -}
-ce8f24cc3d5d40213ad01a1492ec0fb0
-  inpath_ws :: Core.DirectoryPath -> [GHC.IO.FilePath]
+ceb7a789c1b0f2b1d1da28135466b647
+  inpath_raw_ws :: Core.DirectoryPath -> [GHC.IO.FilePath]
   {- Arity: 1, Strictness: <L,1*U>,
      Unfolding: (\ d :: Core.DirectoryPath ->
                  GHC.Base.map
@@ -416,31 +420,137 @@ ce8f24cc3d5d40213ad01a1492ec0fb0
                       @ GHC.Types.Char
                       (GHC.Base.++ @ GHC.Types.Char d Main.con_local_ws18))
                    Main.con_local_ws2) -}
-34529cb67ca9895aa131ab5656dd8d79
+29e89055f8ef29ab3c54276e1c3c1200
   main :: GHC.Types.IO ()
   {- Arity: 1, Strictness: <L,U>,
      Unfolding: InlineRule (0, True, True)
                 Main.main1 `cast` (Sym (GHC.Types.NTCo:IO[0] <()>_R)) -}
-a51017a6c6f8d945736c54e029e70aa5
+2bf3918f292c6daadaeb284f5b982aeb
   main1 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
   {- Arity: 1, Strictness: <L,U>,
-     Unfolding: InlineRule (1, True, False)
-                (\ s :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
-                 case Subroutines.filter_strongWeak2
-                        Main.con_remote_not3
-                        Main.con_remote_not1
+     Unfolding: (\ s :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
+                 case Subroutines.filterPattern1
+                        Main.not_star_r
+                        Main.main20
                         s of ds1 { (#,#) ipv ipv1 ->
-                 (# ipv, GHC.Tuple.() #) }) -}
-7c81e0ac8a4223e2b85f97f5a435b9f7
+                 case Subroutines.filterPattern1
+                        Main.not_star_r
+                        Main.main16
+                        ipv of ds2 { (#,#) ipv2 ipv3 ->
+                 case Subroutines.filterPattern1
+                        Main.not_star_r
+                        Main.main12
+                        ipv2 of ds3 { (#,#) ipv4 ipv5 ->
+                 case Subroutines.filterPattern1
+                        Main.not_star_r
+                        Main.main8
+                        ipv4 of ds4 { (#,#) ipv6 ipv7 ->
+                 case Subroutines.filterPattern1
+                        Main.not_star_r
+                        Main.main2
+                        ipv6 of ds5 { (#,#) ipv8 ipv9 ->
+                 (# ipv8, GHC.Tuple.() #) } } } } }) -}
+68b0265a6ece6a1ad1c787a0ee3c0e02
+  main10 :: [[GHC.Types.Char]]
+  {- Unfolding: (PatternCompiler.compile1 Main.main11) -}
+f9675f4aea9703513f89e47be2522827
+  main11 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "not * (,) although still *"#) -}
+8a108f233f58478740c6818477c8eb30
+  main12 ::
+    Data.Attoparsec.Text.Internal.Parser Data.Text.Internal.Text
+  {- Unfolding: (PatternCompiler.fill Main.main6 Main.main13) -}
+2b80061c9314f5e28292e2b44bf0b444
+  main13 :: [PatternCompiler.Token]
+  {- Unfolding: (PatternCompiler.compile_go Main.main14) -}
+ef11af3900e940ce5fecbd9cf75c6c6e
+  main14 :: [[GHC.Types.Char]]
+  {- Unfolding: (PatternCompiler.compile1 Main.main15) -}
+b06a524c1f136b7cd86e7d73b7181512
+  main15 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "not * (,) but still *"#) -}
+85c910501e3c921fd55858c2ee3211fa
+  main16 ::
+    Data.Attoparsec.Text.Internal.Parser Data.Text.Internal.Text
+  {- Unfolding: (PatternCompiler.fill Main.main6 Main.main17) -}
+3304cb954fdcdf4e59e749c52f05e7c8
+  main17 :: [PatternCompiler.Token]
+  {- Unfolding: (PatternCompiler.compile_go Main.main18) -}
+dc58a6f2bdb91a4ed398b823d66165f3
+  main18 :: [[GHC.Types.Char]]
+  {- Unfolding: (PatternCompiler.compile1 Main.main19) -}
+b5d07f107a0b50ac3afa156356392151
+  main19 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "not * (,) still *"#) -}
+74bb4883d9ae5afe3fa10ddc177912e2
   main2 ::
+    Data.Attoparsec.Text.Internal.Parser Data.Text.Internal.Text
+  {- Unfolding: (PatternCompiler.fill Main.main6 Main.main3) -}
+4401af7c7c2085f43524559171d9f6e8
+  main20 ::
+    Data.Attoparsec.Text.Internal.Parser Data.Text.Internal.Text
+  {- Unfolding: (PatternCompiler.fill Main.main6 Main.main21) -}
+65a8242821b4295c7beed8fdf2ddd50b
+  main21 :: [PatternCompiler.Token]
+  {- Unfolding: (PatternCompiler.compile_go Main.main22) -}
+2ac11e20c7f3ce7652932cc5329f97ae
+  main22 :: [[GHC.Types.Char]]
+  {- Unfolding: (PatternCompiler.compile1 Main.main23) -}
+4cd6e88d148cfd49d59d9e3a7bd1e65a
+  main23 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "not * (,) but just *"#) -}
+3f47b397756d558183da7acf0d8ee154
+  main24 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
   {- Arity: 1,
      Unfolding: (GHC.TopHandler.runMainIO1
                    @ ()
                    Main.main1 `cast` (Sym (GHC.Types.NTCo:IO[0] <()>_R))) -}
+65a208a3d369fd82a6fe09ccc06a7332
+  main3 :: [PatternCompiler.Token]
+  {- Unfolding: (PatternCompiler.compile_go Main.main4) -}
+deac1b562c32fb8b962fc791f9482796
+  main4 :: [[GHC.Types.Char]]
+  {- Unfolding: (PatternCompiler.compile1 Main.main5) -}
+9e691b8b6f50f890402f8958a99eaed5
+  main5 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "not * (,) though still *"#) -}
+bc856de286ec9a8608d867f811e51ef4
+  main6 :: [PatternCompiler.PInput]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ PatternCompiler.PInput
+                   PatternCompiler.Star
+                   Main.main7) -}
+28d39821650e3d9f8ddf8680dd71b869
+  main7 :: [PatternCompiler.PInput]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ PatternCompiler.PInput
+                   PatternCompiler.Star
+                   (GHC.Types.[] @ PatternCompiler.PInput)) -}
+1c6024e1f71378b84569697e7c4c7f1f
+  main8 ::
+    Data.Attoparsec.Text.Internal.Parser Data.Text.Internal.Text
+  {- Unfolding: (PatternCompiler.fill Main.main6 Main.main9) -}
+b6a00a9485a39649a87b77e7bc94ec7d
+  main9 :: [PatternCompiler.Token]
+  {- Unfolding: (PatternCompiler.compile_go Main.main10) -}
+4482dc2061c75f493ca93ad9b9d24d9a
+  not_star_l :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "/Users/lingxiao/Documents/research/data/ngrams/raw-not/not-star.txt"#) -}
+9ce2c9161f6e063aba885c024306bbec
+  not_star_r :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "/nlp/data/xiao/ngrams/raw-not/not-star.txt"#) -}
 380d901dceffa39cc1553000a9fed293
   root_local :: Core.DirectoryPath
   {- Unfolding: (GHC.CString.unpackCString#
