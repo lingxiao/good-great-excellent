@@ -30,8 +30,6 @@ import qualified System.IO as S
 
 
 import Data.Conduit 
-import Data.Time.Clock
-import Data.List.Split
 import Data.List.Split (splitOn)
 
 import Conduits

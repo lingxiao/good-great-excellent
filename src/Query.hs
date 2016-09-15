@@ -12,9 +12,10 @@
 
 module Query (
     query
+  , query'
   ) where
 
-import Control.Monad.Trans
+
 import Control.Monad.State
 
 import Data.Conduit 
@@ -34,6 +35,11 @@ import Core
 
 query :: Op m => FilePath -> Parser Text -> m Output
 query f p = eval $ openFile' f $$ queryFile p
+
+
+
+query' :: FileOpS m [QueryResult] => FilePath -> Parser Text -> m Integer
+query' f p = openFile' f $$ queryFile p
 
 
 openFile' :: FileOpS m s => FilePath -> Source m QueryResult

@@ -15,17 +15,10 @@ module Conduits where
 import Prelude hiding           (readFile, writeFile , 
                                  lines               )
 import System.FilePath
-import System.Directory
-
 import Control.Monad.State  
-import Control.Monad.Except    
-import Control.Monad.Trans.Resource
-import Control.Monad.IO.Class   (MonadIO, liftIO     )
 import Control.Exception.Base   (SomeException       )
-
 import Codec.Compression.GZip   (decompress          )
 
-import Data.Conduit 
 import Data.Conduit.Text 
 import Conduit hiding           (sourceDirectory     ,
                                  sourceFile          )

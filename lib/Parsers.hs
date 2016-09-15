@@ -118,12 +118,12 @@ star = output "*" <$> anyWord
 -- * parse zero or more spaces and ouput one space
 spaces :: Parser Text
 spaces = output " " <$> many' space
-      <?> " "
+      <?> ""
 
 -- * parse one or more spaces and ouput one space
 spaces1 :: Parser Text
 spaces1 = output " " <$> many1' space
-      <?> " "
+      <?> ""
 
 -- * look ahead all nonAlpha symbols and end in space or eoi
 eow :: Parser Text

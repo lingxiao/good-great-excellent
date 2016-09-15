@@ -23,12 +23,9 @@ module Score (
 
 import System.FilePath.Posix
 
-import Control.Monad.State  
-import Control.Monad.Trans.Reader
-
 import Data.Conduit 
 import Data.Text (Text, unpack, pack)
-import Data.Attoparsec.Text hiding (count)
+
 
 
 import Lib
@@ -41,6 +38,9 @@ import Query
 ------------------------------------------------------------------------------}
 
 
+
+
+
 {-----------------------------------------------------------------------------
   File System Utils
 ------------------------------------------------------------------------------}
@@ -51,7 +51,6 @@ import Query
 --* Note  : This is *tightly coupled* to naming conventions of this project
 pathToData :: DirectoryPath -> Parser Name -> FilePath
 pathToData d p = ""
-
 
 
 {-----------------------------------------------------------------------------

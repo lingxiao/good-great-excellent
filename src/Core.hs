@@ -48,8 +48,6 @@ data Config = Con {
 } deriving (Show, Eq)
 
 
-baser = "/home1/l/lingxiao/xiao/good-great-excellent/"
-
 -- * @USE: config "path/to/project-name" ["path/to/data.txt"] 
 -- *       given path to project and path to data,
 -- *       output Config 

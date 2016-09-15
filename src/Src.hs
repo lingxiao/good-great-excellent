@@ -10,9 +10,9 @@
  
 
 module Src (
-	  module Core
-	, module Query
-	, module PreprocessData
+      module Core
+    , module Query
+    , module PreprocessData
 ) where
 
 import Core
