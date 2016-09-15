@@ -10,9 +10,7 @@
  
 module Subroutines (
 
-    filter_weakStrong
-  , filter_strongWeak
-
+    filterPatterns
   , filterPattern
 
   ) where
@@ -31,23 +29,8 @@ import Lib
 
 
 {-----------------------------------------------------------------------------
-  Query data
-------------------------------------------------------------------------------}
-
-
-                      
-
-{-----------------------------------------------------------------------------
   preprocesss data
 ------------------------------------------------------------------------------}
-
-filter_weakStrong :: Config -> IO [(FilePath, String)]
-filter_weakStrong con = filterPatterns (inputs con) $ weakStrong con
-
-
-filter_strongWeak :: Config -> IO [(FilePath, String)]
-filter_strongWeak con = filterPatterns (inputs con) $ strongWeak con
-
 
 -- * @Use : main_filterByPattern ["path/to/data.txt"] "path/to/patterns.txt"
 -- *        filters each data.txt by corresponding pattern found in patter.txt and

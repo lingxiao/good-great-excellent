@@ -12,7 +12,8 @@
  
 module PreprocessData (
 
-  filterByPattern
+    filterByPattern
+  , filterByPattern'
 
   ) where
 
@@ -31,7 +32,7 @@ import Core
 
 
 {-----------------------------------------------------------------------------
-  Code
+  Filter grepped files
 ------------------------------------------------------------------------------}
 
 
@@ -39,9 +40,8 @@ import Core
 -- * in file recognized by `p` and save to output file in `outpath`
 filterByPattern :: FilePath -> FilePath -> Parser Text ->  IO ()
 filterByPattern inpath outpath p  =  run 
-                                  $  sourceFileE inpath 
+                                  $  sourceFile inpath 
                                   $= toInput
-                                  $= logi
                                   $= C.filter (\(t,_,_) -> p <**? preprocess t)
                                   $= fromInput
                                   $$ sinkFile outpath
@@ -50,10 +50,10 @@ filterByPattern inpath outpath p  =  run
 toInput :: FileOp m => Conduit B.ByteString m Input
 toInput = linesOn "\n" 
      $= C.map head
-     $= C.map    (splitOn $ pack ":") 
-     $= C.filter ((==2) . length)
+     $= C.map    (splitOn $ pack ":"                   ) 
+     $= C.filter ((==2) . length                       )
      $= C.map    (\[a,b]   -> (a:splitOn (pack "\t") b))
-     $= C.filter ((==3) . length)
+     $= C.filter ((==3) . length                       )
      $= C.map    (\[s,t,n] -> (t, n, s)                )
 
 
@@ -65,5 +65,32 @@ fromInput = C.map (\(a,b,c) -> encodeUtf8
                                       , pack "\t"
                                       , c
                                       , pack "\n"])
+
+{-----------------------------------------------------------------------------
+  Filter raw ngram files
+------------------------------------------------------------------------------}
+
+
+filterByPattern' :: FilePath -> FilePath -> Parser Text -> IO ()
+filterByPattern' inpath outpath p =  run 
+                                  $  sourceFile inpath
+                                  $= toInput'
+                                  $= C.filter (\(t,_,_) -> p <**? preprocess t)
+                                  $= fromInput
+                                  $$ sinkFile outpath
+
+
+toInput' :: FileOp m => Conduit B.ByteString m Input
+toInput' = linesOn "\n"
+       $= C.map head
+       $= C.map    (splitOn $ pack "\t"     )
+       $= C.filter ((==2) . length          )
+       $= C.map    (\[t,n] -> (t,n, pack ""))
+
+
+
+
+
+
 
 

@@ -37,7 +37,6 @@ query :: Op m => FilePath -> Parser Text -> m Output
 query f p = eval $ openFile' f $$ queryFile p
 
 
-
 query' :: FileOpS m [QueryResult] => FilePath -> Parser Text -> m Integer
 query' f p = openFile' f $$ queryFile p
 
