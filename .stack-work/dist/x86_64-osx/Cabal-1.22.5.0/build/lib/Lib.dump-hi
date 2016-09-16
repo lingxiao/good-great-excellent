@@ -1,11 +1,11 @@
 
 ==================== FINAL INTERFACE ====================
-2016-09-15 14:05:06.501304 UTC
+2016-09-16 14:56:21.266765 UTC
 
-interface goodg_H90TC5DRfXfJF7pQf276VX:Lib 7103
-  interface hash: aad32fdcc760559d26a18e3c32d4e5ef
-  ABI hash: 5d0ab4bfcd7e6dab686fbf696f2f2861
-  export-list hash: c8cdb1bce67e6715745dc545da6d51db
+interface goodg_GBdY7oRp6g78bKpCLQAiTZ:Lib 7103
+  interface hash: 280fc6473324cf42a29a01c430b6a6f4
+  ABI hash: 50ec29f35ae47a825f532afd165d57a0
+  export-list hash: 468c505f6f842690a3c3fcd5f6398775
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: 34a9291488a30a90b4883f399a0708a5
   sig of: Nothing
@@ -28,11 +28,13 @@ exports:
   Parsers.<**
   Parsers.<**?
   Parsers.<+>
+  Parsers.<||>
   Parsers.anyWord
-  Parsers.comma
+  Parsers.echo
   Parsers.eow
-  Parsers.name
+  Parsers.maybeWord
   Parsers.notAlphaDigitSpace
+  Parsers.opt
   Parsers.pzero
   Parsers.spaces
   Parsers.spaces1
@@ -181,69 +183,71 @@ family instance modules: adjunctions-4.3@adjun_HUA1si0oygHIohE6wWvtj8:Data.Funct
                          vector-0.11.0.0@vecto_LmZ3LQW4ivu8MsQuVgukln:Data.Vector.Unboxed.Base
                          zlib-0.6.1.1@zlib_7LjT7TSHX8U3VTy3t378Vu:Codec.Compression.Zlib.Stream
 import  -/  base-4.8.2.0:Prelude 694dcaf039efe62df1c44834e2dbd2fb
-import  -/  Conduits 43d61fe278fbf366b9ba3cb769bf0bb1
-  exports: 9dc2153e0b933c23ec81bc66d9c7b5d0
-  FileOp fed9cd714d02dd39555ee72261928103
-  FileOpS f6b20c4b7ce01a8bbc5d99cec19753b5
-  Op 6698a9e6cb176c3fb7e19794acc969af
-  banner aa5db7b6fb14d91ec508d3dca8616c8c
-  cap 2994f3076daca3110c76e4c52b2f4f9b
-  eval 51b17b8828f80e0bb60a7ccce39911f4
-  linesOn 72c5e8ce4c3e9131f06809c8692e17d0
-  logNum 371510fc802c800db8430fd51239fe62
-  logi abee8c67e644c6cae130101a7c6b03d5
-  logm 812f15325d909710322d8a4145c87346
-  openFile 9b311d4786b42ef64db5ec531951426e
-  run 831ba6a06cb320409c707bbd730d5b75
-  shardFile fec84a430836cb41cf4536295dab02e4
-  sourceDirectories a3b895da81415bbc0c28c92657c10aaa
-  sourceFileE ace9a2e6714d7a4667e827079f52b847
-  untarSaveAs c5d9d5d4da2ce265decc503b97588923
-import  -/  Parsers e7bd8945c4f8a3b538efda4db4d8dd4d
-  exports: 4a540c52c3005e3b3690c46ed7f531ad
-  <** b7192b73363311a9a3f4c1607869a585
-  <**? 8cbaf7ac78788f1a6f0ff1137793e848
-  <+> b9b1cc9b27a84fc90782a178e2c3b56f
-  anyWord cd3228c96e709955b7e37ae6054de56a
-  comma 217b940818d6e8b1e52193ee865aea67
-  eow c7674577f81ca0bb76032cd7032c685f
-  name 054c621d6547cbabbca296155b7a38c0
-  notAlphaDigitSpace fee1c9dd0d7a6010e958937eccbaf03d
-  pzero 472e9e8b64b37516b5cd0fccfe05c7ba
-  spaces c7f89287db05d3e75994922837f7751c
-  spaces1 11fd60e148c036185229386553c82c17
-  star 6f72b99ddf34959138c8a60b7d18d700
-  word d4ff943522dfe0068e4281564c8757c4
-import  -/  PatternCompiler 3fde339644d830cda0c67bd5fb92a410
-  exports: 8fd283ffdc7122a7e36d8052afae7c9b
-  Comma ad31aae2a666f7c4c3cafed190232d35
-  Hole 8cf08013e1153ff3c473dd65e1da10c9
-  OptComma bdd9dcb42aa6fa5fb62e16df5d3bf0da
-  Or 71c7cacd2ec334d319fd683e1e57900e
-  PInput 4330ef5c7b7bc840be3a297bb42f25e7
-  Pattern 0c373adce7996f31e7e0da92c57bf5f3
-  S e19f2364e3c3324559ba7a206aa79e2d
-  Slash e2fb76b8442a8c204e0cf58550dd3b8c
-  Star a3e902f6ab5ae0c03f209eae0d28421c
-  Token d9607ddab297c4477d5f7bf77ab3daa2
-  Word 8c3c858970c1f2c5cb2118a5dbde716e
-  compile 64dc7eada96491f880615ba708c1ab73
-  compile' 10492d23814c9a0d195ba5a192d6aed5
-  token ef692ffd12014b818bc636b7a4e85960
-  tokenizer 3b2f21b9f928d6d8c9b281e2b27281df
-import  -/  Preprocess 9d1bee67f94fa729ad25a09793fbbd5f
-  exports: 7d121c20649d27451f97f230db118a63
-  foldStrip f1f5fc9ddc1ee56287efa38675cc998f
-  preprocess 538cf8898f7c8e09a78b9b9114e1b673
-import  -/  Utils 00667f1c63aee6c09e7b4aa50eca3d90
-  exports: e609de9b1bc175f68470f950eff5ec5a
-  concatFiles beab51113706b0526057da5f2a3d1fcb
-  cutFiles 5ef52c09e5c8e4fc75d10b08b2e68e53
-  makeDirUnder 77097f522e2ba46510b8b191c53f56a4
-  shardFiles a785ebdc34334eae158a269397fe6d7d
-  sourceDirs bd6d669dae818c05724273988a56455f
-  takeN 189062cc5a0bd61d9ba874f50e49d39f
-  untarFiles 03f9fac942e1cd5245d4b1f383f11b9b
+import  -/  Conduits a34ab8c815cf406c89b3a13cc3acb644
+  exports: 9e164791da8aeaf36873e7bbf2c4a1c0
+  FileOp 573551f120aa73bf85ab2cad211094a5
+  FileOpS bcf3deda1f284066313bdce1dde46855
+  Op 30a683c13ee7242c25b4b143a1d2c00b
+  banner 533a92376b9ad27f56489b335ee8d5e7
+  cap 8d37e6712d71c93a00e245664f184cbb
+  eval af9eb69c582c1bdd7d5e113ab9722db4
+  linesOn e5a2bce5548bb69d0b13fd72e1127fa7
+  logNum 1c981edf45fd8909d02756d94ca41603
+  logi 2cdc86eb31e5c4d35e71449bfb4b4859
+  logm bf92492907280b887ce88f0965fb5726
+  openFile af4f6ccc95829178d6b2906ee71878de
+  run a5d5469fd14a4ae08237d37feefc8f9e
+  shardFile cd2ea66ebf0932d489c7f5bd0f40f3ec
+  sourceDirectories e717965d85b4abcfecfc9f869ff104fe
+  sourceFileE 47ad61b5ce2ad2c858a6741b12afd91b
+  untarSaveAs 3779d01cbee2d331dd8243be2ef23655
+import  -/  Parsers dbb218d6d76f76a274d476b4b44d1829
+  exports: 9cd45d1a016eeef08ae56cd2cfa3f996
+  <** 29a4afd8d7742d36a3008fb56f719d55
+  <**? ba9c1190a942515c01c2839e3ed321d6
+  <+> d7b58228a5fafbbb2babed7de6bea16a
+  <||> dfe9174f5da6de86f517319b26b95665
+  anyWord 73dad187c23aef022e785a91a8c04cfe
+  echo ff2bd30b865b0731f4e28fa642c7cc30
+  eow c7b6401e964c3a1d12e9674c5b3108aa
+  maybeWord 27e334140b0574317280beaed01fe06c
+  notAlphaDigitSpace a424e63962c285891da3e35cc2de4715
+  opt 77cbeff2083d80d912633cc3706c4acc
+  pzero 1fa49730df0844cd042701204a8a35ae
+  spaces d50f30b0613950e38cc2ffc316ebe5c5
+  spaces1 ca8143203ebc8b5ea12d4fe0cf348cae
+  star be38cddc2b78ca7424b8486f35c86b44
+  word 0b19afd031281b74a86aefbf082a9445
+import  -/  PatternCompiler dc21f43f3c96689e8bbb94cf71d9e47c
+  exports: 80bf44ba882faeba844efaae9c37af25
+  Comma 24e39e35e930886134e28d6e569fb2f0
+  Hole 7eca811f7547a85294e22b26822c7ea8
+  OptComma 96175fd95225c99e68666471256d0d34
+  Or d28843fc6601f40da8064bea4ecda5ba
+  PInput 25da6732b254fd74984395c8031d0714
+  Pattern 262de8f85aec148d056baba567017ad1
+  S 3807179631e278d2bcc2c79c2a2f0e79
+  Slash 874ccf736fb56b137496a50eeb03adc3
+  Star f7c2f7817aefc43688e229d757935b09
+  Token 03d28679333b9c3c84b10a4ab49cfce5
+  Word 7a2c4c014e034c6cca04406457624a66
+  compile 4e4301f5951b11a3621df136745bf5d8
+  compile' c19702aa1c0bf0b2c481ab37e73716f9
+  token aceb9d20f475a10bfa467f2b43f1db70
+  tokenizer 53f238f4857bdb487ca958c525bd8e53
+import  -/  Preprocess 75bac18bf26e50f63ddd6413db7ec967
+  exports: 70ff8dc128ad94c4b930243f551d242c
+  foldStrip de7f654aa0219487ba224b060fce7a0e
+  preprocess 2ef3914b2579b360a7b6fcb3faa2504d
+import  -/  Utils 0ae36cbd48676c6975f7c15590b827bf
+  exports: 29ca35ef684ec3ce92ff43189ecd7fe3
+  concatFiles 4ef22718c10b67618b5b465d489b841f
+  cutFiles 2b2f7c1c252843b76153ee3a75a4c269
+  makeDirUnder 1d05e46859b5242d4ffe773b1ea7e3fd
+  shardFiles eef00ff9f0d160298a663ddf7ced3554
+  sourceDirs c5cc458cc679a79b769f7e8b8a9f36e0
+  takeN 830f6ef7d0d49899f70014840a44baac
+  untarFiles af531883634d0771f6ec0fb61f635637
 vectorised variables:
 vectorised tycons:
 vectorised reused tycons:
