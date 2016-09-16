@@ -1,8 +1,29 @@
 * (,) but not *
+* (,) but not (a|an|the) *
+
 * (,) if not *
+* (,) if not (a|an|the) *
+
 * (,) although not *
+* (,) although not (a|an|the) *
+
 * (,) though not *
-* (,) (and/or) even *
-* (,) (and/or) almost *
-not only * but *
-not just * but *
+* (,) though not (a|an|the) *
+
+* (,) even *
+* (,) even (a|an|the) *
+* (,) (and|or) even *
+* (,) (and|or) even (a|an|the) *
+
+* (,) almost *
+* (,) almost (a|an|the) * 
+
+* (,) (and|or) almost *
+* (,) (and|or) almost (a|an|the) *
+
+not only * (,) but *
+not just * (,) but *
+
+
+
+

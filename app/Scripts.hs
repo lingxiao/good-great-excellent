@@ -1,14 +1,14 @@
 -----------------------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------------
 -- | 
--- | Module  : A collection of scripts to be run in main
+-- | Module  : A collection of misc scripts to be run in main w/ no gaurantee that they will work
 -- | Author  : Xiao Ling
 -- | Date    : 9/13/2016
 -- |             
 ---------------------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------------
  
-module Subroutines where
+module Scripts where
 
 
 import System.IO
@@ -34,7 +34,7 @@ filterPattern inp p = do
   let root = takeDirectory inp ++ "/filtered/"
   createDirectoryIfMissing False root
   let outp =  root
-          ++ name p
+          ++ echo p
           ++ ".txt"
 
   is <- lines <$> readFile inp
@@ -47,8 +47,8 @@ filterPattern inp p = do
 main_filter_strong_weak :: DirectoryPath -> [Parser Text] -> IO ()
 main_filter_strong_weak root p_sw = do
     createDirectoryIfMissing False $ root ++ "out"
-    mapM (\p -> filterByPattern (root ++ name p ++ ".txt")
-                                (root ++ "out/" ++ name p ++ ".txt")
+    mapM (\p -> filterByPattern (root ++ echo p ++ ".txt")
+                                (root ++ "out/" ++ echo p ++ ".txt")
                                 p) p_sw
 
     return ()
@@ -75,7 +75,7 @@ filterPatterns dataPath patterns = do
   let ps  = (\f -> compile f Star Star) <$> fs
   let fps = zip dataPath ps
   uncurry filterPattern `mapM` fps
-  return $ (\(f,p) -> (f, name p)) <$> fps
+  return $ (\(f,p) -> (f, echo p)) <$> fps
 
 -}
 

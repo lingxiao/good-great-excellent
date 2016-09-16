@@ -1,0 +1,7 @@
+1. what constitutes to a pattern?
+        * (,) {and|or} almost (a|an|the) * 
+     vs 
+        * (,) {though|although} not (a|an|the) *
+
+
+2. how sensitive is ranking w.r.t. delta in pattern catagorization?

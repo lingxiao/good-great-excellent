@@ -19,7 +19,7 @@ import Data.Text hiding (head, replicate, filter, zip)
 
 import Src
 import Lib
-import Subroutines
+import Scripts
 
 
 
@@ -34,7 +34,6 @@ p4 = compile "not * (,) but still *"
 p5 = compile "not * (,) although still *" 
 p6 = compile "not * (,) though still *"   
 p7 = compile "* (,) or very *" 
-
 
 p  = compile "* (,) but not *" Star Star
 

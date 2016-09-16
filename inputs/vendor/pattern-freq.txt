@@ -1,6 +1,8 @@
 totalCnt_weakStrong --> 4.15502394E8
 totalCnt_strongWeak --> 3260968.0
+
 indivCnts_weakStrong:
+
 <*> almost a <*> --> 1458491.0
 <*> , almost the <*> --> 7673.0
 <*> though not an <*> --> 5283.0
@@ -59,7 +61,11 @@ not only <*> but <*> --> 395335.0
 <*> if not a <*> --> 149106.0
 <*> and almost <*> --> 921646.0
 <*> although not a <*> --> 53334.0
+
+
 indivCnts_strongWeak:
+
+
 not the <*> still <*> --> 243.0
 not <*> but still <*> --> 7947.0
 not the <*> just <*> --> 10150.0

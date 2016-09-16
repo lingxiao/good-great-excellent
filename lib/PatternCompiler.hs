@@ -22,7 +22,7 @@ module PatternCompiler (
   , tokenizer
 
   , (<**)
-  , name
+  , echo
 
   ) where
 
@@ -35,8 +35,51 @@ import Parsers
 
 {-----------------------------------------------------------------------------
     Tokenization and Parsing
+    
+    * (,) and|or even (a|an) *
+
+    optional comma, either "and" or "or", even, optional "a" "an" or "the"
+
+    Tok  = T String | Star
+    
+    lang = Tok
+         | Opt lang
+         | Or  lang lang
+         | Seq lang lang
+
+    expr = (a) *
+
 ------------------------------------------------------------------------------}
 
+
+p = opt (word "a") <+> star
+q = star <+> opt (word "a")
+
+
+
+{-
+-- * this example shows that what we want to say is expressible
+-- * in the language of attoparsec parsers
+-- * BUTUBUT:: fooo and  even more bar also passes!! this is wrong
+--p :: Parser Text
+--p =     star 
+--    <+> maybeWord "," 
+--    <+> (word "and" <||> word "or")
+--    <+> word "even" 
+--    <+> (opt $ word "a" <||> word "an")  -- * permit anything
+--    <+> star
+
+--q :: Parser Text
+--q =     star 
+--    <+> (opt . word $ ",") 
+--    <+> (word "and" <||> word "or")
+--    <+> word "even" 
+--    <+> (opt $ word "a" <||> word "an")  -- * permit anything
+    --<+> word "bar"
+-}
+
+
+-- * TODO : write actual regular expression stuff
 data Token = Word String 
            | Hole 
            | Slash
@@ -89,7 +132,7 @@ token :: String -> Token
 token "*"    = Hole
 token ","    = Comma
 token "(,)"  = OptComma
-token xs     = case splitOn "/" xs of
+token xs     = case splitOn "|" xs of
   y:ys  -> Word (stripParens y) `catOr` ys
   _     -> Word $ stripParens xs
 
@@ -127,7 +170,7 @@ toP Hole       = star
 toP Slash      = pzero
 toP OptComma   = comma
 toP Comma      = word ","
-toP (Or t1 t2) = toP t1 <|> toP t2
+toP (Or t1 t2) = toP t1 <||> toP t2
 
 
 {-----------------------------------------------------------------------------

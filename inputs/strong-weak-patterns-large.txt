@@ -1,0 +1,21 @@
+not * (,) just *
+not (a|an|the) * (,) just *
+not * (,) just (a|an|the) * 
+not (a|an|the) * (,) just (a|an|the) * 
+
+not * but just *
+
+
+not * (,) still *
+not (a|an|the) * (,) still *
+not * (,) still (a|an|the) * 
+not (a|an|the) * (,) still (a|an|the) * 
+
+not (,) * but still *
+
+not * (,) although still *
+
+not * (,) though still * 
+
+* (,) or very *
+

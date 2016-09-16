@@ -15,11 +15,15 @@ module Parsers (
     (<**)
   , (<**?)
   , (<+>)
+  , (<||>)
   , pzero
-  , name
+  , opt
+
+  , echo
 
   , word
   , anyWord
+  , maybeWord
   , spaces
   , spaces1
   , eow
@@ -39,7 +43,7 @@ import Data.Attoparsec.Combinator
 import Data.Text hiding (head, foldr, takeWhile)
 
 {-----------------------------------------------------------------------------
-   Run parser, name parser, and parser algebra
+   Parser combinators
 ------------------------------------------------------------------------------}
 
 -- * identity parser under (<+>)
@@ -48,7 +52,7 @@ pzero =  (return . pack $ "")
      <?> "pzero"
 
 -- * Parser combination, combines two parsers `p` and `q`
--- * by concating their outputs and joining names with "_"
+-- * by concating their outputs and joining echos with "_"
 -- * Note parsers form non-associative, commutiative algebra 
 -- * under (<+>) where pzero is identity
 -- * note mzero and mempty are *NOT* identities, 
@@ -58,19 +62,37 @@ infixr 9 <+>
 p <+> q = (\u v -> if unpack v == "" then u 
                    else concat [u, pack " ", v])
       <$> p <*> q
-      <?> p `addName` q
+      <?> p `addEcho` q
 
-addName :: Parser Text -> Parser Text -> String
-addName p q = case (name p, name q) of
+-- * Parser or with appropriate echos
+infixr 8 <||>
+(<||>) :: Parser Text -> Parser Text -> Parser Text
+p <||> q = p <|> q
+       <?> (echo p ++ "|" ++ echo q)
+
+
+-- * make parser p optional
+opt :: Parser Text -> Parser Text
+opt p = let xs = "(" ++ echo p ++ ")"
+        in (output xs <$> (p <|> spaces1))
+        <?> xs 
+
+addEcho :: Parser Text -> Parser Text -> String
+addEcho p q = case (echo p, echo q) of
   ("", "") -> ""
-  ("", _ ) -> name q
-  (_, "" ) -> name p
-  (_, _  ) -> name p ++ "-" ++ name q
+  ("", _ ) -> echo q
+  (_, "" ) -> echo p
+  (_, _  ) -> echo p ++ " " ++ echo q
 
 
-name :: Show a => Parser a -> String
-name p = case (p >> mzero) <** empty of
+-- * Problem: under <|>, only the first echo is taken
+echo :: Show a => Parser a -> String
+echo p = case (p >> mzero) <** empty of
   Left n  -> n
+
+{-----------------------------------------------------------------------------
+   Run parser
+------------------------------------------------------------------------------}
 
 -- * parse text `t` using parser `p`
 infixr 8 <**
@@ -105,10 +127,18 @@ anyWord :: Parser Text
 anyWord = spaces *> takeWhile1 isAlpha <* eow
       <?> "*"
 
--- * next char could either be a comma or 
--- * one or more spacesW
+-- * next string of char is either word `w` or 1+ spaces
+-- * TODO: this is poorly thought out
+-- *       will match any word coming up next so
+-- *        long as word preceded by space
+maybeWord :: String -> Parser Text
+maybeWord = opt . word
+
+-- * next char could either be a comma or 1+ spaces
 comma :: Parser Text
-comma = output "(,)" <$> (word "," <|> spaces1)
+comma = opt . word $ ","
+  -- (output "(,)" <$> (word "," <|> spaces1)) 
+     -- <?> "(,)"
 
 -- * parses any word and outputs "*"
 star :: Parser Text
