@@ -19,10 +19,12 @@ module PatternCompiler (
   , compile
   , compile'
   , token
-  , tokenize
+  , tokenizer
 
   , (<**)
   , echo
+  , star
+  , comma
 
   ) where
 
@@ -52,10 +54,35 @@ import Parsers
 ------------------------------------------------------------------------------}
 
 
+{-
+-- * this example shows that what we want to say is expressible
+-- * in the language of attoparsec parsers
+-- * BUTUBUT:: fooo and  even more bar also passes!! this is wrong
+--p :: Parser Text
+--p =     star 
+--    <+> maybeWord "," 
+--    <+> (word "and" <||> word "or")
+--    <+> word "even" 
+--    <+> (opt $ word "a" <||> word "an")  -- * permit anything
+--    <+> star
+
+--q :: Parser Text
+--q =     star 
+--    <+> (opt . word $ ",") 
+--    <+> (word "and" <||> word "or")
+--    <+> word "even" 
+--    <+> (opt $ word "a" <||> word "an")  -- * permit anything
+    --<+> word "bar"
+-}
+
+
+-- * TODO : write actual regular expression stuff
 data Token = Word String 
            | Hole 
-           | Opt Token
-           | Or  Token Token
+           | Slash
+           | Comma
+           | OptComma
+           | Or Token Token
            deriving (Eq, Show)
 
 -- * Input into Pattern
@@ -77,7 +104,7 @@ type Pattern = PInput -> PInput -> Parser Text
 
 -- * given an expression, output pattern
 compile :: String -> Pattern
-compile = compiler . tokenize
+compile = compiler . tokenizer
 
 -- * compile a string into a parser, the pattern described by the string 
 -- * does not have any `Hole`s in it
@@ -90,22 +117,53 @@ compile' xs = compile xs Nil Nil
     Tokenizer
 ------------------------------------------------------------------------------}
 
+xs = "* (,) although|though not (a|an) *"
+ts = concat . recoverComma <$> splitOn " " xs
+
+tok ys = concat . recoverComma <$> splitOn " " ys
+
+
+xs1 = "foo"
+xs2 = "*"
+xs3 = "(a)"
+xs4 = "a|b"
+xs5 = "(a|b)"
+xs6 = "* foo"
+xs7 = "foo *"
+xs8 = "(,) foo"
+xs9 = "foo (,)"
+xs10 = "foo (,) bar|baz"
+xs11 = "foo (,) bar|baz *"
+xs12 = "foo (,) bar|baz (a|an|the)*"
+
+
+
+
+
+-- * todo: write a real parser that parses strings and send to tokens
+
+
 -- * maps a string to some set of tokens
-tokenize :: String -> [Token]
-tokenize = fmap token . concat . fmap recoverComma . splitOn " "
+tokenizer :: String -> [Token]
+tokenizer = fmap token . concat . fmap recoverComma . splitOn " "
+
+
+-- * todo: write a 
 
 -- * `token`ize a string
 -- * note if `token` sees a string `xs` it does not recognize,
 -- * it just outputs a `Word xs`
+-- * TODO: quick and dirty here, consider doing something real
 token :: String -> Token
-token "*" = Hole
-token xs  | inParens xs = Opt (token $ stripParens xs)
-          | otherwise   = case splitOn "|" xs of 
-              y:ys -> (Word y) `catOr` ys
-              _    -> Word xs
+token "*"    = Hole
+token ","    = Comma
+token "(,)"  = OptComma
+token xs     = case splitOn "|" xs of
+  y:ys  -> Word (stripParens y) `catOr` ys
+  _     -> Word $ stripParens xs
 
 catOr :: Token -> [String] -> Token
-catOr t = foldl (\ts x -> ts `Or` Word x) t
+catOr t = foldr (\x ts -> ts `Or` Word (stripParens x)) t
 
 {-----------------------------------------------------------------------------
     Compiler
@@ -123,9 +181,9 @@ compiler ts = \u v -> [u,v] `fill` ts
 -- * `Hole` tokens are mapped to parser `star`
 fill :: [PInput] -> [Token] -> Parser Text
 fill (i:is) (Hole:ts) = case i of
-  S w   -> word w  <+> fill is ts 
-  Star  -> anyWord <+> fill is ts
-  Nil   -> pzero   <+> fill is ts
+  S w   -> word w <+> fill is ts 
+  Star  -> star   <+> fill is ts
+  Nil   -> pzero  <+> fill is ts
 fill _       []       = pzero  
 fill is      (t:ts)   = toP t <+> fill is ts
 
@@ -133,10 +191,25 @@ fill is      (t:ts)   = toP t <+> fill is ts
 -- * convert token to parser, note `Hole` is sent to `star` which accept
 -- * any string of alphabetical symbols
 toP :: Token -> Parser Text
-toP Hole       = anyWord
-toP (Word xs ) = word xs
-toP (Opt ts  ) = opt $ toP ts
+toP (Word xs)  = word xs
+toP Hole       = star
+toP Slash      = pzero
+toP OptComma   = opt $ word ","
+toP Comma      = word ","
 toP (Or t1 t2) = toP t1 <||> toP t2
+
+{-----------------------------------------------------------------------------
+    Distinguished parsers
+------------------------------------------------------------------------------}
+
+star :: Parser Text
+star = anyWord
+-- output "*" <$> anyWord
+
+
+comma :: Parser Text
+comma = opt . word $ ","
+
 
 
 {-----------------------------------------------------------------------------
@@ -145,22 +218,15 @@ toP (Or t1 t2) = toP t1 <||> toP t2
 
 recoverComma :: String -> [String]
 recoverComma []                  = []
-recoverComma xs | xs == ","      = [","]
-                | last xs == ',' = [init xs, ","]
+recoverComma xs | last xs == ',' = [init xs, ","]
                 | otherwise      = [xs]
 
--- * check if string wrapped by parens
-inParens :: String -> Bool
-inParens []     = False
-inParens (_:[]) = False
-inParens (x:xs) | x == '(' && Prelude.last xs == ')' = True
-                | otherwise                          = False
-
--- * Given string of for "(...)", strip parens
+-- * aggressively remove all occurences of "(" and/or ")" in a string
 stripParens :: String -> String
-stripParens = reverse . tail . reverse . tail
-
-
+stripParens = foldr strip mempty
+    where strip c cs | c == '('   = cs
+                     | c == ')'   = cs
+                     | otherwise  = c:cs
 
 
 

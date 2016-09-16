@@ -27,12 +27,13 @@ main :: IO ()
 main = do
     runTestTT . TestList 
               $ [ ttoken
-                , ttokenizer
+                , ttokenize
                 , tcompile
                 , tcompile'
 
                 , tbutnot
                 , talmost
+                , talthoughNot
                 ]
     return ()
 
@@ -49,28 +50,42 @@ echo' = Left . echo
 ttoken :: Test
 ttoken = "token" 
        ~: TestList [ token "*"          ~?= Hole
-                   , token ","          ~?= Comma
-                   , token "(,)"        ~?= OptComma
+                   , token ","          ~?= Word ","
+                   , token "(,)"        ~?= Opt (Word ",")
                    , token "hello"      ~?= Word "hello"
-                   , token "(hello)"    ~?= Word "hello"
-                   , token "(and|or)"   ~?= Word "and" `Or` Word "or"
-                   , token "(or|or|or)" ~?= Word "or" `Or` Word "or" `Or` Word "or"
-                   , token "."          ~?= Word "."
+                   , token "(hello)"    ~?= Opt (Word "hello")
+                   , token "and|or"     ~?= Word "and" `Or` Word "or"
+                   , token "(and|or)"   ~?= Opt (Word "and" `Or` Word "or")
+                   , token "or|or|or"   ~?= Word "or" `Or` Word "or" `Or` Word "or"
+
                    ]
 
 
-ttokenizer :: Test
-ttokenizer = "tokenizer"
-         ~: TestList [ tokenizer "* (,) but not *" 
-                       ~?= [Hole,OptComma,Word "but",Word "not",Hole]
-                     , tokenizer "* (,) (and|or) even *"
-                       ~?= [Hole,OptComma,Or (Word "and") (Word "or"),Word "even",Hole]
-                     , tokenizer "not only * but *"
-                       ~?= [Word "not",Word "only",Hole,Word "but",Hole]
-                      , tokenizer "not * (,) just *"
-                       ~?= [Word "not", Hole, OptComma, Word "just", Hole]
-                      , tokenizer "not *, but still *"
-                       ~?= [Word "not",Hole,Comma,Word "but",Word "still",Hole]
+
+ttokenize :: Test
+ttokenize = "tokenize"
+         ~: TestList [ tokenize "* foo"   ~?= [Hole, Word "foo"]
+                     , tokenize "foo *"   ~?= [Word "foo", Hole]
+                     , tokenize ", foo"   ~?= [Word ",", Word "foo"]
+                     , tokenize "foo,"    ~?= [Word "foo", Word ","]
+                     , tokenize "(,) foo" ~?= [Opt (Word ","), Word "foo"]
+                     , tokenize "foo (,)" ~?= [Word "foo", Opt (Word ",")]
+
+                     , tokenize "foo (,) bar|baz" 
+                     ~?= [Word "foo", Opt (Word ","), Or (Word "bar") (Word "baz")]
+                     , tokenize "foo (,) bar|baz *" 
+                     ~?= [Word "foo",Opt (Word ","),Or (Word "bar") (Word "baz"),Hole]
+                     , tokenize "foo (,) bar|baz (a|an|the) *" 
+                     ~?= [Word "foo",Opt (Word ","),Or (Word "bar") (Word "baz"),Opt (Or (Or (Word "a") (Word "an")) (Word "the")),Hole]
+                     , tokenize "foo, bar|baz (a|an|the) *"  
+                     ~?= [Word "foo",Word ",",Or (Word "bar") (Word "baz"),Opt (Or (Or (Word "a") (Word "an")) (Word "the")),Hole]
+
+                     , tokenize "* (,) but not *" 
+                     ~?= [Hole,Opt (Word ","),Word "but",Word "not",Hole]
+                     , tokenize "* (,) (and|or) even *"
+                     ~?= [Hole,Opt (Word ","),Opt (Or (Word "and") (Word "or")),Word "even",Hole]
+                      , tokenize "not *, but still *"
+                     ~?= [Word "not",Hole,Word ",",Word "but",Word "still",Hole]
                      ]
 
 
@@ -91,8 +106,8 @@ tcompile =  let p1 = (compile "* or *"                ) (S "good") (S "great")
                      , p2 <** pack "or good or great" ~?= right "or good or great"
                      , p2 <** pack "or good bu great" ~?= echo' p2
 
-                     , p3 <** pack "good and great"   ~?= right "good and great"
-                     , p3 <** pack "good or great"    ~?= right "good or great"
+                     , p3 <** pack "good and great"   ~?= right "good (and|or) great"
+                     , p3 <** pack "good or great"    ~?= right "good (and|or) great"
                      , p3 <** pack "good bu great"    ~?= echo' p3
 
                      , p4 <** pack "foo or bar"       ~?= right "foo or bar"
@@ -118,6 +133,39 @@ tcompile' = let p = compile' "hello"
 {-----------------------------------------------------------------------------
    Compiling project specific parsers
 ------------------------------------------------------------------------------}
+
+
+talthoughNot :: Test
+talthoughNot = let p = compile "* (,) though|although not (a|an|the) *" Star Star
+            in let q = compile "* (,) though|although not (a|an|the) *" (S "good") (S "great")
+            in "* (,) though|although not (a|an|the) *  and @ good, great"
+
+            ~: TestList [ p <** pack "foo though not bar"       ~?= right "foo (,) though not (a|an|the) bar"
+                        , p <** pack "foo although not bar"     ~?= right "foo (,) although not (a|an|the) bar"
+
+                        , p <** pack "foo, though not bar"      ~?= right "foo (,) though not (a|an|the) bar"
+                        , p <** pack "foo, although not bar"    ~?= right "foo (,) although not (a|an|the) bar"
+
+                        , p <** pack "foo although not a bar"   ~?= right "foo (,) although not (a|an|the) bar"
+                        , p <** pack "foo although not an bar"  ~?= right "foo (,) although not (a|an|the) bar"
+                        , p <** pack "foo although not the bar" ~?= right "foo (,) although not (a|an|the) bar"
+
+                        , p <** pack "foo although not foo bar" ~?= right "foo (,) although not (a|an|the) foo"
+
+                        , p <** pack "foo but not foo bar"      ~?= echo' p
+
+                        , q <** pack "good though not great"       ~?= right "good (,) though not (a|an|the) great"
+                        , q <** pack "good although not great"     ~?= right "good (,) although not (a|an|the) great"
+                        , q <** pack "good although not a great"   ~?= right "good (,) although not (a|an|the) great"
+                        , q <** pack "good although not an great"  ~?= right "good (,) although not (a|an|the) great"
+                        , q <** pack "good although not the great" ~?= right "good (,) although not (a|an|the) great"
+
+                        -- * this case fails, which is good because it's what you want to not overcount
+                        , q <** pack "good although not not great" ~?=  echo' q
+
+
+
+                        ]
 
 tbutnot :: Test
 tbutnot =  let p1 = (compile "* (,) but not *") (S "good") (S "great")
