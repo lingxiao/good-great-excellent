@@ -23,12 +23,9 @@ module Parsers (
 
   , word
   , anyWord
-  , maybeWord
   , spaces
   , spaces1
   , eow
-  , comma
-  , star
   , notAlphaDigitSpace
 
   ) where
@@ -126,24 +123,6 @@ word w =  spaces *> string (pack w) <* eow
 anyWord :: Parser Text
 anyWord = spaces *> takeWhile1 isAlpha <* eow
       <?> "*"
-
--- * next string of char is either word `w` or 1+ spaces
--- * TODO: this is poorly thought out
--- *       will match any word coming up next so
--- *        long as word preceded by space
-maybeWord :: String -> Parser Text
-maybeWord = opt . word
-
--- * next char could either be a comma or 1+ spaces
-comma :: Parser Text
-comma = opt . word $ ","
-  -- (output "(,)" <$> (word "," <|> spaces1)) 
-     -- <?> "(,)"
-
--- * parses any word and outputs "*"
-star :: Parser Text
-star = output "*" <$> anyWord
-
 
 -- * parse zero or more spaces and ouput one space
 spaces :: Parser Text

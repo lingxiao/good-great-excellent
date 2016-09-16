@@ -23,6 +23,8 @@ module PatternCompiler (
 
   , (<**)
   , echo
+  , star
+  , comma
 
   ) where
 
@@ -50,11 +52,6 @@ import Parsers
     expr = (a) *
 
 ------------------------------------------------------------------------------}
-
-
-p = opt (word "a") <+> star
-q = star <+> opt (word "a")
-
 
 
 {-
@@ -120,9 +117,27 @@ compile' xs = compile xs Nil Nil
     Tokenizer
 ------------------------------------------------------------------------------}
 
+xs = "* (,) although|though not (a|an) *"
+ts = concat . recoverComma <$> splitOn " " xs
+
+
+
+-- * todo: write a real parser that parses strings and send to tokens
+
+tstar   = (const Star    ) <$> word "*"
+tmcomma = (const OptComma) <$> word "(,)"
+tcomma  = (const Comma   ) <$> word ","
+
+
+
+
+
 -- * maps a string to some set of tokens
 tokenizer :: String -> [Token]
 tokenizer = fmap token . concat . fmap recoverComma . splitOn " "
+
+
+-- * todo: write a 
 
 -- * `token`ize a string
 -- * note if `token` sees a string `xs` it does not recognize,
@@ -168,9 +183,22 @@ toP :: Token -> Parser Text
 toP (Word xs)  = word xs
 toP Hole       = star
 toP Slash      = pzero
-toP OptComma   = comma
+toP OptComma   = opt $ word ","
 toP Comma      = word ","
 toP (Or t1 t2) = toP t1 <||> toP t2
+
+{-----------------------------------------------------------------------------
+    Distinguished parsers
+------------------------------------------------------------------------------}
+
+star :: Parser Text
+star = anyWord
+-- output "*" <$> anyWord
+
+
+comma :: Parser Text
+comma = opt . word $ ","
+
 
 
 {-----------------------------------------------------------------------------

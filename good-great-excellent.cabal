@@ -81,6 +81,7 @@ test-suite good-great-excellent-test
 
   other-modules:       ParserText
                      , PreprocessTest
+                     , RawPatternTest
                      , PatternCompilerTest
 
   build-depends:       base >= 4.7 && < 5

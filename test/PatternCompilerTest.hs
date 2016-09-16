@@ -31,11 +31,6 @@ main = do
                 , tcompile
                 , tcompile'
 
-                , test1
-                , test2
-                , test3
-                , test4
-                
                 , tbutnot
                 , talmost
                 ]
@@ -100,8 +95,8 @@ tcompile =  let p1 = (compile "* or *"                ) (S "good") (S "great")
                      , p3 <** pack "good or great"    ~?= right "good or great"
                      , p3 <** pack "good bu great"    ~?= echo' p3
 
-                     , p4 <** pack "foo or bar"       ~?= right "* or *"
-                     , p4 <** pack "bar or foo"       ~?= right "* or *"
+                     , p4 <** pack "foo or bar"       ~?= right "foo or bar"
+                     , p4 <** pack "bar or foo"       ~?= right "bar or foo"
                      , p4 <** pack "bar and foo"      ~?= echo' p4
          ]
 
@@ -121,105 +116,17 @@ tcompile' = let p = compile' "hello"
 
 
 {-----------------------------------------------------------------------------
-   A series of adhoc test building up to project specific expressions
-
-   (..)      parens denote optional string
-   {..}      curly parense denotes required string
-   {a} {b} == a b
-
-   (foo|bar) means foo or bar or space
-   {foo|bar} means foo or bar
-
-  * (,) but not (a|an|the) *
-
-  * (,) if not (a|an|the) *
-
-  * (,) although|though not (a|an|the)*
-
-  * (,) (and|or) even (a|an|the)*
-
-  * (,) almost (a|an|the) * 
-
-  * (,) (and|or) almost (a|an|the) *
-
-  not only|just * (,) but *
-
-
-------------------------------------------------------------------------------}
-
-test1 :: Test
-test1 =  let p1  = opt (word "a") <+> word "bar"
-      in let p2  = opt (word "a") <+> star
-
-      in let o1  = right "(a) bar"
-      in let o2  = right "(a) *"
-      in "(a) bar,   (a) *"
-      ~: TestList [ p1 <** pack "a bar" ~?= o1
-                  , p1 <** pack " bar"  ~?= o1
-                  , p1 <** pack "f bar" ~?= echo' p1
-
-                  , p2 <** pack "a foo"   ~?= o2
-                  , p2 <** pack "a bar"   ~?= o2
-                  , p2 <** pack " bar"    ~?= o2
-                  , p2 <** pack "bar"     ~?= echo' p2
-                  , p2 <** pack "the bar" ~?= echo' p2
-
-                  ]
-
-test2 :: Test
-test2 =  let p1  = word "a" <||> word "an"
-     in  let o1  = right "a|an"
-     in "a|an"
-     ~:  TestList [ p1 <** pack "a"   ~?= right "a"
-                  , p1 <** pack "an"  ~?= right "an"
-                  , p1 <** pack " "   ~?= echo' p1
-                  , p1 <** pack "the" ~?= echo' p1
-                  ]
-
-test3 :: Test
-test3 =  let p1  = opt $ word "a" <||> word "an"
-     in  let o1  = right "(a|an)"
-     in "(a|an)"
-     ~:  TestList [ p1 <** pack "a"   ~?= o1
-                  , p1 <** pack "an"  ~?= o1
-                  , p1 <** pack " "   ~?= o1
-                  , p1 <** pack "the" ~?= echo' p1
-                  ]
-
-
-test4 :: Test
-test4 =  let p1  = opt (word "a" <||> word "an")
-     in  let p2  = p1 <+> word "bar"
-     in  let p3  = p1 <+> star
-     in  let p4  = star <+> p1
-
-     in  let o2  = right $ echo p2
-     in  let o3  = right $ echo p3
-     in  let o4  = right $ echo p4
-     in "(a|an) bar, (a|an) *, * (a|an)"
-     ~:  TestList [ 
-
-
-                  ]
-
-
-
-
-
-{-----------------------------------------------------------------------------
-   Other Adhoc test compiler on specific phrases
+   Compiling project specific parsers
 ------------------------------------------------------------------------------}
 
 tbutnot :: Test
-tbutnot =  let o1 = right "good (,) but not great"
-        in let o2 = right "* (,) but not *"
-        in let p1 = (compile "* (,) but not *") (S "good") (S "great")
+tbutnot =  let p1 = (compile "* (,) but not *") (S "good") (S "great")
         in let p2 = (compile "* (,) but not *") Star Star
         in "but not"
-        ~: TestList [ p1 <** (pack "good but not great"        ) ~?= o1
-                    , p1 <** (pack "good, but not great"       ) ~?= o1
-                    , p1 <** (pack "good ,  but not great"     ) ~?= o1
-                    , p1 <** (pack "good but not great comment") ~?= o1
+        ~: TestList [ p1 <** (pack "good but not great"        ) ~?= right "good (,) but not great"        
+                    , p1 <** (pack "good, but not great"       ) ~?= right "good (,) but not great"       
+                    , p1 <** (pack "good ,  but not great"     ) ~?= right "good (,) but not great"     
+                    , p1 <** (pack "good but not great comment") ~?= right "good (,) but not great"
 
                     -- * TODO: This test fails 
                     --, p1 <** (pack "good ,but not great "      ) ~?= o1
@@ -227,38 +134,25 @@ tbutnot =  let o1 = right "good (,) but not great"
                     , p1 <** (pack "foo but not bar"           ) ~?= echo' p1
                     , p1 <** (pack "foo,  but not bar"         ) ~?= echo' p1
 
-                    , p2 <** (pack "foo but not bar"           ) ~?= o2
-                    , p2<** (pack "foo,  but not bar"         )  ~?= o2
+                    , p2 <** (pack "foo but not bar"           ) ~?= right "foo (,) but not bar"
+                    , p2<** (pack "foo,  but not bar"         )  ~?= right "foo (,) but not bar"
                     ]
 
 talmost :: Test
-talmost =  let o1 = right "good (,) and almost great"
-        in let o2 = right "good (,) or almost great"
-        in let o3 = right "* (,) and almost *"
-        in let o4 = right "* (,) or almost *"
-
-        in let p1 = (compile "* (,) (and|or) almost *") (S "good") (S "great")
-        in let p2 = (compile "* (,) (and|or) almost *") Star Star
+talmost =  let p1 = (compile "* (,) and|or almost *") (S "good") (S "great")
+        in let p2 = (compile "* (,) and|or almost *") Star Star
         in "* (,) (and|or) almost *"
 
-        ~: TestList [ p1 <** (pack "good and almost great"     ) ~?= o1
-                    , p1 <** (pack "good, and almost great"    ) ~?= o1
-                    , p1 <** (pack "good or almost great"      ) ~?= o2
-                    , p1 <** (pack "good, or almost great"     ) ~?= o2
+        ~: TestList [ p1 <** (pack "good and almost great"     ) ~?= right "good (,) and almost great"
+                    , p1 <** (pack "good, and almost great"    ) ~?= right "good (,) and almost great"
+                    , p1 <** (pack "good or almost great"      ) ~?= right "good (,) or almost great"
+                    , p1 <** (pack "good, or almost great"     ) ~?= right "good (,) or almost great"
                     , p1 <** (pack "good but almost great"     ) ~?= echo' p1
 
-                    , p2 <** (pack "foo and almost bar"        ) ~?= o3
-                    , p2 <** (pack "foo, or almost bar"        ) ~?= o4
+                    , p2 <** (pack "foo and almost bar"        ) ~?= right "foo (,) and almost bar"
+                    , p2 <** (pack "foo, or almost bar"        ) ~?= right "foo (,) or almost bar"
                     , p2 <** (pack "foo, ord almost bar"       ) ~?= echo' p2
                     ]
-
-
-
-
-
-
-
-
 
 
 

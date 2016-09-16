@@ -148,7 +148,7 @@ tmaybeWord = let p   = opt . word $ "foo"
 
 
 tcomma :: Test
-tcomma = let comma = maybeWord ","
+tcomma = let comma = opt . word $ ","
        in let o = right "(,)"
        in "comma'" 
        ~: TestList [ comma <** (pack ","  ) ~?= o
