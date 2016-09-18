@@ -140,21 +140,28 @@ talthoughNot = let p = compile "* (,) though|although not (a|an|the) *" Star Sta
             in let q = compile "* (,) though|although not (a|an|the) *" (S "good") (S "great")
             in "* (,) though|although not (a|an|the) *  and @ good, great"
 
-            ~: TestList [ p <** pack "foo though not bar"       ~?= right "foo (,) though not (a|an|the) bar"
+            ~: TestList [ -- * no comma, no article
+                          p <** pack "foo though not bar"       ~?= right "foo (,) though not (a|an|the) bar"
                         , p <** pack "foo although not bar"     ~?= right "foo (,) although not (a|an|the) bar"
 
+                          -- * comma
                         , p <** pack "foo, though not bar"      ~?= right "foo (,) though not (a|an|the) bar"
                         , p <** pack "foo, although not bar"    ~?= right "foo (,) although not (a|an|the) bar"
 
+                          -- * article
                         , p <** pack "foo although not a bar"   ~?= right "foo (,) although not (a|an|the) bar"
                         , p <** pack "foo although not an bar"  ~?= right "foo (,) although not (a|an|the) bar"
                         , p <** pack "foo although not the bar" ~?= right "foo (,) although not (a|an|the) bar"
 
-                        , p <** pack "foo although not foo bar" ~?= right "foo (,) although not (a|an|the) foo"
+                          -- * wrong sentence that passes test due to option
+                        , p <** pack "foo although not not bar" ~?= right "foo (,) although not (a|an|the) not"
 
+                          -- * wrong non-optional word
                         , p <** pack "foo but not foo bar"      ~?= echo' p
 
+                          -- * same variation as above but with concrete words
                         , q <** pack "good though not great"       ~?= right "good (,) though not (a|an|the) great"
+                        , q <** pack "good, though not great"      ~?= right "good (,) though not (a|an|the) great"
                         , q <** pack "good although not great"     ~?= right "good (,) although not (a|an|the) great"
                         , q <** pack "good although not a great"   ~?= right "good (,) although not (a|an|the) great"
                         , q <** pack "good although not an great"  ~?= right "good (,) although not (a|an|the) great"
@@ -162,9 +169,6 @@ talthoughNot = let p = compile "* (,) though|although not (a|an|the) *" Star Sta
 
                         -- * this case fails, which is good because it's what you want to not overcount
                         , q <** pack "good although not not great" ~?=  echo' q
-
-
-
                         ]
 
 tbutnot :: Test

@@ -78,7 +78,7 @@ makeDirUnder :: String -> String -> IO FilePath
 makeDirUnder project name = do
       xs <- getCurrentDirectory
       let top:_   = splitOn project xs
-      let dir     = top ++ project ++ "/" ++ name
+      let dir     = top ++ project ++ "/" ++ name ++ "/"
       createDirectoryIfMissing False dir
       return dir
 

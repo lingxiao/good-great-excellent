@@ -23,6 +23,7 @@ module Parsers (
 
   , word
   , anyWord
+  , star
   , spaces
   , spaces1
   , eow
@@ -37,7 +38,7 @@ import Control.Applicative hiding (empty)
 import Data.Char
 import Data.Attoparsec.Text
 import Data.Attoparsec.Combinator
-import Data.Text hiding (head, foldr, takeWhile)
+import Data.Text hiding (head, foldr, takeWhile, tail, reverse)
 
 {-----------------------------------------------------------------------------
    Parser combinators
@@ -56,23 +57,25 @@ pzero =  (return . pack $ "")
 -- * they always fail
 infixr 9 <+>
 (<+>) :: Parser Text -> Parser Text -> Parser Text
-p <+> q = (\u v -> if unpack v == "" then u 
-                   else concat [u, pack " ", v])
+p <+> q = (\u v -> if v == empty then u 
+                   else concat [u, pack " ", v]
+          )
       <$> p <*> q
       <?> p `addEcho` q
 
--- * Parser or with appropriate echos
+-- * Parser or with appropriate semantic to recover names
 infixr 8 <||>
 (<||>) :: Parser Text -> Parser Text -> Parser Text
 p <||> q = p <|> q
        <?> (echo p ++ "|" ++ echo q)
 
-
 -- * make parser p optional
+-- * opt = output xs <$> (p <|> spaces1)
 opt :: Parser Text -> Parser Text
 opt p = let xs = "(" ++ echo p ++ ")"
-        in (output xs <$> (p <|> spaces1))
-        <?> xs 
+        in (option (pack xs) $ output xs <$> p)
+      -- * in output xs <$> (p <|> spaces1)
+      <?> xs
 
 addEcho :: Parser Text -> Parser Text -> String
 addEcho p q = case (echo p, echo q) of
@@ -81,11 +84,14 @@ addEcho p q = case (echo p, echo q) of
   (_, "" ) -> echo p
   (_, _  ) -> echo p ++ " " ++ echo q
 
-
 -- * Problem: under <|>, only the first echo is taken
+--echo p = case (p >> mzero) <** empty of
 echo :: Show a => Parser a -> String
-echo p = case (p >> mzero) <** empty of
-  Left n  -> n
+echo p = case p <** empty of
+  Right n  ->  reverse . tail 
+             . reverse . tail 
+             . show $ n        -- * when echoing `opt p`
+  Left  n  -> n
 
 {-----------------------------------------------------------------------------
    Run parser
@@ -110,7 +116,6 @@ p <**? t = case p <** t of
   Right _ -> True
   _       -> False
 
-
 {-----------------------------------------------------------------------------
    Basic parsers
 ------------------------------------------------------------------------------}
@@ -123,6 +128,10 @@ word w =  spaces *> string (pack w) <* eow
 anyWord :: Parser Text
 anyWord = spaces *> takeWhile1 isAlpha <* eow
       <?> "*"
+
+-- * alias
+star :: Parser Text
+star = anyWord      
 
 -- * parse zero or more spaces and ouput one space
 spaces :: Parser Text
@@ -153,8 +162,7 @@ notAlphaNum = satisfy (not . isAlphaNum)
 
 -- * things not allowed: alphabets, numbers, space
 notAlphaDigitSpace :: Parser Char
-notAlphaDigitSpace = satisfy (\c 
-                   -> not (isDigit c || isAlpha c || isSpace c))
+notAlphaDigitSpace = satisfy (\c -> not (isDigit c || isAlpha c || isSpace c))
                   <?> "not_alpha_digit_space"
 
 

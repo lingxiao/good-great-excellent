@@ -33,6 +33,8 @@ import qualified Data.Conduit.Combinators as C
 import Lib 
 import Core
 
+type InPath  = FilePath
+type OutPath = FilePath
 
 {-----------------------------------------------------------------------------
   Filter grepped files
@@ -40,7 +42,7 @@ import Core
 
 -- * Given parser `p` and `inpath` to ngrams file, take all lines
 -- * in file recognized by `p` and save to output file in `outpath`
-filterByPattern :: FilePath -> FilePath -> Parser Text ->  IO ()
+filterByPattern :: InPath -> OutPath -> Parser Text ->  IO ()
 filterByPattern inpath outpath p  =  run 
                                   $  sourceFile inpath 
                                   $= toInput
@@ -72,7 +74,7 @@ fromInput = C.map (\(a,b,c) -> encodeUtf8
   Filter raw ngram files
 ------------------------------------------------------------------------------}
 
-filterByPattern' :: FilePath -> FilePath -> Parser Text -> IO ()
+filterByPattern' :: InPath -> OutPath -> Parser Text -> IO ()
 filterByPattern' inpath outpath p =  run 
                                   $  sourceFile inpath
                                   $= toInput'

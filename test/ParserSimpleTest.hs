@@ -10,7 +10,7 @@
 ---------------------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------------
 
-module ParsersTest where
+module ParserSimpleTest where
 
 import Test.HUnit
 import Data.Text hiding (foldr)
@@ -32,9 +32,10 @@ main = do
                 , tspaces1
                 , tNotAlphaDigitSpace
                 , teow
+                , topt
                 , tword
                 , tanyWord
-                , tmaybeWord
+                , topt
                 , tcomma
                 ]
     return ()
@@ -86,6 +87,7 @@ tcombinators = let p    = word "hello"
                     ]
 
 
+
 tword :: Test
 tword =  let p   = word  "hello"
       in let o   = right "hello"
@@ -107,6 +109,7 @@ tword =  let p   = word  "hello"
                   , p <** (pack "hello.com"   ) ~?= err
                   , p <** (pack "hello.kw.net") ~?= err
                   ]
+
 
 
 tanyWord :: Test
@@ -131,18 +134,15 @@ tanyWord = let o   = right "hello"
                     ]
 
 
-tmaybeWord :: Test
-tmaybeWord = let p   = opt . word $ "foo"
-          in let o   = right     "(foo)"
-          in let err = echo'     p
+topt :: Test
+topt = let p   = opt . word $ "foo"
           in "maybeWord"
-          ~: TestList [ p <** (pack "foo"         ) ~?= o
-                      , p <** (pack "foo word"    ) ~?= o
-                      , p <** (pack "  foo   word") ~?= o
-                      , p <** (pack " word"       ) ~?= o
-
-                      , p <** (pack "word"        ) ~?= err
-                      , p <** (pack "fooo"        ) ~?= err
+          ~: TestList [ p <** (pack "foo"         ) ~?= right "(foo)"
+                      , p <** (pack "foo word"    ) ~?= right "(foo)"
+                      , p <** (pack "  foo   word") ~?= right "(foo)"
+                      , p <** (pack " word"       ) ~?= right "(foo)"
+                      , p <** (pack "word"        ) ~?= right "(foo)"
+                      , p <** (pack "fooo"        ) ~?= right "(foo)"
                       ]
 
 
@@ -154,7 +154,7 @@ tcomma = let comma = opt . word $ ","
        ~: TestList [ comma <** (pack ","  ) ~?= o
                    , comma <** (pack "  ,") ~?= o
                    , comma <** (pack " ")   ~?= o
-                   , comma <** (pack "h"  ) ~?= echo' comma
+                   , comma <** (pack "h"  ) ~?= o
                    ]
 
 

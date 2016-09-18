@@ -3,14 +3,14 @@
 -----------------------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------------
 -- | 
--- | Module  : Test patterns build from raw parsers
+-- | Module  : Test how parsers interact
 -- | Author  : Xiao Ling
 -- | Date    : 9/16/2016
 -- |             
 ---------------------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------------
 
-module RawPatternTest where
+module ParserInteractionTest where
 
 import Test.HUnit
 import Data.Text hiding (foldr)
@@ -82,15 +82,15 @@ test1 =  let p1  = opt (word "a") <+> word "bar"
 
       in "(a) bar,   (a) *,  bar (a),  * (a)"
 
-      ~: TestList [ p1 <** pack "a bar" ~?= right "(a) bar"
-                  , p1 <** pack " bar"  ~?= right "(a) bar"
+      ~: TestList [ p1 <** pack "a bar" ~?= o1
+                  , p1 <** pack " bar"  ~?= o1
                   , p1 <** pack "f bar" ~?= echo' p1
 
                   , p2 <** pack "a foo"   ~?= right "(a) foo"
                   , p2 <** pack "a bar"   ~?= right "(a) bar"
                   , p2 <** pack " bar"    ~?= right "(a) bar"
-                  , p2 <** pack "bar"     ~?= echo' p2
-                  , p2 <** pack "the bar" ~?= echo' p2
+                  , p2 <** pack "bar"     ~?= right "(a) bar"
+                  , p2 <** pack "the bar" ~?= right "(a) the"
 
                   , p3 <** pack "bar a"   ~?= right "bar (a)"
                   , p3 <** pack "bar "    ~?= right "bar (a)"
@@ -101,9 +101,8 @@ test1 =  let p1  = opt (word "a") <+> word "bar"
                   , p4 <** pack "qar "    ~?= right "qar (a)"
                   -- * note a space is consumed so (opt $ word "a") is satisfied
                   , p4 <** pack "por the" ~?= right "por (a)"
-
-
                   ]
+
 
 test2 :: Test
 test2 =  let p1  = word "a" <||> word "an"
@@ -117,12 +116,11 @@ test2 =  let p1  = word "a" <||> word "an"
 
 test3 :: Test
 test3 =  let p1  = opt $ word "a" <||> word "an"
-     in  let o1  = right "(a|an)"
      in "(a|an)"
-     ~:  TestList [ p1 <** pack "a"   ~?= o1
-                  , p1 <** pack "an"  ~?= o1
-                  , p1 <** pack " "   ~?= o1
-                  , p1 <** pack "the" ~?= echo' p1
+     ~:  TestList [ p1 <** pack "a"   ~?= right "(a|an)"
+                  , p1 <** pack "an"  ~?= right "(a|an)"
+                  , p1 <** pack " "   ~?= right "(a|an)"
+                  , p1 <** pack "the" ~?= right "(a|an)"
                   ]
 
 
@@ -182,7 +180,7 @@ test5 =  let q  = opt $ word "a" <||> word "an"
                   , p3 <** pack "a  zar"   ~?= right "(a|an) zar"
                   , p3 <** pack "an  ear"  ~?= right "(a|an) ear"
                   , p3 <** pack "    ear"  ~?= right "(a|an) ear"
-                  , p3 <** pack "the ear"  ~?= echo' p3
+                  , p3 <** pack "the ear"  ~?= right "(a|an) the"
 
                   , p4 <** pack "zar a"    ~?= right "zar (a|an)"
                   , p4 <** pack "ear an"   ~?= right "ear (a|an)"
@@ -192,14 +190,15 @@ test5 =  let q  = opt $ word "a" <||> word "an"
                   ]
 
 
+
 test6 :: Test
-test6 = let p1 =   star              -- *   "* (,) but not (a|an) *"
+test6 = let p1 =   star            
               <+> (opt $ word ",") 
               <+> word "but" 
               <+> word "not"
               <+> opt (word "a" <||> word "an")
               <+> star
-      in let p2 = word "good"         -- * "good (,) but not (a|an) great"
+      in let p2 = word "good"      
               <+> (opt $ word ",") 
               <+> word "but" 
               <+> word "not"
@@ -234,7 +233,7 @@ test6 = let p1 =   star              -- *   "* (,) but not (a|an) *"
 
 
 test7 :: Test
-test7 = let p =  star              -- * "* (,) although|though not (a|an) *"
+test7 = let p =  star             
              <+> (opt $ word ",")
              <+> (word "although" <||> word "though")
              <+> word "not"

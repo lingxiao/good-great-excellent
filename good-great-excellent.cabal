@@ -67,6 +67,7 @@ executable good-great-excellent-exe
                      , bytestring
                      , attoparsec
                      , transformers
+                     , time
                      , HUnit
 
                      
@@ -79,9 +80,9 @@ test-suite good-great-excellent-test
   hs-source-dirs:      test
   main-is:             Spec.hs
 
-  other-modules:       ParserText
+  other-modules:       ParserSimpleText
+                     , ParserInteractionTest
                      , PreprocessTest
-                     , RawPatternTest
                      , PatternCompilerTest
 
   build-depends:       base >= 4.7 && < 5

@@ -35,20 +35,6 @@ import Parsers
 
 {-----------------------------------------------------------------------------
     Tokenization and Parsing
-    
-    * (,) and|or even (a|an) *
-
-    optional comma, either "and" or "or", even, optional "a" "an" or "the"
-
-    Tok  = T String | Star
-    
-    lang = Tok
-         | Opt lang
-         | Or  lang lang
-         | Seq lang lang
-
-    expr = (a) *
-
 ------------------------------------------------------------------------------}
 
 

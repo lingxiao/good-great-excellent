@@ -16,6 +16,7 @@ module Core (
   , Input
   , Output
   , QueryResult
+  , PatternExpr
 
   , Config
   , config
@@ -43,6 +44,8 @@ type Input         = (Text, Text, Text)
 type Output        = (Integer, [QueryResult])
 type QueryResult   = (Text,Text,Integer,Text)
 
+type PatternExpr   = String       
+
 {-----------------------------------------------------------------------------
     Filepath configuration
 ------------------------------------------------------------------------------}
@@ -50,8 +53,8 @@ type QueryResult   = (Text,Text,Integer,Text)
 
 data Config = Con {
       corpus         :: DirectoryPath
-    , weakStrong     :: [String]
-    , strongWeak     :: [String]
+    , weakStrong     :: [PatternExpr]
+    , strongWeak     :: [PatternExpr]
 } deriving (Show, Eq)
 
 

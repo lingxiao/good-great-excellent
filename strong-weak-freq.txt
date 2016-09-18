@@ -1,0 +1,11 @@
+strong-weak-freq.txt
+--------------------------------------------------
+total: 3413081
+--------------------------------------------------
+not (a|an|the) * (,) just (a|an|the) *     2497527
+not (a|an|the) * (,) but just (a|an|the) *     1193
+not (a|an|the) * (,) still (a|an|the) *     152310
+not (a|an|the) * (,) but still (a|an|the) *     4105
+not (a|an|the) * (,) although still (a|an|the) *     0
+not (a|an|the) * (,) though still (a|an|the) *     0
+* (,) or very *     757946
