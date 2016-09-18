@@ -1,11 +1,11 @@
 
 ==================== FINAL INTERFACE ====================
-2016-09-16 14:00:04.667544 UTC
+2016-09-18 02:44:54.03648 UTC
 
-interface goodg_GBdY7oRp6g78bKpCLQAiTZ:Conduits 7103
-  interface hash: eb6a63e18689a0a05ccbad791d519df5
-  ABI hash: a34ab8c815cf406c89b3a13cc3acb644
-  export-list hash: 9e164791da8aeaf36873e7bbf2c4a1c0
+interface goodg_DmvfzrsRlTTEG4TgbQ9uXe:Conduits 7103
+  interface hash: cd09a70a19065ac6605273a682cbdd34
+  ABI hash: f6985511b634bda5e029814f8f74bbb6
+  export-list hash: 489f3f8d13b58ebd86c3a7ee1760c2aa
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: a15922da834f2f01f7a0695d98ce9660
   sig of: Nothing
@@ -188,7 +188,7 @@ import  -/  transformers-0.4.2.0@trans_GZTjP9K5WFq01xC9BAGQpF:Control.Monad.IO.C
 import  -/  transformers-0.4.2.0@trans_GZTjP9K5WFq01xC9BAGQpF:Control.Monad.Trans.Class f629605e4c93de7ab5f6a3350107b4d1
 import  -/  transformers-0.4.2.0@trans_GZTjP9K5WFq01xC9BAGQpF:Control.Monad.Trans.State.Lazy a0ae9990521f3719d0ffc837d271b7a5
 import  -/  zlib-0.6.1.1@zlib_7LjT7TSHX8U3VTy3t378Vu:Codec.Compression.GZip f01f83cce0cfe4cc9420fb4062158e77
-4cb922a59c0cdf1179a0281ecdab8411
+8c55e468e0f66a956027b9c977df390f
   $wa ::
     Control.Monad.IO.Class.MonadIO m =>
     forall b.
@@ -312,30 +312,30 @@ import  -/  zlib-0.6.1.1@zlib_7LjT7TSHX8U3VTy3t378Vu:Codec.Compression.GZip f01f
                           x1)
                  } in
                  go2) -}
-a7b6a197104e634b5f102b0b31a55fdf
+97e4f1201e980f86f3a4ae0686f03c4c
   $wlogNum ::
     Conduits.FileOpS m GHC.Types.Int =>
     Data.Conduit.Internal.Conduit.ConduitM i i m ()
   {- Arity: 1, Strictness: <L,U(1*U,A,1*U,1*U)>, Inline: [0] -}
-573551f120aa73bf85ab2cad211094a5
+45dfb867f45c64f2df43920ed47ba070
   type FileOp (m :: * -> *) = Conduits.FileOpS m ()
-bcf3deda1f284066313bdce1dde46855
+bf52de68f605b29c5eca7b3534f48c1f
   type FileOpS (m :: * -> *) s =
     (Control.Monad.State.Class.MonadState s m,
      Control.Monad.IO.Class.MonadIO m,
      Control.Monad.Trans.Resource.Internal.MonadResource m,
      Control.Monad.Trans.Control.MonadBaseControl GHC.Types.IO m)
-30a683c13ee7242c25b4b143a1d2c00b
+ad0f51756a8eaf1e4bfe0cd2e304b730
   type Op (m :: * -> *) =
     (Control.Monad.Trans.Control.MonadBaseControl GHC.Types.IO m,
      Control.Monad.Catch.MonadThrow m,
      Control.Monad.IO.Class.MonadIO m)
-533a92376b9ad27f56489b335ee8d5e7
+b53d9ee74e03147f39752caebec748ec
   banner :: GHC.Types.IO ()
   {- Arity: 1, Strictness: <L,U>,
      Unfolding: InlineRule (0, True, True)
                 Conduits.banner1 `cast` (Sym (GHC.Types.NTCo:IO[0] <()>_R)) -}
-1704acc3e7ba299fcf611b24274a43ba
+ad164cb31e49d968428a94358cfb21b4
   banner1 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
@@ -346,21 +346,21 @@ bcf3deda1f284066313bdce1dde46855
                    Conduits.banner2
                    GHC.Types.True
                    eta) -}
-9b20137379d98eb7a9243f223fecf670
+cc747ff887fa4f1faacce515fba56435
   banner2 :: [GHC.Types.Char]
   {- Unfolding: (Conduits.banner_go Conduits.banner3) -}
-402657bdc662562ccd7b50abed389972
+d3324bfaccef44c47995bcd27bc7d2b1
   banner3 :: GHC.Integer.Type.Integer
   {- HasNoCafRefs, Unfolding: (__integer 1) -}
-d54123c86b8515ed066246c1872ae7e9
+ccbeaaa57ca65fbc82d120202eaaa236
   banner_go :: GHC.Integer.Type.Integer -> [GHC.Types.Char]
   {- Arity: 1, Strictness: <S,U> -}
-8d37e6712d71c93a00e245664f184cbb
+3110b757e7c4085419a43f8e34687a0b
   cap ::
     Control.Monad.IO.Class.MonadIO m =>
     Data.Conduit.Internal.Conduit.Consumer i m ()
   {- Arity: 1, Strictness: <L,U(U,C(U))> -}
-af9eb69c582c1bdd7d5e113ab9722db4
+908292d6bb457b3a2815afad532ff114
   eval ::
     (Conduits.Op m, GHC.Base.Monoid s) =>
     Control.Monad.Trans.Resource.Internal.ResourceT
@@ -468,7 +468,7 @@ af9eb69c582c1bdd7d5e113ab9722db4
                    `cast`
                  (Control.Monad.Trans.State.Lazy.NTCo:StateT[0] <s>_N <m>_R <a1>_N)
                    lvl15) -}
-e5a2bce5548bb69d0b13fd72e1127fa7
+40437ad6176f8f9cfd3715337f5e1c27
   linesOn ::
     Conduits.FileOpS m s =>
     GHC.Base.String
@@ -476,7 +476,7 @@ e5a2bce5548bb69d0b13fd72e1127fa7
          Data.ByteString.Internal.ByteString m [Data.Text.Internal.Text]
   {- Arity: 2,
      Strictness: <L,U(A,A,1*U(1*U(U(U,U,U,U,U),C(U)),A,A,A,A),1*U)><L,1*U> -}
-1c981edf45fd8909d02756d94ca41603
+1e2fe0b2aaef45e5aa8309c74d2332da
   logNum ::
     (GHC.Show.Show i, Conduits.FileOpS m GHC.Types.Int) =>
     Data.Conduit.Internal.Conduit.Conduit i m i
@@ -488,12 +488,12 @@ e5a2bce5548bb69d0b13fd72e1127fa7
                    w :: GHC.Show.Show i
                    w1 :: Conduits.FileOpS m GHC.Types.Int ->
                  Conduits.$wlogNum @ i @ m w1) -}
-2cdc86eb31e5c4d35e71449bfb4b4859
+a4e875d67b3ab32ccc0491fa0bf93065
   logi ::
     (GHC.Show.Show i, Conduits.FileOpS m s) =>
     Data.Conduit.Internal.Conduit.Conduit i m i
   {- Arity: 2, Strictness: <L,U(A,U,A)><L,U(1*U,A,1*U,1*U)> -}
-bf92492907280b887ce88f0965fb5726
+0a43aabb270087b7624d408fd3662928
   logm ::
     Conduits.FileOpS m s =>
     GHC.Base.String -> Data.Conduit.Internal.Conduit.Conduit i m i
@@ -651,7 +651,7 @@ bf92492907280b887ce88f0965fb5726
                    `cast`
                  (Sym (Data.Conduit.Internal.Conduit.NTCo:ConduitM[0]
                            <i>_N <i>_N <m>_N <()>_R))) -}
-af4f6ccc95829178d6b2906ee71878de
+ec21a64fbd1b17ff6f9178f03a0c7806
   openFile ::
     (GHC.Base.Monad m, Control.Monad.IO.Class.MonadIO m) =>
     Data.Conduit.Internal.Conduit.Conduit
@@ -668,7 +668,7 @@ af4f6ccc95829178d6b2906ee71878de
                                <Data.ByteString.Internal.ByteString>_N
                                <m>_N
                                <()>_R)) -}
-ca244ab78a1664f82939a607454bce12
+26a7d35f158c68fab4759f93ebf58c84
   openFile1 ::
     (GHC.Base.Monad m, Control.Monad.IO.Class.MonadIO m) =>
     forall b.
@@ -703,7 +703,7 @@ ca244ab78a1664f82939a607454bce12
                               m
                               b ->
                  Conduits.$wa @ m w1 @ b w2) -}
-a5d5469fd14a4ae08237d37feefc8f9e
+a42f16105c614c0f840fe9e09d1d013a
   run ::
     Control.Monad.Trans.Control.MonadBaseControl GHC.Types.IO m =>
     Control.Monad.Trans.Resource.Internal.ResourceT
@@ -814,7 +814,7 @@ a5d5469fd14a4ae08237d37feefc8f9e
                     (Control.Monad.Trans.State.Lazy.NTCo:StateT[0] <()>_N <m>_R <a1>_N)
                       GHC.Tuple.())
                    lvl15) -}
-cd2ea66ebf0932d489c7f5bd0f40f3ec
+2a45221f0e7507344765a1321251d4a7
   shardFile ::
     Conduits.FileOpS m s =>
     GHC.Base.String
@@ -832,7 +832,7 @@ cd2ea66ebf0932d489c7f5bd0f40f3ec
                  ->_R <GHC.Types.Int>_R
                  ->_R Sym (Data.Conduit.Internal.Conduit.NTCo:ConduitM[0]
                                <GHC.IO.FilePath>_N <()>_N <m>_N <()>_R)) -}
-8d606447188c3c6575103687d7448e28
+92c450fc676e92cf6bba6c18a0f425b5
   shardFile1 ::
     Conduits.FileOpS m s =>
     GHC.Base.String
@@ -846,21 +846,21 @@ cd2ea66ebf0932d489c7f5bd0f40f3ec
             GHC.IO.FilePath GHC.IO.FilePath () () m b
   {- Arity: 5,
      Strictness: <L,U(A,A,1*U,1*U)><L,U><L,U><L,U(U)><L,U> -}
-e717965d85b4abcfecfc9f869ff104fe
+340d235998aaeefc8c8abd10cba62a5c
   sourceDirectories ::
     Conduits.FileOpS m s =>
     [GHC.IO.FilePath]
     -> GHC.Base.String
     -> Data.Conduit.Internal.Conduit.Source m GHC.IO.FilePath
   {- Arity: 3, Strictness: <L,U(A,A,1*U,1*U)><L,1*U><L,U> -}
-47ad61b5ce2ad2c858a6741b12afd91b
+5289c03e017818de3cceb953ec59852d
   sourceFileE ::
     Conduits.FileOpS m s =>
     GHC.IO.FilePath
     -> Data.Conduit.Internal.Conduit.Source
          m Data.ByteString.Internal.ByteString
   {- Arity: 2, Strictness: <L,U(A,A,1*U(A,U,A,U,C(U)),1*U)><L,U> -}
-3779d01cbee2d331dd8243be2ef23655
+7ee9693e3cab68e25787055edeb6bfdf
   untarSaveAs ::
     Conduits.FileOpS m s =>
     GHC.Base.String

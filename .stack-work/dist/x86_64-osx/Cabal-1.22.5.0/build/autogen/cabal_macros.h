@@ -98,6 +98,13 @@
   (major1) == 0 && (major2) <  6 || \
   (major1) == 0 && (major2) == 6 && (minor) <= 1)
 
+/* package time-1.5.0.1 */
+#define VERSION_time "1.5.0.1"
+#define MIN_VERSION_time(major1,major2,minor) (\
+  (major1) <  1 || \
+  (major1) == 1 && (major2) <  5 || \
+  (major1) == 1 && (major2) == 5 && (minor) <= 0)
+
 /* package transformers-0.4.2.0 */
 #define VERSION_transformers "0.4.2.0"
 #define MIN_VERSION_transformers(major1,major2,minor) (\
@@ -182,5 +189,5 @@
   (major1) == 0 && (major2) <  28 || \
   (major1) == 0 && (major2) == 28 && (minor) <= 0)
 
-#define CURRENT_PACKAGE_KEY "goodg_GBdY7oRp6g78bKpCLQAiTZ"
+#define CURRENT_PACKAGE_KEY "goodg_DmvfzrsRlTTEG4TgbQ9uXe"
 

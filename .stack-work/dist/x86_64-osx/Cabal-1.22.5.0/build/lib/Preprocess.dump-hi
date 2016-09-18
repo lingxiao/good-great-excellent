@@ -1,11 +1,11 @@
 
 ==================== FINAL INTERFACE ====================
-2016-09-16 14:00:03.014026 UTC
+2016-09-18 02:44:50.395829 UTC
 
-interface goodg_GBdY7oRp6g78bKpCLQAiTZ:Preprocess 7103
-  interface hash: 935788c68a47ae9574f46a310758bcaf
-  ABI hash: 75bac18bf26e50f63ddd6413db7ec967
-  export-list hash: 70ff8dc128ad94c4b930243f551d242c
+interface goodg_DmvfzrsRlTTEG4TgbQ9uXe:Preprocess 7103
+  interface hash: 8303462cf94abaa31faff3490758fcea
+  ABI hash: 58792408274cdca5a172c615befcd901
+  export-list hash: 0124ea26c8dc588d84b9bb94eb176b31
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: 34a9291488a30a90b4883f399a0708a5
   sig of: Nothing
@@ -41,19 +41,19 @@ import  -/  base-4.8.2.0:GHC.Base 1db77db5dae73d8c424c85b09fbadb89
 import  -/  base-4.8.2.0:Prelude 694dcaf039efe62df1c44834e2dbd2fb
 import  -/  text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text b53ae191632883b10562be5cbaa0b22b
 import  -/  text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text.Internal d9b6b9a9dd535595b612aea5738b7466
-dd46b5c2f740948e4a4ac3e0f8753737
+81d798d9a36c578ff3426df7725ea741
   $wfoldStrip ::
     GHC.Prim.ByteArray#
     -> GHC.Prim.Int# -> GHC.Prim.Int# -> Data.Text.Internal.Text
   {- Arity: 3, Strictness: <L,U><L,U><L,U>, Inline: [0] -}
-de7f654aa0219487ba224b060fce7a0e
+aadace9cc6a5412a119db064d9aa7d48
   foldStrip :: Data.Text.Internal.Text -> Data.Text.Internal.Text
   {- Arity: 1, Strictness: <S,1*U(U,U,U)>, Inline: INLINE[0],
      Unfolding: InlineRule (1, True, False)
                 (\ w :: Data.Text.Internal.Text ->
                  case w of ww { Data.Text.Internal.Text ww1 ww2 ww3 ->
                  Preprocess.$wfoldStrip ww1 ww2 ww3 }) -}
-2ef3914b2579b360a7b6fcb3faa2504d
+da0f1b0df5ae7645566b07130bc7ace4
   preprocess :: Data.Text.Internal.Text -> Data.Text.Internal.Text
   {- Arity: 1, Strictness: <S,1*U(U,U,U)>,
      Unfolding: InlineRule (0, True, True) Preprocess.foldStrip -}
