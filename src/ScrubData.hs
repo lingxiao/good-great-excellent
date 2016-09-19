@@ -29,6 +29,7 @@ import qualified Data.Text as T
 import qualified Data.ByteString as B
 
 import Conduit
+import qualified Data.Conduit.Text as CT
 import qualified Data.Conduit.Combinators as C
 
 import Lib 
@@ -37,19 +38,34 @@ import Core
 type InPath  = FilePath
 type OutPath = FilePath
 
-
 {-----------------------------------------------------------------------------
-  deocde >> casefold >> encode
-
---scrub :: InPath -> OutPath -> IO ()
---scrub inp outp = run 
-               --$ sourceFile inp
-               --$ 
+  case fold data
 ------------------------------------------------------------------------------}
 
+inroot :: DirectoryPath
+inroot = "/Users/lingxiao/Documents/research/data/ngrams/search/4gms/"
+name   = "4gm-0005.txt"
+inp    = inroot ++ name
+outp   = inroot ++ "scrub/" ++ name
+
+-- * `preprocess` each line of file found at `inp` and save to `outp`
+scrub :: InPath -> OutPath -> CT.Codec -> IO ()
+scrub inp outp c =  run 
+                 $  sourceFile inp
+                 $= CT.decode c
+                 $= CT.lines
+                 $= C.map    (splitOn . pack $ "\t"           )
+                 $= C.filter ((==2) . length                  )
+                 $= C.map    (\[t,n] -> T.concat [ preprocess t
+                                                 , pack "\t"
+                                                 , n
+                                                 , pack "\n"] )
+                 $= CT.encode c
+                 $$ sinkFile outp
 
 
-
+foo :: IO ()
+foo = scrub inp outp CT.utf8
 
 {-----------------------------------------------------------------------------
   Filter grepped files
@@ -81,14 +97,18 @@ go inpath outpath p predicate =  run
                                $$ sinkFile outpath
 
 
+  -- *linesOn "\n" 
+
 toInput :: FileOp m => Conduit B.ByteString m Input
-toInput = linesOn "\n" 
-     $= C.map head
-     $= C.map    (splitOn $ pack ":"                   ) 
-     $= C.filter ((==2) . length                       )
-     $= C.map    (\[a,b]   -> (a:splitOn (pack "\t") b))
-     $= C.filter ((==3) . length                       )
-     $= C.map    (\[s,t,n] -> (t, n, s)                )
+toInput = CT.decode CT.iso8859_1
+       $= CT.lines
+       $= C.map    (splitOn . pack $ "\n"                )
+       $= C.map    head
+       $= C.map    (splitOn $ pack ":"                   ) 
+       $= C.filter ((==2) . length                       )
+       $= C.map    (\[a,b]   -> (a:splitOn (pack "\t") b))
+       $= C.filter ((==3) . length                       )
+       $= C.map    (\[s,t,n] -> (t, n, s)                )
 
 
 fromInput :: FileOp m => Conduit Input m B.ByteString
@@ -114,8 +134,10 @@ filterByPattern' inpath outpath p =  run
 
 
 toInput' :: FileOp m => Conduit B.ByteString m Input
-toInput' = linesOn "\n"
-       $= C.map head
+toInput' = CT.decode CT.utf16_le
+       $= CT.lines
+       $= C.map    (splitOn . pack $ "\n")
+       $= C.map    head
        $= C.map    (splitOn $ pack "\t"     )
        $= C.filter ((==2) . length          )
        $= C.map    (\[t,n] -> (t,n, pack ""))

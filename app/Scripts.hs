@@ -13,6 +13,9 @@ module Scripts (
     main_split_by_pattern
   , main_pattern_freq
 
+  , pattern_freq
+  , total_freq
+
   ) where
 
 
@@ -60,13 +63,15 @@ split_by_pattern root p = do
   let out1 = root ++ "out/" ++ echo p ++ ".txt"
   let out2 = root ++ "out/" ++ "leftover-" ++ echo p ++ ".txt"
   conformToPattern    path out1 p
-  --notConformToPattern path out2 p
+  notConformToPattern path out2 p
 
 {-----------------------------------------------------------------------------
   count total occurences of each pattern in 
   reduced corpus built from: `grepped >> main_filterByPattern`
 ------------------------------------------------------------------------------}
 
+
+-- * @USE : main_pattern_freq "path\to\corpus" [patterns] "output-file-name"
 main_pattern_freq :: DirectoryPath 
                   -> [PatternExpr]
                   -> String 
@@ -103,16 +108,8 @@ pattern_freq :: DirectoryPath -> Parser Text -> IO (String, Integer)
 pattern_freq d p = do
     let name = echo p
     let path = d ++ name ++ ".txt"
-    (n,_) <- p `queryIn` path
-    print name
-    print n
+    (n,_) <- p `query_at` path
     return (name,n)
-
-
-
-
-
-
 
 
 

@@ -4,11 +4,30 @@ weak-strong-occurences
 total: 74,197,796
 --------------------------------------------------
 * (,) but not (a|an|the) *         20,825,403
-* (,) if not (a|an|the) *           5,054,687
 
+   - parsed after taking into account case: 23,094,822
+   - the left over  part of document has   : 
+     even less than before ???
+
+
+
+* (,) if not (a|an|the) *           5,242,932
+
+	-- parsed after taking into account case: 524,2932
+     - the left over  part of document has   : 
+
+		even less ?????
+
+-- * skipped grp this one since too many cases
 * (,) although not (a|an|the) *       157,633
+
+-- * skipped grep this one since too many cases
 * (,) though not (a|an|the) *         323,156
+
+-- * grepping all cases of "even" right now
 * (,) (and|or) even (a|an|the) *   42,374,768
+
+
 * (,) (and|or) almost (a|an|the) *  5,087,510
 not only * (,) but *                  332,541
 not just * (,) but *                   42,098

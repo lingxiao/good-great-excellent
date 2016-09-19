@@ -12,7 +12,8 @@
 
 module Query (
     query
-  , queryIn
+  , query_at
+  , total_freq
   ) where
 
 
@@ -22,41 +23,67 @@ import Data.Conduit
 import Conduit              (foldlC)
 import Data.Attoparsec.Text hiding (count)
 import Data.Text            (Text, unpack, pack, splitOn)
+import Data.Conduit.Binary  (sourceFile, sinkFile)
 import qualified Data.ByteString as B
+import qualified Data.Conduit.Text as CT
 import qualified Data.Conduit.Combinators as C
+
 
 import Lib
 import Core
+
 
 {-----------------------------------------------------------------------------
   Query all files in directory
 ------------------------------------------------------------------------------}
 
 query :: Op m => Parser Text -> DirectoryPath -> m Output
-query p f = eval 
-              $ [f] `sourceDirectories` ".txt" 
-              $= openFile 
-              $= prepFile 
-              $$ queryFile p
+query p f =  eval 
+          $  [f] `sourceDirectories` ".txt" 
+          $= openFile 
+          $= prepFileWith CT.utf8
+          $$ queryFile p
 
 {-----------------------------------------------------------------------------
   Query one file
 ------------------------------------------------------------------------------}
 
 -- * query preprocessed text file
-queryIn :: Op m => Parser Text -> FilePath -> m Output
-queryIn p f = eval $ sourceFileE f $= prepFile $$ queryFile p
+query_at :: Op m => Parser Text -> FilePath -> m Output
+query_at p f =  eval
+            $  sourceFile f 
+            $= prepFileWith CT.utf8
+            $$ queryFile p
 
+{-----------------------------------------------------------------------------
+  Sum all frequencies in a file
+------------------------------------------------------------------------------}
 
-prepFile :: FileOpS m s => Conduit B.ByteString m QueryResult
-prepFile =  linesOn "\n"
-             $= C.map head
-             $= C.map    (splitOn $ pack "\t")
-             $= C.filter (\x -> length x == 3)
-             $= C.map    (\[a,b,c] -> ( preprocess a
-                                      , a
-                                      , read . unpack $ b
-                                      , c))
+total_freq :: Op m => FilePath -> m Integer
+total_freq inp =   run 
+            $   sourceFile inp
+            $=  prepFileWith CT.iso8859_1
+            $=  awaitForever (\(_,_,n,_) -> yield n)
+            $$  foldlC (+) 0
+
+{-----------------------------------------------------------------------------
+  Conduits
+------------------------------------------------------------------------------}
+
+-- linesOn "\n"
+prepFileWith :: FileOpS m s 
+         => CT.Codec
+         -> Conduit B.ByteString m QueryResult
+prepFileWith c = CT.decode c -- * why is it utf8
+         $= CT.lines
+         $= C.map    (splitOn . pack $ "\n")
+         $= C.map    head
+         $= C.map    (splitOn $ pack "\t")
+         $= C.filter (\x -> length x == 3)
+         $= C.map    (\[a,b,c] -> ( preprocess a
+                                  , a
+                                  , read . unpack $ b
+                                  , c))
 
 queryFile :: FileOpS m [QueryResult]
           => Parser Text

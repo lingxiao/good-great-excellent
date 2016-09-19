@@ -50,7 +50,7 @@ executable good-great-excellent-exe
   other-modules  :    Core
                     , Src
                     , Query
-                    , SrubData
+                    , ScrubData
                     , Scripts
 
 
@@ -61,6 +61,7 @@ executable good-great-excellent-exe
                      , text
                      , split
                      , conduit
+                     , conduit-extra 
                      , conduit-combinators
                      , directory
                      , filepath

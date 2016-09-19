@@ -10,7 +10,25 @@
 ---------------------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------------
 
-module Conduits where
+module Conduits (
+
+     FileOpS
+   , FileOp
+   , Op
+
+   , eval
+   , run
+
+   , sourceDirectories
+   , openFile
+
+   , untarSaveAs
+   , shardFile
+   , logi
+   , logm
+   , cap
+
+  ) where
 
 import Prelude hiding           (readFile, writeFile , 
                                  lines               )
