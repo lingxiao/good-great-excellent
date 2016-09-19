@@ -1,0 +1,28 @@
+weak-strong-occurences
+2016-09-18 03:04:19.228749 UTC
+--------------------------------------------------
+total: 74,197,796
+--------------------------------------------------
+* (,) but not (a|an|the) *         20,825,403
+* (,) if not (a|an|the) *           5,054,687
+
+* (,) although not (a|an|the) *       157,633
+* (,) though not (a|an|the) *         323,156
+* (,) (and|or) even (a|an|the) *   42,374,768
+* (,) (and|or) almost (a|an|the) *  5,087,510
+not only * (,) but *                  332,541
+not just * (,) but *                   42,098
+
+
+strong-weak-occurences-short
+2016-09-18 03:12:14.746717 UTC
+--------------------------------------------------
+total: 3,413,081
+--------------------------------------------------
+not (a|an|the) * (,) just (a|an|the) *           2,497,527
+not (a|an|the) * (,) but just (a|an|the) *       1,193
+not (a|an|the) * (,) still (a|an|the) *          152,310
+not (a|an|the) * (,) but still (a|an|the) *      4,105
+not (a|an|the) * (,) although still (a|an|the) * 0
+not (a|an|the) * (,) though still (a|an|the) *   0
+* (,) or very *                                  757,946

@@ -8,7 +8,12 @@
 ---------------------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------------
  
-module Scripts where
+module Scripts (
+
+    main_split_by_pattern
+  , main_pattern_freq
+
+  ) where
 
 
 import System.IO
@@ -37,16 +42,25 @@ import Lib
 
 ------------------------------------------------------------------------------}
 
-
--- * @Use: main = main_filterByPattern "path/to/raw" [parsers]
-main_filter_by_pattern :: DirectoryPath -> [Parser Text] -> IO ()
-main_filter_by_pattern root patterns = do
+-- * @Use: main = main_split_by_pattern "path/to/greped-raw" [parsers]
+-- *       Assume we have a files in directory at `root` named
+-- *       `echo p`.txt for each p in `patterns`,
+-- *       filter the file for any items caught by grep but 
+-- *       does not `conformToPattern` to repsective p \in patterns
+-- *       also save list of items does `notConformToPattern`
+main_split_by_pattern :: DirectoryPath -> [Parser Text] -> IO ()
+main_split_by_pattern root patterns = do
     createDirectoryIfMissing False $ root ++ "out"
-    mapM (\p -> filterByPattern (root ++ echo p ++ ".txt")
-                                (root ++ "out/" ++ echo p ++ ".txt")
-                                p) patterns
-
+    mapM (split_by_pattern root) patterns
     return ()
+
+split_by_pattern :: DirectoryPath -> Parser Text  -> IO ()
+split_by_pattern root p = do
+  let path = root ++ echo p ++ ".txt"
+  let out1 = root ++ "out/" ++ echo p ++ ".txt"
+  let out2 = root ++ "out/" ++ "leftover-" ++ echo p ++ ".txt"
+  conformToPattern    path out1 p
+  --notConformToPattern path out2 p
 
 {-----------------------------------------------------------------------------
   count total occurences of each pattern in 

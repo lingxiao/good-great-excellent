@@ -12,7 +12,8 @@
  
 module PreprocessData (
 
-    filterByPattern
+    conformToPattern
+  , notConformToPattern
   , filterByPattern'
 
   ) where
@@ -42,13 +43,28 @@ type OutPath = FilePath
 
 -- * Given parser `p` and `inpath` to ngrams file, take all lines
 -- * in file recognized by `p` and save to output file in `outpath`
-filterByPattern :: InPath -> OutPath -> Parser Text ->  IO ()
-filterByPattern inpath outpath p  =  run 
-                                  $  sourceFile inpath 
-                                  $= toInput
-                                  $= C.filter (\(t,_,_) -> p <**? preprocess t)
-                                  $= fromInput
-                                  $$ sinkFile outpath
+conformToPattern :: InPath -> OutPath -> Parser Text ->  IO ()
+conformToPattern inpath outpath p  = go inpath outpath p
+                                     (\(t,_,_) -> p <**? preprocess t)
+
+
+-- * Given parser `p` and `inpath` to ngrams file, take all lines
+-- * in file not recognized by `p` and save to output file in `outpath`
+-- * may be used for debuggin parser on production data
+notConformToPattern :: InPath -> OutPath -> Parser Text -> IO ()                                  
+notConformToPattern inpath outpath p = go inpath outpath p
+                                       (\(t,_,_) -> not $ p <**? preprocess t)
+
+
+-- * Given parser `p` and `inpath` to ngrams file, take all lines
+-- * in file satisfying `predicate` and save to output file in `outpath`scan :: InPath -> OutPath -> Parser Text -> (Input -> Bool) -> IO ()
+go :: InPath -> OutPath -> Parser Text -> (Input -> Bool) -> IO ()
+go inpath outpath p predicate =  run 
+                               $  sourceFile inpath 
+                               $= toInput
+                               $= C.filter predicate
+                               $= fromInput
+                               $$ sinkFile outpath
 
 
 toInput :: FileOp m => Conduit B.ByteString m Input

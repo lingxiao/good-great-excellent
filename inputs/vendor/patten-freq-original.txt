@@ -3,11 +3,11 @@ totalCnt_strongWeak --> 3,260,968.0
 
 indivCnts_weakStrong:
 
-<*> , but not <*>      10,079,648
-<*> but not <*>        29,947,598
-<*> but not the <*>     1,046,877
-<*> but not an <*>         62,622
-<*> but not a <*>         450,444
+<*> , but not <*> -->   1.0079648E7
+<*> but not <*> -->     2.9947598E7
+<*> but not the <*> --> 1046877.0
+<*> but not an <*> -->  62622.0
+<*> but not a <*> -->   450444.0
 
 
 <*> almost a <*> --> 1458491.0
