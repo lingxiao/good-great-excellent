@@ -12,7 +12,8 @@
  
 module ScrubData (
 
-    conformToPattern
+    scrub
+  , conformToPattern
   , notConformToPattern
   , filterByPattern'
 
@@ -44,7 +45,7 @@ type OutPath = FilePath
 
 inroot :: DirectoryPath
 inroot = "/Users/lingxiao/Documents/research/data/ngrams/search/4gms/"
-name   = "4gm-0005.txt"
+name   = "4gm-0010.txt"
 inp    = inroot ++ name
 outp   = inroot ++ "scrub/" ++ name
 
@@ -64,8 +65,11 @@ scrub inp outp c =  run
                  $$ sinkFile outp
 
 
-foo :: IO ()
-foo = scrub inp outp CT.utf8
+foo :: Int -> IO ()
+foo n = do
+  let inp  = inroot ++ "4gm-00" ++ show n ++ ".txt"
+  let outp = inroot ++ "scrub/" ++ "4gm-00" ++ show n ++ ".txt"
+  scrub inp outp CT.utf8
 
 {-----------------------------------------------------------------------------
   Filter grepped files

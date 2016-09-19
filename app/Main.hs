@@ -13,8 +13,11 @@ module Main where
 import System.FilePath.Posix
 import System.Directory
 import Control.Monad.Trans.Reader
+
 import Data.Attoparsec.Text 
 import Data.Text hiding (head, replicate, filter, foldr, zip)
+import qualified Data.Conduit.Text as CT
+
 
 import Src
 import Lib
@@ -54,7 +57,16 @@ pbut = compile "* (,) but not (a|an|the) *" Star Star
 pif  = compile "* (,) if not (a|an|the) *" Star Star
 
 main :: IO ()
-main = return ()
+main = do
+  fs'       <- getDirectoryContents r5gm
+  let fs    = filter (\f -> takeExtension f == ".txt") fs'
+  let inps  = (++) r5gm <$> fs
+  let outps = (\p -> r5gm ++ "scrub/" ++ p) <$> fs
+  let ps    = zip inps outps
+  mapM (\(i,o) -> scrub i o CT.utf8) ps
+  return ()
+
+  
   -- * hypothesis: since we took care of cases
   -- * this should conform to example --> but actually have less
 
@@ -84,6 +96,7 @@ main = return ()
 
    -- * filter greped data                   
    --main_split_by_pattern grep_ws [pif]
+
 
 {-----------------------------------------------------------------------------
     Configurations
