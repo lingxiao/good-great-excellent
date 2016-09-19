@@ -90,11 +90,11 @@ main = return ()
 ------------------------------------------------------------------------------}
 
 -- * remote
--- * 4gm, 4gm_scrub, 5gm, 5gm_scrub :: DirectoryPath
---4gm       = "/nlp/data/xiao/ngrams/raw/4gms/"
---4gm_scrub = 4gm ++ "scrub/"
---5gm       = "/nlp/data/xiao/ngrams/raw/5gms/"
---5gm_scrub = 5gm ++ "scrub/"
+r4gm, r4gm_scrub, r5gm, r5gm_scrub :: DirectoryPath
+r4gm       = "/nlp/data/xiao/ngrams/raw/4gms/"
+r4gm_scrub = r4gm ++ "scrub/"
+r5gm       = "/nlp/data/xiao/ngrams/raw/5gms/"
+r5gm_scrub = r5gm ++ "scrub/"
 
 
 
