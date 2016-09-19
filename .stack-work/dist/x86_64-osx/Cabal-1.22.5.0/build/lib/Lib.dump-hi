@@ -1,29 +1,25 @@
 
 ==================== FINAL INTERFACE ====================
-2016-09-18 02:44:59.152746 UTC
+2016-09-19 01:46:11.260205 UTC
 
 interface goodg_DmvfzrsRlTTEG4TgbQ9uXe:Lib 7103
-  interface hash: 2665b7e1a2cbe03d38d77a2a63bc5e3b
-  ABI hash: 9d8fc4271c3f65382e56c2f6cff059ee
-  export-list hash: ca497823cfe00a7a5ba2965e5071ddb1
+  interface hash: 92740dd172e7f571a8535610659b9a2c
+  ABI hash: 0382ca76b2a906184ac958382df5100c
+  export-list hash: f75abedfdbe9a9c6aee80dbe9c26bdcf
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: 34a9291488a30a90b4883f399a0708a5
   sig of: Nothing
   used TH splices: False
   where
 exports:
-  Conduits.banner
   Conduits.cap
   Conduits.eval
-  Conduits.linesOn
-  Conduits.logNum
   Conduits.logi
   Conduits.logm
   Conduits.openFile
   Conduits.run
   Conduits.shardFile
   Conduits.sourceDirectories
-  Conduits.sourceFileE
   Conduits.untarSaveAs
   Parsers.<**
   Parsers.<**?
@@ -182,23 +178,19 @@ family instance modules: adjunctions-4.3@adjun_HUA1si0oygHIohE6wWvtj8:Data.Funct
                          vector-0.11.0.0@vecto_LmZ3LQW4ivu8MsQuVgukln:Data.Vector.Unboxed.Base
                          zlib-0.6.1.1@zlib_7LjT7TSHX8U3VTy3t378Vu:Codec.Compression.Zlib.Stream
 import  -/  base-4.8.2.0:Prelude 694dcaf039efe62df1c44834e2dbd2fb
-import  -/  Conduits f6985511b634bda5e029814f8f74bbb6
-  exports: 489f3f8d13b58ebd86c3a7ee1760c2aa
+import  -/  Conduits 1600df16aeaac8e823f4f457d091ceee
+  exports: ea420d2693eefe012ce157b03a67ec06
   FileOp 45dfb867f45c64f2df43920ed47ba070
   FileOpS bf52de68f605b29c5eca7b3534f48c1f
   Op ad0f51756a8eaf1e4bfe0cd2e304b730
-  banner b53d9ee74e03147f39752caebec748ec
   cap 3110b757e7c4085419a43f8e34687a0b
-  eval 908292d6bb457b3a2815afad532ff114
-  linesOn 40437ad6176f8f9cfd3715337f5e1c27
-  logNum 1e2fe0b2aaef45e5aa8309c74d2332da
+  eval 5453cdaad44bf15d656011b778ec03c6
   logi a4e875d67b3ab32ccc0491fa0bf93065
-  logm 0a43aabb270087b7624d408fd3662928
-  openFile ec21a64fbd1b17ff6f9178f03a0c7806
-  run a42f16105c614c0f840fe9e09d1d013a
+  logm 877de59b0797d998f106dbef72b7e991
+  openFile 03642a150d016eb8c85f6b07cf03dd8b
+  run eb118562ed79eccffbf2459a5c290a21
   shardFile 2a45221f0e7507344765a1321251d4a7
   sourceDirectories 340d235998aaeefc8c8abd10cba62a5c
-  sourceFileE 5289c03e017818de3cceb953ec59852d
   untarSaveAs 7ee9693e3cab68e25787055edeb6bfdf
 import  -/  Parsers 97be3f88ac191bc83d77e91a9f5cc950
   exports: 2896c53312aff025ace80f8ad93ff852
