@@ -42,6 +42,10 @@ import Scripts
 
 -- * then form: a file of positive and negative examples
 
+
+-- * consider `decode >> casefold >> encode utf8`
+-- * entire document
+
 pbut = compile "* (,) but not (a|an|the) *" Star Star
 pif  = compile "* (,) if not (a|an|the) *" Star Star
 

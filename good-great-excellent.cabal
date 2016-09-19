@@ -50,7 +50,7 @@ executable good-great-excellent-exe
   other-modules  :    Core
                     , Src
                     , Query
-                    , PreprocessData
+                    , SrubData
                     , Scripts
 
 

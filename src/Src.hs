@@ -13,10 +13,10 @@ module Src (
       module Core
     , module Score
     , module Query
-    , module PreprocessData
+    , module ScrubData
 ) where
 
 import Core
 import Score
 import Query
-import PreprocessData
+import ScrubData
