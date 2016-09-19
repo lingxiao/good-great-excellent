@@ -1,7 +1,8 @@
 -----------------------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------------
 -- | 
--- | Module  : A collection of misc scripts to be run in main w/ no gaurantee that they will work
+-- | Module  : A collection of misc scripts to be run in main 
+-- |           with no gaurantee that they will work
 -- | Author  : Xiao Ling
 -- | Date    : 9/13/2016
 -- |             
@@ -36,13 +37,6 @@ import Lib
 
 {-----------------------------------------------------------------------------
   preprocesss data
-    
-    patterns <- strongWeak <$> config_l
-    let parsers = (\p -> compile p Star Star) <$> patterns
-    let ns = echo <$> parsers
-    mapM print ns
-    main_filterByPattern root_sw parsers
-
 ------------------------------------------------------------------------------}
 
 -- * @Use: main = main_split_by_pattern "path/to/greped-raw" [parsers]
@@ -69,7 +63,6 @@ split_by_pattern root p = do
   count total occurences of each pattern in 
   reduced corpus built from: `grepped >> main_filterByPattern`
 ------------------------------------------------------------------------------}
-
 
 -- * @USE : main_pattern_freq "path\to\corpus" [patterns] "output-file-name"
 main_pattern_freq :: DirectoryPath 

@@ -51,9 +51,9 @@ query p f =  eval
 -- * query preprocessed text file
 query_at :: Op m => Parser Text -> FilePath -> m Output
 query_at p f =  eval
-            $  sourceFile f 
-            $= prepFileWith CT.utf8
-            $$ queryFile p
+             $  sourceFile f 
+             $= prepFileWith CT.utf8
+             $$ queryFile p
 
 {-----------------------------------------------------------------------------
   Sum all frequencies in a file
@@ -61,10 +61,10 @@ query_at p f =  eval
 
 total_freq :: Op m => FilePath -> m Integer
 total_freq inp =   run 
-            $   sourceFile inp
-            $=  prepFileWith CT.iso8859_1
-            $=  awaitForever (\(_,_,n,_) -> yield n)
-            $$  foldlC (+) 0
+               $   sourceFile inp
+               $=  prepFileWith CT.iso8859_1
+               $=  awaitForever (\(_,_,n,_) -> yield n)
+               $$  foldlC (+) 0
 
 {-----------------------------------------------------------------------------
   Conduits
@@ -74,16 +74,16 @@ total_freq inp =   run
 prepFileWith :: FileOpS m s 
          => CT.Codec
          -> Conduit B.ByteString m QueryResult
-prepFileWith c = CT.decode c -- * why is it utf8
-         $= CT.lines
-         $= C.map    (splitOn . pack $ "\n")
-         $= C.map    head
-         $= C.map    (splitOn $ pack "\t")
-         $= C.filter (\x -> length x == 3)
-         $= C.map    (\[a,b,c] -> ( preprocess a
-                                  , a
-                                  , read . unpack $ b
-                                  , c))
+prepFileWith c = CT.decode c 
+              $= CT.lines
+              $= C.map    (splitOn . pack $ "\n")
+              $= C.map    head
+              $= C.map    (splitOn $ pack "\t")
+              $= C.filter (\x -> length x == 3)
+              $= C.map    (\[a,b,c] -> ( preprocess a
+                                       , a
+                                       , read . unpack $ b
+                                       , c))
 
 queryFile :: FileOpS m [QueryResult]
           => Parser Text

@@ -27,10 +27,44 @@ import Scripts
   Main
 ------------------------------------------------------------------------------}
 
+pbut = compile "* (,) but not (a|an|the) *" Star Star
+pif  = compile "* (,) if not (a|an|the) *" Star Star
 
-    -- * Next: need to take statisitcs over all word pairs and save
-    -- * then need to figure out why althoug not, though not
-    -- * have no occurences in query
+
+{-
+
+next:
+
+1. grep files for but not
+2. count total occurences, call it m
+3. (confrom_to_pattern, not_conform_to_pattern)
+4. count occurence of each to make sure it sums to m
+5. reference against vendor data, if still off
+   by orders of magnitude then something else is going on
+
+-}
+main :: IO ()
+main = do
+  fs'       <- getDirectoryContents r5gm
+  let fs    = filter (\f -> takeExtension f == ".txt") fs'
+  let inps  = (++) r5gm <$> fs
+  let outps = (\p -> r5gm ++ "scrub/" ++ p) <$> fs
+  let ps    = zip inps outps
+  mapM (\(i,o) -> scrub i o CT.utf8) ps
+  return ()
+
+foo :: Int -> IO ()
+foo n = do
+  let inroot = "/Users/lingxiao/Documents/research/data/ngrams/search/4gms/"
+  let inp    = inroot ++ "4gm-00" ++ show n ++ ".txt"
+  let outp   = inroot ++ "scrub/" ++ "4gm-00" ++ show n ++ ".txt"
+  scrub CT.utf8 inp outp 
+
+
+
+-- * Next: need to take statisitcs over all word pairs and save
+-- * then need to figure out why althoug not, though not
+-- * have no occurences in query
 
 
 -- * current problem: number's dont line up remotely!!
@@ -53,49 +87,35 @@ import Scripts
 
 
 
-pbut = compile "* (,) but not (a|an|the) *" Star Star
-pif  = compile "* (,) if not (a|an|the) *" Star Star
+-- * hypothesis: since we took care of cases
+-- * this should conform to example --> but actually have less
 
-main :: IO ()
-main = do
-  fs'       <- getDirectoryContents r5gm
-  let fs    = filter (\f -> takeExtension f == ".txt") fs'
-  let inps  = (++) r5gm <$> fs
-  let outps = (\p -> r5gm ++ "scrub/" ++ p) <$> fs
-  let ps    = zip inps outps
-  mapM (\(i,o) -> scrub i o CT.utf8) ps
-  return ()
+{-
 
-  
-  -- * hypothesis: since we took care of cases
-  -- * this should conform to example --> but actually have less
+let name = echo pif
+n <- total_freq $ corpus_l ++ name ++ ".txt"
+print (name,n)
+return ()
+-}
 
-  {-
-
-  let name = echo pif
-  n <- total_freq $ corpus_l ++ name ++ ".txt"
-  print (name,n)
-  return ()
-  -}
-
-  -- * where you left off: reallly need to
-  -- * take care of case folding and encoding up front
-  -- * or you'll have tons of problems later
-  -- * consider using tworkenize
+-- * where you left off: reallly need to
+-- * take care of case folding and encoding up front
+-- * or you'll have tons of problems later
+-- * consider using tworkenize
 
 
-  -- * decode with utf-8, if decoding no good then
-  -- * put in symbol unknown
+-- * decode with utf-8, if decoding no good then
+-- * put in symbol unknown
 
 
 
-    --con <- config_l
-    --main_pattern_freq (corpus con    ) 
-                      --(strongWeak con) 
-                      --"strong-weak-occurences-short"
+--con <- config_l
+--main_pattern_freq (corpus con    ) 
+                  --(strongWeak con) 
+                  --"strong-weak-occurences-short"
 
-   -- * filter greped data                   
-   --main_split_by_pattern grep_ws [pif]
+-- * filter greped data                   
+--main_split_by_pattern grep_ws [pif]
 
 
 {-----------------------------------------------------------------------------
@@ -108,7 +128,6 @@ r4gm       = "/nlp/data/xiao/ngrams/raw/4gms/"
 r4gm_scrub = r4gm ++ "scrub/"
 r5gm       = "/nlp/data/xiao/ngrams/raw/5gms/"
 r5gm_scrub = r5gm ++ "scrub/"
-
 
 
 

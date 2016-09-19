@@ -13,9 +13,9 @@
 module ScrubData (
 
     scrub
-  , conformToPattern
-  , notConformToPattern
-  , filterByPattern'
+  , conform_pattern
+  , conform_pattern'
+  , not_conform_pattern
 
   ) where
 
@@ -43,15 +43,10 @@ type OutPath = FilePath
   case fold data
 ------------------------------------------------------------------------------}
 
-inroot :: DirectoryPath
-inroot = "/Users/lingxiao/Documents/research/data/ngrams/search/4gms/"
-name   = "4gm-0010.txt"
-inp    = inroot ++ name
-outp   = inroot ++ "scrub/" ++ name
-
 -- * `preprocess` each line of file found at `inp` and save to `outp`
-scrub :: InPath -> OutPath -> CT.Codec -> IO ()
-scrub inp outp c =  run 
+-- * by case folding and whitespace stripping
+scrub :: CT.Codec -> InPath -> OutPath -> IO ()
+scrub c inp outp =  run 
                  $  sourceFile inp
                  $= CT.decode c
                  $= CT.lines
@@ -64,47 +59,57 @@ scrub inp outp c =  run
                  $= CT.encode c
                  $$ sinkFile outp
 
-
-foo :: Int -> IO ()
-foo n = do
-  let inp  = inroot ++ "4gm-00" ++ show n ++ ".txt"
-  let outp = inroot ++ "scrub/" ++ "4gm-00" ++ show n ++ ".txt"
-  scrub inp outp CT.utf8
-
 {-----------------------------------------------------------------------------
   Filter grepped files
 ------------------------------------------------------------------------------}
 
 -- * Given parser `p` and `inpath` to ngrams file, take all lines
 -- * in file recognized by `p` and save to output file in `outpath`
-conformToPattern :: InPath -> OutPath -> Parser Text ->  IO ()
-conformToPattern inpath outpath p  = go inpath outpath p
-                                     (\(t,_,_) -> p <**? preprocess t)
-
+conform_pattern :: Parser Text -> InPath -> OutPath -> IO ()
+conform_pattern p  = go (\(t,_,_) -> p <**? preprocess t) p CT.utf8
 
 -- * Given parser `p` and `inpath` to ngrams file, take all lines
 -- * in file not recognized by `p` and save to output file in `outpath`
 -- * may be used for debuggin parser on production data
-notConformToPattern :: InPath -> OutPath -> Parser Text -> IO ()                                  
-notConformToPattern inpath outpath p = go inpath outpath p
-                                       (\(t,_,_) -> not $ p <**? preprocess t)
+not_conform_pattern :: Parser Text -> InPath -> OutPath -> IO ()                                  
+not_conform_pattern p = go (\(t,_,_) -> not $ p <**? preprocess t) p CT.utf8
 
+{-----------------------------------------------------------------------------
+  Filter raw ngram files
+------------------------------------------------------------------------------}
 
 -- * Given parser `p` and `inpath` to ngrams file, take all lines
--- * in file satisfying `predicate` and save to output file in `outpath`scan :: InPath -> OutPath -> Parser Text -> (Input -> Bool) -> IO ()
-go :: InPath -> OutPath -> Parser Text -> (Input -> Bool) -> IO ()
-go inpath outpath p predicate =  run 
-                               $  sourceFile inpath 
-                               $= toInput
-                               $= C.filter predicate
-                               $= fromInput
-                               $$ sinkFile outpath
+-- * in file recognized by `p` and save to output file in `outpath`
+conform_pattern' ::  Parser Text -> InPath -> OutPath -> IO ()
+conform_pattern' p inp outp =  run 
+                           $  sourceFile inp
+                           $= toInput' CT.utf8
+                           $= C.filter (\(t,_,_) -> p <**? preprocess t)
+                           $= fromInput CT.utf8
+                           $$ sinkFile outp
 
+{-----------------------------------------------------------------------------
+ Subroutines
+------------------------------------------------------------------------------}
 
-  -- *linesOn "\n" 
+-- * Given parser `p` and `inpath` to ngrams file, take all lines
+-- * in file satisfying `predicate` and save to output file in `outpath`
+go :: (Input -> Bool) 
+   -> Parser Text 
+   -> CT.Codec 
+   -> InPath 
+   -> OutPath 
+   -> IO ()
+go predicate p code inp outp = run 
+                            $  sourceFile inp 
+                            $= toInput code
+                            $= C.filter predicate
+                            $= fromInput code
+                            $$ sinkFile outp
 
-toInput :: FileOp m => Conduit B.ByteString m Input
-toInput = CT.decode CT.iso8859_1
+-- * convert greped ngram files to inputs
+toInput :: FileOp m => CT.Codec -> Conduit B.ByteString m Input
+toInput code = CT.decode code
        $= CT.lines
        $= C.map    (splitOn . pack $ "\n"                )
        $= C.map    head
@@ -115,41 +120,24 @@ toInput = CT.decode CT.iso8859_1
        $= C.map    (\[s,t,n] -> (t, n, s)                )
 
 
-fromInput :: FileOp m => Conduit Input m B.ByteString
-fromInput = C.map (\(a,b,c) -> encodeUtf8 
-                          $  T.concat [ a
-                                      , pack "\t"
-                                      , b
-                                      , pack "\t"
-                                      , c
-                                      , pack "\n"])
+-- * convert raw ngrams files to inputs
+toInput' :: FileOp m => CT.Codec -> Conduit B.ByteString m Input
+toInput' code =  CT.decode code
+              $= CT.lines
+              $= C.map    (splitOn . pack $ "\n"   )
+              $= C.map    head
+              $= C.map    (splitOn $ pack "\t"     )
+              $= C.filter ((==2) . length          )
+              $= C.map    (\[t,n] -> (t,n, pack ""))
 
-{-----------------------------------------------------------------------------
-  Filter raw ngram files
-------------------------------------------------------------------------------}
-
-filterByPattern' :: InPath -> OutPath -> Parser Text -> IO ()
-filterByPattern' inpath outpath p =  run 
-                                  $  sourceFile inpath
-                                  $= toInput'
-                                  $= C.filter (\(t,_,_) -> p <**? preprocess t)
-                                  $= fromInput
-                                  $$ sinkFile outpath
-
-
-toInput' :: FileOp m => Conduit B.ByteString m Input
-toInput' = CT.decode CT.utf16_le
-       $= CT.lines
-       $= C.map    (splitOn . pack $ "\n")
-       $= C.map    head
-       $= C.map    (splitOn $ pack "\t"     )
-       $= C.filter ((==2) . length          )
-       $= C.map    (\[t,n] -> (t,n, pack ""))
-
-
-
-
-
-
+-- * convert filered files back to bytestring
+fromInput :: FileOp m => CT.Codec -> Conduit Input m B.ByteString
+fromInput code = C.map (\(a,b,c) -> T.concat [ a
+                                             , pack "\t"
+                                             , b
+                                             , pack "\t"
+                                            , c
+                                            , pack "\n"])
+               $= CT.encode code
 
 
