@@ -1,62 +1,122 @@
 
 ==================== FINAL INTERFACE ====================
-2016-09-18 02:44:50.395829 UTC
+2016-09-20 18:36:36.258299 UTC
 
 interface goodg_DmvfzrsRlTTEG4TgbQ9uXe:Preprocess 7103
-  interface hash: 8303462cf94abaa31faff3490758fcea
-  ABI hash: 58792408274cdca5a172c615befcd901
-  export-list hash: 0124ea26c8dc588d84b9bb94eb176b31
+  interface hash: d11bbb674b42766ca5d712264b7b87da
+  ABI hash: 8cedbc87854d8226ca6314564e2a9c2e
+  export-list hash: 1f515d6e2ae9b38c055b0aec58ebc5f8
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: 34a9291488a30a90b4883f399a0708a5
   sig of: Nothing
   used TH splices: False
   where
 exports:
-  Preprocess.foldStrip
+  Preprocess.fromWords
   Preprocess.preprocess
-module dependencies:
+  Preprocess.toWords
+module dependencies: Parsers Tokenize
 package dependencies: array-0.5.1.0@array_67iodizgJQIIxYVTp4emlA
-                      base-4.8.2.0* binary-0.7.5.0@binar_3uXFWMoAGBg0xKP9MHKRwi
+                      attoparsec-0.13.0.2@attop_F2JR8EcnzjH8eSBi5YocsE* base-4.8.2.0*
+                      binary-0.7.5.0@binar_3uXFWMoAGBg0xKP9MHKRwi
                       bytestring-0.10.6.0@bytes_6VWy06pWzJq9evDvK2d4w6
                       containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU
                       deepseq-1.4.1.1@deeps_6vMKxt5sPFR0XsbRWvvq59 ghc-prim-0.4.0.0
-                      integer-gmp-1.0.0.0 text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne*
-orphans: base-4.8.2.0:GHC.Base base-4.8.2.0:GHC.Float
+                      hashable-1.2.4.0@hasha_EalUWgp8NarBYWPbvYAD8I integer-gmp-1.0.0.0
+                      primitive-0.6.1.0@primi_EphY2c7CCxSCBKjAN0YTR3
+                      scientific-0.3.4.9@scien_1WVNjGUftkQ9QzH4DOM2n1
+                      text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne*
+                      transformers-0.4.2.0@trans_GZTjP9K5WFq01xC9BAGQpF
+                      vector-0.11.0.0@vecto_LmZ3LQW4ivu8MsQuVgukln
+orphans: attoparsec-0.13.0.2@attop_F2JR8EcnzjH8eSBi5YocsE:Data.Attoparsec.Text.Internal
+         base-4.8.2.0:GHC.Base base-4.8.2.0:GHC.Float
          binary-0.7.5.0@binar_3uXFWMoAGBg0xKP9MHKRwi:Data.Binary.Generic
          bytestring-0.10.6.0@bytes_6VWy06pWzJq9evDvK2d4w6:Data.ByteString.Builder
+         hashable-1.2.4.0@hasha_EalUWgp8NarBYWPbvYAD8I:Data.Hashable.Generic
          text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text
+         text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text.Lazy
          text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text.Show
-family instance modules: base-4.8.2.0:Control.Applicative
-                         base-4.8.2.0:Data.Either base-4.8.2.0:Data.Functor.Identity
-                         base-4.8.2.0:Data.Monoid base-4.8.2.0:Data.Type.Equality
-                         base-4.8.2.0:Data.Void base-4.8.2.0:GHC.Exts
-                         base-4.8.2.0:GHC.Generics
+         transformers-0.4.2.0@trans_GZTjP9K5WFq01xC9BAGQpF:Control.Monad.Trans.Error
+         vector-0.11.0.0@vecto_LmZ3LQW4ivu8MsQuVgukln:Data.Vector.Fusion.Bundle
+family instance modules: attoparsec-0.13.0.2@attop_F2JR8EcnzjH8eSBi5YocsE:Data.Attoparsec.Internal.Types
+                         base-4.8.2.0:Control.Applicative base-4.8.2.0:Data.Either
+                         base-4.8.2.0:Data.Functor.Identity base-4.8.2.0:Data.Monoid
+                         base-4.8.2.0:Data.Type.Equality base-4.8.2.0:Data.Void
+                         base-4.8.2.0:GHC.Exts base-4.8.2.0:GHC.Generics
                          containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.IntMap.Base
                          containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.IntSet.Base
                          containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.Map.Base
                          containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.Sequence
                          containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.Set.Base
+                         primitive-0.6.1.0@primi_EphY2c7CCxSCBKjAN0YTR3:Control.Monad.Primitive
                          text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text
+                         text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text.Lazy
+                         vector-0.11.0.0@vecto_LmZ3LQW4ivu8MsQuVgukln:Data.Vector
+import  -/  attoparsec-0.13.0.2@attop_F2JR8EcnzjH8eSBi5YocsE:Data.Attoparsec.Combinator 515b3551027b987cac85138dd4df58cf
+import  -/  attoparsec-0.13.0.2@attop_F2JR8EcnzjH8eSBi5YocsE:Data.Attoparsec.Text ef4522f4be13d2408762e9077e71bbfa
+import  -/  base-4.8.2.0:Data.Char c8f827952d4111ae2e47c0b105217cdb
+import  -/  base-4.8.2.0:Data.Foldable 2ce969969ad5231eb40bd713f94f05ad
 import  -/  base-4.8.2.0:GHC.Base 1db77db5dae73d8c424c85b09fbadb89
+import  -/  base-4.8.2.0:GHC.List 0c736920522bbd14b770342776012ab6
 import  -/  base-4.8.2.0:Prelude 694dcaf039efe62df1c44834e2dbd2fb
+import  -/  ghc-prim-0.4.0.0:GHC.Classes e1f4ff80f7b5262008a595d29986fb18
+import  -/  Parsers 97be3f88ac191bc83d77e91a9f5cc950
+  exports: 2896c53312aff025ace80f8ad93ff852
+import  -/  Tokenize 2d259b33e022e55620b17a7a72141123
+  exports: 3877a91ef25701272b3ca895085836b9
+  tokenize 9827fc325a379e1bc799f57fc5256d12
 import  -/  text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text b53ae191632883b10562be5cbaa0b22b
 import  -/  text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text.Internal d9b6b9a9dd535595b612aea5738b7466
-81d798d9a36c578ff3426df7725ea741
-  $wfoldStrip ::
+c420eb656588adf595eadbc36f26c42f
+  $wa ::
+    GHC.Prim.ByteArray#
+    -> GHC.Prim.Int# -> GHC.Prim.Int# -> [[Data.Text.Internal.Text]]
+  {- Arity: 3, Strictness: <L,U><L,U><L,U>, Inline: [0] -}
+0437ef4a61d16c86d4073454b0966234
+  $wpreprocess ::
     GHC.Prim.ByteArray#
     -> GHC.Prim.Int# -> GHC.Prim.Int# -> Data.Text.Internal.Text
   {- Arity: 3, Strictness: <L,U><L,U><L,U>, Inline: [0] -}
-aadace9cc6a5412a119db064d9aa7d48
-  foldStrip :: Data.Text.Internal.Text -> Data.Text.Internal.Text
+92e80d84e102e857b34e0b4fd2c0a4d4
+  $wtoWords ::
+    GHC.Prim.ByteArray#
+    -> GHC.Prim.Int# -> GHC.Prim.Int# -> [Data.Text.Internal.Text]
+  {- Arity: 3, Strictness: <L,U><L,U><L,U>, Inline: [0],
+     Unfolding: (\ ww :: GHC.Prim.ByteArray#
+                   ww1 :: GHC.Prim.Int#
+                   ww2 :: GHC.Prim.Int# ->
+                 Preprocess.toWords_go (Preprocess.$wa ww ww1 ww2)) -}
+a9a1731c58d955d77f479c39fd5da0bb
+  fromWords :: [Data.Text.Internal.Text] -> Data.Text.Internal.Text
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ x :: [Data.Text.Internal.Text] ->
+                 Data.Text.concat
+                   (Data.Text.Internal.Functions.intersperse
+                      @ Data.Text.Internal.Text
+                      Preprocess.fromWords1
+                      x)) -}
+91e9e3bb93c99be3f3cf4fd2f48df3d2
+  fromWords1 :: Data.Text.Internal.Text
+  {- Unfolding: (Data.Text.Show.unpackCString# " "#) -}
+b5d95a6a7113d3692421d3920c7a7e02
+  preprocess :: Data.Text.Internal.Text -> Data.Text.Internal.Text
   {- Arity: 1, Strictness: <S,1*U(U,U,U)>, Inline: INLINE[0],
      Unfolding: InlineRule (1, True, False)
                 (\ w :: Data.Text.Internal.Text ->
                  case w of ww { Data.Text.Internal.Text ww1 ww2 ww3 ->
-                 Preprocess.$wfoldStrip ww1 ww2 ww3 }) -}
-da0f1b0df5ae7645566b07130bc7ace4
-  preprocess :: Data.Text.Internal.Text -> Data.Text.Internal.Text
-  {- Arity: 1, Strictness: <S,1*U(U,U,U)>,
-     Unfolding: InlineRule (0, True, True) Preprocess.foldStrip -}
+                 Preprocess.$wpreprocess ww1 ww2 ww3 }) -}
+33fdc2f8cd7e29f860cbff6af84e3cba
+  toWords :: Data.Text.Internal.Text -> [Data.Text.Internal.Text]
+  {- Arity: 1, Strictness: <S,1*U(U,U,U)>, Inline: INLINE[0],
+     Unfolding: InlineRule (1, True, False)
+                (\ w :: Data.Text.Internal.Text ->
+                 case w of ww { Data.Text.Internal.Text ww1 ww2 ww3 ->
+                 Preprocess.$wtoWords ww1 ww2 ww3 }) -}
+55e3f7edc4cd168af075ee744d781003
+  toWords_go ::
+    [[Data.Text.Internal.Text]] -> [Data.Text.Internal.Text]
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U> -}
 vectorised variables:
 vectorised tycons:
 vectorised reused tycons:
