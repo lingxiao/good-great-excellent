@@ -8,17 +8,17 @@
 ---------------------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------------
 
-module Preprocess where
+module NormalizeText (
 
+    normalize
+
+  ) where
+
+
+import Control.Monad
 import Data.Text (Text, pack, unpack, empty)
 import qualified Data.Text as T
 import Tokenize
-
-
-import Data.Char
-import Data.Attoparsec.Text
-import Data.Attoparsec.Combinator
-import Parsers
 
 
 {-----------------------------------------------------------------------------
@@ -29,8 +29,8 @@ import Parsers
 -- *    (1) fold case
 -- *    (2) fold space
 -- *    (3) interspace punctations
-preprocess :: Text -> Text
-preprocess = T.toCaseFold . fromWords . toWords
+normalize :: Text -> Text
+normalize = T.toCaseFold . fromWords . toWords
 
 {-----------------------------------------------------------------------------
     specific tasks
@@ -39,21 +39,24 @@ preprocess = T.toCaseFold . fromWords . toWords
 fromWords :: [Text] -> Text
 fromWords = T.intercalate (pack " ")
 
--- * problem: need to determine what to do w/ punctuations
--- * 1. proper tokenizaton
--- * 2. normalize ngrams
--- * 3. now run grep over the data set
+
 toWords :: Text -> [Text]
 toWords =   concat 
-          . fmap tokenize 
+          . fmap tokenizer
           . filter ((/=) empty) 
           . T.splitOn (pack " ") 
 
 
-
-
-
-
+-- * (1) strip white space
+-- * (2) preserve urls and web addresses
+-- * (3) put space around punctations, 
+-- * (4) preserve contractions such as he's, he'll
+tokenizer :: Text -> [Text]
+tokenizer =   run 
+          $   whitespace
+          >=> uris
+          >=> punctuation 
+          >=> contractions           
 
 
 

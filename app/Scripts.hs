@@ -42,15 +42,13 @@ import Lib
 
 main_normalize :: DirectoryPath -> String -> Int -> IO ()
 main_normalize root filename n = do
-  let out  = root     ++ "/scrub/"
-  let idx  = (concat $ replicate (4 - (length . show $ n)) "0") ++ show n
+  let outr = root     ++ "/scrub/"
+  let idx  = (concat $ replicate (4 - (length . show $ n)) "0")  
+          ++ show n
   let name = filename ++ "-" ++ idx ++ ".txt"
   let inp  = root     ++ name
-  let outp = out      ++ name
---  print inp
---  print ("----------------------------------")
+  let outp = outr     ++ name
   scrub CT.utf8 inp outp
-
 
 {-----------------------------------------------------------------------------
   parse greped data

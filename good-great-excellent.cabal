@@ -18,8 +18,8 @@ library
   exposed-modules:     Lib
   other-modules  :     Parsers
                     ,  Conduits
-                    ,  Preprocess
                     ,  Tokenize
+                    ,  NormalizeText
                     ,  PatternCompiler
                     ,  Utils
 
@@ -84,7 +84,7 @@ test-suite good-great-excellent-test
 
   other-modules:       ParserSimpleText
                      , ParserInteractionTest
-                     , PreprocessTest
+                     , NormalizeTextTest
                      , TokenizeTest
                      , PatternCompilerTest
 

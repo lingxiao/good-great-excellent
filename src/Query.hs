@@ -95,7 +95,7 @@ prepFileWith c = CT.decode c
               $= C.map    head
               $= C.map    (splitOn $ pack "\t")
               $= C.filter (\x -> length x == 3)
-              $= C.map    (\[a,b,c] -> ( preprocess a
+              $= C.map    (\[a,b,c] -> ( normalize a
                                        , a
                                        , read . unpack $ b
                                        , c))

@@ -2,7 +2,9 @@
 -----------------------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------------
 -- | 
--- | Module  : NLP Tokenizer, adapted to use Text instead of Strings from the
+-- | Vendor
+-- | Module  : NLP Tokenizer, adapted to use Text instead of Strings
+-- |           Note this module is not found on stackage
 -- | Author  : Grzegorz Chrupała
 -- | Date    : 9/20/2016
 -- |             
@@ -60,11 +62,11 @@ run :: Tokenizer -> (Text -> [Text])
 run f = \txt -> map T.copy $ (map unwrap . unE . f) txt
 
 defaultTokenizer :: Tokenizer
-defaultTokenizer =     whitespace 
-                   >=> uris 
-                   >=> punctuation 
+defaultTokenizer =   whitespace 
+                 >=> uris 
+                 >=> punctuation 
                  >=> contractions 
-               --   >=> negatives 
+                 >=> negatives 
 
 -- | Detect common uris and freeze them
 uris :: Tokenizer

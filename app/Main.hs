@@ -87,7 +87,7 @@ total      : 91,414
 
 main :: IO ()
 main = do
-  (main_normalize r5gm "5gm") `mapM` [0..131]
+  (main_normalize r5gm "5gm") `mapM` [5..117]
   return ()
 
   -- * loop to count occurences

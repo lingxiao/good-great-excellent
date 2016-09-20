@@ -12,7 +12,7 @@
 module Lib (
       module Parsers
     , module Conduits
-    , module Preprocess
+    , module NormalizeText
     , module PatternCompiler
     , module Utils
 ) where
@@ -21,6 +21,6 @@ module Lib (
 
 import Parsers
 import Conduits
-import Preprocess
+import NormalizeText
 import PatternCompiler
 import Utils

@@ -12,12 +12,17 @@ grep pattern          grep-count      vendor/pattern-freq.txt    conform-pattern
 
 — * these are weird since the greped raw-count has more than vendor, but parsed version is less than vendor
 but not               170,485,658      41,587,189                    23,100,277          146,090,597          169,190,874
+
 if not                 67,426,635      16,202,125                     5,272,456           61,155,430           66,427,886
+
 although not            5,025,396       1,647,826                       161,264            4,823,983            4,985,247
+
 though not             10,972,824       1,771,651                       327,695           10,590,856           10,918,551
 
 — * these are bad since the greped raw count has less than what vendor specified
+
 and|or even           178,625,111     292,616,581                    44,274,606          132,002,117          176,276,723
+
 and|or almost          14,147,292      61,234,877                     5,219,282            8,886,009           14,105,291
 
 — * these are ok since they’re within 1% of each other
