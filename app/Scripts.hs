@@ -48,9 +48,7 @@ main_normalize root filename n = do
   let name = filename ++ "-" ++ idx ++ ".txt"
   let inp  = root     ++ name
   let outp = outr     ++ name
-  print inp
-  print outp
-  --scrub CT.utf8 inp outp
+  scrub CT.utf8 inp outp
 
 {-----------------------------------------------------------------------------
   parse greped data
