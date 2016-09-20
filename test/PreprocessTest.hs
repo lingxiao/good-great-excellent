@@ -22,7 +22,7 @@ import Preprocess
 main :: IO ()
 main = do
     runTestTT . TestList 
-              $ [ tfoldstrip
+              $ [ tpreprocess
                 ]
     return ()
 
@@ -30,11 +30,43 @@ main = do
     Tasks
 ------------------------------------------------------------------------------}
 
-tfoldstrip :: Test
-tfoldstrip = let e           = pack "good but not great" 
-           in let foldStrip' = foldStrip . pack
-           in "foldStrip" 
-        ~: TestList [ foldStrip' "good but not great"        ~?= e
-                    , foldStrip' "Good BUT not gREAt"        ~?= e
-                    , foldStrip' "   good but not great   "  ~?= e
+tpreprocess :: Test
+tpreprocess = let preprocess' = preprocess . pack
+           in let e = pack "good but not great" 
+           in "preprocess"
+        ~: TestList [ 
+                      -- * identity
+                      preprocess' "good but not great"        ~?= e
+                      -- * case fold
+                    , preprocess' "Good BUT not gREAt"        ~?= e
+                      --  * white space 
+                    , preprocess' "  good but    not great  "  ~?= e
+
+                      -- * hyphen preserved
+                    , preprocess' "good-great"                 ~?= pack "good-great"
+
+                      -- * comma base case
+                    , preprocess' "good, but     not   "      ~?= pack "good , but not"
+
+                      -- * comma no space behind 
+                    , preprocess' "good ,but     not   "      ~?= pack "good , but not"
+
+                      -- * comma space in front and behind
+                    , preprocess' "good , but     not   "     ~?= pack "good , but not"
                     ]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -10,8 +10,15 @@
 
 module Preprocess where
 
+import Data.Text (Text, pack, unpack, empty)
+import qualified Data.Text as T
+import Tokenize
 
-import Data.Text
+
+import Data.Char
+import Data.Attoparsec.Text
+import Data.Attoparsec.Combinator
+import Parsers
 
 
 {-----------------------------------------------------------------------------
@@ -19,15 +26,64 @@ import Data.Text
 ------------------------------------------------------------------------------}
 
 -- * preprocess text
+-- *    (1) fold case
+-- *    (2) fold space
+-- *    (3) interspace punctations
 preprocess :: Text -> Text
-preprocess = foldStrip
-
+preprocess = T.toCaseFold . fromWords . toWords
 
 {-----------------------------------------------------------------------------
     specific tasks
 ------------------------------------------------------------------------------}
 
+fromWords :: [Text] -> Text
+fromWords = T.intercalate (pack " ")
 
-foldStrip :: Text -> Text
-foldStrip = toCaseFold . strip
+-- * problem: need to determine what to do w/ punctuations
+-- * 1. proper tokenizaton
+-- * 2. normalize ngrams
+-- * 3. now run grep over the data set
+toWords :: Text -> [Text]
+toWords =   concat 
+          . fmap tokenize 
+          . filter ((/=) empty) 
+          . T.splitOn (pack " ") 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

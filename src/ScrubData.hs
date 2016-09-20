@@ -40,26 +40,6 @@ type InPath  = FilePath
 type OutPath = FilePath
 
 {-----------------------------------------------------------------------------
-  case fold data
-------------------------------------------------------------------------------}
-
--- * `preprocess` each line of file found at `inp` and save to `outp`
--- * by case folding and whitespace stripping
-scrub :: CT.Codec -> InPath -> OutPath -> IO ()
-scrub c inp outp =  run 
-                 $  sourceFile inp
-                 $= CT.decode c
-                 $= CT.lines
-                 $= C.map    (splitOn . pack $ "\t"           )
-                 $= C.filter ((==2) . length                  )
-                 $= C.map    (\[t,n] -> T.concat [ preprocess t
-                                                 , pack "\t"
-                                                 , n
-                                                 , pack "\n"] )
-                 $= CT.encode c
-                 $$ sinkFile outp
-
-{-----------------------------------------------------------------------------
   Filter grepped files
 ------------------------------------------------------------------------------}
 
@@ -82,11 +62,31 @@ not_conform_pattern p = go (\(t,_,_) -> not $ p <**? preprocess t) p CT.utf8
 -- * in file recognized by `p` and save to output file in `outpath`
 conform_pattern' ::  Parser Text -> InPath -> OutPath -> IO ()
 conform_pattern' p inp outp =  run 
-                           $  sourceFile inp
-                           $= toInput' CT.utf8
-                           $= C.filter (\(t,_,_) -> p <**? preprocess t)
-                           $= fromInput CT.utf8
-                           $$ sinkFile outp
+                            $  sourceFile inp
+                            $= toInput' CT.utf8
+                            $= C.filter (\(t,_,_) -> p <**? preprocess t)
+                            $= fromInput CT.utf8
+                            $$ sinkFile outp
+
+{-----------------------------------------------------------------------------
+  case fold data
+------------------------------------------------------------------------------}
+
+-- * `preprocess` each line of file found at `inp` and save to `outp`
+-- * by case folding and whitespace stripping
+scrub :: CT.Codec -> InPath -> OutPath -> IO ()
+scrub c inp outp =  run 
+                 $  sourceFile inp
+                 $= CT.decode c
+                 $= CT.lines
+                 $= C.map    (splitOn . pack $ "\t"           )
+                 $= C.filter ((==2) . length                  )
+                 $= C.map    (\[t,n] -> T.concat [ preprocess t
+                                                 , pack "\t"
+                                                 , n
+                                                 , pack "\n"] )
+                 $= CT.encode c
+                 $$ sinkFile outp
 
 {-----------------------------------------------------------------------------
  Subroutines
@@ -109,15 +109,15 @@ go predicate p code inp outp = run
 
 -- * convert greped ngram files to inputs
 toInput :: FileOp m => CT.Codec -> Conduit B.ByteString m Input
-toInput code = CT.decode code
-       $= CT.lines
-       $= C.map    (splitOn . pack $ "\n"                )
-       $= C.map    head
-       $= C.map    (splitOn $ pack ":"                   ) 
-       $= C.filter ((==2) . length                       )
-       $= C.map    (\[a,b]   -> (a:splitOn (pack "\t") b))
-       $= C.filter ((==3) . length                       )
-       $= C.map    (\[s,t,n] -> (t, n, s)                )
+toInput code =  CT.decode code
+             $= CT.lines
+             $= C.map    (splitOn . pack $ "\n"                )
+             $= C.map    head
+             $= C.map    (splitOn $ pack ":"                   ) 
+             $= C.filter ((==2) . length                       )
+             $= C.map    (\[a,b]   -> (a:splitOn (pack "\t") b))
+             $= C.filter ((==3) . length                       )
+             $= C.map    (\[s,t,n] -> (t, n, s)                )
 
 
 -- * convert raw ngrams files to inputs

@@ -14,9 +14,11 @@ module Query (
     query
   , query_at
   , total_freq
+  , raw_freq
   ) where
 
 
+import System.FilePath.Posix
 import Control.Monad.State
 
 import Data.Conduit 
@@ -59,15 +61,28 @@ query_at p f =  eval
   Sum all frequencies in a file
 ------------------------------------------------------------------------------}
 
+-- * count total frequency, compatible with file that `conform_pattern`
+-- * and file that `not_conform_pattern`
 total_freq :: Op m => FilePath -> m Integer
 total_freq inp =   run 
                $   sourceFile inp
-               $=  prepFileWith CT.iso8859_1
-               $=  awaitForever (\(_,_,n,_) -> yield n)
+               $=  prepFileWith CT.utf8   -- CT.iso8859_1
+               $=  C.map (\(_,_,n,_) -> n)
                $$  foldlC (+) 0
 
+-- * count total frequency in greped file
+raw_freq :: Op m => FilePath -> m Integer
+raw_freq inp =  run
+                $  sourceFile inp               
+                $= CT.decode CT.utf8
+                $= CT.lines
+                $= C.map    (splitOn . pack $ "\t"        )
+                $= C.filter ((==2) . length               )
+                $= C.map    (\[t,n] -> (read . unpack $ n))
+                $$ foldlC (+) 0
+
 {-----------------------------------------------------------------------------
-  Conduits
+  Subroutines
 ------------------------------------------------------------------------------}
 
 -- linesOn "\n"

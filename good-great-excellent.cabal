@@ -19,6 +19,7 @@ library
   other-modules  :     Parsers
                     ,  Conduits
                     ,  Preprocess
+                    ,  Tokenize
                     ,  PatternCompiler
                     ,  Utils
 
@@ -84,6 +85,7 @@ test-suite good-great-excellent-test
   other-modules:       ParserSimpleText
                      , ParserInteractionTest
                      , PreprocessTest
+                     , TokenizeTest
                      , PatternCompilerTest
 
   build-depends:       base >= 4.7 && < 5

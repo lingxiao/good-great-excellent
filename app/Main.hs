@@ -10,13 +10,9 @@
 
 module Main where
 
-import System.FilePath.Posix
-import System.Directory
-import Control.Monad.Trans.Reader
 
-import Data.Attoparsec.Text 
 import Data.Text hiding (head, replicate, filter, foldr, zip)
-import qualified Data.Conduit.Text as CT
+import System.FilePath.Posix
 
 
 import Src
@@ -27,68 +23,100 @@ import Scripts
   Main
 ------------------------------------------------------------------------------}
 
-pbut = compile "* (,) but not (a|an|the) *" Star Star
-pif  = compile "* (,) if not (a|an|the) *" Star Star
+pbut = "* (,) but not (a|an|the) *" 
+pif  = "* (,) if not (a|an|the) *" 
+
+p1 = "* (,) but not (a|an|the) *" 
+p2 = "* (,) if not (a|an|the) *" 
+p3 = "* (,) although not (a|an|the) *" 
+p4 = "* (,) though not (a|an|the) *" 
+p5 = "* (,) (and|or) even (a|an|the) *" 
+p6 = "* (,) (and|or) almost (a|an|the) *" 
+p7 = "not only * (,) but *" 
+p8 = "not just * (,) but *" 
+
+
+r1 = "not (a|an|the) * (,) just (a|an|the) *"     
+r2 = "not (a|an|the) * (,) but just (a|an|the) *"     
+r3 = "not (a|an|the) * (,) still (a|an|the) *"        
+r4 = "not (a|an|the) * (,) but still (a|an|the) *"    
+r5 = "not (a|an|the) * (,) although still (a|an|the) *"
+r6 = "not (a|an|the) * (,) though still (a|an|the) *" 
+r7 = "* (,) or very *"
+
 
 
 {-
 
 next:
 
-1. grep files for but not
-2. count total occurences, call it m
-3. (confrom_to_pattern, not_conform_to_pattern)
+0. scrubbed all files                             - DONE
+1. grep files for but not                         - remote
+2. count total occurences, call it m              - local
+3. (confrom_to_pattern, not_conform_to_pattern)   - local
 4. count occurence of each to make sure it sums to m
 5. reference against vendor data, if still off
    by orders of magnitude then something else is going on
 
+where you left off:
+
+conform + not-conform /= raw-total
+strategy ???
+  count on reduced text to see where the bug appear
+  see what causes the bug
+
+  grep separate file and check numbers
+
+
+strategy:
+
+normalize text:
+   strip comma
+   lower case
+   strip whitespace or tab characters
+
+
+total      : 91,414
+conform    : 9,844
+not-conform: 81,570
+total      : 91,414
+
 -}
+
+
+
 main :: IO ()
 main = do
-  fs'       <- getDirectoryContents r5gm
-  let fs    = filter (\f -> takeExtension f == ".txt") fs'
-  let inps  = (++) r5gm <$> fs
-  let outps = (\p -> r5gm ++ "scrub/" ++ p) <$> fs
-  let ps    = zip inps outps
-  mapM (\(i,o) -> scrub i o CT.utf8) ps
+  (main_normalize r5gm "5gm") `mapM` [0..131]
   return ()
 
-foo :: Int -> IO ()
-foo n = do
-  let inroot = "/Users/lingxiao/Documents/research/data/ngrams/search/4gms/"
-  let inp    = inroot ++ "4gm-00" ++ show n ++ ".txt"
-  let outp   = inroot ++ "scrub/" ++ "4gm-00" ++ show n ++ ".txt"
-  scrub CT.utf8 inp outp 
+  -- * loop to count occurences
+  --step1 grep_sm p1
+  --step2 grep_sm p1
+  --step3 grep_sm p1
 
 
-
--- * Next: need to take statisitcs over all word pairs and save
--- * then need to figure out why althoug not, though not
--- * have no occurences in query
-
-
--- * current problem: number's dont line up remotely!!
--- * strategy: count grep "but not" raw number
--- *           to upper bound stuff
--- *  problem: capitalization 
--- * solution: grepping subset of permutation of capitlazation right now
-
--- * current progress : grepping thoruhg subset of all permutations
--- *                    of weak-strong and strong-weak patterns
--- * alternatively    : preprocess entire corpus and then grep it     
-
--- * then form: a file of positive and negative examples
+step1 :: DirectoryPath -> PatternExpr -> IO ()
+step1 root p = do
+  let path = root ++ p ++ ".txt"
+  n <- raw_freq path
+  print p
+  print "------------------------------------------------"
+  print $ "raw frequency: " ++ show n
 
 
--- * where you left off:
--- *      (1) consider decode >> preprocess >> encode utf8
--- *      (2) consider case where cannot decode,
--- *          simply skip over line
+step2 :: DirectoryPath -> PatternExpr -> IO ()
+step2 root p = main_split_by_pattern root [compile p Star Star]
 
 
+step3 :: DirectoryPath -> PatternExpr -> IO ()
+step3 root xs = do
+  n <- total_freq $ root ++ "/out/" ++ xs ++ ".txt"
+  m <- total_freq $ root ++ "/out/leftover-" ++ xs ++ ".txt"
+  print $ "conform    : " ++ show n
+  print $ "not-conform: " ++ show m
+  print $ "total      : " ++ show (n + m)
 
--- * hypothesis: since we took care of cases
--- * this should conform to example --> but actually have less
 
 {-
 
@@ -96,26 +124,20 @@ let name = echo pif
 n <- total_freq $ corpus_l ++ name ++ ".txt"
 print (name,n)
 return ()
+
+
+con <- config_l
+main_pattern_freq (corpus con    ) 
+                  (strongWeak con) 
+                  "strong-weak-occurences-short"
+
+ * filter greped data                   
+main_split_by_pattern grep_ws [pif]
+
+
 -}
 
--- * where you left off: reallly need to
--- * take care of case folding and encoding up front
--- * or you'll have tons of problems later
--- * consider using tworkenize
 
-
--- * decode with utf-8, if decoding no good then
--- * put in symbol unknown
-
-
-
---con <- config_l
---main_pattern_freq (corpus con    ) 
-                  --(strongWeak con) 
-                  --"strong-weak-occurences-short"
-
--- * filter greped data                   
---main_split_by_pattern grep_ws [pif]
 
 
 {-----------------------------------------------------------------------------
@@ -132,8 +154,9 @@ r5gm_scrub = r5gm ++ "scrub/"
 
 
 -- * local
-grep_ws = "/Users/lingxiao/Documents/research/data/ngrams/raw-weak-strong/"
-grep_sw = "/Users/lingxiao/Documents/research/data/ngrams/raw-strong-weak/"
+grep_sm = "/Users/lingxiao/Documents/research/data/ngrams/grep-small/"
+grep_ws = "/Users/lingxiao/Documents/research/data/ngrams/grep-weak-strong/"
+grep_sw = "/Users/lingxiao/Documents/research/data/ngrams/grep-strong-weak/"
 
 
 corpus_l   = "/Users/lingxiao/Documents/research/data/ngrams/corpus/"
