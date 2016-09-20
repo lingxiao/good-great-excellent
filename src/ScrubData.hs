@@ -40,31 +40,31 @@ type InPath  = FilePath
 type OutPath = FilePath
 
 {-----------------------------------------------------------------------------
-  Filter grepped files
+  Filter grepped normalized-ngram files
 ------------------------------------------------------------------------------}
 
--- * Given parser `p` and `inpath` to ngrams file, take all lines
+-- * Given parser `p` and `inpath` to normalized ngrams file, take all lines
 -- * in file recognized by `p` and save to output file in `outpath`
 conform_pattern :: Parser Text -> InPath -> OutPath -> IO ()
-conform_pattern p  = go (\(t,_,_) -> p <**? normalize t) p CT.utf8
+conform_pattern p  = go (\(t,_,_) -> p <**? t) p CT.utf8
 
--- * Given parser `p` and `inpath` to ngrams file, take all lines
+-- * Given parser `p` and `inpath` to normalized ngrams file, take all lines
 -- * in file not recognized by `p` and save to output file in `outpath`
 -- * may be used for debuggin parser on production data
 not_conform_pattern :: Parser Text -> InPath -> OutPath -> IO ()                                  
-not_conform_pattern p = go (\(t,_,_) -> not $ p <**? normalize t) p CT.utf8
+not_conform_pattern p = go (\(t,_,_) -> not $ p <**? t) p CT.utf8
 
 {-----------------------------------------------------------------------------
-  Filter raw ngram files
+  Filter normalized-ngram files
 ------------------------------------------------------------------------------}
 
--- * Given parser `p` and `inpath` to ngrams file, take all lines
+-- * Given parser `p` and `inpath` to normalized ngrams file, take all lines
 -- * in file recognized by `p` and save to output file in `outpath`
 conform_pattern' ::  Parser Text -> InPath -> OutPath -> IO ()
 conform_pattern' p inp outp =  run 
                             $  sourceFile inp
                             $= toInput' CT.utf8
-                            $= C.filter (\(t,_,_) -> p <**? normalize t)
+                            $= C.filter (\(t,_,_) -> p <**? t)
                             $= fromInput CT.utf8
                             $$ sinkFile outp
 

@@ -67,7 +67,7 @@ total_freq :: Op m => FilePath -> m Integer
 total_freq inp =   run 
                $   sourceFile inp
                $=  prepFileWith CT.utf8   -- CT.iso8859_1
-               $=  C.map (\(_,_,n,_) -> n)
+               $=  C.map (\(_,n,_) -> n)
                $$  foldlC (+) 0
 
 -- * count total frequency in greped file
@@ -85,7 +85,7 @@ raw_freq inp =  run
   Subroutines
 ------------------------------------------------------------------------------}
 
--- linesOn "\n"
+
 prepFileWith :: FileOpS m s 
          => CT.Codec
          -> Conduit B.ByteString m QueryResult
@@ -95,16 +95,15 @@ prepFileWith c = CT.decode c
               $= C.map    head
               $= C.map    (splitOn $ pack "\t")
               $= C.filter (\x -> length x == 3)
-              $= C.map    (\[a,b,c] -> ( normalize a
-                                       , a
-                                       , read . unpack $ b
-                                       , c))
+              $= C.map    (\[t,n,s] -> ( t
+                                       , read . unpack $ n
+                                       , s))
 
 queryFile :: FileOpS m [QueryResult]
           => Parser Text
           -> Consumer QueryResult m Integer
-queryFile p = C.filter     (\(t,_,_,_)  -> p <**? t)
-           $= awaitForever (\t@(_,_,n,_) -> do
+queryFile p = C.filter     (\(t,_,_  )  -> p <**? t)
+           $= awaitForever (\t@(_,n,_) -> do
                        ts <- lift get
                        let ts' = t:ts
                        lift . put $ ts'

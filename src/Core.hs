@@ -42,7 +42,7 @@ type DirectoryPath = FilePath
 -- * the third field is number of results
 type Input         = (Text, Text, Text)
 type Output        = (Integer, [QueryResult])
-type QueryResult   = (Text,Text,Integer,Text)
+type QueryResult   = (Text,Integer,Text)
 
 type PatternExpr   = String       
 

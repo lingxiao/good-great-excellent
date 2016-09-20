@@ -58,29 +58,6 @@ next:
 5. reference against vendor data, if still off
    by orders of magnitude then something else is going on
 
-where you left off:
-
-conform + not-conform /= raw-total
-strategy ???
-  count on reduced text to see where the bug appear
-  see what causes the bug
-
-  grep separate file and check numbers
-
-
-strategy:
-
-normalize text:
-   strip comma
-   lower case
-   strip whitespace or tab characters
-
-
-total      : 91,414
-conform    : 9,844
-not-conform: 81,570
-total      : 91,414
-
 -}
 
 
@@ -118,30 +95,8 @@ step3 root xs = do
   print $ "total      : " ++ show (n + m)
 
 
-{-
-
-let name = echo pif
-n <- total_freq $ corpus_l ++ name ++ ".txt"
-print (name,n)
-return ()
-
-
-con <- config_l
-main_pattern_freq (corpus con    ) 
-                  (strongWeak con) 
-                  "strong-weak-occurences-short"
-
- * filter greped data                   
-main_split_by_pattern grep_ws [pif]
-
-
--}
-
-
-
-
 {-----------------------------------------------------------------------------
-    Configurations
+  Paths
 ------------------------------------------------------------------------------}
 
 -- * remote
