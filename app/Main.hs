@@ -49,7 +49,7 @@ strong_weak = ["not (a|an|the) * (,) just (a|an|the) *"
 -- * right now: run through normalize >> step1 >> step2 >> step3
 main :: IO ()
 main = do
-  main_split_by_pattern rgrep_ws $ (\p -> compile p Star Star) <$> weak_strong
+  main_split_by_pattern rgrep_sw $ (\p -> compile p Star Star) <$> strong_weak
 
 
 {-----------------------------------------------------------------------------
