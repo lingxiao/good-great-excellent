@@ -91,8 +91,8 @@ step3 root xs = do
 
 -- * remote
 rgrep_ws, rgrep_sw :: DirectoryPath
-rgrep_ws  = "/nlp/data/xiao/ngrams/greped/weak-strong"
-rgrep_sw  = "/nlp/data/xiao/ngrams/greped/strong-weak"
+rgrep_ws  = "/nlp/data/xiao/ngrams/greped/weak-strong/"
+rgrep_sw  = "/nlp/data/xiao/ngrams/greped/strong-weak/"
 
 
 -- * local
