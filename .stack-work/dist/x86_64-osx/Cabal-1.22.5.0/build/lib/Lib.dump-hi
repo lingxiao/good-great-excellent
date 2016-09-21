@@ -1,11 +1,11 @@
 
 ==================== FINAL INTERFACE ====================
-2016-09-20 18:36:37.086988 UTC
+2016-09-20 22:41:21.340265 UTC
 
 interface goodg_DmvfzrsRlTTEG4TgbQ9uXe:Lib 7103
-  interface hash: f1450cd67c017eb579467685413db067
-  ABI hash: c1eb52f6faa422e3cc7bf86e4c50b215
-  export-list hash: fbf6b5e8d22dada609ba864df0285a6a
+  interface hash: a84491ec5e766bc8a7318f683c604e9f
+  ABI hash: 435630b921b9e9ad09b3a3837271c8da
+  export-list hash: 1d16a7513deda5a5737aadc079a1bef7
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: 34a9291488a30a90b4883f399a0708a5
   sig of: Nothing
@@ -21,6 +21,7 @@ exports:
   Conduits.shardFile
   Conduits.sourceDirectories
   Conduits.untarSaveAs
+  NormalizeText.normalize
   Parsers.<**
   Parsers.<**?
   Parsers.<+>
@@ -39,9 +40,6 @@ exports:
   PatternCompiler.compile'
   PatternCompiler.token
   PatternCompiler.tokenize
-  Preprocess.fromWords
-  Preprocess.preprocess
-  Preprocess.toWords
   Utils.concatFiles
   Utils.cutFiles
   Utils.makeDirUnder
@@ -55,7 +53,7 @@ exports:
   PatternCompiler.PInput{PatternCompiler.S PatternCompiler.Star}
   PatternCompiler.Pattern
   PatternCompiler.Token{PatternCompiler.Hole PatternCompiler.Opt PatternCompiler.Or PatternCompiler.Word}
-module dependencies: Conduits Parsers PatternCompiler Preprocess
+module dependencies: Conduits NormalizeText Parsers PatternCompiler
                      Tokenize Utils
 package dependencies: StateVar-1.1.0.4@State_IOvB80WkYNkEizdt0JVpzy
                       adjunctions-4.3@adjun_HUA1si0oygHIohE6wWvtj8
@@ -193,6 +191,9 @@ import  -/  Conduits 1600df16aeaac8e823f4f457d091ceee
   shardFile 2a45221f0e7507344765a1321251d4a7
   sourceDirectories 340d235998aaeefc8c8abd10cba62a5c
   untarSaveAs 7ee9693e3cab68e25787055edeb6bfdf
+import  -/  NormalizeText 16397df33f83e98e17ee96b6f949e96e
+  exports: 331d31477300d82cf936991ca526786d
+  normalize 4d36cb2f75be77adf7226b9580c6911f
 import  -/  Parsers 97be3f88ac191bc83d77e91a9f5cc950
   exports: 2896c53312aff025ace80f8ad93ff852
   <** d93cb7457c892ffb267245e6b2837f51
@@ -224,11 +225,6 @@ import  -/  PatternCompiler 5f864c3f64cd4818252cf8308fa404dd
   compile' c90145efd1cdcf08899c9b08ab43c6b4
   token 47f848736775757dd43bf891931d704c
   tokenize 9f0d1062f35690179ddd430b1ef8d951
-import  -/  Preprocess 8cedbc87854d8226ca6314564e2a9c2e
-  exports: 1f515d6e2ae9b38c055b0aec58ebc5f8
-  fromWords a9a1731c58d955d77f479c39fd5da0bb
-  preprocess b5d95a6a7113d3692421d3920c7a7e02
-  toWords 33fdc2f8cd7e29f860cbff6af84e3cba
 import  -/  Utils f84541065ef656839c57fc95f7765007
   exports: 4e3bde9a9cf18d662ae609c3093bd4a8
   concatFiles d7fff1165a38bad9f5a75bca660b14a4

@@ -1,11 +1,11 @@
 
 ==================== FINAL INTERFACE ====================
-2016-09-20 22:08:02.289427 UTC
+2016-09-21 18:51:39.227677 UTC
 
 interface main@main:Main 7103
-  interface hash: e3d28b5ec2285d60d2c77bffa5563543
-  ABI hash: b19f4bbfd2708bceaeac6decdaed0a38
-  export-list hash: e86d7114ecabda09775674f37baf7544
+  interface hash: b8204f4e357e5728b8732789bed92666
+  ABI hash: d0e30f4a9c6c98415386b0a3f4bb6973
+  export-list hash: d64c9f30ee4b4114217a812e8aef7886
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: f8c694548b2debe1f8faf3f9ee47371f
   sig of: Nothing
@@ -18,33 +18,14 @@ exports:
   Main.grep_sw
   Main.grep_ws
   Main.main
-  Main.p1
-  Main.p2
-  Main.p3
-  Main.p4
-  Main.p5
-  Main.p6
-  Main.p7
-  Main.p8
   Main.patterns_l
-  Main.pbut
-  Main.pif
-  Main.r1
-  Main.r2
-  Main.r3
-  Main.r4
-  Main.r4gm
-  Main.r4gm_scrub
-  Main.r5
-  Main.r5gm
-  Main.r5gm_scrub
-  Main.r6
-  Main.r7
-  Main.root_sw
-  Main.root_ws
+  Main.rgrep_sw
+  Main.rgrep_ws
   Main.step1
   Main.step2
   Main.step3
+  Main.strong_weak
+  Main.weak_strong
 module dependencies: Core Query Score Scripts ScrubData Src
 package dependencies: StateVar-1.1.0.4@State_IOvB80WkYNkEizdt0JVpzy
                       adjunctions-4.3@adjun_HUA1si0oygHIohE6wWvtj8
@@ -168,39 +149,39 @@ family instance modules: adjunctions-4.3@adjun_HUA1si0oygHIohE6wWvtj8:Data.Funct
                          vector-0.11.0.0@vecto_LmZ3LQW4ivu8MsQuVgukln:Data.Vector.Unboxed
                          vector-0.11.0.0@vecto_LmZ3LQW4ivu8MsQuVgukln:Data.Vector.Unboxed.Base
                          zlib-0.6.1.1@zlib_7LjT7TSHX8U3VTy3t378Vu:Codec.Compression.Zlib.Stream
-import  -/  base-4.8.2.0:Data.Traversable 7576318f4ef8587ad947f87012b65abf
+import  -/  base-4.8.2.0:Data.Functor 5c701b0af1708f0192a25dfe14ce6274
 import  -/  base-4.8.2.0:GHC.Base 1db77db5dae73d8c424c85b09fbadb89
 import  -/  base-4.8.2.0:GHC.Num 9f42750c866f5832ca565146bd660c60
 import  -/  base-4.8.2.0:GHC.Show 0e1d8380a8fb0cfb07ebeda3b70cbf38
 import  -/  base-4.8.2.0:Prelude 694dcaf039efe62df1c44834e2dbd2fb
 import  -/  base-4.8.2.0:System.IO 0899686bfc1d9ef72dff3de85e99862a
+import  -/  conduit-extra-1.1.13.2@condu_ErVEtE0OOPvEOsJa6HCflV:Data.Conduit.Text d3bf92cbb1501548eef313b83348e07c
 import  -/  filepath-1.4.0.0@filep_Ey7a1in9roBAE8bUFJ5R9m:System.FilePath.Posix da2bfc0e51fee241a6f2334547c9597d
 import  -/  ghc-prim-0.4.0.0:GHC.Types 6b27fb3fdbd0e3f0925a4496c66513bb
-import  -/  good-great-excellent-0.1.0.0@goodg_DmvfzrsRlTTEG4TgbQ9uXe:Lib c1eb52f6faa422e3cc7bf86e4c50b215
+import  -/  good-great-excellent-0.1.0.0@goodg_DmvfzrsRlTTEG4TgbQ9uXe:Lib 435630b921b9e9ad09b3a3837271c8da
 import  -/  good-great-excellent-0.1.0.0@goodg_DmvfzrsRlTTEG4TgbQ9uXe:PatternCompiler 5f864c3f64cd4818252cf8308fa404dd
-import  -/  Core f13b5fc181295be128238a606cbb883d
+import  -/  Core 9a5bf0cdd1ec906700cf8c688b51a5dd
   Config caee52235134b93db772134968b2cb0c
   DirectoryPath d5c28258b354fd92c19a39b0e15fb216
   PatternExpr 93ec1dc84f5cc2d0d3eef3719a2898ef
   config 0c7ab785f80c9ea306179e5451c95c5f
-import  -/  Query ebc1d4baef21a7aa41a342fc14b16e4e
+import  -/  Query 5ab431890c7071b3bb690472a3bc0a12
   raw_freq 6a9d35834ba16260e18007923557bb27
   total_freq 18dfea5666fbf4faec008c5547a16a8c
-import  -/  Scripts 98bb76701b83f90329d0037d560cb146
+import  -/  Scripts cf673f58f9eba43781aa9ee214e27574
   exports: 19d7ba37bb03e0eefa41bb35304603b6
-  main_normalize 0488e0842a61bb1bb9780c313ffc827f
-  main_split_by_pattern b3d54861d057e27c3de4e67ba0fc079e
+  main_split_by_pattern 444bc1e6d65df2c2275370e39f72bbb7
 import  -/  Src 470f9164a3db4ef1fc1c345a472db265
   exports: bf26dcb1b4741f6ae44bb03b2dde9386
 import  -/  text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text b53ae191632883b10562be5cbaa0b22b
-30b737e994e4ea716ce98bdba9465425
+2fe8066059ff2347767df01872cdb71d
   config_l :: GHC.Types.IO Core.Config
   {- Arity: 1, Strictness: <L,U>,
      Unfolding: InlineRule (0, True, True)
                 Main.config_l1
                   `cast`
                 (Sym (GHC.Types.NTCo:IO[0] <Core.Config>_R)) -}
-18bbcca33058c1e87ea6a6f8eb118637
+5327e4e918162710c0884f6a9561764b
   config_l1 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, Core.Config #)
@@ -218,11 +199,11 @@ import  -/  text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text b53ae191632883b10
                         Main.config_l2
                         ipv
                    GHC.Base.Just con -> (# ipv, con #) } }) -}
-a3668a03f4454a7b29ed680087e78ad8
+515d41d6ba35347ee5f2c6601f6bc5d9
   config_l2 :: GHC.Exception.SomeException
   {- Unfolding: (GHC.IO.Exception.$fExceptionIOException_$ctoException
                    Main.config_l3) -}
-69a7f204b67015e8215999f446352436
+8cf8b23f5a6273ee637311a30f11ff35
   config_l3 :: GHC.IO.Exception.IOException
   {- Unfolding: (GHC.IO.Exception.IOError
                    (GHC.Base.Nothing @ GHC.IO.Handle.Types.Handle)
@@ -231,10 +212,10 @@ a3668a03f4454a7b29ed680087e78ad8
                    Main.config_l4
                    (GHC.Base.Nothing @ Foreign.C.Types.CInt)
                    (GHC.Base.Nothing @ GHC.IO.FilePath)) -}
-7d2f418d7795b30e62e5b519957f424a
+6f74d5ced293aa00fe6ad338c05d1009
   config_l4 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString#
-                   "Pattern match failure in do expression at app/Main.hs:171:5-12"#) -}
+                   "Pattern match failure in do expression at app/Main.hs:109:5-12"#) -}
 b070e8e1fafb2201d1dcbb1532abe25d
   corpus_l :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString#
@@ -243,139 +224,80 @@ b070e8e1fafb2201d1dcbb1532abe25d
   grep_sm :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString#
                    "/Users/lingxiao/Documents/research/data/ngrams/grep-small/"#) -}
-399020412e80e38ba292c98a7c3983ee
+b208ce38330c848c4c91924f60176d9d
   grep_sw :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString#
-                   "/Users/lingxiao/Documents/research/data/ngrams/grep-strong-weak/"#) -}
-57bee1e475e657ee2e5fb1e54cf40288
+                   "/Users/lingxiao/Documents/research/data/ngrams/greped/strong-weak/"#) -}
+7a282537c1ee2bd30803b74699601e9f
   grep_ws :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString#
-                   "/Users/lingxiao/Documents/research/data/ngrams/grep-weak-strong/"#) -}
-4c882aa850e0d3f46375c98415b10736
+                   "/Users/lingxiao/Documents/research/data/ngrams/greped/weak-strong/"#) -}
+198819c3dd707bcc38ba77a974c36554
   main :: GHC.Types.IO ()
-  {- Arity: 1, Strictness: <L,U>,
+  {- Arity: 1,
      Unfolding: InlineRule (0, True, True)
                 Main.main1 `cast` (Sym (GHC.Types.NTCo:IO[0] <()>_R)) -}
-b3b0f8f4353f658efff52147b2230ae7
+3502497f4af8c52fbf1b92169431dec4
   main1 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
-  {- Arity: 1, Strictness: <L,U>,
-     Unfolding: (\ s :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
-                 case Main.main2 0 s of ds1 { (#,#) ipv ipv1 ->
-                 (# ipv, GHC.Tuple.() #) }) -}
-620db4ae2fbe0910bc57bca73f3befcf
+  {- Arity: 1,
+     Unfolding: (Scripts.main_split_by_pattern1
+                   Main.rgrep_ws
+                   Main.main2) -}
+9e84da9c83038ad7327a9f0eaafebf04
   main2 ::
-    GHC.Prim.Int#
-    -> GHC.Prim.State# GHC.Prim.RealWorld
-    -> (# GHC.Prim.State# GHC.Prim.RealWorld, [()] #)
-  {- Arity: 2, Strictness: <L,U><L,U> -}
-d5390fee564dec50d0e58a50ee829826
+    [Data.Attoparsec.Internal.Types.Parser
+       Data.Text.Internal.Text Data.Text.Internal.Text]
+  {- Unfolding: (GHC.Base.map
+                   @ [GHC.Types.Char]
+                   @ (Data.Attoparsec.Internal.Types.Parser
+                        Data.Text.Internal.Text Data.Text.Internal.Text)
+                   Main.main3
+                   Main.weak_strong) -}
+37a35dc842255e8e966f39c4e5264010
   main3 ::
+    GHC.Base.String
+    -> Data.Attoparsec.Text.Internal.Parser Data.Text.Internal.Text
+  {- Arity: 1,
+     Unfolding: (\ p :: GHC.Base.String ->
+                 PatternCompiler.fill
+                   Main.main4
+                   (PatternCompiler.compile_go (PatternCompiler.compile1 p))) -}
+ee1057ee059ba88f20a4ff8de1c9ca1b
+  main4 :: [PatternCompiler.PInput]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ PatternCompiler.PInput
+                   PatternCompiler.Star
+                   Main.main5) -}
+3f008cd2639b4396d3be17a17a042bc0
+  main5 :: [PatternCompiler.PInput]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ PatternCompiler.PInput
+                   PatternCompiler.Star
+                   (GHC.Types.[] @ PatternCompiler.PInput)) -}
+99d6d56c193987953aeb721ae2cd2c9e
+  main6 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
   {- Arity: 1,
      Unfolding: (GHC.TopHandler.runMainIO1
                    @ ()
                    Main.main1 `cast` (Sym (GHC.Types.NTCo:IO[0] <()>_R))) -}
-fc25efed2e93326d3acecba88b9ccbe3
-  p1 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString#
-                   "* (,) but not (a|an|the) *"#) -}
-f3b7b821992675504522030cf0442100
-  p2 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString#
-                   "* (,) if not (a|an|the) *"#) -}
-72cb44d2ec788fd43fa8362c003210c0
-  p3 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString#
-                   "* (,) although not (a|an|the) *"#) -}
-6f9eb5657937633f238863986d335a07
-  p4 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString#
-                   "* (,) though not (a|an|the) *"#) -}
-a310cd7227b61bfc3916b8884652a07c
-  p5 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString#
-                   "* (,) (and|or) even (a|an|the) *"#) -}
-586a65868518a81db3833d6a8eeae4d5
-  p6 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString#
-                   "* (,) (and|or) almost (a|an|the) *"#) -}
-9d7159ff4e465cfa0aaec0e10ef3c354
-  p7 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString#
-                   "not only * (,) but *"#) -}
-0efccd2ae61fc960f41294cc1688d3a9
-  p8 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString#
-                   "not just * (,) but *"#) -}
 a81752fcc002b5300e62729a5f732bc5
   patterns_l :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString#
                    "/Users/lingxiao/Documents/research/code/good-great-excellent/inputs/"#) -}
-4012dec6a34701f7bda003b1523fd624
-  pbut :: [GHC.Types.Char]
-  {- Unfolding: (Main.p1) -}
-cb674ece0f3c83399fb3de61790d33a7
-  pif :: [GHC.Types.Char]
-  {- Unfolding: (Main.p2) -}
-ef86490bab23b98bcbd839a675770f2a
-  r1 :: [GHC.Types.Char]
+cc4c5b6b57697ff6998022cf55dfeebf
+  rgrep_sw :: Core.DirectoryPath
   {- Unfolding: (GHC.CString.unpackCString#
-                   "not (a|an|the) * (,) just (a|an|the) *"#) -}
-a0b54b3bbb25143a94b29c8d881a7486
-  r2 :: [GHC.Types.Char]
+                   "/nlp/data/xiao/ngrams/greped/strong-weak"#) -}
+08d85e58f2fa8195ed942d2e4d0d5d54
+  rgrep_ws :: Core.DirectoryPath
   {- Unfolding: (GHC.CString.unpackCString#
-                   "not (a|an|the) * (,) but just (a|an|the) *"#) -}
-7293a5be3ed5982c81a99600b5385c43
-  r3 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString#
-                   "not (a|an|the) * (,) still (a|an|the) *"#) -}
-a9c837c1b6c1fb4df50a3c1d816dcfb9
-  r4 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString#
-                   "not (a|an|the) * (,) but still (a|an|the) *"#) -}
-f2f6a7ca6b9500393f165437b35ed950
-  r4gm :: Core.DirectoryPath
-  {- Unfolding: (GHC.CString.unpackCString#
-                   "/nlp/data/xiao/ngrams/raw/4gms/"#) -}
-1e628b3a508ccd0384da099ffe715c45
-  r4gm_scrub :: Core.DirectoryPath
-  {- Unfolding: (GHC.Base.++
-                   @ GHC.Types.Char
-                   Main.r4gm
-                   Main.r4gm_scrub1) -}
-89713f3f51f248a5adac30265ec9ff69
-  r4gm_scrub1 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString# "scrub/"#) -}
-5051bce2b848b692ed7c0bfca0d82fbb
-  r5 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString#
-                   "not (a|an|the) * (,) although still (a|an|the) *"#) -}
-50b5f5597d960523806f1429aaed0e84
-  r5gm :: Core.DirectoryPath
-  {- Unfolding: (GHC.CString.unpackCString#
-                   "/nlp/data/xiao/ngrams/raw/5gms/"#) -}
-9c9f7dd121a3b32e75f83b1b3b7b5517
-  r5gm_scrub :: Core.DirectoryPath
-  {- Unfolding: (GHC.Base.++
-                   @ GHC.Types.Char
-                   Main.r5gm
-                   Main.r4gm_scrub1) -}
-6cff24ea63e0917ab7fc0d9f0bbbecde
-  r6 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString#
-                   "not (a|an|the) * (,) though still (a|an|the) *"#) -}
-47388397310bdacc53cf032ec012aabe
-  r7 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString# "* (,) or very *"#) -}
-461ecb08c8ab0718fbad3c62f82a5c36
-  root_sw :: [GHC.Types.Char]
-  {- Unfolding: (Main.grep_sw) -}
-20c60bab871145e02e9c1edbf302296b
-  root_ws :: [GHC.Types.Char]
-  {- Unfolding: (Main.grep_ws) -}
+                   "/nlp/data/xiao/ngrams/greped/weak-strong"#) -}
 3dc5ee77932e7e219152ed866cb5346e
   step1 :: Core.DirectoryPath -> Core.PatternExpr -> GHC.Types.IO ()
   {- Arity: 3, Strictness: <L,1*U><L,U><L,U>,
@@ -394,7 +316,7 @@ f2f6a7ca6b9500393f165437b35ed950
      Unfolding: ((Control.Monad.Trans.Control.$fMonadBaseControlIOIO,
                   Control.Monad.Catch.$fMonadThrowIO,
                   Control.Monad.IO.Class.$fMonadIOIO)) -}
-76509e6561928f1d62db35484b8d3b93
+55b85feabaee8cfb9614f38199fb869f
   step12 ::
     Core.DirectoryPath
     -> Core.PatternExpr
@@ -409,33 +331,19 @@ f2f6a7ca6b9500393f165437b35ed950
                    (GHC.Types.:
                       @ (Data.Attoparsec.Text.Internal.Parser Data.Text.Internal.Text)
                       (PatternCompiler.fill
-                         Main.step13
+                         Main.main4
                          (PatternCompiler.compile_go (PatternCompiler.compile1 p)))
                       (GHC.Types.[]
                          @ (Data.Attoparsec.Text.Internal.Parser Data.Text.Internal.Text)))
                    eta) -}
-2ae85f9dc57b8f2fc4fb4e1c58948307
-  step13 :: [PatternCompiler.PInput]
-  {- HasNoCafRefs,
-     Unfolding: (GHC.Types.:
-                   @ PatternCompiler.PInput
-                   PatternCompiler.Star
-                   Main.step14) -}
-765f2952891faf0e2a1281d37a27fc4f
-  step14 :: [PatternCompiler.PInput]
-  {- HasNoCafRefs,
-     Unfolding: (GHC.Types.:
-                   @ PatternCompiler.PInput
-                   PatternCompiler.Star
-                   (GHC.Types.[] @ PatternCompiler.PInput)) -}
-0eee238a5a359ea22cf2343900a8d322
-  step15 ::
+489289c137803eecbfa3bc1f79bf1a8f
+  step13 ::
     Core.DirectoryPath
     -> Core.PatternExpr
     -> GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
   {- Arity: 3, Strictness: <L,U><L,U><L,U> -}
-b34d8548b80355b0fb971cbd347a385d
+fa954dde5e7be70f4c72bb7d7ce900d6
   step2 :: Core.DirectoryPath -> Core.PatternExpr -> GHC.Types.IO ()
   {- Arity: 3, Strictness: <S,U><L,U><L,U>,
      Unfolding: InlineRule (0, True, True)
@@ -444,11 +352,11 @@ b34d8548b80355b0fb971cbd347a385d
                 (<Core.DirectoryPath>_R
                  ->_R <Core.PatternExpr>_R
                  ->_R Sym (GHC.Types.NTCo:IO[0] <()>_R)) -}
-e89c808a42fab7f1fa66a4f6335fd9a6
+c3dbc87079020b2290eec8dff5455a09
   step3 :: Core.DirectoryPath -> Core.PatternExpr -> GHC.Types.IO ()
   {- Arity: 3, Strictness: <L,U><L,U><L,U>,
      Unfolding: InlineRule (0, True, True)
-                Main.step15
+                Main.step13
                   `cast`
                 (<Core.DirectoryPath>_R
                  ->_R <Core.PatternExpr>_R
@@ -525,6 +433,170 @@ bea15c61a5e6013d6963bdf2975ed775
 db4e69faf5258ea254459f28dceb1818
   step9 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# ".txt"#) -}
+ef65434ca32dc9cdef53a5f9ed8e8946
+  strong_weak :: [Core.PatternExpr]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ Core.PatternExpr
+                   Main.strong_weak13
+                   Main.strong_weak1) -}
+f01174cdab7042c107f2cb141b68e16a
+  strong_weak1 :: [Core.PatternExpr]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ Core.PatternExpr
+                   Main.strong_weak12
+                   Main.strong_weak2) -}
+db765cf27c4ca0f75852b6149646b12d
+  strong_weak10 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "not (a|an|the) * (,) but still (a|an|the) *"#) -}
+f46ba0c9e8b9f9c49cc81a2c1eaeea47
+  strong_weak11 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "not (a|an|the) * (,) still (a|an|the) * "#) -}
+b4c5ac382eb4d2d24dd8b1bd6a46d8da
+  strong_weak12 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "not (a|an|the) * (,) but just (a|an|the) *"#) -}
+2a875930bea7e95827f3726f6923efa5
+  strong_weak13 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "not (a|an|the) * (,) just (a|an|the) *"#) -}
+b6f24388b59ffdb94d131cf0389635b5
+  strong_weak2 :: [Core.PatternExpr]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ Core.PatternExpr
+                   Main.strong_weak11
+                   Main.strong_weak3) -}
+84936109457158446b5b602f9b378951
+  strong_weak3 :: [Core.PatternExpr]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ Core.PatternExpr
+                   Main.strong_weak10
+                   Main.strong_weak4) -}
+7f3525f4d64e144d7e3ac9fa583c7c5e
+  strong_weak4 :: [Core.PatternExpr]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ Core.PatternExpr
+                   Main.strong_weak9
+                   Main.strong_weak5) -}
+564b652f792e4dad579d842006db81ac
+  strong_weak5 :: [Core.PatternExpr]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ Core.PatternExpr
+                   Main.strong_weak8
+                   Main.strong_weak6) -}
+79f65a996032eceb033c9a16c1d0e787
+  strong_weak6 :: [Core.PatternExpr]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ Core.PatternExpr
+                   Main.strong_weak7
+                   (GHC.Types.[] @ Core.PatternExpr)) -}
+19883493898ecd85564ba3a44eb30a65
+  strong_weak7 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "* (,) or very *"#) -}
+ba4d4cc6269fecd37761db6fa16bd8bc
+  strong_weak8 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "not (a|an|the) * (,) though still (a|an|the) * "#) -}
+e40c6b2b46610654806e681513b68680
+  strong_weak9 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "not (a|an|the) * (,) although still (a|an|the) *"#) -}
+8ec132cc14d33f4c192a877670e7abfb
+  weak_strong :: [Core.PatternExpr]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ Core.PatternExpr
+                   Main.weak_strong15
+                   Main.weak_strong1) -}
+a56540341ddf2b6fa0702a1a47aef094
+  weak_strong1 :: [Core.PatternExpr]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ Core.PatternExpr
+                   Main.weak_strong14
+                   Main.weak_strong2) -}
+9e0aa9cfb440ed110d052a8534ae6c2c
+  weak_strong10 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "* (,) (and|or) almost (a|an|the) *"#) -}
+748412ccce1e767bb069670e5381cb10
+  weak_strong11 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "* (,) (and|or) even (a|an|the) *"#) -}
+a33fc85a3570edfba1f58e125bb6168b
+  weak_strong12 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "* (,) though not (a|an|the) *"#) -}
+4513a6b2adbed3235dcb56d71e540e1b
+  weak_strong13 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "* (,) although not (a|an|the) *"#) -}
+73ec19bc2b198d78d0511e2a06b5b9d4
+  weak_strong14 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "* (,) if not (a|an|the) *"#) -}
+95337937a1177a5b95684c665ab688bc
+  weak_strong15 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "* (,) but not (a|an|the) *"#) -}
+d7494b1e707ebf11308a9bde09c53527
+  weak_strong2 :: [Core.PatternExpr]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ Core.PatternExpr
+                   Main.weak_strong13
+                   Main.weak_strong3) -}
+d244ef972d2265dc717698bdb9c7e735
+  weak_strong3 :: [Core.PatternExpr]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ Core.PatternExpr
+                   Main.weak_strong12
+                   Main.weak_strong4) -}
+95152aa8e825c39e3766d2f96e6f4680
+  weak_strong4 :: [Core.PatternExpr]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ Core.PatternExpr
+                   Main.weak_strong11
+                   Main.weak_strong5) -}
+b38c8399fd17e5f4fa6e425dc55bce73
+  weak_strong5 :: [Core.PatternExpr]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ Core.PatternExpr
+                   Main.weak_strong10
+                   Main.weak_strong6) -}
+522c0ee2feeec820d9837be51bde195b
+  weak_strong6 :: [Core.PatternExpr]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ Core.PatternExpr
+                   Main.weak_strong9
+                   Main.weak_strong7) -}
+ff6c7e20f82b8a69ba8075ba8f1a041e
+  weak_strong7 :: [Core.PatternExpr]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ Core.PatternExpr
+                   Main.weak_strong8
+                   (GHC.Types.[] @ Core.PatternExpr)) -}
+e9c768410a450393508cf63d6097ea1e
+  weak_strong8 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "not just * (,) but *"#) -}
+593a6ebfdb3e82c6616b2587690dc0af
+  weak_strong9 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "not only * (,) but *"#) -}
 vectorised variables:
 vectorised tycons:
 vectorised reused tycons:
