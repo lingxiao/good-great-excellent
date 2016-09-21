@@ -73,7 +73,7 @@ conform_pattern' p inp outp =  run
 ------------------------------------------------------------------------------}
 
 -- * `normalize` each line of file found at `inp` and save to `outp`
--- * by case folding and whitespace stripping
+-- * decode and encode using codec `c`
 scrub :: CT.Codec -> InPath -> OutPath -> IO ()
 scrub c inp outp =  run 
                  $  sourceFile inp
@@ -87,6 +87,7 @@ scrub c inp outp =  run
                                                  , pack "\n"] )
                  $= CT.encode c
                  $$ sinkFile outp
+
 
 {-----------------------------------------------------------------------------
  Subroutines

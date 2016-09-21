@@ -11,8 +11,10 @@
 module Main where
 
 
-import Data.Text hiding (head, replicate, filter, foldr, zip)
+import Data.Text (Text, unpack, pack)
 import System.FilePath.Posix
+import Data.Conduit.Text 
+
 
 
 import Src
@@ -23,56 +25,44 @@ import Scripts
   Main
 ------------------------------------------------------------------------------}
 
-pbut = "* (,) but not (a|an|the) *" 
-pif  = "* (,) if not (a|an|the) *" 
+weak_strong :: [PatternExpr]
+weak_strong = ["* (,) but not (a|an|the) *"
+             ,"* (,) if not (a|an|the) *"
+             ,"* (,) although not (a|an|the) *"
+             ,"* (,) though not (a|an|the) *"
+             ,"* (,) (and|or) even (a|an|the) *"
+             ,"* (,) (and|or) almost (a|an|the) *"
+             ,"not only * (,) but *"
+             ,"not just * (,) but *"
+             ]
 
-p1 = "* (,) but not (a|an|the) *" 
-p2 = "* (,) if not (a|an|the) *" 
-p3 = "* (,) although not (a|an|the) *" 
-p4 = "* (,) though not (a|an|the) *" 
-p5 = "* (,) (and|or) even (a|an|the) *" 
-p6 = "* (,) (and|or) almost (a|an|the) *" 
-p7 = "not only * (,) but *" 
-p8 = "not just * (,) but *" 
+strong_weak :: [PatternExpr]
+strong_weak = ["not (a|an|the) * (,) just (a|an|the) *"
+             ,"not (a|an|the) * (,) but just (a|an|the) *"
+             ,"not (a|an|the) * (,) still (a|an|the) * "
+             ,"not (a|an|the) * (,) but still (a|an|the) *"
+             ,"not (a|an|the) * (,) although still (a|an|the) *"
+             ,"not (a|an|the) * (,) though still (a|an|the) * "
+             ,"* (,) or very *"
+             ]
 
-
-r1 = "not (a|an|the) * (,) just (a|an|the) *"     
-r2 = "not (a|an|the) * (,) but just (a|an|the) *"     
-r3 = "not (a|an|the) * (,) still (a|an|the) *"        
-r4 = "not (a|an|the) * (,) but still (a|an|the) *"    
-r5 = "not (a|an|the) * (,) although still (a|an|the) *"
-r6 = "not (a|an|the) * (,) though still (a|an|the) *" 
-r7 = "* (,) or very *"
-
-
-
-{-
-
-next:
-
-0. scrubbed all files                             - DONE
-1. grep files for but not                         - remote
-2. count total occurences, call it m              - local
-3. (confrom_to_pattern, not_conform_to_pattern)   - local
-4. count occurence of each to make sure it sums to m
-5. reference against vendor data, if still off
-   by orders of magnitude then something else is going on
-
--}
-
-
-
+-- * right now: run through normalize >> step1 >> step2 >> step3
 main :: IO ()
 main = do
-  (main_normalize r5gm "5gm") `mapM` [5..117]
-  return ()
+  main_split_by_pattern rgrep_ws $ (\p -> compile p Star Star) <$> weak_strong
+
+
+{-----------------------------------------------------------------------------
+  task stack
+------------------------------------------------------------------------------}
+
 
   -- * loop to count occurences
   --step1 grep_sm p1
   --step2 grep_sm p1
   --step3 grep_sm p1
 
-
+-- * count raw frequencies
 step1 :: DirectoryPath -> PatternExpr -> IO ()
 step1 root p = do
   let path = root ++ p ++ ".txt"
@@ -81,11 +71,12 @@ step1 root p = do
   print "------------------------------------------------"
   print $ "raw frequency: " ++ show n
 
-
+-- * filter by pattern
 step2 :: DirectoryPath -> PatternExpr -> IO ()
 step2 root p = main_split_by_pattern root [compile p Star Star]
 
-
+-- * count filtered out and filtered in to make sure:
+-- *   count (out ++ in) = count(out) + count(in) = count (raw)
 step3 :: DirectoryPath -> PatternExpr -> IO ()
 step3 root xs = do
   n <- total_freq $ root ++ "/out/" ++ xs ++ ".txt"
@@ -94,31 +85,23 @@ step3 root xs = do
   print $ "not-conform: " ++ show m
   print $ "total      : " ++ show (n + m)
 
-
 {-----------------------------------------------------------------------------
   Paths
 ------------------------------------------------------------------------------}
 
 -- * remote
-r4gm, r4gm_scrub, r5gm, r5gm_scrub :: DirectoryPath
-r4gm       = "/nlp/data/xiao/ngrams/raw/4gms/"
-r4gm_scrub = r4gm ++ "scrub/"
-r5gm       = "/nlp/data/xiao/ngrams/raw/5gms/"
-r5gm_scrub = r5gm ++ "scrub/"
-
+rgrep_ws, rgrep_sw :: DirectoryPath
+rgrep_ws  = "/nlp/data/xiao/ngrams/greped/weak-strong"
+rgrep_sw  = "/nlp/data/xiao/ngrams/greped/strong-weak"
 
 
 -- * local
 grep_sm = "/Users/lingxiao/Documents/research/data/ngrams/grep-small/"
-grep_ws = "/Users/lingxiao/Documents/research/data/ngrams/grep-weak-strong/"
-grep_sw = "/Users/lingxiao/Documents/research/data/ngrams/grep-strong-weak/"
-
+grep_ws = "/Users/lingxiao/Documents/research/data/ngrams/greped/weak-strong/"
+grep_sw = "/Users/lingxiao/Documents/research/data/ngrams/greped/strong-weak/"
 
 corpus_l   = "/Users/lingxiao/Documents/research/data/ngrams/corpus/"
 patterns_l = "/Users/lingxiao/Documents/research/code/good-great-excellent/inputs/"
-
-root_ws    = "/Users/lingxiao/Documents/research/data/ngrams/grep-weak-strong/"
-root_sw    = "/Users/lingxiao/Documents/research/data/ngrams/grep-strong-weak/"
 
 
 config_l :: IO Config

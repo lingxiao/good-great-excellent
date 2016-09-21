@@ -12,7 +12,7 @@ set -x
 
 # request x gigabyte of RAM 
 # man 5 complex
-#$ -l mem=100G
+#$ -l mem=50G
 
 # name of job
 # man 1 qsub
@@ -35,14 +35,6 @@ cd $HOME/xiao/good-great-excellent/shell
 #$ -e $PWD/logs
 
 
-
-# This will move the large file load-in to fast local 
-# disk, to see if the problem is due to using the 
-# remote shared storage.
-# (run the binary, but point it to the /scratch-local directory above)
-# mkdir -p /scratch-local/users/lingxiao
-# cp /nlp/data/xiao/ngrams/dummydata/4gm-0088.txt /scratch-local/users/lingxiao/4gm-0088.txt
-
 # when am I running
 #/bin/date
 
@@ -56,4 +48,3 @@ cd $HOME/xiao/good-great-excellent/shell
 # run my scripts
 $HOME/xiao/good-great-excellent/.stack-work/install/x86_64-linux/lts-6.11/7.10.3/bin/good-great-excellent-exe
 
-# rm /scratch-local/users/lingxiao/4gm-0088.txt
