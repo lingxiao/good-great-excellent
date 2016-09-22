@@ -1,11 +1,11 @@
 
 ==================== FINAL INTERFACE ====================
-2016-09-22 00:33:46.693174 UTC
+2016-09-22 23:26:44.818119 UTC
 
 interface main@main:Main 7103
-  interface hash: c49f56ae721a681330f6b8a43cd7266a
-  ABI hash: 7b64e3d39d14aebfea66f0158c368317
-  export-list hash: d64c9f30ee4b4114217a812e8aef7886
+  interface hash: ee1082590b6a4bd8f680555a892edcba
+  ABI hash: 937a037ced52c183387c410c15e48ef9
+  export-list hash: d0735ba0847df76374a3761331c2c8c2
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: f8c694548b2debe1f8faf3f9ee47371f
   sig of: Nothing
@@ -14,18 +14,14 @@ interface main@main:Main 7103
 exports:
   Main.config_l
   Main.corpus_l
+  Main.corpus_r
   Main.grep_sm
   Main.grep_sw
   Main.grep_ws
   Main.main
   Main.patterns_l
-  Main.rgrep_sw
-  Main.rgrep_ws
-  Main.step1
-  Main.step2
-  Main.step3
-  Main.strong_weak
-  Main.weak_strong
+  Main.patterns_r
+  Main.w_good_bad
 module dependencies: Core Query Score Scripts ScrubData Src
 package dependencies: StateVar-1.1.0.4@State_IOvB80WkYNkEizdt0JVpzy
                       adjunctions-4.3@adjun_HUA1si0oygHIohE6wWvtj8
@@ -149,77 +145,58 @@ family instance modules: adjunctions-4.3@adjun_HUA1si0oygHIohE6wWvtj8:Data.Funct
                          vector-0.11.0.0@vecto_LmZ3LQW4ivu8MsQuVgukln:Data.Vector.Unboxed
                          vector-0.11.0.0@vecto_LmZ3LQW4ivu8MsQuVgukln:Data.Vector.Unboxed.Base
                          zlib-0.6.1.1@zlib_7LjT7TSHX8U3VTy3t378Vu:Codec.Compression.Zlib.Stream
+import  -/  base-4.8.2.0:Data.Traversable 7576318f4ef8587ad947f87012b65abf
 import  -/  base-4.8.2.0:GHC.Base 1db77db5dae73d8c424c85b09fbadb89
-import  -/  base-4.8.2.0:GHC.List 0c736920522bbd14b770342776012ab6
-import  -/  base-4.8.2.0:GHC.Num 9f42750c866f5832ca565146bd660c60
-import  -/  base-4.8.2.0:GHC.Show 0e1d8380a8fb0cfb07ebeda3b70cbf38
 import  -/  base-4.8.2.0:Prelude 694dcaf039efe62df1c44834e2dbd2fb
 import  -/  base-4.8.2.0:System.IO 0899686bfc1d9ef72dff3de85e99862a
-import  -/  conduit-extra-1.1.13.2@condu_ErVEtE0OOPvEOsJa6HCflV:Data.Conduit.Text d3bf92cbb1501548eef313b83348e07c
-import  -/  filepath-1.4.0.0@filep_Ey7a1in9roBAE8bUFJ5R9m:System.FilePath.Posix da2bfc0e51fee241a6f2334547c9597d
 import  -/  ghc-prim-0.4.0.0:GHC.Types 6b27fb3fdbd0e3f0925a4496c66513bb
 import  -/  good-great-excellent-0.1.0.0@goodg_DmvfzrsRlTTEG4TgbQ9uXe:Lib 435630b921b9e9ad09b3a3837271c8da
-import  -/  good-great-excellent-0.1.0.0@goodg_DmvfzrsRlTTEG4TgbQ9uXe:PatternCompiler 5f864c3f64cd4818252cf8308fa404dd
-import  -/  Core 9a5bf0cdd1ec906700cf8c688b51a5dd
+import  -/  Core 2ef28469fa6aa0ab3e755b56582fa0dc
   Config caee52235134b93db772134968b2cb0c
-  DirectoryPath d5c28258b354fd92c19a39b0e15fb216
-  PatternExpr 93ec1dc84f5cc2d0d3eef3719a2898ef
   config 0c7ab785f80c9ea306179e5451c95c5f
-import  -/  Query 5ab431890c7071b3bb690472a3bc0a12
-  raw_freq 6a9d35834ba16260e18007923557bb27
-  total_freq 18dfea5666fbf4faec008c5547a16a8c
-import  -/  Scripts cf673f58f9eba43781aa9ee214e27574
-  exports: 19d7ba37bb03e0eefa41bb35304603b6
-  main_split_by_pattern 444bc1e6d65df2c2275370e39f72bbb7
-import  -/  Src 470f9164a3db4ef1fc1c345a472db265
-  exports: bf26dcb1b4741f6ae44bb03b2dde9386
+  corpus 57709cdf300123cbb006a8f7893457fb
+  strongWeak a545015f55d64d1f0e5b537be90da55e
+  weakStrong 2bf1477d9d7b9fb03fe2de502900480e
+import  -/  Scripts de02c13073b03e53531300d7457d0f67
+  exports: d90f05a8e615b7c6ee690d1732316ba9
+  query_save ae944f7e87c3264ddb8a9851ac8a436d
+import  -/  Src b74d4e10ac936c0d4e7f299103b2570e
+  exports: e665187d01dbf2804bf06c196c69cbeb
 import  -/  text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text b53ae191632883b10562be5cbaa0b22b
-9def409fa4befae5300afe391055e518
+import  -/  time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn:Data.Time.Clock d187f9ce1132a97c33b2032a6709adce
+0451fba802e3eb41a3d6b34666b04748
   config_l :: GHC.Types.IO Core.Config
   {- Arity: 1, Strictness: <L,U>,
      Unfolding: InlineRule (0, True, True)
                 Main.config_l1
                   `cast`
                 (Sym (GHC.Types.NTCo:IO[0] <Core.Config>_R)) -}
-6ae7b1f62ab906d8cc7bb2324f80931d
+fe584b86f9db1a6760b4f7b1d8e03e7d
   config_l1 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, Core.Config #)
   {- Arity: 1, Strictness: <L,U>,
-     Unfolding: (\ s :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
+     Unfolding: InlineRule (1, True, False)
+                (\ s :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
                  case Core.config1
-                        Main.corpus_l
-                        Main.patterns_l
+                        Main.corpus_r
+                        Main.patterns_r
                         s of ds1 { (#,#) ipv ipv1 ->
                  case ipv1 of wild {
-                   GHC.Base.Nothing
-                   -> GHC.Prim.raiseIO#
-                        @ GHC.Exception.SomeException
-                        @ Core.Config
-                        Main.config_l2
-                        ipv
+                   GHC.Base.Nothing -> GHC.IO.failIO1 @ Core.Config Main.config_l2 ipv
                    GHC.Base.Just con -> (# ipv, con #) } }) -}
-4c06e1e98f118ef4c84a641f30c03e1e
-  config_l2 :: GHC.Exception.SomeException
-  {- Unfolding: (GHC.IO.Exception.$fExceptionIOException_$ctoException
-                   Main.config_l3) -}
-1b0d41a33a00d074a234ad959b24514a
-  config_l3 :: GHC.IO.Exception.IOException
-  {- Unfolding: (GHC.IO.Exception.IOError
-                   (GHC.Base.Nothing @ GHC.IO.Handle.Types.Handle)
-                   GHC.IO.Exception.UserError
-                   (GHC.Types.[] @ GHC.Types.Char)
-                   Main.config_l4
-                   (GHC.Base.Nothing @ Foreign.C.Types.CInt)
-                   (GHC.Base.Nothing @ GHC.IO.FilePath)) -}
-c5528bf081bde5c312a569dc83d3285c
-  config_l4 :: [GHC.Types.Char]
+3173e0acc191e70a8a59122cb2820194
+  config_l2 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString#
-                   "Pattern match failure in do expression at app/Main.hs:116:5-12"#) -}
+                   "Pattern match failure in do expression at app/Main.hs:76:5-12"#) -}
 b070e8e1fafb2201d1dcbb1532abe25d
   corpus_l :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString#
                    "/Users/lingxiao/Documents/research/data/ngrams/corpus/"#) -}
+d5242c98aa66dab1055f401dc042c638
+  corpus_r :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "/nlp/data/xiao/ngrams/corpus/"#) -}
 4a6eb0c0b198d1137f4797eedf898eb9
   grep_sm :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString#
@@ -232,30 +209,104 @@ b208ce38330c848c4c91924f60176d9d
   grep_ws :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString#
                    "/Users/lingxiao/Documents/research/data/ngrams/greped/weak-strong/"#) -}
-105dfb98fdab651a718b635d483fba1f
+54ab4adb1e559ee0bf7898c8c15cd23a
   main :: GHC.Types.IO ()
-  {- Arity: 1,
+  {- Arity: 1, Strictness: <L,U>,
      Unfolding: InlineRule (0, True, True)
                 Main.main1 `cast` (Sym (GHC.Types.NTCo:IO[0] <()>_R)) -}
-d1c8d492a193fb8bc523d413c61772e2
+5a411c1104e45a887e5fce9dd8e8992e
   main1 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
-  {- Arity: 1, Unfolding: (Main.main3 Main.grep_ws Main.main2) -}
-1ab2aeb23c5813db3217b738cd059268
-  main2 :: Core.PatternExpr
-  {- Unfolding: (GHC.List.$w!!
-                   @ Core.PatternExpr
-                   Main.weak_strong
-                   0) -}
-73c8746599bbd10de692e5150aa3bb2a
-  main3 ::
-    Core.DirectoryPath
-    -> Core.PatternExpr
-    -> GHC.Prim.State# GHC.Prim.RealWorld
-    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
-  {- Arity: 3, Strictness: <L,U><L,U><L,U> -}
-c4d55b8be916f2bad35e1fca56238b15
+  {- Arity: 1, Strictness: <L,U>,
+     Unfolding: (\ s :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
+                 case Core.config1
+                        Main.corpus_r
+                        Main.patterns_r
+                        s of ds1 { (#,#) ipv ipv1 ->
+                 case ipv1 of wild {
+                   GHC.Base.Nothing
+                   -> case GHC.Prim.raiseIO#
+                             @ GHC.Exception.SomeException
+                             @ Core.Config
+                             Main.main2
+                             ipv
+                      ret_ty (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+                      of {}
+                   GHC.Base.Just con
+                   -> let {
+                        a1 :: Core.DirectoryPath
+                        = case con of wild1 { Core.Con ds2 ds3 ds4 -> ds2 }
+                      } in
+                      let {
+                        a2 :: [Core.PatternExpr]
+                        = case con of wild1 { Core.Con ds2 ds3 ds4 -> ds3 }
+                      } in
+                      letrec {
+                        a3 :: [(GHC.Base.String, GHC.Base.String)]
+                              -> GHC.Prim.State# GHC.Prim.RealWorld
+                              -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+                                    [(GHC.Integer.Type.Integer, [Core.Output])] #)
+                          {- Arity: 2, Strictness: <S,1*U><L,U> -}
+                        = \ ds :: [(GHC.Base.String, GHC.Base.String)]
+                            eta :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
+                          case ds of wild1 {
+                            []
+                            -> (# eta,
+                                  GHC.Types.[] @ (GHC.Integer.Type.Integer, [Core.Output]) #)
+                            : y ys
+                            -> case y of ww { (,) ww1 ww2 ->
+                               case Scripts.$wa a2 a1 ww1 ww2 eta of ds2 { (#,#) ipv2 ipv3 ->
+                               case a3 ys ipv2 of ds3 { (#,#) ipv4 ipv5 ->
+                               (# ipv4,
+                                  GHC.Types.:
+                                    @ (GHC.Integer.Type.Integer, [Core.Output])
+                                    ipv3
+                                    ipv5 #) } } } }
+                      } in
+                      case a3 Main.main_pws ipv of ds2 { (#,#) ipv2 ipv3 ->
+                      let {
+                        a4 :: [Core.PatternExpr]
+                        = case con of wild1 { Core.Con ds3 ds4 ds5 -> ds5 }
+                      } in
+                      letrec {
+                        a5 :: [(GHC.Base.String, GHC.Base.String)]
+                              -> GHC.Prim.State# GHC.Prim.RealWorld
+                              -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+                                    [(GHC.Integer.Type.Integer, [Core.Output])] #)
+                          {- Arity: 2, Strictness: <S,1*U><L,U> -}
+                        = \ ds :: [(GHC.Base.String, GHC.Base.String)]
+                            eta :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
+                          case ds of wild1 {
+                            []
+                            -> (# eta,
+                                  GHC.Types.[] @ (GHC.Integer.Type.Integer, [Core.Output]) #)
+                            : y ys
+                            -> case y of ww { (,) ww1 ww2 ->
+                               case Scripts.$wa a4 a1 ww1 ww2 eta of ds3 { (#,#) ipv4 ipv5 ->
+                               case a5 ys ipv4 of ds4 { (#,#) ipv6 ipv7 ->
+                               (# ipv6,
+                                  GHC.Types.:
+                                    @ (GHC.Integer.Type.Integer, [Core.Output])
+                                    ipv5
+                                    ipv7 #) } } } }
+                      } in
+                      case a5 Main.main_pws ipv2 of ds3 { (#,#) ipv4 ipv5 ->
+                      (# ipv4, GHC.Tuple.() #) } } } }) -}
+9fadb9494277eaa786b7fca0ea3bd915
+  main2 :: GHC.Exception.SomeException
+  {- Unfolding: (GHC.IO.Exception.$fExceptionIOException_$ctoException
+                   Main.main3) -}
+229d0d9c20d4a9f11a45c9eb25508b98
+  main3 :: GHC.IO.Exception.IOException
+  {- Unfolding: (GHC.IO.Exception.IOError
+                   (GHC.Base.Nothing @ GHC.IO.Handle.Types.Handle)
+                   GHC.IO.Exception.UserError
+                   (GHC.Types.[] @ GHC.Types.Char)
+                   Main.config_l2
+                   (GHC.Base.Nothing @ Foreign.C.Types.CInt)
+                   (GHC.Base.Nothing @ GHC.IO.FilePath)) -}
+76a6e51ba2b0069fb22f7671448c86bc
   main4 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
@@ -263,324 +314,108 @@ c4d55b8be916f2bad35e1fca56238b15
      Unfolding: (GHC.TopHandler.runMainIO1
                    @ ()
                    Main.main1 `cast` (Sym (GHC.Types.NTCo:IO[0] <()>_R))) -}
+39fd03a169c0ba5ee0ebbdf4e8f01967
+  main_go ::
+    [[GHC.Types.Char]] -> [([GHC.Types.Char], [GHC.Types.Char])]
+  {- Arity: 1, Strictness: <S,1*U> -}
+489bc5ddd516ceed983bdc8edc00804b
+  main_pws :: [([GHC.Types.Char], [GHC.Types.Char])]
+  {- Unfolding: (Main.main_go Main.w_good_bad) -}
 a81752fcc002b5300e62729a5f732bc5
   patterns_l :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString#
                    "/Users/lingxiao/Documents/research/code/good-great-excellent/inputs/"#) -}
-fe1086159a25ced0917f3ee544bfff42
-  rgrep_sw :: Core.DirectoryPath
+ac5de24987aefe51211b1a7ed175ebac
+  patterns_r :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString#
-                   "/nlp/data/xiao/ngrams/greped/strong-weak/"#) -}
-ee0ca0984edaaca28befade06e43456a
-  rgrep_ws :: Core.DirectoryPath
-  {- Unfolding: (GHC.CString.unpackCString#
-                   "/nlp/data/xiao/ngrams/greped/weak-strong/"#) -}
-3dc5ee77932e7e219152ed866cb5346e
-  step1 :: Core.DirectoryPath -> Core.PatternExpr -> GHC.Types.IO ()
-  {- Arity: 3, Strictness: <L,1*U><L,U><L,U>,
-     Unfolding: InlineRule (0, True, True)
-                Main.step4
-                  `cast`
-                (<Core.DirectoryPath>_R
-                 ->_R <Core.PatternExpr>_R
-                 ->_R Sym (GHC.Types.NTCo:IO[0] <()>_R)) -}
-926767f27ccfe5c8331ade3621965c51
-  step10 :: GHC.IO.FilePath -> GHC.Types.IO GHC.Integer.Type.Integer
-  {- Unfolding: (Query.raw_freq @ GHC.Types.IO Main.step11) -}
-601891e0ede3200cbb275b0ba3d643af
-  step11 :: Conduits.Op GHC.Types.IO
-  {- Strictness: m,
-     Unfolding: ((Control.Monad.Trans.Control.$fMonadBaseControlIOIO,
-                  Control.Monad.Catch.$fMonadThrowIO,
-                  Control.Monad.IO.Class.$fMonadIOIO)) -}
-eca4eb45907f221455328bdd2d793a57
-  step12 ::
-    Core.DirectoryPath
-    -> Core.PatternExpr
-    -> GHC.Prim.State# GHC.Prim.RealWorld
-    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
-  {- Arity: 3, Strictness: <S,U><L,U><L,U>,
-     Unfolding: (\ root :: Core.DirectoryPath
-                   p :: Core.PatternExpr
-                   eta :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
-                 Scripts.main_split_by_pattern1
-                   root
-                   (GHC.Types.:
-                      @ (Data.Attoparsec.Text.Internal.Parser Data.Text.Internal.Text)
-                      (PatternCompiler.fill
-                         Main.step13
-                         (PatternCompiler.compile_go (PatternCompiler.compile1 p)))
-                      (GHC.Types.[]
-                         @ (Data.Attoparsec.Text.Internal.Parser Data.Text.Internal.Text)))
-                   eta) -}
-2ae85f9dc57b8f2fc4fb4e1c58948307
-  step13 :: [PatternCompiler.PInput]
-  {- HasNoCafRefs,
-     Unfolding: (GHC.Types.:
-                   @ PatternCompiler.PInput
-                   PatternCompiler.Star
-                   Main.step14) -}
-765f2952891faf0e2a1281d37a27fc4f
-  step14 :: [PatternCompiler.PInput]
-  {- HasNoCafRefs,
-     Unfolding: (GHC.Types.:
-                   @ PatternCompiler.PInput
-                   PatternCompiler.Star
-                   (GHC.Types.[] @ PatternCompiler.PInput)) -}
-531534103d2a1d5cfb2b62c94f1f756e
-  step2 :: Core.DirectoryPath -> Core.PatternExpr -> GHC.Types.IO ()
-  {- Arity: 3, Strictness: <S,U><L,U><L,U>,
-     Unfolding: InlineRule (0, True, True)
-                Main.step12
-                  `cast`
-                (<Core.DirectoryPath>_R
-                 ->_R <Core.PatternExpr>_R
-                 ->_R Sym (GHC.Types.NTCo:IO[0] <()>_R)) -}
-34709c6408bceb71f1fa996cc31e5810
-  step3 :: Core.DirectoryPath -> Core.PatternExpr -> GHC.Types.IO ()
-  {- Arity: 3, Strictness: <L,U><L,U><L,U>,
-     Unfolding: InlineRule (0, True, True)
-                Main.main3
-                  `cast`
-                (<Core.DirectoryPath>_R
-                 ->_R <Core.PatternExpr>_R
-                 ->_R Sym (GHC.Types.NTCo:IO[0] <()>_R)) -}
-2baffd5e1758770a359be8a9ba7a34f2
-  step4 ::
-    Core.DirectoryPath
-    -> Core.PatternExpr
-    -> GHC.Prim.State# GHC.Prim.RealWorld
-    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
-  {- Arity: 3, Strictness: <L,1*U><L,U><L,U>,
-     Unfolding: (\ root :: Core.DirectoryPath
-                   p :: Core.PatternExpr
-                   s :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
-                 case (Main.step10
-                         (GHC.Base.++
-                            @ GHC.Types.Char
-                            root
-                            (GHC.Base.++ @ GHC.Types.Char p Main.step9)))
-                        `cast`
-                      (GHC.Types.NTCo:IO[0] <GHC.Integer.Type.Integer>_R)
-                        s of ds1 { (#,#) ipv ipv1 ->
-                 case GHC.IO.Handle.Text.hPutStr2
-                        GHC.IO.Handle.FD.stdout
-                        (GHC.Show.$fShow[]_$s$cshow1 p)
-                        GHC.Types.True
-                        ipv of ds2 { (#,#) ipv2 ipv3 ->
-                 case GHC.IO.Handle.Text.hPutStr2
-                        GHC.IO.Handle.FD.stdout
-                        Main.step6
-                        GHC.Types.True
-                        ipv2 of ds3 { (#,#) ipv4 ipv5 ->
-                 GHC.IO.Handle.Text.hPutStr2
-                   GHC.IO.Handle.FD.stdout
-                   (GHC.Types.:
-                      @ GHC.Types.Char
-                      GHC.Show.shows6
-                      (GHC.Show.showLitString
-                         (GHC.CString.unpackAppendCString#
-                            "raw frequency: "#
-                            (case GHC.Show.$w$cshowsPrec1
-                                    0
-                                    ipv1
-                                    (GHC.Types.[] @ GHC.Types.Char) of ww2 { (#,#) ww3 ww4 ->
-                             GHC.Types.: @ GHC.Types.Char ww3 ww4 }))
-                         Main.step5))
-                   GHC.Types.True
-                   ipv4 } } }) -}
-2a127f8d257db160776abb001c1262de
-  step5 :: [GHC.Types.Char]
-  {- HasNoCafRefs,
-     Unfolding: (GHC.Types.:
-                   @ GHC.Types.Char
-                   GHC.Show.shows6
-                   (GHC.Types.[] @ GHC.Types.Char)) -}
-d02ffe186d21b144befeb83f7e4f68b8
-  step6 :: GHC.Base.String
-  {- Unfolding: (GHC.Types.:
-                   @ GHC.Types.Char
-                   GHC.Show.shows6
-                   Main.step7) -}
-911bd70e459f4a98e0c27c3adace68e0
-  step7 :: GHC.Base.String
-  {- Unfolding: (GHC.Show.showLitString
-                   Main.step8
-                   (GHC.Types.:
-                      @ GHC.Types.Char
-                      GHC.Show.shows6
-                      (GHC.Types.[] @ GHC.Types.Char))) -}
-bea15c61a5e6013d6963bdf2975ed775
-  step8 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString#
-                   "------------------------------------------------"#) -}
-db4e69faf5258ea254459f28dceb1818
-  step9 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString# ".txt"#) -}
-9a689e33ff09929f07928f98c2ace2b0
-  strong_weak :: [Core.PatternExpr]
+                   "/home1/l/lingxiao/xiao/good-great-excellent/inputs/"#) -}
+d8feae2a8336ea8c790193599ad36090
+  w_good_bad :: [[GHC.Types.Char]]
   {- Strictness: m2,
      Unfolding: (GHC.Types.:
-                   @ Core.PatternExpr
-                   Main.strong_weak13
-                   Main.strong_weak1) -}
-1b960012b288a9a3b32d522fe0f5c496
-  strong_weak1 :: [Core.PatternExpr]
+                   @ [GHC.Types.Char]
+                   Main.w_good_bad12
+                   Main.w_good_bad1) -}
+4b6eae59e035d8f3d24954457b33329b
+  w_good_bad1 :: [[GHC.Types.Char]]
   {- Strictness: m2,
      Unfolding: (GHC.Types.:
-                   @ Core.PatternExpr
-                   Main.strong_weak12
-                   Main.strong_weak2) -}
-db765cf27c4ca0f75852b6149646b12d
-  strong_weak10 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString#
-                   "not (a|an|the) * (,) but still (a|an|the) *"#) -}
-8cf97d2b2d7ae5392d7693e1610e1013
-  strong_weak11 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString#
-                   "not (a|an|the) * (,) still (a|an|the) *"#) -}
-b4c5ac382eb4d2d24dd8b1bd6a46d8da
-  strong_weak12 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString#
-                   "not (a|an|the) * (,) but just (a|an|the) *"#) -}
-2a875930bea7e95827f3726f6923efa5
-  strong_weak13 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString#
-                   "not (a|an|the) * (,) just (a|an|the) *"#) -}
-4898447a7b05b1f21aa3536cd554dacf
-  strong_weak2 :: [Core.PatternExpr]
+                   @ [GHC.Types.Char]
+                   Main.w_good_bad16
+                   Main.w_good_bad2) -}
+7d67814fb5aac991d83d3829ba4298f4
+  w_good_bad10 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "solid"#) -}
+87395296f711f09a23a5d9308b46e6d2
+  w_good_bad11 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "great"#) -}
+94695805077c26d0d1d2a91a137cf9fd
+  w_good_bad12 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "good"#) -}
+2977d322ea1ccf5321446e6c42c1a964
+  w_good_bad13 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "satisfactory"#) -}
+d67fbbe72cb0e30908f0723d68442beb
+  w_good_bad14 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "acceptable"#) -}
+d0d5e8b9d6777ac4ee94a471f2b4ccca
+  w_good_bad15 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "best"#) -}
+f2d12ffc49587735168601e9a80eb9e6
+  w_good_bad16 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "better"#) -}
+acc81771df0799a23cc3819e6e94fc97
+  w_good_bad2 :: [[GHC.Types.Char]]
   {- Strictness: m2,
      Unfolding: (GHC.Types.:
-                   @ Core.PatternExpr
-                   Main.strong_weak11
-                   Main.strong_weak3) -}
-e563a360841947b3091d57c946440c18
-  strong_weak3 :: [Core.PatternExpr]
+                   @ [GHC.Types.Char]
+                   Main.w_good_bad15
+                   Main.w_good_bad3) -}
+9d25434d176f1664b343c8bff7fdd9ef
+  w_good_bad3 :: [[GHC.Types.Char]]
   {- Strictness: m2,
      Unfolding: (GHC.Types.:
-                   @ Core.PatternExpr
-                   Main.strong_weak10
-                   Main.strong_weak4) -}
-e426c57f9396bad542a13f1be8f94c81
-  strong_weak4 :: [Core.PatternExpr]
+                   @ [GHC.Types.Char]
+                   Main.w_good_bad14
+                   Main.w_good_bad4) -}
+5aa1051f8630b008542f04cf27012cff
+  w_good_bad4 :: [[GHC.Types.Char]]
   {- Strictness: m2,
      Unfolding: (GHC.Types.:
-                   @ Core.PatternExpr
-                   Main.strong_weak9
-                   Main.strong_weak5) -}
-0a6ce21cffc38caca489fe9bb18a2af7
-  strong_weak5 :: [Core.PatternExpr]
+                   @ [GHC.Types.Char]
+                   Main.w_good_bad13
+                   Main.w_good_bad5) -}
+b2bd5a9e62c325c645f33026e983f2ee
+  w_good_bad5 :: [[GHC.Types.Char]]
   {- Strictness: m2,
      Unfolding: (GHC.Types.:
-                   @ Core.PatternExpr
-                   Main.strong_weak8
-                   Main.strong_weak6) -}
-79f65a996032eceb033c9a16c1d0e787
-  strong_weak6 :: [Core.PatternExpr]
+                   @ [GHC.Types.Char]
+                   Main.w_good_bad12
+                   Main.w_good_bad6) -}
+262e999bea4c87e0a29af94258dbc009
+  w_good_bad6 :: [[GHC.Types.Char]]
   {- Strictness: m2,
      Unfolding: (GHC.Types.:
-                   @ Core.PatternExpr
-                   Main.strong_weak7
-                   (GHC.Types.[] @ Core.PatternExpr)) -}
-19883493898ecd85564ba3a44eb30a65
-  strong_weak7 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString# "* (,) or very *"#) -}
-a6b8dcb8222dfb28130b4f62935bd546
-  strong_weak8 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString#
-                   "not (a|an|the) * (,) though still (a|an|the) *"#) -}
-e40c6b2b46610654806e681513b68680
-  strong_weak9 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString#
-                   "not (a|an|the) * (,) although still (a|an|the) *"#) -}
-8ec132cc14d33f4c192a877670e7abfb
-  weak_strong :: [Core.PatternExpr]
+                   @ [GHC.Types.Char]
+                   Main.w_good_bad11
+                   Main.w_good_bad7) -}
+54b2bb5d505f6ce6ab7516ab8bca471a
+  w_good_bad7 :: [[GHC.Types.Char]]
   {- Strictness: m2,
      Unfolding: (GHC.Types.:
-                   @ Core.PatternExpr
-                   Main.weak_strong15
-                   Main.weak_strong1) -}
-a56540341ddf2b6fa0702a1a47aef094
-  weak_strong1 :: [Core.PatternExpr]
+                   @ [GHC.Types.Char]
+                   Main.w_good_bad10
+                   Main.w_good_bad8) -}
+e31091b08ff571bb82b07b20703fae30
+  w_good_bad8 :: [[GHC.Types.Char]]
   {- Strictness: m2,
      Unfolding: (GHC.Types.:
-                   @ Core.PatternExpr
-                   Main.weak_strong14
-                   Main.weak_strong2) -}
-9e0aa9cfb440ed110d052a8534ae6c2c
-  weak_strong10 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString#
-                   "* (,) (and|or) almost (a|an|the) *"#) -}
-748412ccce1e767bb069670e5381cb10
-  weak_strong11 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString#
-                   "* (,) (and|or) even (a|an|the) *"#) -}
-a33fc85a3570edfba1f58e125bb6168b
-  weak_strong12 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString#
-                   "* (,) though not (a|an|the) *"#) -}
-4513a6b2adbed3235dcb56d71e540e1b
-  weak_strong13 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString#
-                   "* (,) although not (a|an|the) *"#) -}
-73ec19bc2b198d78d0511e2a06b5b9d4
-  weak_strong14 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString#
-                   "* (,) if not (a|an|the) *"#) -}
-95337937a1177a5b95684c665ab688bc
-  weak_strong15 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString#
-                   "* (,) but not (a|an|the) *"#) -}
-d7494b1e707ebf11308a9bde09c53527
-  weak_strong2 :: [Core.PatternExpr]
-  {- Strictness: m2,
-     Unfolding: (GHC.Types.:
-                   @ Core.PatternExpr
-                   Main.weak_strong13
-                   Main.weak_strong3) -}
-d244ef972d2265dc717698bdb9c7e735
-  weak_strong3 :: [Core.PatternExpr]
-  {- Strictness: m2,
-     Unfolding: (GHC.Types.:
-                   @ Core.PatternExpr
-                   Main.weak_strong12
-                   Main.weak_strong4) -}
-95152aa8e825c39e3766d2f96e6f4680
-  weak_strong4 :: [Core.PatternExpr]
-  {- Strictness: m2,
-     Unfolding: (GHC.Types.:
-                   @ Core.PatternExpr
-                   Main.weak_strong11
-                   Main.weak_strong5) -}
-b38c8399fd17e5f4fa6e425dc55bce73
-  weak_strong5 :: [Core.PatternExpr]
-  {- Strictness: m2,
-     Unfolding: (GHC.Types.:
-                   @ Core.PatternExpr
-                   Main.weak_strong10
-                   Main.weak_strong6) -}
-522c0ee2feeec820d9837be51bde195b
-  weak_strong6 :: [Core.PatternExpr]
-  {- Strictness: m2,
-     Unfolding: (GHC.Types.:
-                   @ Core.PatternExpr
-                   Main.weak_strong9
-                   Main.weak_strong7) -}
-ff6c7e20f82b8a69ba8075ba8f1a041e
-  weak_strong7 :: [Core.PatternExpr]
-  {- Strictness: m2,
-     Unfolding: (GHC.Types.:
-                   @ Core.PatternExpr
-                   Main.weak_strong8
-                   (GHC.Types.[] @ Core.PatternExpr)) -}
-e9c768410a450393508cf63d6097ea1e
-  weak_strong8 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString#
-                   "not just * (,) but *"#) -}
-593a6ebfdb3e82c6616b2587690dc0af
-  weak_strong9 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString#
-                   "not only * (,) but *"#) -}
+                   @ [GHC.Types.Char]
+                   Main.w_good_bad9
+                   (GHC.Types.[] @ [GHC.Types.Char])) -}
+3f7f001c1eb016fccd17bbf5d36e3cc0
+  w_good_bad9 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "superb"#) -}
 vectorised variables:
 vectorised tycons:
 vectorised reused tycons:
