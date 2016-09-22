@@ -133,6 +133,7 @@ anyWord = spaces *> takeWhile1 isAlpha <* eow
 star :: Parser Text
 star = anyWord      
 
+
 -- * parse zero or more spaces and ouput one space
 spaces :: Parser Text
 spaces = output " " <$> many' space

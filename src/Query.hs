@@ -33,6 +33,7 @@ import qualified Data.Conduit.Combinators as C
 
 import Lib
 import Core
+import ScrubData
 
 
 {-----------------------------------------------------------------------------
@@ -66,20 +67,31 @@ query_at p f =  eval
 total_freq :: Op m => FilePath -> m Integer
 total_freq inp =   run 
                $   sourceFile inp
-               $=  prepFileWith CT.utf8   -- CT.iso8859_1
-               $=  C.map (\(_,n,_) -> n)
+               $=  toInput CT.utf8
+               $=  C.map (\(_,n) -> read . unpack $ n)
                $$  foldlC (+) 0
+
 
 -- * count total frequency in greped file
 raw_freq :: Op m => FilePath -> m Integer
 raw_freq inp =  run
-                $  sourceFile inp               
+             $  sourceFile inp   
+             $= toInput CT.utf8
+             $= C.map (\(_,n) -> read . unpack $ n)
+             $$ foldlC (+) 0
+
+{-
+
+
                 $= CT.decode CT.utf8
                 $= CT.lines
-                $= C.map    (splitOn . pack $ "\t"        )
-                $= C.filter ((==2) . length               )
-                $= C.map    (\[t,n] -> (read . unpack $ n))
+                $= logi
+                $= C.map    (splitOn . pack $ "\t"      )
+                $= C.map    (\[_,n] -> read . unpack $ n)
                 $$ foldlC (+) 0
+
+        $= C.filter ((==2) . length               )
+-}                
 
 {-----------------------------------------------------------------------------
   Subroutines
@@ -95,15 +107,16 @@ prepFileWith c = CT.decode c
               $= C.map    head
               $= C.map    (splitOn $ pack "\t")
               $= C.filter (\x -> length x == 3)
-              $= C.map    (\[t,n,s] -> ( t
+              $= C.map    (\[t,n] -> ( t
                                        , read . unpack $ n
-                                       , s))
+                                      ))
+
 
 queryFile :: FileOpS m [QueryResult]
           => Parser Text
           -> Consumer QueryResult m Integer
-queryFile p = C.filter     (\(t,_,_  )  -> p <**? t)
-           $= awaitForever (\t@(_,n,_) -> do
+queryFile p = C.filter     (\(t,_)  -> p <**? t)
+           $= awaitForever (\t@(_,n) -> do
                        ts <- lift get
                        let ts' = t:ts
                        lift . put $ ts'

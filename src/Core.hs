@@ -40,9 +40,9 @@ type DirectoryPath = FilePath
 -- * Results from a single `Query` to ngram documents
 -- * the first field is preprocess text, second field is orginal text
 -- * the third field is number of results
-type Input         = (Text, Text, Text)
+type Input         = (Text, Text)
 type Output        = (Integer, [QueryResult])
-type QueryResult   = (Text,Integer,Text)
+type QueryResult   = (Text,Integer)
 
 type PatternExpr   = String       
 

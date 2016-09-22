@@ -1,6 +1,8 @@
 totalCnt_weakStrong --> 4.15502394E8   = 415,502,394
 totalCnt_strongWeak --> 3,260,968.0
 
+
+
 indivCnts_weakStrong:
 
 <*> , but not <*>      10,079,648
@@ -75,26 +77,59 @@ not only <*> but <*> --> 395335.0
 
 indivCnts_strongWeak:
 
+not the <*> just <*> --> 10150.0
+not <*> just <*> -->     1852207.0
+not <*> just the <*> --> 23462.0
+not <*> , just <*> -->   150699.0
+not <*> just an <*> -->  1436.0
+not a <*> just <*> -->   4399.0
+not an <*> just <*> -->  851.0
+not <*> just a <*> -->   38215.0
+
+
+not <*> but just <*> --> 4171.0
+
 
 not the <*> still <*> --> 243.0
-not <*> but still <*> --> 7947.0
-not the <*> just <*> --> 10150.0
-not <*> just <*> --> 1852207.0
-not <*> just the <*> --> 23462.0
 not <*> still the <*> --> 198.0
-not <*> , just <*> --> 150699.0
-not <*> still an <*> --> 185.0
-not <*> still a <*> --> 787.0
+not <*> still an <*> -->  185.0
+not <*> still a <*> -->   787.0
+not an <*> still <*> -->  0.0
+not a <*> still <*> -->   41.0
+not <*> , still <*> -->   6533.0
+not <*> still <*> -->     182939.0
+
+not <*> but still <*> --> 7947.0
+
 <*> or very <*> --> 934215.0
-not an <*> still <*> --> 0.0
-not <*> just an <*> --> 1436.0
-not <*> but just <*> --> 4171.0
-not a <*> still <*> --> 41.0
-not <*> although still <*> --> 0.0
 <*> , or very <*> --> 42290.0
+
+
+not <*> although still <*> --> 0.0
 not <*> though still <*> --> 0.0
-not <*> , still <*> --> 6533.0
-not a <*> just <*> --> 4399.0
-not an <*> just <*> --> 851.0
-not <*> just a <*> --> 38215.0
-not <*> still <*> --> 182939.0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

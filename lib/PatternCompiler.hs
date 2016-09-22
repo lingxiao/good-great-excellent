@@ -37,7 +37,6 @@ import Parsers
     Tokenization and Parsing
 ------------------------------------------------------------------------------}
 
-
 data Token = Word String 
            | Hole 
            | Opt Token

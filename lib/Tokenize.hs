@@ -4,7 +4,7 @@
 -- | 
 -- | Vendor
 -- | Module  : NLP Tokenizer, adapted to use Text instead of Strings
--- |           Note this module is not found on stackage
+-- |           Note this module is kept locally because it is not found on stackage
 -- | Author  : Grzegorz Chrupała
 -- | Date    : 9/20/2016
 -- |             

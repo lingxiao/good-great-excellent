@@ -14,8 +14,7 @@ module Main where
 import Data.Text (Text, unpack, pack)
 import System.FilePath.Posix
 import Data.Conduit.Text 
-
-
+import Data.Text (Text, unpack, pack, splitOn)
 
 import Src
 import Lib
@@ -26,41 +25,43 @@ import Scripts
 ------------------------------------------------------------------------------}
 
 weak_strong :: [PatternExpr]
-weak_strong = ["* (,) but not (a|an|the) *"
-             ,"* (,) if not (a|an|the) *"
-             ,"* (,) although not (a|an|the) *"
-             ,"* (,) though not (a|an|the) *"
-             ,"* (,) (and|or) even (a|an|the) *"
-             ,"* (,) (and|or) almost (a|an|the) *"
-             ,"not only * (,) but *"
-             ,"not just * (,) but *"
-             ]
+weak_strong = ["* (,) but not (a|an|the) *"              --  no misparse in grep
+              ,"* (,) if not (a|an|the) *"               --  no misparse in grep
+              ,"* (,) although not (a|an|the) *"         --  no misparse in grep
+              ,"* (,) though not (a|an|the) *"           --  no misparse in grep
+              ,"* (,) (and|or) even (a|an|the) *"        --  no misparse in and even
+              ,"* (,) (and|or) almost (a|an|the) *"      --
+              ,"not only * (,) but *"                    --
+              ,"not just * (,) but *"                    -- 
+              ]
 
 strong_weak :: [PatternExpr]
 strong_weak = ["not (a|an|the) * (,) just (a|an|the) *"
-             ,"not (a|an|the) * (,) but just (a|an|the) *"
-             ,"not (a|an|the) * (,) still (a|an|the) * "
-             ,"not (a|an|the) * (,) but still (a|an|the) *"
-             ,"not (a|an|the) * (,) although still (a|an|the) *"
-             ,"not (a|an|the) * (,) though still (a|an|the) * "
-             ,"* (,) or very *"
-             ]
+              ,"not (a|an|the) * (,) but just (a|an|the) *"
+              ,"not (a|an|the) * (,) still (a|an|the) *"
+              ,"not (a|an|the) * (,) but still (a|an|the) *"
+              ,"not (a|an|the) * (,) although still (a|an|the) *"
+              ,"not (a|an|the) * (,) though still (a|an|the) *"
+              ,"* (,) or very *"
+              ]
+
+
+-- * debug
+
+fs = "/Users/lingxiao/Documents/research/data/ngrams/small/greped.txt"
 
 -- * right now: run through normalize >> step1 >> step2 >> step3
 main :: IO ()
 main = do
-  main_split_by_pattern rgrep_sw $ (\p -> compile p Star Star) <$> strong_weak
+  step1 grep_ws `mapM` ["* (,) although not (a|an|the) *", "* (,) though not (a|an|the) *"]
+  step2 grep_ws `mapM` ["* (,) although not (a|an|the) *", "* (,) though not (a|an|the) *"]
+  step3 grep_ws `mapM` ["* (,) although not (a|an|the) *", "* (,) though not (a|an|the) *"]
+  return ()
 
 
 {-----------------------------------------------------------------------------
   task stack
 ------------------------------------------------------------------------------}
-
-
-  -- * loop to count occurences
-  --step1 grep_sm p1
-  --step2 grep_sm p1
-  --step3 grep_sm p1
 
 -- * count raw frequencies
 step1 :: DirectoryPath -> PatternExpr -> IO ()
@@ -68,8 +69,8 @@ step1 root p = do
   let path = root ++ p ++ ".txt"
   n <- raw_freq path
   print p
-  print "------------------------------------------------"
   print $ "raw frequency: " ++ show n
+  print "------------------------------------------------"
 
 -- * filter by pattern
 step2 :: DirectoryPath -> PatternExpr -> IO ()
@@ -81,9 +82,12 @@ step3 :: DirectoryPath -> PatternExpr -> IO ()
 step3 root xs = do
   n <- total_freq $ root ++ "/out/" ++ xs ++ ".txt"
   m <- total_freq $ root ++ "/out/leftover-" ++ xs ++ ".txt"
+  print xs
   print $ "conform    : " ++ show n
   print $ "not-conform: " ++ show m
   print $ "total      : " ++ show (n + m)
+  print "------------------------------------------------"
+
 
 {-----------------------------------------------------------------------------
   Paths
