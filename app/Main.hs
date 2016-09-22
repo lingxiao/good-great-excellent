@@ -43,13 +43,13 @@ main :: IO ()
 main = do
   con <- config_l
   let weak_strong = weakStrong con
-  let strong_weak = strong_weak con
+  let strong_weak = strongWeak con
 
   let pws = [(u,v) | u <- w_good_bad, v <- w_good_bad ]
 
   query_save weak_strong (corpus con) `mapM` pws
   query_save strong_weak (corpus con) `mapM` pws
-  
+
   return ()
 
 
