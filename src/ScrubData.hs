@@ -97,13 +97,13 @@ go predicate p code inp outp = run
 
 -- * hypothesis: there's problems here
 -- * convert greped ngram files to inputs
-toInput :: FileOp m => CT.Codec -> Conduit B.ByteString m Input
+toInput :: Op m => CT.Codec -> Conduit B.ByteString m Input
 toInput code =  CT.decode code
              $= CT.lines
              $= awaitForever (\xs -> yield . toTuple $ xs)
 
 -- * convert filered files back to bytestring
-fromInput :: FileOp m => CT.Codec -> Conduit Input m B.ByteString
+fromInput :: Op m => CT.Codec -> Conduit Input m B.ByteString
 fromInput code = C.map (\(t,n) -> T.concat [ t
                                            , pack "\t"
                                            , n

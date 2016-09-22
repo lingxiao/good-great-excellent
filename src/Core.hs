@@ -41,8 +41,8 @@ type DirectoryPath = FilePath
 -- * the first field is preprocess text, second field is orginal text
 -- * the third field is number of results
 type Input         = (Text, Text)
-type Output        = (Integer, [QueryResult])
-type QueryResult   = (Text,Integer)
+type Output        = (Integer, [Input])
+type QueryResult   = (Text,Text)
 
 type PatternExpr   = String       
 
