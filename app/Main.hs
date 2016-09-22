@@ -64,8 +64,8 @@ patterns_l = "/Users/lingxiao/Documents/research/code/good-great-excellent/input
 
 
 -- * remote
-corpus_r    = "/nlp/data/xiao/ngrams/corpus"
-patterns_r  = "/home1/l/lingxiao/xiao/good-great-excellent/inputs"
+corpus_r    = "/nlp/data/xiao/ngrams/corpus/"
+patterns_r  = "/home1/l/lingxiao/xiao/good-great-excellent/inputs/"
 
 
 config_l :: IO Config
