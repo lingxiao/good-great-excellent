@@ -1,9 +1,9 @@
 
 ==================== FINAL INTERFACE ====================
-2016-09-18 02:44:58.830947 UTC
+2016-09-22 18:16:38.286705 UTC
 
 interface goodg_DmvfzrsRlTTEG4TgbQ9uXe:PatternCompiler 7103
-  interface hash: 45cab55f6be49c34a05eeaf35d673cf6
+  interface hash: b54dee94d12eba18996202b9aea0ebc5
   ABI hash: 5f864c3f64cd4818252cf8308fa404dd
   export-list hash: 3864c875e5fad417e42b9b9568cb52cf
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
@@ -68,12 +68,12 @@ import  -/  base-4.8.2.0:GHC.List 0c736920522bbd14b770342776012ab6
 import  -/  base-4.8.2.0:GHC.Show 0e1d8380a8fb0cfb07ebeda3b70cbf38
 import  -/  base-4.8.2.0:Prelude 694dcaf039efe62df1c44834e2dbd2fb
 import  -/  ghc-prim-0.4.0.0:GHC.Classes e1f4ff80f7b5262008a595d29986fb18
-import  -/  Parsers 97be3f88ac191bc83d77e91a9f5cc950
+import  -/  Parsers e7eaf91e7ec3f61bb5a8390cf68530a3
   exports: 2896c53312aff025ace80f8ad93ff852
   <** d93cb7457c892ffb267245e6b2837f51
   <+> 668d7c8b1fecffe257ac8125341eca20
   <||> 9c2b0c7b51e07fa277ada32c4c1f9804
-  anyWord d5ca55efae12f17b04c3f9f6e793e396
+  anyWord b9c2f16278f595faf01bbabba1125e40
   echo f84d0813230f45b5ba1a06213be98aa1
   opt f0d318952da5fd3a62e853dab23cd86d
   pzero fc88de5bbded84660dd35fb06c6d914e

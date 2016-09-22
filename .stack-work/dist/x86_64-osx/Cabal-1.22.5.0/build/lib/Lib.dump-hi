@@ -1,9 +1,9 @@
 
 ==================== FINAL INTERFACE ====================
-2016-09-20 22:41:21.340265 UTC
+2016-09-22 00:33:39.238075 UTC
 
 interface goodg_DmvfzrsRlTTEG4TgbQ9uXe:Lib 7103
-  interface hash: a84491ec5e766bc8a7318f683c604e9f
+  interface hash: 223553329e6651e9bccc4daa0a4795e8
   ABI hash: 435630b921b9e9ad09b3a3837271c8da
   export-list hash: 1d16a7513deda5a5737aadc079a1bef7
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
@@ -194,13 +194,13 @@ import  -/  Conduits 1600df16aeaac8e823f4f457d091ceee
 import  -/  NormalizeText 16397df33f83e98e17ee96b6f949e96e
   exports: 331d31477300d82cf936991ca526786d
   normalize 4d36cb2f75be77adf7226b9580c6911f
-import  -/  Parsers 97be3f88ac191bc83d77e91a9f5cc950
+import  -/  Parsers e7eaf91e7ec3f61bb5a8390cf68530a3
   exports: 2896c53312aff025ace80f8ad93ff852
   <** d93cb7457c892ffb267245e6b2837f51
   <**? da634ca78078923b9f6b341840a0fe4e
   <+> 668d7c8b1fecffe257ac8125341eca20
   <||> 9c2b0c7b51e07fa277ada32c4c1f9804
-  anyWord d5ca55efae12f17b04c3f9f6e793e396
+  anyWord b9c2f16278f595faf01bbabba1125e40
   echo f84d0813230f45b5ba1a06213be98aa1
   eow e2d64f51f61bedaaf6e17f18f049ad82
   notAlphaDigitSpace 1084b1b2f1457ac222fd515bb4b0d9d0
@@ -208,7 +208,7 @@ import  -/  Parsers 97be3f88ac191bc83d77e91a9f5cc950
   pzero fc88de5bbded84660dd35fb06c6d914e
   spaces 611e7d298580127f628f88586d2a19b1
   spaces1 65e7fe2f9cf20ad68ee1b1a2dc1f16ea
-  star 790a745d9916f82b3cd4fe6b456c279a
+  star 15708442f21f7fd0f28dfa1516a2b401
   word f78a3ea18df7944d95d3363b5fde27d4
 import  -/  PatternCompiler 5f864c3f64cd4818252cf8308fa404dd
   exports: 3864c875e5fad417e42b9b9568cb52cf

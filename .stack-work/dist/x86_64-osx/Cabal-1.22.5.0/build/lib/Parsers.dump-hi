@@ -1,10 +1,10 @@
 
 ==================== FINAL INTERFACE ====================
-2016-09-18 02:44:57.44051 UTC
+2016-09-22 00:33:37.033037 UTC
 
 interface goodg_DmvfzrsRlTTEG4TgbQ9uXe:Parsers 7103
-  interface hash: 819d06ddfc3020e0028f7cba459b8248
-  ABI hash: 97be3f88ac191bc83d77e91a9f5cc950
+  interface hash: b2310e78745ba84a7a59ba6fb25bf2f5
+  ABI hash: e7eaf91e7ec3f61bb5a8390cf68530a3
   export-list hash: 2896c53312aff025ace80f8ad93ff852
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: a15922da834f2f01f7a0695d98ce9660
@@ -81,8 +81,8 @@ import  -/  base-4.8.2.0:Prelude 694dcaf039efe62df1c44834e2dbd2fb
 import  -/  ghc-prim-0.4.0.0:GHC.Classes e1f4ff80f7b5262008a595d29986fb18
 import  -/  text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text b53ae191632883b10562be5cbaa0b22b
 import  -/  text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text.Internal d9b6b9a9dd535595b612aea5738b7466
-fixities infixr 9 <+>, infixr 8 <||>, infixr 8 <**, infixr 8 <**?
-0c2cfc55ec7c6def5f9f699f6718d132
+fixities infixr 8 <||>, infixr 9 <+>, infixr 8 <**?, infixr 8 <**
+63f61af32067f362cb9ffdf1cea3b98b
   $wa ::
     Data.Attoparsec.Internal.Types.State Data.Text.Internal.Text
     -> GHC.Prim.Int#
@@ -125,25 +125,25 @@ fixities infixr 9 <+>, infixr 8 <||>, infixr 8 <**, infixr 8 <**?
                                       pos' :: Data.Attoparsec.Internal.Types.Pos
                                       more' :: Data.Attoparsec.Internal.Types.More
                                       strs :: [GHC.Base.String]
-                                      msg4 :: GHC.Base.String ->
+                                      msg5 :: GHC.Base.String ->
                                     w2
                                       t'
                                       pos'
                                       more'
                                       (GHC.Types.: @ GHC.Base.String Parsers.anyWord5 strs)
-                                      msg4) -}
+                                      msg5) -}
                    = \ t' :: Data.Attoparsec.Internal.Types.State
                                Data.Text.Internal.Text
                        pos' :: Data.Attoparsec.Internal.Types.Pos
                        more' :: Data.Attoparsec.Internal.Types.More
                        strs :: [GHC.Base.String]
-                       msg4 :: GHC.Base.String ->
+                       msg5 :: GHC.Base.String ->
                      w2
                        t'
                        pos'
                        more'
                        (GHC.Types.: @ GHC.Base.String Parsers.anyWord5 strs)
-                       msg4
+                       msg5
                  } in
                  (Data.Attoparsec.Combinator.$s$fAlternativeParser_$s$fApplicativeParser_$c*>
                     @ Data.Text.Internal.Text
@@ -489,7 +489,7 @@ da634ca78078923b9f6b341840a0fe4e
     -> Data.Attoparsec.Text.Internal.Parser Data.Text.Internal.Text
   {- Arity: 2,
      Strictness: <L,C(C1(C1(C1(C1(U)))))><L,C(C1(C1(C1(C1(U)))))> -}
-d5ca55efae12f17b04c3f9f6e793e396
+b9c2f16278f595faf01bbabba1125e40
   anyWord ::
     Data.Attoparsec.Text.Internal.Parser Data.Text.Internal.Text
   {- Arity: 5,
@@ -499,7 +499,7 @@ d5ca55efae12f17b04c3f9f6e793e396
                   `cast`
                 (Sym (Data.Attoparsec.Internal.Types.NTCo:Parser[0]
                           <Data.Text.Internal.Text>_N <Data.Text.Internal.Text>_R)) -}
-4f6924e38579f21892c74a6df467edc6
+db847e35b5951d21fd5452cb5bedc5ef
   anyWord1 ::
     Data.Attoparsec.Internal.Types.State Data.Text.Internal.Text
     -> Data.Attoparsec.Internal.Types.Pos
@@ -895,7 +895,7 @@ fc88de5bbded84660dd35fb06c6d914e
                         `cast`
                       (Data.Attoparsec.Internal.Types.NTCo:Pos[0]) of ww { GHC.Types.I# ww1 ->
                  Parsers.$wa7 @ r w ww1 w2 w3 w4 }) -}
-790a745d9916f82b3cd4fe6b456c279a
+15708442f21f7fd0f28dfa1516a2b401
   star ::
     Data.Attoparsec.Text.Internal.Parser Data.Text.Internal.Text
   {- Arity: 5,
