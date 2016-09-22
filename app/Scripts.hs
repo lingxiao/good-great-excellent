@@ -48,8 +48,8 @@ query_save :: [PatternExpr]
            -> (String,String) 
            -> IO (Integer,[Output])
 query_save ps fin dirname (u,v) = do
-  root <- makeDirUnder "good-great-excellent" dirname
-
+  createDirectoryIfMissing False "words" 
+  root <- makeDirUnder "good-great-excellent" $ "words/" ++ dirname
 
   let pats = (\p -> compile p (S u) (S v)) <$> ps
   os      <- mapM (\p -> query p fin) pats
@@ -78,7 +78,7 @@ query_save ps fin dirname (u,v) = do
 
 
     ) rs
-  return (tot,os)
+  return (0,[])
         where mark  = foldr (++) mempty $ (const "-") <$> [1..50] 
 
 
