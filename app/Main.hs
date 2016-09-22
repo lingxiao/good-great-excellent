@@ -26,7 +26,8 @@ import Scripts
 
 
 
-w_good_bad = [ "good"
+good_bad = [   "good"
+             , "bad"
              , "better"
              , "best"
              , "acceptable"
@@ -37,7 +38,49 @@ w_good_bad = [ "good"
              , "superb"
              ]
 
+wet_dry = [ "wet"
+          , "dry"
+          , "muddy"
+          , "sticky"
+          , "humid"
+          , "tacky"
+          , "moist"
+          , "damp"
+          , "steamy"
+          , "wet"
+          , "drippy"
+          , "watery"
+          , "boggy"
+          , "soggy"
+          , "rainy"
+          , "waterlogged"
+          ]
 
+
+good_bad' = [ "good"
+            , "bad"
+            , "evil"
+            , "negative"
+            , "mediocre"
+            , "poor"
+            , "bad"
+            , "worse"
+            , "awful"
+            , "worst"
+            , "terrible"
+            ]
+
+soph_naif = ["innocent", "simple", "naive", "childlike", "naif"]
+
+char_unchar = ["characteristic"
+              , "limited"
+              , "special"
+              , "peculiar"
+              , "specific"
+              , "particular"
+              , "uncharacteristic"
+              , "unique"
+              ]
 
 main :: IO ()
 main = do
@@ -45,12 +88,28 @@ main = do
   let weak_strong = weakStrong con
   let strong_weak = strongWeak con
 
-  let pws = [(u,v) | u <- w_good_bad, v <- w_good_bad ]
+  let pws = [(u,v) | u <- good_bad, v <- good_bad ]
 
-  query_save weak_strong (corpus con) `mapM` pws
-  query_save strong_weak (corpus con) `mapM` pws
+  query_save weak_strong (corpus con) "good-bad-weak-strong" `mapM` power good_bad
+  query_save strong_weak (corpus con) "good-bad-strong-weak" `mapM` power good_bad
+
+  query_save weak_strong (corpus con) "wet-dry-weak-strong" `mapM` power wet_dry
+  query_save strong_weak (corpus con) "wet-dry-strong-weak" `mapM` power wet_dry
+
+  query_save weak_strong (corpus con) "good-bad-2-weak-strong" `mapM` power good_bad'
+  query_save strong_weak (corpus con) "good-bad-2-strong-weak" `mapM` power good_bad'
+
+  query_save weak_strong (corpus con) "soph-naif-weak-strong" `mapM` power soph_naif
+  query_save strong_weak (corpus con) "soph-naif-strong-weak" `mapM` power soph_naif
+
+  query_save weak_strong (corpus con) "char-unchar-weak-strong" `mapM` power char_unchar
+  query_save strong_weak (corpus con) "char-unchar-strong-weak" `mapM` power char_unchar
+
 
   return ()
+
+power :: [a] -> [(a,a)]
+power xs = [(u,v) | u <- xs, v <- xs]
 
 
 {-----------------------------------------------------------------------------

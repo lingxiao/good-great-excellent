@@ -44,16 +44,18 @@ import Lib
 
 query_save :: [PatternExpr] 
            -> FilePath 
+           -> String
            -> (String,String) 
            -> IO (Integer,[Output])
-query_save ps fin (u,v) = do
+query_save ps fin dirname (u,v) = do
+  root <- makeDirUnder "good-great-excellent" dirname
+
+
   let pats = (\p -> compile p (S u) (S v)) <$> ps
   os      <- mapM (\p -> query p fin) pats
   let tot = foldr (+) 0 $ fst <$> os
 
   let rs  = zip ps os
-
-  root    <- makeDirUnder "good-great-excellent" "out"
 
   let path = root ++ u ++ "-" ++ v ++ ".txt"
 
