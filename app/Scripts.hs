@@ -11,7 +11,9 @@
  
 module Scripts (
 
-    main_normalize
+    query_save
+  , main_prep_data
+  , main_normalize
   , main_split_by_pattern
   , main_pattern_freq
 
@@ -27,7 +29,7 @@ import System.FilePath.Posix
 import qualified System.IO as S
 
 import Data.Time.Clock
-import Data.Text (Text)
+import Data.Text (Text, unpack, pack, splitOn)
 import Data.Attoparsec.Text 
 import qualified Data.Conduit.Text as CT
 
@@ -35,6 +37,77 @@ import Core
 import Src
 import Lib 
 
+
+{-----------------------------------------------------------------------------
+  Count and save for occurences of specific patterns
+------------------------------------------------------------------------------}
+
+query_save :: [PatternExpr] 
+           -> FilePath 
+           -> (String,String) 
+           -> IO (Integer,[Output])
+query_save ps fin (u,v) = do
+  let pats = (\p -> compile p (S u) (S v)) <$> ps
+  os      <- mapM (\p -> query p fin) pats
+  let tot = foldr (+) 0 $ fst <$> os
+
+  let rs  = zip ps os
+
+  root    <- makeDirUnder "good-great-excellent" "out"
+
+  let path = root ++ u ++ "-" ++ v ++ ".txt"
+
+  time <- show <$> getCurrentTime
+  h    <- S.openFile path S.WriteMode
+
+  S.hPutStrLn h $ u ++ ", " ++ v
+  S.hPutStrLn h time
+  S.hPutStrLn h mark
+  S.hPutStrLn h $ "cumulative occurrences : " ++ show tot
+  S.hPutStrLn h mark
+
+  mapM (\(patt,(n,xs)) -> do
+    S.hPutStrLn h mark
+    S.hPutStrLn h patt
+    S.hPutStrLn h mark
+    S.hPutStrLn h $ "total: " ++ show n
+    mapM (\(t,m) -> S.hPutStrLn h 
+                 $ unpack t ++ " " ++ unpack m) xs
+
+
+    ) rs
+  return (tot,os)
+        where mark  = foldr (++) mempty $ (const "-") <$> [1..50] 
+
+
+
+
+{-----------------------------------------------------------------------------
+  Prep data
+------------------------------------------------------------------------------}
+
+main_prep_data :: DirectoryPath -> PatternExpr -> IO ()
+main_prep_data root p = do
+
+    -- * count raw frequencies
+    let path = root ++ p ++ ".txt"
+    n <- raw_freq path
+    print p
+    print $ "raw frequency: " ++ show n
+    print "------------------------------------------------"
+
+    -- * filter by pattern
+    main_split_by_pattern root [compile p Star Star]
+
+  -- * count filtered out and filtered in to make sure:
+  -- *   count (out ++ in) = count(out) + count(in) = count (raw)
+    n <- total_freq $ root ++ "/out/" ++ p ++ ".txt"
+    m <- total_freq $ root ++ "/out/leftover-" ++ p ++ ".txt"
+    print p
+    print $ "conform    : " ++ show n
+    print $ "not-conform: " ++ show m
+    print $ "total      : " ++ show (n + m)
+    print "------------------------------------------------"
 
 {-----------------------------------------------------------------------------
   normalize raw ngrams

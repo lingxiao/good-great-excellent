@@ -83,7 +83,7 @@ raw_freq inp =  run
 
 -- * Subroutines * --
 
-queryFile :: FileOpS m [QueryResult]
+queryFile :: FileOpS m [Input]
           => Parser Text
           -> Consumer Input m Integer
 queryFile p = C.filter     (\(t,_)  -> p <**? t)

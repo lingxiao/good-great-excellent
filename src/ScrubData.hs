@@ -17,7 +17,6 @@ module ScrubData (
   , not_conform_pattern
 
   , toInput
-  , fromInput
 
   ) where
 

@@ -1,0 +1,157 @@
+good, great
+2016-09-22 22:42:40.338858 UTC
+--------------------------------------------------
+cumulative occurences : 84862
+--------------------------------------------------
+--------------------------------------------------
+* (,) but not (a|an|the) *
+--------------------------------------------------
+total: 75493
+good but not great year 71
+good but not great team 40
+good but not great players 58
+good but not great player 88
+good but not great performance 41
+good but not great movie 75
+good but not great job 50
+good but not great in 131
+good but not great hand 140
+good but not great for 169
+good but not great food 51
+good but not great film 98
+good but not great effort 85
+good but not great by 56
+good but not great but 72
+good but not great book 92
+good but not great at 46
+good but not great as 73
+good but not great and 384
+good but not great album 61
+good but not great us 100
+good but not great i 96
+good but not great comment 42
+good but not great ? 45
+good but not great <unk> 51
+good but not great </s> 450
+good but not great ; 262
+good but not great : 91
+good but not great 3 58
+good but not great ... 158
+good but not great . 7095
+good but not great -- 78
+good but not great - 274
+good but not great , 2431
+good but not great ) 211
+good but not great ( 220
+good but not great ' 99
+good but not great " 528
+good but not great ! 137
+good but not a great 193
+good , but not great 16790
+good , but not great 72
+good but not great top 222
+good but not great posted 80
+good but not great espresso 148
+good but not great earnings 110
+good but not great by 188
+good but not great this 47
+good but not great i 89
+good but not great great 334
+good but not great comment 47
+good but not great </s> 752
+good but not great ... 167
+good but not great . 1268
+good but not great - 179
+good but not great , 987
+good but not great ( 259
+good but not great " 777
+good but not great ! 190
+good but not great by 101
+good but not great sex 55
+good but not great </s> 204
+good but not great . 53
+good but not great - 71
+good but not great , 205
+good but not great ( 97
+good but not great " 352
+good but not great start 268
+good but not great <unk> 42
+good but not great , 51
+good but not great ( 63
+good but not great " 66
+good but not great january 42
+good but not great </s> 165
+good but not great , 104
+good but not great " 50
+good , but not great 5813
+good , but not great 850
+good , but not great 122
+good , but not great 54
+good , but not great 706
+good , but not great 85
+good but not great 18365
+good but not great 7112
+good but not great 1540
+good but not great 595
+good but not great 160
+good but not great 690
+good but not great 206
+--------------------------------------------------
+* (,) if not (a|an|the) *
+--------------------------------------------------
+total: 3986
+good if not great game 40
+good if not great football 55
+good if not great . 306
+good if not great , 181
+good , if not great 1863
+good , if not great 49
+good if not great 1492
+--------------------------------------------------
+* (,) although not (a|an|the) *
+--------------------------------------------------
+total: 131
+good , although not great 131
+--------------------------------------------------
+* (,) though not (a|an|the) *
+--------------------------------------------------
+total: 616
+good , though not great 504
+good though not great 112
+--------------------------------------------------
+* (,) (and|or) even (a|an|the) *
+--------------------------------------------------
+total: 4134
+good or even great . 106
+good or even great , 98
+good or even a great 97
+good , or even great 295
+good , even the great 41
+good , even great for 43
+good , even great . 125
+good , even great , 478
+good , and even great 53
+good , or even great 43
+good or even great 1097
+good and even great 376
+good , even great 1231
+good , even great 51
+--------------------------------------------------
+* (,) (and|or) almost (a|an|the) *
+--------------------------------------------------
+total: 321
+good , almost great , 41
+good almost great ( read 42
+good , almost great <unk> 40
+good , almost great 106
+good almost great ( 42
+good , almost great 50
+--------------------------------------------------
+not only * (,) but *
+--------------------------------------------------
+total: 0
+--------------------------------------------------
+not just * (,) but *
+--------------------------------------------------
+total: 181
+not just good but great 181

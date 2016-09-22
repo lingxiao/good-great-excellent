@@ -15,7 +15,6 @@ module Core (
     DirectoryPath
   , Input
   , Output
-  , QueryResult
   , PatternExpr
 
   , Config
@@ -42,8 +41,6 @@ type DirectoryPath = FilePath
 -- * the third field is number of results
 type Input         = (Text, Text)
 type Output        = (Integer, [Input])
-type QueryResult   = (Text,Text)
-
 type PatternExpr   = String       
 
 {-----------------------------------------------------------------------------
