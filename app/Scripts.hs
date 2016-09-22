@@ -48,8 +48,7 @@ query_save :: [PatternExpr]
            -> (String,String) 
            -> IO (Integer,[Output])
 query_save ps fin dirname (u,v) = do
-  createDirectoryIfMissing False "words" 
-  root <- makeDirUnder "good-great-excellent" $ "words/" ++ dirname
+  root <- makeDirUnder "good-great-excellent" dirname
 
   let pats = (\p -> compile p (S u) (S v)) <$> ps
   os      <- mapM (\p -> query p fin) pats
