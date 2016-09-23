@@ -74,8 +74,6 @@ query_save ps fin dirname (u,v) = do
     S.hPutStrLn h $ "total: " ++ show n
     mapM (\(t,m) -> S.hPutStrLn h 
                  $ unpack t ++ " " ++ unpack m) xs
-
-
     ) rs
   return (0,[])
         where mark  = foldr (++) mempty $ (const "-") <$> [1..50] 

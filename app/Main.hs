@@ -90,12 +90,6 @@ main = do
 
   let pws = [(u,v) | u <- good_bad, v <- good_bad ]
 
-  query_save weak_strong (corpus con) "good-bad-weak-strong" `mapM` power good_bad
-  query_save strong_weak (corpus con) "good-bad-strong-weak" `mapM` power good_bad
-
-  query_save weak_strong (corpus con) "wet-dry-weak-strong" `mapM` power wet_dry
-  query_save strong_weak (corpus con) "wet-dry-strong-weak" `mapM` power wet_dry
-
   query_save weak_strong (corpus con) "good-bad-2-weak-strong" `mapM` power good_bad'
   query_save strong_weak (corpus con) "good-bad-2-strong-weak" `mapM` power good_bad'
 
@@ -104,7 +98,6 @@ main = do
 
   query_save weak_strong (corpus con) "char-unchar-weak-strong" `mapM` power char_unchar
   query_save strong_weak (corpus con) "char-unchar-strong-weak" `mapM` power char_unchar
-
 
   return ()
 
