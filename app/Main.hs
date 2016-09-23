@@ -15,6 +15,8 @@ module Main where
 import Data.Time.Clock
 import Data.Text (Text, unpack, pack, splitOn)
 import qualified System.IO as S
+import qualified Data.Conduit.Text as CT
+
 
 import Src
 import Lib
@@ -26,7 +28,7 @@ import Scripts
 
 
 
-good_bad = [   "good"
+good_bad =    [   "good"
              , "bad"
              , "better"
              , "best"
@@ -38,7 +40,7 @@ good_bad = [   "good"
              , "superb"
              ]
 
-wet_dry = [ "wet"
+wet_dry =     [ "wet"
           , "dry"
           , "muddy"
           , "sticky"
@@ -57,7 +59,7 @@ wet_dry = [ "wet"
           ]
 
 
-good_bad' = [ "good"
+good_bad' =   [ "good"
             , "bad"
             , "evil"
             , "negative"
@@ -70,7 +72,7 @@ good_bad' = [ "good"
             , "terrible"
             ]
 
-soph_naif = ["innocent", "simple", "naive", "childlike", "naif"]
+soph_naif =   ["innocent", "simple", "naive", "childlike", "naif"]
 
 char_unchar = ["characteristic"
               , "limited"
@@ -82,45 +84,34 @@ char_unchar = ["characteristic"
               , "unique"
               ]
 
+-- * query for word frequence of every word in here
 main :: IO ()
 main = do
-  con <- config_l
-  let weak_strong = weakStrong con
-  let strong_weak = strongWeak con
-
-  let pws = [(u,v) | u <- good_bad, v <- good_bad ]
-
-  query_save weak_strong (corpus con) "good-bad-2-weak-strong" `mapM` power good_bad'
-  query_save strong_weak (corpus con) "good-bad-2-strong-weak" `mapM` power good_bad'
-
-  query_save weak_strong (corpus con) "soph-naif-weak-strong" `mapM` power soph_naif
-  query_save strong_weak (corpus con) "soph-naif-strong-weak" `mapM` power soph_naif
-
-  query_save weak_strong (corpus con) "char-unchar-weak-strong" `mapM` power char_unchar
-  query_save strong_weak (corpus con) "char-unchar-strong-weak" `mapM` power char_unchar
+  count_word "/nlp/data/xiao/ngrams/normalized/1gm/vocab.txt"
+             $ good_bad 
+             ++ wet_dry 
+             ++ good_bad' 
+             ++ soph_naif 
+             ++ char_unchar
 
   return ()
-
-power :: [a] -> [(a,a)]
-power xs = [(u,v) | u <- xs, v <- xs]
-
 
 {-----------------------------------------------------------------------------
   Paths
 ------------------------------------------------------------------------------}
 
 -- * local
-grep_sm = "/Users/lingxiao/Documents/research/data/ngrams/grep-small/"
-grep_ws = "/Users/lingxiao/Documents/research/data/ngrams/greped/weak-strong/"
-grep_sw = "/Users/lingxiao/Documents/research/data/ngrams/greped/strong-weak/"
+grep_sm    = "/Users/lingxiao/Documents/research/data/ngrams/grep-small/"
+grep_ws    = "/Users/lingxiao/Documents/research/data/ngrams/greped/weak-strong/"
+grep_sw    = "/Users/lingxiao/Documents/research/data/ngrams/greped/strong-weak/"
 
 corpus_l   = "/Users/lingxiao/Documents/research/data/ngrams/corpus/"
 patterns_l = "/Users/lingxiao/Documents/research/code/good-great-excellent/inputs/"
 
 
 -- * remote
-corpus_r    = "/nlp/data/xiao/ngrams/corpus/"
-patterns_r  = "/home1/l/lingxiao/xiao/good-great-excellent/inputs/"
+corpus_r   = "/nlp/data/xiao/ngrams/corpus/"
+patterns_r = "/home1/l/lingxiao/xiao/good-great-excellent/inputs/"
 
 
 config_l :: IO Config

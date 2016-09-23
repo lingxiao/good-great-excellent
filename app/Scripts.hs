@@ -1,7 +1,7 @@
 -----------------------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------------
 -- | 
--- | Module  : A collection of misc scripts to be run in main 
+-- | Module  : A collection of scripts to be run in main,
 -- |           with no gaurantee that they will work
 -- | Author  : Xiao Ling
 -- | Date    : 9/13/2016
@@ -11,9 +11,12 @@
  
 module Scripts (
 
-    query_save
+    count_phrase
+  , count_word
   , main_prep_data
   , main_normalize
+  , main_normalize_words
+
   , main_split_by_pattern
   , main_pattern_freq
 
@@ -42,26 +45,44 @@ import Lib
   Count and save for occurences of specific patterns
 ------------------------------------------------------------------------------}
 
-query_save :: [PatternExpr] 
+count_phrase :: [PatternExpr] 
            -> FilePath 
            -> String
            -> (String,String) 
            -> IO (Integer,[Output])
-query_save ps fin dirname (u,v) = do
-  root <- makeDirUnder "good-great-excellent" dirname
-
+count_phrase ps fin dirname (u,v) = do
+  root     <- makeDirUnder "good-great-excellent" dirname
   let pats = (\p -> compile p (S u) (S v)) <$> ps
-  os      <- mapM (\p -> query p fin) pats
-  let tot = foldr (+) 0 $ fst <$> os
-
-  let rs  = zip ps os
-
+  os       <- mapM (\p -> query p fin) pats
+  let tot  = foldr (+) 0 $ fst <$> os
+  let rs   = zip ps os
   let path = root ++ u ++ "-" ++ v ++ ".txt"
+  save_queries path tot rs
+  return (tot,os)
 
+
+count_word :: FilePath -> [String] -> IO (Integer, [Output])
+count_word d ws = do
+  
+  root     <- makeDirUnder "good-great-excellent" "words"
+  let ps   = compile' <$> ws
+  os       <- flip query_at d `mapM` ps
+  let tot  = foldr (+) 0 $ fst <$> os
+  let rs   = zip ws os
+  let path = root ++ "words.txt"
+  save_queries path tot rs
+
+  return (tot,os)
+
+
+save_queries :: DirectoryPath 
+            -> Integer 
+            -> [(String, Output)]
+            -> IO ()
+save_queries path tot rs = do
   time <- show <$> getCurrentTime
   h    <- S.openFile path S.WriteMode
 
-  S.hPutStrLn h $ u ++ ", " ++ v
   S.hPutStrLn h time
   S.hPutStrLn h mark
   S.hPutStrLn h $ "cumulative occurrences : " ++ show tot
@@ -70,14 +91,13 @@ query_save ps fin dirname (u,v) = do
   mapM (\(patt,(n,xs)) -> do
     S.hPutStrLn h mark
     S.hPutStrLn h patt
-    S.hPutStrLn h mark
+    -- S.hPutStrLn h mark
     S.hPutStrLn h $ "total: " ++ show n
     mapM (\(t,m) -> S.hPutStrLn h 
-                 $ unpack t ++ " " ++ unpack m) xs
+                 $  unpack t ++ " " ++ unpack m) xs
     ) rs
-  return (0,[])
+  return ()
         where mark  = foldr (++) mempty $ (const "-") <$> [1..50] 
-
 
 
 
@@ -125,6 +145,14 @@ main_normalize root filename n = do
   print outp
   print "-----------------------------------------------"
   scrub CT.utf8 inp outp
+
+main_normalize_words :: FilePath -> FilePath -> IO ()  
+main_normalize_words inp outp = do
+  print "running scrub ... "
+  scrub CT.utf8 inp outp
+  print "Done!"
+  
+
 
 {-----------------------------------------------------------------------------
   parse greped data
