@@ -65,7 +65,11 @@ count_word :: FilePath -> [String] -> IO (Integer, [Output])
 count_word d ws = do
   
   root     <- makeDirUnder "good-great-excellent" "words"
+
   let ps   = compile' <$> ws
+
+  print $ echo <$> ps
+
   os       <- flip query_at d `mapM` ps
   let tot  = foldr (+) 0 $ fst <$> os
   let rs   = zip ws os
