@@ -11,8 +11,7 @@
 module Main where
 
 
-
-import Data.Time.Clock
+import System.Directory
 import Data.Text (Text, unpack, pack, splitOn)
 import qualified System.IO as S
 import qualified Data.Conduit.Text as CT
@@ -87,7 +86,7 @@ char_unchar = ["characteristic"
 -- * query for word frequence of every word in here
 main :: IO ()
 main = do
-  con <- config_l
+  con <- sysConfig
   let filepath = corpus con
   count_word (filepath ++ "vocab.txt") 
              "trial" 
@@ -107,12 +106,24 @@ patterns_l = "/Users/lingxiao/Documents/research/code/good-great-excellent/input
 corpus_r   = "/nlp/data/xiao/ngrams/corpus/"
 patterns_r = "/home1/l/lingxiao/xiao/good-great-excellent/inputs/"
 
+
+sysConfig :: IO Config
+sysConfig = do
+  d <- take 6 <$> getCurrentDirectory
+  if d == "/Users" then config_l
+  else config_r
+
+
+
 config_l :: IO Config
 config_l = do
-    Just con <- config corpus_r patterns_r
+    Just con <- config corpus_l patterns_l
     return con
 
-
+config_r :: IO Config
+config_r = do
+    Just con <- config corpus_r patterns_r
+    return con
 
 
 
