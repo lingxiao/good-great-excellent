@@ -141,7 +141,7 @@ main_normalize root filename n = do
   let intr = root ++ filename ++ "/"
   let outr = intr ++ "scrub/"
   let idx  = (concat $ replicate (4 - (length . show $ n)) "0")  
-          ++ show n
+           ++ show n
   let name = filename ++ "-" ++ idx ++ ".txt"
   let inp  = intr     ++ name
   let outp = outr     ++ name
@@ -155,8 +155,7 @@ main_normalize_words inp outp = do
   print "running scrub ... "
   scrub CT.utf8 inp outp
   print "Done!"
-  
-
+ 
 
 {-----------------------------------------------------------------------------
   parse greped data

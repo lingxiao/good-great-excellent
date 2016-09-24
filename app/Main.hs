@@ -87,8 +87,10 @@ char_unchar = ["characteristic"
 -- * query for word frequence of every word in here
 main :: IO ()
 main = do
-  count_word (corpus_l ++ "vocab.txt") 
-             "sophisticated-naif" 
+  con <- config_l
+  let filepath = corpus con
+  count_word (filepath ++ "vocab.txt") 
+             "trial" 
              soph_naif
   return ()
 
@@ -101,11 +103,9 @@ main = do
 corpus_l   = "/Users/lingxiao/Documents/research/data/ngrams/corpus/"
 patterns_l = "/Users/lingxiao/Documents/research/code/good-great-excellent/inputs/"
 
-
 -- * remote
 corpus_r   = "/nlp/data/xiao/ngrams/corpus/"
 patterns_r = "/home1/l/lingxiao/xiao/good-great-excellent/inputs/"
-
 
 config_l :: IO Config
 config_l = do
