@@ -58,12 +58,6 @@ query_at p f =  eval
              $= toInput CT.utf8
              $$ queryFile p
 
-query_at :: Op m => Parser Text -> FilePath -> m Output
-query_at p f = eval 
-            $ sourceFile f
-            $= toInput CT.utf8
-            $= queryFile p
-
 {-----------------------------------------------------------------------------
   Sum all frequencies in a file
 ------------------------------------------------------------------------------}
