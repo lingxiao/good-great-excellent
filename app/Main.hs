@@ -87,13 +87,10 @@ char_unchar = ["characteristic"
 main :: IO ()
 main = do
   con <- sysConfig
-  --let filepath = corpus con
-  --count_word (filepath ++ "vocab.txt") 
-             --"trial" 
-             --soph_naif
-  conform_pattern (compile "* (,) but not *" Star Star)
-                  "/nlp/data/xiao/ngrams/normalized/grep-weak-strong/but-not.txt"
-                  "/nlp/data/xiao/ngrams/normalized/grep-weak-strong/but-not-trial.txt"
+  let filepath = corpus con
+  count_word (filepath ++ "vocab.txt") 
+             "trial" 
+             soph_naif
   return ()
 
 {-----------------------------------------------------------------------------

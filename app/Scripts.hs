@@ -94,6 +94,7 @@ save_queries path tot rs = do
   S.hPutStrLn h mark
   S.hPutStrLn h $ "cumulative occurrences : " ++ show tot
   S.hPutStrLn h mark
+  S.hClose h
         where mark  = foldr (++) mempty $ (const "-") <$> [1..50] 
 
 {-
