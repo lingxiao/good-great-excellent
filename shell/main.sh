@@ -23,7 +23,7 @@ set -x
 
 
 # make sure I set my $CWD (current working directory)
-cd $HOME/xiao/good-great-intensity/shell
+cd $HOME/xiao/good-great-excellent/shell
 
 # You must set the error and output locations, as the default log output
 # location is the directory you qsub'ed from. For instance, say I cd to
@@ -45,5 +45,5 @@ cd $HOME/xiao/good-great-intensity/shell
 #echo $JOB_ID $SGE_STDOUT_PATH 
 
 # run my scripts
-$HOME/xiao/good-great-intensity/.stack-work/install/x86_64-linux/lts-6.11/7.10.3/bin/good-great-intensity-exe
+$HOME/xiao/good-great-excellent/.stack-work/install/x86_64-linux/lts-6.11/7.10.3/bin/good-great-excellent-exe
 
