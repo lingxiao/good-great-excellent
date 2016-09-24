@@ -61,21 +61,21 @@ count_phrase ps fin dirname (u,v) = do
   return (tot,os)
 
 
-count_word :: FilePath -> [String] -> IO (Integer, [Output])
-count_word d ws = do
+count_word :: FilePath 
+           -> String
+           -> [PatternExpr] 
+           -> IO (Integer, [Output])
+count_word inpath name ws = do
   
-  root     <- makeDirUnder "good-great-excellent" "words"
+  root     <- makeDirUnder "good-great-excellent" "out"
 
   let ps   = compile' <$> ws
 
-  print $ echo <$> ps
-
-  os       <- flip query_at d `mapM` ps
+  os       <- flip query_at inpath `mapM` ps
   let tot  = foldr (+) 0 $ fst <$> os
   let rs   = zip ws os
-  let path = root ++ "words.txt"
+  let path = root ++ name ++ ".txt"
   save_queries path tot rs
-
   return (tot,os)
 
 

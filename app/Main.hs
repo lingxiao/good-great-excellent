@@ -87,12 +87,18 @@ char_unchar = ["characteristic"
 -- * query for word frequence of every word in here
 main :: IO ()
 main = do
-  count_word "/nlp/data/xiao/ngrams/normalized/1gm/vocab.txt"
-             $ good_bad 
-             ++ wet_dry 
-             ++ good_bad' 
-             ++ soph_naif 
-             ++ char_unchar
+  count_word (corpus_r ++ "vocab.txt") 
+            "wet-dry"   
+            wet_dry
+  count_word (corpus_r ++ "vocab.txt") 
+            "good-bad-2" 
+            good_bad'
+  count_word (corpus_r ++ "vocab.txt") 
+            "sophisticated-naif" 
+            soph_naif
+  count_word (corpus_r ++ "vocab.txt") 
+            "characteristic-uncharacteristic" 
+            char_unchar
 
   return ()
 
@@ -101,9 +107,6 @@ main = do
 ------------------------------------------------------------------------------}
 
 -- * local
-grep_sm    = "/Users/lingxiao/Documents/research/data/ngrams/grep-small/"
-grep_ws    = "/Users/lingxiao/Documents/research/data/ngrams/greped/weak-strong/"
-grep_sw    = "/Users/lingxiao/Documents/research/data/ngrams/greped/strong-weak/"
 
 corpus_l   = "/Users/lingxiao/Documents/research/data/ngrams/corpus/"
 patterns_l = "/Users/lingxiao/Documents/research/code/good-great-excellent/inputs/"
