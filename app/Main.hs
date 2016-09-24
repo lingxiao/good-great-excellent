@@ -109,7 +109,7 @@ patterns_r = "/home1/l/lingxiao/xiao/good-great-excellent/inputs/"
 
 sysConfig :: IO Config
 sysConfig = do
-  d <- take 6 <$> getCurrentDirectory
+  d <- take 6 <$> getCurrentDirectory 
   if d == "/Users" then config_l
   else config_r
 

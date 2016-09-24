@@ -71,14 +71,12 @@ count_word inpath name ws = do
 
   let ps   = compile' <$> ws
 
-  -- os       <- flip query_at inpath `mapM` ps
---   let tot  = foldr (+) 0 $ fst <$> os
---  let rs   = zip ws os
+  os       <- flip query_at inpath `mapM` ps
+  let tot  = foldr (+) 0 $ fst <$> os
+  let rs   = zip ws os
   let path = root ++ name ++ ".txt"
-  save_queries path 0 []
-  return (0,[])
---  save_queries path tot rs
---  return (tot,os)
+  save_queries path tot rs
+  return (tot,os)
 
 
 save_queries :: DirectoryPath 
@@ -94,10 +92,7 @@ save_queries path tot rs = do
   S.hPutStrLn h mark
   S.hPutStrLn h $ "cumulative occurrences : " ++ show tot
   S.hPutStrLn h mark
-  S.hClose h
-        where mark  = foldr (++) mempty $ (const "-") <$> [1..50] 
 
-{-
   mapM (\(patt,(n,xs)) -> do
     S.hPutStrLn h mark
     S.hPutStrLn h patt
@@ -105,8 +100,11 @@ save_queries path tot rs = do
     mapM (\(t,m) -> S.hPutStrLn h 
                  $  unpack t ++ " " ++ unpack m) xs
     ) rs
+
+  S.hClose h
+  
   return ()
--}
+        where mark  = foldr (++) mempty $ (const "-") <$> [1..50] 
 
 
 
@@ -120,6 +118,7 @@ main_prep_data root p = do
     -- * count raw frequencies
     let path = root ++ p ++ ".txt"
     n <- raw_freq path
+
     print $ "raw frequency: " ++ show n
     print "------------------------------------------------"
 
