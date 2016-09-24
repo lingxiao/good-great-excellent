@@ -60,7 +60,7 @@ wet_dry = [ "wet"
 
 
 good_bad' = [ "good"
-            , "bad"˜
+            , "bad"
             , "evil"
             , "negative"
             , "mediocre"
