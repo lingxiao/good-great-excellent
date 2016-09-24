@@ -28,7 +28,7 @@ import Scripts
 
 
 
-good_bad =    [   "good"
+good_bad =   [   "good"
              , "bad"
              , "better"
              , "best"
@@ -40,7 +40,7 @@ good_bad =    [   "good"
              , "superb"
              ]
 
-wet_dry =     [ "wet"
+wet_dry = [ "wet"
           , "dry"
           , "muddy"
           , "sticky"
@@ -59,8 +59,8 @@ wet_dry =     [ "wet"
           ]
 
 
-good_bad' =   [ "good"
-            , "bad"
+good_bad' = [ "good"
+            , "bad"˜
             , "evil"
             , "negative"
             , "mediocre"
@@ -87,19 +87,9 @@ char_unchar = ["characteristic"
 -- * query for word frequence of every word in here
 main :: IO ()
 main = do
-  count_word (corpus_r ++ "vocab.txt") 
-            "wet-dry"   
-            wet_dry
-  count_word (corpus_r ++ "vocab.txt") 
-            "good-bad-2" 
-            good_bad'
-  count_word (corpus_r ++ "vocab.txt") 
-            "sophisticated-naif" 
-            soph_naif
-  count_word (corpus_r ++ "vocab.txt") 
-            "characteristic-uncharacteristic" 
-            char_unchar
-
+  count_word (corpus_l ++ "vocab.txt") 
+             "sophisticated-naif" 
+             soph_naif
   return ()
 
 {-----------------------------------------------------------------------------

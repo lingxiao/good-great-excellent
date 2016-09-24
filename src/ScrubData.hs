@@ -15,7 +15,6 @@ module ScrubData (
     scrub
   , conform_pattern
   , not_conform_pattern
-
   , toInput
 
   ) where
@@ -113,4 +112,7 @@ fromInput code = C.map (\(t,n) -> T.concat [ t
 toTuple :: Text -> (Text, Text)
 toTuple xs = (t,n)
   where [t,n] = splitOn (pack "\t") xs
+
+
+
 

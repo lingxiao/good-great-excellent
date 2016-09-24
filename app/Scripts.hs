@@ -84,6 +84,7 @@ save_queries :: DirectoryPath
             -> [(String, Output)]
             -> IO ()
 save_queries path tot rs = do
+
   time <- show <$> getCurrentTime
   h    <- S.openFile path S.WriteMode
 
@@ -95,7 +96,6 @@ save_queries path tot rs = do
   mapM (\(patt,(n,xs)) -> do
     S.hPutStrLn h mark
     S.hPutStrLn h patt
-    -- S.hPutStrLn h mark
     S.hPutStrLn h $ "total: " ++ show n
     mapM (\(t,m) -> S.hPutStrLn h 
                  $  unpack t ++ " " ++ unpack m) xs
