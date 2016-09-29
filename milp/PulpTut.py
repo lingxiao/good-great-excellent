@@ -1,5 +1,5 @@
 ############################################################
-# TUTORIAL: PULP
+# Module  : Pulp tutorial
 # Source  : https://pythonhosted.org/PuLP/CaseStudies/a_blending_problem.html
 # Date    : Sept 27th. 2016
 ############################################################
@@ -17,7 +17,7 @@ probs = LpProblem("tutorial", LpMinimize)
 # LpVariable :: String 
 #            -> Int       -- * LowerBound 
 #            -> Int       -- * UpperBound 
-#            -> LpInteger | LpContinous
+#            -> LpInteger | LpContinuous
 #            -> Variable
 
 # we can inspect the fields by: 
@@ -31,7 +31,7 @@ x2   = LpVariable("beef-percent"   , 0, 100, LpInteger)
 probs += 0.013*x1 + 0.008*x2
 
 # The five constraints are entered
-probs += x1 + x2 == 100,             "PercentagesSum"
+probs += x1 + x2 == 100            , "PercentagesSum"
 probs += 0.100*x1 + 0.200*x2 >= 8.0, "ProteinRequirement"
 probs += 0.080*x1 + 0.100*x2 >= 6.0, "FatRequirement"
 probs += 0.001*x1 + 0.005*x2 <= 2.0, "FibreRequirement"
