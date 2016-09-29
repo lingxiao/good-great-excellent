@@ -1,6 +1,5 @@
 ############################################################
-# Module  : simple version of adjective ranking tutorial
-# Source  : https://pythonhosted.org/PuLP/CaseStudies/a_blending_problem.html
+# Module  : simple version of adjective ranking with two words
 # Date    : Sept 27th. 2016
 ############################################################
 
@@ -119,7 +118,7 @@ paper += d22 + s22*C >= 0
 
 # solve, check status and print output
 def solve(prob):
-    prob.writeLP(prob.name + ".lp")
+    # prob.writeLP(prob.name + ".lp")
     prob.solve()
     print "status: " + LpStatus[prob.status]
     for v in prob.variables():
