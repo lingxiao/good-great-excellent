@@ -4,9 +4,8 @@
 ############################################################
 
 from pulp import *
-import math
 import milp
-
+import math
 
 ############################################################
 # Scores - naive implementation
@@ -20,7 +19,6 @@ scores = {'1_2'  :  1,
           '2_3'  :  3,
           '3_2'  : -3}
 
-
 scores2 = {'good_great'      :  1, 
           'great_good'       : -1,
           'good_excellent'   :  2,
@@ -33,56 +31,6 @@ for key, n in scores.iteritems():
   C += abs(n)
 
 C = C * 10
-
-############################################################
-# Program
-############################################################
-
-# Given string of form "i_j", check if i == j
-# iNotj :: String -> Bool
-def iNotj(xs):
-  ns = xs.split("_")
-  if len(ns) == 2: return ns[0] != ns[1]
-  else           : return False
-
-
-paper = LpProblem("three words auto", LpMaximize)
-
-ns  = ['1','2','3']
-nss = [n + '_' + m for n in ns for m in ns]
-
-# variable names
-xs = ['x_' + n for n in ns]   
-ds = ['d_' + n for n in nss]
-ws = ['w_' + n for n in nss]
-ss = ['s_' + n for n in nss]
-
-# pulp variabbles
-x = LpVariable.dict("x", ns , 0, 1, LpContinuous)
-d = LpVariable.dict("d", nss, 0, 1, LpContinuous)
-w = LpVariable.dict('w', nss, 0, 1, LpInteger   )
-s = LpVariable.dict('s', nss, 0, 1, LpInteger   )
-
-# objective function
-obj  = [ (w[ij] - s[ij]) * scores[ij] for ij in nss if iNotj(ij)    ] \
-     + [ (w[ii] + s[ii]) * -C         for ii in nss if not iNotj(ii)]
-
-paper += lpSum(obj)
-
-# constraints
-C1 = [ d[i + "_" + j] - x[j] + x[i]  for i in ns for j in ns]    # xj - xi          = dij
-C2 = [ (d[ij] - w[ij])*C             for ij in nss          ]    # dij - wij * C    <= 0
-C3 = [ (d[ij] + (1 - w[ij]))*C       for ij in nss          ]    # dij + (1- wij)*C >= 0
-C4 = [ (d[ij] + s[ij])*C             for ij in nss          ]    # dij + sij*C      >= 0
-C5 = [ (d[ij] - (1-s[ij]))*C         for ij in nss          ]    # dij - (1 - sij)*C < 0
-
-paper += lpSum(C1) == 0
-paper += lpSum(C2) <= 0
-paper += lpSum(C3) >= 0
-paper += lpSum(C4) >= 0
-paper += lpSum(C5) <= 0
-
-
 
 ############################################################
 # Program Manual
@@ -193,30 +141,4 @@ prob += d31 - (1 - s31)*C <= 0
 prob += d32 - (1 - s32)*C <= 0 
 prob += d33 - (1 - s33)*C <= 0 
 
-
-############################################################
-# solve
-############################################################
-
-
-def solve(prob,xs):
-    # prob.writeLP(prob.name + ".lp")
-    prob.solve()
-
-    print "======================================="
-
-
-    print "status: " + LpStatus[prob.status]
-
-    if xs:
-        print "======== Select variable values ======="
-        for x in xs:
-            print (x.name, "= ", x.varValue)
-
-    print "========= All variable values ========="
-
-    for v in prob.variables():
-        print (v.name, "= ", v.varValue)
-
-solve(prob,[x1,x2,x3])
 

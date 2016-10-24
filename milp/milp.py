@@ -15,10 +15,10 @@ import math
 # @Use: Given an instance of Milp problem, solve it and 
 #       print output to console
 
-# @Example: p = run(milp({"good_great": 1, "great_good": -1}))
+# @Example: p = solve(milp({"good_great": 1, "great_good": -1}))
 
-# run :: MilpProblem -> Eff [State MilpProblem, IO ()] MilpProblem
-def run(prob):
+# solve :: MilpProblem -> Eff [State MilpProblem, IO ()] MilpProblem
+def solve(prob):
 
     prob.solve()
 
