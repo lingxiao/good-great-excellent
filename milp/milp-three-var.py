@@ -20,6 +20,14 @@ scores = {'1_2'  :  1,
           '2_3'  :  3,
           '3_2'  : -3}
 
+
+scores2 = {'good_great'      :  1, 
+          'great_good'       : -1,
+          'good_excellent'   :  2,
+          'excellent_good'   : -2,
+          'great_excellent'  :  3,
+          'excellent_great'  : -3}
+
 C = 0
 for key, n in scores.iteritems():
   C += abs(n)

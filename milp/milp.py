@@ -49,17 +49,21 @@ def milp(scores):
   # compute constants and get words
   ############################################################
 
+  # construct constant so that "C is a very large constant 
+  # greater than Sum_{ij} |score(ai,aj)|"
   C = 0
   for key, n in scores.iteritems():
     C += abs(n)
 
   C = C * 10
 
+  # pull out the keys in scores dictionary
+  # and construct its powerset
   words  = toWords(scores)
   wwords = [u + '_' + v for u in words for v in words]
 
   ############################################################
-  # Program
+  # Construct the milp Program
   ############################################################
 
   prob   = LpProblem("milp problem", LpMaximize)
@@ -84,10 +88,10 @@ def milp(scores):
 
   # constraints
   C1 = [ d[i + "_" + j] - x[j] + x[i]  for i in words for j in words]    # xj - xi          = dij
-  C2 = [ (d[ij] - w[ij])*C             for ij in wwords          ]    # dij - wij * C    <= 0
-  C3 = [ (d[ij] + (1 - w[ij]))*C       for ij in wwords          ]    # dij + (1- wij)*C >= 0
-  C4 = [ (d[ij] + s[ij])*C             for ij in wwords          ]    # dij + sij*C      >= 0
-  C5 = [ (d[ij] - (1-s[ij]))*C         for ij in wwords          ]    # dij - (1 - sij)*C < 0
+  C2 = [ (d[ij] - w[ij])*C             for ij in wwords             ]    # dij - wij * C    <= 0
+  C3 = [ (d[ij] + (1 - w[ij]))*C       for ij in wwords             ]    # dij + (1- wij)*C >= 0
+  C4 = [ (d[ij] + s[ij])*C             for ij in wwords             ]    # dij + sij*C      >= 0
+  C5 = [ (d[ij] - (1-s[ij]))*C         for ij in wwords             ]    # dij - (1 - sij)*C < 0
 
   prob += lpSum(C1) == 0
   prob += lpSum(C2) <= 0
@@ -96,7 +100,6 @@ def milp(scores):
   prob += lpSum(C5) <= 0
 
   return prob
-
 
 ############################################################
 # helper functions
