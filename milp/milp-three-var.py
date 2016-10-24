@@ -5,6 +5,7 @@
 
 from pulp import *
 import math
+import milp
 
 
 ############################################################
@@ -61,18 +62,17 @@ obj  = [ (w[ij] - s[ij]) * scores[ij] for ij in nss if iNotj(ij)    ] \
 paper += lpSum(obj)
 
 # constraints
+C1 = [ d[i + "_" + j] - x[j] + x[i]  for i in ns for j in ns]    # xj - xi          = dij
+C2 = [ (d[ij] - w[ij])*C             for ij in nss          ]    # dij - wij * C    <= 0
+C3 = [ (d[ij] + (1 - w[ij]))*C       for ij in nss          ]    # dij + (1- wij)*C >= 0
+C4 = [ (d[ij] + s[ij])*C             for ij in nss          ]    # dij + sij*C      >= 0
+C5 = [ (d[ij] - (1-s[ij]))*C         for ij in nss          ]    # dij - (1 - sij)*C < 0
 
-C1 = [ x[j]   - x[i]          == d[i + "_" + j] for i in ns for j in ns]    # xj - xi          = dij
-C2 = [ (d[ij] - w[ij])*C      <= 0              for ij in nss          ]    # dij - wij * C    <= 0
-C3 = [ (d[ij] + (1 - w[ij]))*C >= 0             for ij in nss          ]    # dij + (1- wij)*C >= 0
-C4 = [ (d[ij] + s[ij])*C       >= 0             for ij in nss          ]    # dij + sij*C      >= 0
-C5 = [ (d[ij] - (1-s[ij]))*C   <= 0             for ij in nss          ]    # dij - (1 - sij)*C < 0
-
-paper += lpSum(C1)
-paper += lpSum(C2)
-paper += lpSum(C3)
-paper += lpSum(C4)
-paper += lpSum(C5)
+paper += lpSum(C1) == 0
+paper += lpSum(C2) <= 0
+paper += lpSum(C3) >= 0
+paper += lpSum(C4) >= 0
+paper += lpSum(C5) <= 0
 
 
 
@@ -190,8 +190,6 @@ prob += d33 - (1 - s33)*C <= 0
 # solve
 ############################################################
 
-
-# solve(prob,[x1,x2,x3])
 
 def solve(prob,xs):
     # prob.writeLP(prob.name + ".lp")
