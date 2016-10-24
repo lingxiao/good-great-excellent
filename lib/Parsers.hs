@@ -74,7 +74,6 @@ p <||> q = p <|> q
 opt :: Parser Text -> Parser Text
 opt p = let xs = "(" ++ echo p ++ ")"
         in (option (pack xs) $ output xs <$> p)
-      -- * in output xs <$> (p <|> spaces1)
       <?> xs
 
 addEcho :: Parser Text -> Parser Text -> String

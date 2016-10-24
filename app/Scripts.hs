@@ -3,6 +3,7 @@
 -- | 
 -- | Module  : A collection of scripts to be run in main,
 -- |           with no gaurantee that they will work
+-- | TODO    : consider: http://www.haskellforall.com/2012/07/purify-code-using-free-monads.html
 -- | Author  : Xiao Ling
 -- | Date    : 9/13/2016
 -- |             

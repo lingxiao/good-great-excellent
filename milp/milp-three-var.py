@@ -1,190 +1,216 @@
 ############################################################
-# Module  : simple version of adjective ranking with three words
-# Date    : Sept 27th. 2016
+# Module  : simple demo over real data and a few words
+# Date    : Oct. 19th
 ############################################################
 
 from pulp import *
+import math
+
 
 ############################################################
-# Constants
+# Scores - naive implementation
 ############################################################
 
-# Arbitrary constant
-C  = 1.1e10
+# dummy score
+scores = {'1_2'  :  1, 
+          '2_1'  : -1,
+          '1_3'  :  2,
+          '3_1'  : -2,
+          '2_3'  :  3,
+          '3_2'  : -3}
 
-# P1 := sum_{p in Pws} cnt(p(*,*))
-P1 = 415502394.0
+C = 0
+for key, n in scores.iteritems():
+  C += abs(n)
 
-# P2:= sum_{p in Psw} cnt(p(*,*))
-P2 = 3260968.0   
-
-# sum of occurences of p_ws(i,j)
-W_good_great   = 84862.0/P1
-W_good_superb  = 283.9  /P1
-W_great_good   = 1829.0 /P1
-W_great_superb = 0.0    /P1
-W_superb_good  = 0.0    /P1
-W_superb_great = 0.0    /P1
-
-
-# sum of occurences of p_sw(i,j)
-S_good_great   = 138.0/P2
-S_good_superb  = 0.0  /P2
-S_great_good   = 384.0/P2
-S_great_superb = 0.0  /P2
-S_superb_good  = 42.0 /P2
-S_superb_great = 0.0  /P2
-
-
-# cnt(good), cnt(great), cnt(superb)
-ngood   = 89827779.0
-ngreat  = 106080147.0
-nsuperb = 2050800.0
-
-
-# scores from corpus data
-R11 = 0        # good-good
-R22 = 0        # great-great
-R33 = 0        # superb-superb
-
-# raw iRj
-R12r = ((W_good_great  - S_good_great  ) - (W_great_good   - S_great_good  ))/(ngood*ngreat  )
-R13r = ((W_good_superb - S_good_superb ) - (W_superb_good  - S_superb_good ))/(ngood*nsuperb )
-R21r = ((W_great_good  - S_great_good  ) - (W_good_great   - S_good_great  ))/(ngood*ngreat  )
-R23r = ((W_great_superb- S_great_superb) - (W_superb_great - S_superb_great))/(ngreat*nsuperb)
-R31r = ((W_superb_good - S_superb_good ) - (W_good_superb  - S_good_superb ))/(nsuperb*ngood )
-R32r = ((W_superb_great - S_superb_great)- (W_great_superb - S_great_superb))/(nsuperb*ngreat)
-
-# raw good-superb score
-
-# raw great-superb score
-norms = [x for x in [R12r,R13r,R21r,R23r,R31r,R32r] if x !=0]
-
-norm = min(norms)
-
-R12 = R12r/norm
-R13 = R13r/norm
-R21 = R21r/norm
-R23 = R23r/norm
-R31 = R31r/norm
-R32 = R32r/norm
+C = C * 10
 
 ############################################################
-# Manually set up problem where E = {(good,good),(great,great)}
+# Program
 ############################################################
 
-# Set up the Lp problem
-paper  = LpProblem("order {good,great} where E = {}", LpMaximize)
-
-# manually set up all possible relations among two words
-w11 = LpVariable("w11"  , 0,1, LpInteger)    # good  < good
-w12 = LpVariable("w12"  , 0,1, LpInteger)    # good  < great
-w13 = LpVariable("w13"  , 0,1, LpInteger)    # good  < superb
-
-
-w21 = LpVariable("w21"  , 0,1, LpInteger)    # great < good
-w22 = LpVariable("w22"  , 0,1, LpInteger)    # great < great
-w23 = LpVariable("w23"  , 0,1, LpInteger)    # great < superb
-
-w31 = LpVariable("w31"  , 0,1, LpInteger)    # superb < good
-w32 = LpVariable("w32"  , 0,1, LpInteger)    # superb < great
-w33 = LpVariable("w33"  , 0,1, LpInteger)    # superb < superb
+# Given string of form "i_j", check if i == j
+# iNotj :: String -> Bool
+def iNotj(xs):
+  ns = xs.split("_")
+  if len(ns) == 2: return ns[0] != ns[1]
+  else           : return False
 
 
-s11 = LpVariable("s11"  , 0,1, LpInteger)    # good   > good
-s12 = LpVariable("s12"  , 0,1, LpInteger)    # good   > great
-s13 = LpVariable("s13"  , 0,1, LpInteger)    # good   > superb
+paper = LpProblem("three words auto", LpMaximize)
+
+ns  = ['1','2','3']
+nss = [n + '_' + m for n in ns for m in ns]
+
+# variable names
+xs = ['x_' + n for n in ns]   
+ds = ['d_' + n for n in nss]
+ws = ['w_' + n for n in nss]
+ss = ['s_' + n for n in nss]
+
+# pulp variabbles
+x = LpVariable.dict("x", ns , 0, 1, LpContinuous)
+d = LpVariable.dict("d", nss, 0, 1, LpContinuous)
+w = LpVariable.dict('w', nss, 0, 1, LpInteger   )
+s = LpVariable.dict('s', nss, 0, 1, LpInteger   )
+
+# objective function
+obj  = [ (w[ij] - s[ij]) * scores[ij] for ij in nss if iNotj(ij)    ] \
+     + [ (w[ii] + s[ii]) * -C         for ii in nss if not iNotj(ii)]
+
+paper += lpSum(obj)
+
+# constraints
+
+C1 = [ x[j]   - x[i]          == d[i + "_" + j] for i in ns for j in ns]    # xj - xi          = dij
+C2 = [ (d[ij] - w[ij])*C      <= 0              for ij in nss          ]    # dij - wij * C    <= 0
+C3 = [ (d[ij] + (1 - w[ij]))*C >= 0             for ij in nss          ]    # dij + (1- wij)*C >= 0
+C4 = [ (d[ij] + s[ij])*C       >= 0             for ij in nss          ]    # dij + sij*C      >= 0
+C5 = [ (d[ij] - (1-s[ij]))*C   <= 0             for ij in nss          ]    # dij - (1 - sij)*C < 0
+
+paper += lpSum(C1)
+paper += lpSum(C2)
+paper += lpSum(C3)
+paper += lpSum(C4)
+paper += lpSum(C5)
 
 
-s21 = LpVariable("s21"  , 0,1, LpInteger)    # great  > good
-s22 = LpVariable("s22"  , 0,1, LpInteger)    # great  > great
-s23 = LpVariable("s23"  , 0,1, LpInteger)    # great  > superb
 
-s31 = LpVariable("s31"  , 0,1, LpInteger)    # superb > good
-s32 = LpVariable("s32"  , 0,1, LpInteger)    # superb > great
-s33 = LpVariable("s33"  , 0,1, LpInteger)    # superb > superb
+############################################################
+# Program Manual
+############################################################
 
+prob  = LpProblem("three words", LpMaximize)
 
-# continous variables
-x1  = LpVariable("x1"  , 0, 1)              # val of good
-x2  = LpVariable("x2"  , 0, 1)              # val of great
-x3  = LpVariable("x3"  , 0, 1)              # val of superb
+# declare variables
+x1 = LpVariable("x1"  ,0,1,LpContinuous)
+x2 = LpVariable("x2"  ,0,1,LpContinuous)
+x3 = LpVariable("x3"  ,0,1,LpContinuous)
 
-d11 = LpVariable("d11", 0, 1)               # x1 - x1
-d12 = LpVariable("d12", 0, 1)               # x1 - x2
-d13 = LpVariable("d13", 0, 1)               # x1 - x3
-d21 = LpVariable("d21", 0, 1)               # x2 - x1
-d22 = LpVariable("d22", 0, 1)               # x2 - x2
-d23 = LpVariable("d23", 0, 1)               # x2 - x3
-d31 = LpVariable("d31", 0, 1)               # x3 - x1
-d32 = LpVariable("d32", 0, 1)               # x3 - x2
-d33 = LpVariable("d33", 0, 1)               # x3 - x3
+w11 = LpVariable("w11"  ,0,1,LpInteger)
+w12 = LpVariable("w12"  ,0,1,LpInteger)
+w13 = LpVariable("w13"  ,0,1,LpInteger)
+w21 = LpVariable("w21"  ,0,1,LpInteger)
+w22 = LpVariable("w22"  ,0,1,LpInteger)
+w23 = LpVariable("w23"  ,0,1,LpInteger)
+w31 = LpVariable("w31"  ,0,1,LpInteger)
+w32 = LpVariable("w32"  ,0,1,LpInteger)
+w33 = LpVariable("w33"  ,0,1,LpInteger)
 
 
-# # # # objective function # # #
-order = (w12 - s12)*R12 + (w13 - s13)*R13 + (w21 - s21)*R21	+ (w23 - s23)*R23 + (w31 - s31)*R31	+ (w32 - s32)*R32
+s11 = LpVariable("s11"  ,0,1,LpInteger)
+s12 = LpVariable("s12"  ,0,1,LpInteger)
+s13 = LpVariable("s13"  ,0,1,LpInteger)
+s21 = LpVariable("s21"  ,0,1,LpInteger)
+s22 = LpVariable("s22"  ,0,1,LpInteger)
+s23 = LpVariable("s23"  ,0,1,LpInteger)
+s31 = LpVariable("s31"  ,0,1,LpInteger)
+s32 = LpVariable("s32"  ,0,1,LpInteger)
+s33 = LpVariable("s33"  ,0,1,LpInteger)
+
+d11 = LpVariable("d11" ,0,1, LpContinuous)
+d12 = LpVariable("d12" ,0,1, LpContinuous)
+d13 = LpVariable("d13" ,0,1, LpContinuous)
+d21 = LpVariable("d21" ,0,1, LpContinuous)
+d22 = LpVariable("d22" ,0,1, LpContinuous)
+d23 = LpVariable("d23" ,0,1, LpContinuous)
+d31 = LpVariable("d31" ,0,1, LpContinuous)
+d32 = LpVariable("d32" ,0,1, LpContinuous)
+d33 = LpVariable("d33" ,0,1, LpContinuous)
 
 
-# synonym = (w11 + s11)*R11 + (w22 - s22)*R22  
+# objective function
+nonsyn = (w12 - s12)*scores['1_2'] \
+       + (w13 - s13)*scores['1_3'] \
+       + (w21 - s21)*scores['2_1'] \
+       + (w23 - s23)*scores['2_3'] \
+       + (w31 - s31)*scores['3_1'] \
+       + (w32 - s32)*scores['3_2']
 
-# where you left off:
-# the order is exactly reversed, does this come from poor data? or improper constraints, or bad C?
-paper  += order
+syn    = (w11 + s11)*C \
+       + (w22 + s22)*C \
+       + (w33 + s33)*C
 
-# # # # constraints # # #
+prob  += nonsyn - syn
 
-# # distance constraints
-# paper += d11 == x1 - x1
-# paper += d12 == x1 - x2
-# paper += d21 == x2 - x1
-# paper += d22 == x2 - x2
+# constraints
+prob += d11 == x1 - x1
+prob += d12 == x2 - x1
+prob += d13 == x3 - x1
+prob += d21 == x1 - x2
+prob += d22 == x2 - x2
+prob += d23 == x3 - x2
+prob += d31 == x1 - x3
+prob += d32 == x2 - x3
+prob += d33 == x3 - x3
 
-# # 
-# paper += d11 - w11*C <= 0
-# paper += d12 - w12*C <= 0
-# paper += d21 - w21*C <= 0
-# paper += d22 - w22*C <= 0
+prob += d11 - w11*C <= 0
+prob += d12 - w12*C <= 0
+prob += d13 - w13*C <= 0
+prob += d21 - w21*C <= 0
+prob += d22 - w22*C <= 0
+prob += d23 - w23*C <= 0
+prob += d31 - w31*C <= 0
+prob += d32 - w32*C <= 0
+prob += d33 - w33*C <= 0
+
+prob += d11 + (1 - w11)*C > 0
+prob += d12 + (1 - w12)*C > 0
+prob += d13 + (1 - w13)*C > 0
+prob += d21 + (1 - w21)*C > 0
+prob += d22 + (1 - w22)*C > 0
+prob += d23 + (1 - w23)*C > 0
+prob += d31 + (1 - w31)*C > 0
+prob += d32 + (1 - w32)*C > 0
+prob += d33 + (1 - w33)*C > 0
 
 
-# paper += d11 + (1-w11)*C > 0
-# paper += d12 + (1-w12)*C > 0
-# paper += d21 + (1-w21)*C > 0
-# paper += d22 + (1-w22)*C > 0
+prob += d11 + s11*C      >= 0
+prob += d12 + s12*C      >= 0
+prob += d13 + s13*C      >= 0
+prob += d21 + s21*C      >= 0
+prob += d22 + s22*C      >= 0
+prob += d23 + s23*C      >= 0
+prob += d31 + s31*C      >= 0
+prob += d32 + s32*C      >= 0
+prob += d33 + s33*C      >= 0
+
+prob += d11 - (1 - s11)*C <= 0 
+prob += d12 - (1 - s12)*C <= 0 
+prob += d13 - (1 - s13)*C <= 0 
+prob += d21 - (1 - s21)*C <= 0 
+prob += d22 - (1 - s22)*C <= 0 
+prob += d23 - (1 - s23)*C <= 0 
+prob += d31 - (1 - s31)*C <= 0 
+prob += d32 - (1 - s32)*C <= 0 
+prob += d33 - (1 - s33)*C <= 0 
 
 
-# paper += d11 + s11*C >= 0
-# paper += d12 + s12*C >= 0
-# paper += d21 + s21*C >= 0
-# paper += d22 + s22*C >= 0
-# paper += d22 + s22*C >= 0
-
-# paper += d11 - (1-s11)*C < 0
-# paper += d12 - (1-s12)*C < 0
-# paper += d21 - (1-s21)*C < 0
-# paper += d22 - (1-s22)*C < 0
+############################################################
+# solve
+############################################################
 
 
-# solve, check status and print output
-def solve(prob):
-    prob.writeLP(prob.name + ".lp")
+# solve(prob,[x1,x2,x3])
+
+def solve(prob,xs):
+    # prob.writeLP(prob.name + ".lp")
     prob.solve()
+
+    print "======================================="
+
+
     print "status: " + LpStatus[prob.status]
+
+    if xs:
+        print "======== Select variable values ======="
+        for x in xs:
+            print (x.name, "= ", x.varValue)
+
+    print "========= All variable values ========="
+
     for v in prob.variables():
         print (v.name, "= ", v.varValue)
 
+solve(prob,[x1,x2,x3])
 
-############################################################
-# Automatically set up problem where E = {}
-############################################################
-
-
-
-############################################################
-# Score
-############################################################
-
-
-
-
-
-    

@@ -10,7 +10,7 @@
 
 module Main where
 
-
+ 
 import System.Directory
 import Data.Text (Text, unpack, pack, splitOn)
 import qualified System.IO as S
@@ -33,7 +33,6 @@ good_bad =   [ "good"
              , "best"
              , "acceptable"
              , "satisfactory"
-             , "good"
              , "great"
              , "solid"
              , "superb"
@@ -71,7 +70,11 @@ good_bad' = [ "good"
             , "terrible"
             ]
 
-soph_naif =   ["innocent", "simple", "naive", "childlike", "naif"]
+soph_naif =  [ "innocent"
+             , "simple"
+             , "naive"
+             , "childlike"
+             , "naif"]
 
 char_unchar = ["characteristic"
               , "limited"
