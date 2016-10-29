@@ -32,15 +32,6 @@ def config(pattern, weakStrong, strongWeak):
     else:
         raise NameError("invalid directory: ", pattern, weakStrong, strongWeak)
 
-patternDir    = "/Users/lingxiao/Documents/research/code/good-great-excellent/inputs/"
-strongWeakDir = "/Users/lingxiao/Documents/research/code/good-great-excellent/out/strong-weak-words"
-weakStrongDir = "/Users/lingxiao/Documents/research/code/good-great-excellent/out/weak-strong-words"
-
-ai  = "good"
-aj  = "better"
-ws  = [ai,aj,"best"]
-CON = config(patternDir, weakStrongDir, strongWeakDir)
-
 ############################################################
 # Populate word statistics
 ############################################################
@@ -97,7 +88,7 @@ def countStrong(con,patterns,aij):
 # @USE: find occurences of `pattern` in list of strings `xxs`
 #       and output `total: ####` associated with pattern
 #       Note if string malformed, we throw error
-# total :: String -> [String] -> Error String Int
+# total :: String -> [String] -> Error String Float
 def total(pattern,xxs):
     k  = xxs.index(pattern)
     xs = xxs[k+2]
