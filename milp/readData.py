@@ -37,9 +37,9 @@ def config(pattern, weakStrong, strongWeak):
 ############################################################
 
 # @Use: Given list of adjectives `ws = [.. ai,..,aj,...]`
-#       number of times "R ai aj" appear in corpus
-#       where R is some weak-strong relationship lingustic
-#       pattern
+#       output number of times "R ai aj" appear in corpus
+#       for every i and j
+#       where R is some weak-strong linguistic relationship 
 
 # weakOver :: CON -> [String] 
 #          -> Eff [IO, Error String] (Dict String [Float])
@@ -47,9 +47,9 @@ def weakOver(con,ws):
     return counts(con,ws,toWeakStrong,countWeak)
 
 # @Use: Given list of adjectives `ws = [.. ai,..,aj,...]`
-#       number of times "R ai aj" appear in corpus
-#       where R is some strong-weak relationship lingustic
-#       pattern
+#       output number of times "R ai aj" appear in corpus
+#       for every i and j
+#       where R is some weak-strong linguistic relationship 
 
 # strongOver :: CON -> [String] 
 #             -> Eff [IO, Error String] (Dict String [Float])
