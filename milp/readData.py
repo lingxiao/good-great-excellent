@@ -19,7 +19,7 @@ import os
 # directories valid. else throw error
 
 # config :: DirectoryPath -> DirectoryPath -> DirectoryPath 
-#        -> Dict String DirectoryPath
+#        -> Eff [IO, Error String] (Dict String DirectoryPath)
 def config(pattern, weakStrong, strongWeak):
 
     if os.path.isdir(patternDir) and \
