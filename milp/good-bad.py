@@ -3,12 +3,19 @@
 # Date    : Oct. 19th
 ############################################################
 
-from pulp import *
+import pulp
 import math
-from milp import milp, run
+import milp
 
 ############################################################
 # Data
+# === good, bad
+# %! better
+# %! best
+# acceptable, satisfactory
+# good
+# great, solid
+# superb
 ############################################################
 
 words   = ["good", "better", "best"]
@@ -97,4 +104,13 @@ scores = {'good_better' :  96.15094952470072,
 ############################################################
 # Program
 ############################################################
+
+prob = milp.milp(scores)
+
+
+
+
+
+
+
 

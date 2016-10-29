@@ -1,10 +1,11 @@
 ############################################################
 # Module  : simple demo over real data and a few words
 # Date    : Oct. 19th
-# Source  : https://pythonhosted.org/PuLP/CaseStudies/a_blending_problem.html
 ############################################################
 
-import pulp
+from pulp import *
+import milp
+import math
 
 ############################################################
 # Scores - naive implementation
@@ -18,39 +19,12 @@ scores = {'1_2'  :  1,
           '2_3'  :  3,
           '3_2'  : -3}
 
-wscores = {'good_great'      :  1, 
+scores2 = {'good_great'      :  1, 
           'great_good'       : -1,
           'good_excellent'   :  2,
           'excellent_good'   : -2,
           'great_excellent'  :  3,
           'excellent_great'  : -3}
-
-scores3 = {'1_2'  :  1, 
-           '2_1'  : -1,
-           '1_3'  :  2,
-           '3_1'  : -2,
-           '1_4'  :  4,
-           '4_1'  : -4,
-           '2_3'  :  3,
-           '3_2'  : -3,
-           '2_4'  :  5,
-           '4_2'  : -5,
-           '3_4'  :  6,
-           '4_3'  : -6}
-
-############################################################
-# run the milp problem and print solutions
-############################################################
-
-# fourvar  = milp.solve(milp.solve(scores3))
-
-fourvar = milp.solve(milp.milp(scores))
-
-
-############################################################
-# Program Manual
-############################################################
-
 
 C = 0
 for key, n in scores.iteritems():
@@ -166,3 +140,5 @@ prob += d23 - (1 - s23)*C <= 0
 prob += d31 - (1 - s31)*C <= 0 
 prob += d32 - (1 - s32)*C <= 0 
 prob += d33 - (1 - s33)*C <= 0 
+
+
