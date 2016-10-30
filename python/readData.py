@@ -7,6 +7,36 @@
 import os
 
 ############################################################
+# Class 
+############################################################
+
+patternDir    = "/Users/lingxiao/Documents/research/code/good-great-excellent/inputs/"
+strongWeakDir = "/Users/lingxiao/Documents/research/code/good-great-excellent/out/strong-weak-words"
+weakStrongDir = "/Users/lingxiao/Documents/research/code/good-great-excellent/out/weak-strong-words"
+wordDir       = "/Users/lingxiao/Documents/research/code/good-great-excellent/out/words"
+words         = ["good","better"]
+
+class DataReader(object):
+
+    def __init__(self, pattern_dir, word_dir, weak_dir, strong_dir):
+        self.Config = config(pattern_dir \
+                            ,word_dir    \
+                            ,weak_dir    \
+                            ,strong_dir  )
+
+
+    def count(self, words):
+        return wordCount(self.Config,words)
+
+    def weak(self,words):
+        return weakOver(self.Config,words)
+
+    def strong(self,words):
+        return strongOver(self.Config,words)
+
+
+
+############################################################
 # Project Text File Config
 ############################################################
 
