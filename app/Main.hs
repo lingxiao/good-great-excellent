@@ -13,6 +13,7 @@ module Main where
  
 import System.Directory
 import Data.Text (Text, unpack, pack, splitOn)
+import Data.Set  (Set, union, fromList, toList)
 import qualified System.IO as S
 import qualified Data.Conduit.Text as CT
 
@@ -90,11 +91,11 @@ char_unchar = ["characteristic"
 main :: IO ()
 main = do
   con <- sysConfig
-  let filepath = corpus con
-  count_word (filepath ++ "vocab.txt") 
-             "trial" 
-             soph_naif
-  return ()
+  let inpath = corpus con ++ "vocab.txt"
+  let xs = toList $ fromList good_bad `union` fromList good_bad'
+  count_words inpath "out" xs
+  count_words inpath "out" wet_dry
+  count_words inpath "out" char_unchar
 
 {-----------------------------------------------------------------------------
   Paths

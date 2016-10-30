@@ -13,7 +13,7 @@
 module Scripts (
 
     count_phrase
-  , count_word
+  , count_words
   , main_prep_data
   , main_normalize
   , main_normalize_words
@@ -23,6 +23,8 @@ module Scripts (
 
   , pattern_freq
   , total_freq
+
+
 
   ) where
 
@@ -62,22 +64,30 @@ count_phrase ps fin dirname (u,v) = do
   return (tot,os)
 
 
-count_word :: FilePath 
-           -> String
+
+count_words :: FilePath 
+           -> FilePath
            -> [PatternExpr] 
-           -> IO (Integer, [Output])
-count_word inpath name ws = do
+           -> IO ()
+count_words inpath outdir ws = do 
+  count_word inpath outdir `mapM` ws
+  return ()
   
-  root     <- makeDirUnder "good-great-excellent" "out"
+count_word :: FilePath 
+           -> FilePath
+           -> PatternExpr
+           -> IO Output
+count_word inpath outdir word = do
+  
+  root     <- makeDirUnder "good-great-excellent" outdir
+  (tot,os) <- query_at (compile' word) inpath
 
-  let ps   = compile' <$> ws
+  let ps      = compile' word
+  let outpath = root ++ word ++ ".txt"
 
-  os       <- flip query_at inpath `mapM` ps
-  let tot  = foldr (+) 0 $ fst <$> os
-  let rs   = zip ws os
-  let path = root ++ name ++ ".txt"
-  save_queries path tot rs
+  save_queries outpath tot [(word,(tot,os))]
   return (tot,os)
+
 
 
 save_queries :: DirectoryPath 
