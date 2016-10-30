@@ -1,11 +1,11 @@
 
 ==================== FINAL INTERFACE ====================
-2016-09-22 18:16:38.286705 UTC
+2016-10-30 01:49:09.674484 UTC
 
-interface goodg_DmvfzrsRlTTEG4TgbQ9uXe:PatternCompiler 7103
-  interface hash: b54dee94d12eba18996202b9aea0ebc5
-  ABI hash: 5f864c3f64cd4818252cf8308fa404dd
-  export-list hash: 3864c875e5fad417e42b9b9568cb52cf
+interface goodg_7yTcpPp20HH7TrsrNkfgsn:PatternCompiler 7103
+  interface hash: a234bc2d631d4e372be2a17c140b97e7
+  ABI hash: e0d3a6e5343a3af0764473ef3303a071
+  export-list hash: 42ab6d0472f38de3d1fe6285391d435b
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: a15922da834f2f01f7a0695d98ce9660
   sig of: Nothing
@@ -68,21 +68,21 @@ import  -/  base-4.8.2.0:GHC.List 0c736920522bbd14b770342776012ab6
 import  -/  base-4.8.2.0:GHC.Show 0e1d8380a8fb0cfb07ebeda3b70cbf38
 import  -/  base-4.8.2.0:Prelude 694dcaf039efe62df1c44834e2dbd2fb
 import  -/  ghc-prim-0.4.0.0:GHC.Classes e1f4ff80f7b5262008a595d29986fb18
-import  -/  Parsers e7eaf91e7ec3f61bb5a8390cf68530a3
-  exports: 2896c53312aff025ace80f8ad93ff852
-  <** d93cb7457c892ffb267245e6b2837f51
-  <+> 668d7c8b1fecffe257ac8125341eca20
-  <||> 9c2b0c7b51e07fa277ada32c4c1f9804
-  anyWord b9c2f16278f595faf01bbabba1125e40
-  echo f84d0813230f45b5ba1a06213be98aa1
-  opt f0d318952da5fd3a62e853dab23cd86d
-  pzero fc88de5bbded84660dd35fb06c6d914e
-  word f78a3ea18df7944d95d3363b5fde27d4
+import  -/  Parsers 619f8c136d77b0de416587332ff6b144
+  exports: 61b04e9cda02b57fb5b43b9629112fba
+  <** 4a6ab45fe463bf987b14ea01294a3193
+  <+> 151005781fdd0af4f6b5f7b893d8ebc8
+  <||> bd4cac8e4265cf4caf69de14be30f3cb
+  anyWord 7fad749842ac167f0304c24649c780ba
+  echo f8aee999bb699cf4f4a30ff69ed80013
+  opt 5f60c2ebc226173968e4978af0b110f0
+  pzero 1cc6f5e132ca1d3bcc021354218410d3
+  word 5d800484aa251b3ca6a4ddfe37a41935
 import  -/  split-0.2.3.1@split_2IxbOPGrTSq7kFrJA7odmE:Data.List.Split 487cc1966f0f25916f1ba58bdff4b0ee
 import  -/  split-0.2.3.1@split_2IxbOPGrTSq7kFrJA7odmE:Data.List.Split.Internals ec8cf5264ec78ab060cadb7ee5b994f0
 import  -/  text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text b53ae191632883b10562be5cbaa0b22b
 import  -/  text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text.Internal d9b6b9a9dd535595b612aea5738b7466
-02c4fbacac07f46e9a9bb4ade990e047
+f1ccc551297aa88d64ce873657e71a38
   $fEqPInput :: GHC.Classes.Eq PatternCompiler.PInput
   DFunId[0]
   {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
@@ -90,7 +90,7 @@ import  -/  text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text.Internal d9b6b9a9
                   @ PatternCompiler.PInput
                   PatternCompiler.$fEqPInput_$c==
                   PatternCompiler.$fEqPInput_$c/= -}
-02c4fbacac07f46e9a9bb4ade990e047
+f1ccc551297aa88d64ce873657e71a38
   $fEqPInput_$c/= ::
     PatternCompiler.PInput -> PatternCompiler.PInput -> GHC.Types.Bool
   {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
@@ -111,7 +111,7 @@ import  -/  text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text.Internal d9b6b9a9
                    -> case b of wild1 {
                         DEFAULT -> GHC.Types.True
                         PatternCompiler.Nil -> GHC.Types.False } }) -}
-02c4fbacac07f46e9a9bb4ade990e047
+f1ccc551297aa88d64ce873657e71a38
   $fEqPInput_$c== ::
     PatternCompiler.PInput -> PatternCompiler.PInput -> GHC.Types.Bool
   {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
@@ -129,7 +129,7 @@ import  -/  text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text.Internal d9b6b9a9
                    -> case ds1 of wild1 {
                         DEFAULT -> GHC.Types.False
                         PatternCompiler.Nil -> GHC.Types.True } }) -}
-bc5e76db49c1742dc6ff7ee80e8d29df
+5127f9b2fe75859435ff29ee8446f81e
   $fEqToken :: GHC.Classes.Eq PatternCompiler.Token
   DFunId[0]
   {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
@@ -137,7 +137,7 @@ bc5e76db49c1742dc6ff7ee80e8d29df
                   @ PatternCompiler.Token
                   PatternCompiler.$fEqToken_$c==
                   PatternCompiler.$fEqToken_$c/= -}
-bc5e76db49c1742dc6ff7ee80e8d29df
+5127f9b2fe75859435ff29ee8446f81e
   $fEqToken_$c/= ::
     PatternCompiler.Token -> PatternCompiler.Token -> GHC.Types.Bool
   {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
@@ -146,11 +146,11 @@ bc5e76db49c1742dc6ff7ee80e8d29df
                  case PatternCompiler.$fEqToken_$c== a b of wild {
                    GHC.Types.False -> GHC.Types.True
                    GHC.Types.True -> GHC.Types.False }) -}
-bc5e76db49c1742dc6ff7ee80e8d29df
+5127f9b2fe75859435ff29ee8446f81e
   $fEqToken_$c== ::
     PatternCompiler.Token -> PatternCompiler.Token -> GHC.Types.Bool
   {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U> -}
-02c4fbacac07f46e9a9bb4ade990e047
+f1ccc551297aa88d64ce873657e71a38
   $fShowPInput :: GHC.Show.Show PatternCompiler.PInput
   DFunId[0]
   {- Strictness: m, Inline: [ALWAYS] CONLIKE,
@@ -159,24 +159,24 @@ bc5e76db49c1742dc6ff7ee80e8d29df
                   PatternCompiler.$fShowPInput_$cshowsPrec
                   PatternCompiler.$fShowPInput_$cshow
                   PatternCompiler.$fShowPInput_$cshowList -}
-02c4fbacac07f46e9a9bb4ade990e047
+f1ccc551297aa88d64ce873657e71a38
   $fShowPInput1 :: PatternCompiler.PInput -> GHC.Show.ShowS
   {- Arity: 2,
      Unfolding: (PatternCompiler.$fShowPInput_$cshowsPrec
                    PatternCompiler.$fShowPInput2) -}
-0d780263e70343c9093ab0a2356deeb8
+197d2ecf6dcc3d4969f181ce6f01cd8e
   $fShowPInput2 :: GHC.Types.Int
   {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 0) -}
-ad8b33632d2294badbc0b948cbdf73de
+15d977b94ab625669bdd116ecee4a1b8
   $fShowPInput3 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "Nil"#) -}
-4f5967706f1f5560222e5041a91287e3
+8fd506795f8c6f7192e2a2f3ae756bb2
   $fShowPInput4 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "Star"#) -}
-288bab8d305c7f7e88bf9fac4af1b2ca
+39bc557c176d02122a23f7806fe4927c
   $fShowPInput5 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "S "#) -}
-02c4fbacac07f46e9a9bb4ade990e047
+f1ccc551297aa88d64ce873657e71a38
   $fShowPInput_$cshow :: PatternCompiler.PInput -> GHC.Base.String
   {- Arity: 1, Strictness: <S,1*U>,
      Unfolding: InlineRule (1, True, False)
@@ -185,14 +185,14 @@ ad8b33632d2294badbc0b948cbdf73de
                    GHC.Show.shows18
                    x
                    (GHC.Types.[] @ GHC.Types.Char)) -}
-02c4fbacac07f46e9a9bb4ade990e047
+f1ccc551297aa88d64ce873657e71a38
   $fShowPInput_$cshowList ::
     [PatternCompiler.PInput] -> GHC.Show.ShowS
   {- Arity: 2,
      Unfolding: (GHC.Show.showList__
                    @ PatternCompiler.PInput
                    PatternCompiler.$fShowPInput1) -}
-02c4fbacac07f46e9a9bb4ade990e047
+f1ccc551297aa88d64ce873657e71a38
   $fShowPInput_$cshowsPrec ::
     GHC.Types.Int -> PatternCompiler.PInput -> GHC.Show.ShowS
   {- Arity: 3, Strictness: <L,1*U(U)><S,1*U><L,U>,
@@ -238,7 +238,7 @@ ad8b33632d2294badbc0b948cbdf73de
                         @ GHC.Types.Char
                         PatternCompiler.$fShowPInput3
                         eta }) -}
-bc5e76db49c1742dc6ff7ee80e8d29df
+5127f9b2fe75859435ff29ee8446f81e
   $fShowToken :: GHC.Show.Show PatternCompiler.Token
   DFunId[0]
   {- Strictness: m, Inline: [ALWAYS] CONLIKE,
@@ -247,12 +247,12 @@ bc5e76db49c1742dc6ff7ee80e8d29df
                   PatternCompiler.$fShowToken_$cshowsPrec
                   PatternCompiler.$fShowToken_$cshow
                   PatternCompiler.$fShowToken_$cshowList -}
-bc5e76db49c1742dc6ff7ee80e8d29df
+5127f9b2fe75859435ff29ee8446f81e
   $fShowToken1 :: PatternCompiler.Token -> GHC.Show.ShowS
   {- Arity: 2,
      Unfolding: (PatternCompiler.$fShowToken_$cshowsPrec
                    PatternCompiler.$fShowPInput2) -}
-bc5e76db49c1742dc6ff7ee80e8d29df
+5127f9b2fe75859435ff29ee8446f81e
   $fShowToken_$cshow :: PatternCompiler.Token -> GHC.Base.String
   {- Arity: 1, Strictness: <S,1*U>,
      Unfolding: InlineRule (1, True, False)
@@ -261,30 +261,30 @@ bc5e76db49c1742dc6ff7ee80e8d29df
                    GHC.Show.shows18
                    x
                    (GHC.Types.[] @ GHC.Types.Char)) -}
-bc5e76db49c1742dc6ff7ee80e8d29df
+5127f9b2fe75859435ff29ee8446f81e
   $fShowToken_$cshowList :: [PatternCompiler.Token] -> GHC.Show.ShowS
   {- Arity: 2,
      Unfolding: (GHC.Show.showList__
                    @ PatternCompiler.Token
                    PatternCompiler.$fShowToken1) -}
-bc5e76db49c1742dc6ff7ee80e8d29df
+5127f9b2fe75859435ff29ee8446f81e
   $fShowToken_$cshowsPrec ::
     GHC.Types.Int -> PatternCompiler.Token -> GHC.Show.ShowS
   {- Arity: 3, Strictness: <L,1*U(U)><S,1*U><L,U> -}
-02c4fbacac07f46e9a9bb4ade990e047
+f1ccc551297aa88d64ce873657e71a38
   data PInput = S GHC.Base.String | Star | Nil
-5205c6767090e8d1a1a2e3b48ebc3f42
+86a8a08507814e90542c2d64387a5184
   type Pattern =
     PatternCompiler.PInput
     -> PatternCompiler.PInput
     -> Data.Attoparsec.Text.Internal.Parser Data.Text.Internal.Text
-bc5e76db49c1742dc6ff7ee80e8d29df
+5127f9b2fe75859435ff29ee8446f81e
   data Token
     = Word GHC.Base.String
     | Hole
     | Opt PatternCompiler.Token
     | Or PatternCompiler.Token PatternCompiler.Token
-e4f87ef65dd67b86571bde5f2620a7e9
+6679e83c5252deb7006ae438cd1a515f
   compile :: GHC.Base.String -> PatternCompiler.Pattern
   {- Arity: 1, Strictness: <L,U>,
      Unfolding: (\ x :: GHC.Base.String ->
@@ -302,7 +302,7 @@ e4f87ef65dd67b86571bde5f2620a7e9
                          v
                          (GHC.Types.[] @ PatternCompiler.PInput)))
                    ts) -}
-c90145efd1cdcf08899c9b08ab43c6b4
+58d52ebf96960186e3063a792defa10b
   compile' ::
     GHC.Base.String
     -> Data.Attoparsec.Text.Internal.Parser Data.Text.Internal.Text
@@ -318,28 +318,28 @@ c90145efd1cdcf08899c9b08ab43c6b4
                          PatternCompiler.Nil
                          (GHC.Types.[] @ PatternCompiler.PInput)))
                    (PatternCompiler.tokenize xs)) -}
-07ed9f7a0905eb6823a7181489757f51
+1985f6508adbaa5f3a0a918c6c647531
   compile1 :: [GHC.Types.Char] -> [[GHC.Types.Char]]
   {- Unfolding: (Data.List.Split.Internals.splitOn
                    @ GHC.Types.Char
                    GHC.Classes.$fEqChar
                    PatternCompiler.compile2) -}
-0698fedb2ba8e0f0461f4146e79537dc
+2408737307a426c22131f9f179b9cc4b
   compile2 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# " "#) -}
-4fb4ff8cf93d6ffb78002f3db84701c4
+c72bbff6b5045a9fbc27cac24877153e
   compile_go :: [[GHC.Types.Char]] -> [PatternCompiler.Token]
   {- Arity: 1, Strictness: <S,1*U> -}
-f2e0b6b9e42ea90f1a67751f298e1932
+49f341e84dc6feed8ea9883c4f172bef
   fill ::
     [PatternCompiler.PInput]
     -> [PatternCompiler.Token]
     -> Data.Attoparsec.Text.Internal.Parser Data.Text.Internal.Text
   {- Arity: 2, Strictness: <S,U><S,U> -}
-47f848736775757dd43bf891931d704c
+39faf47d7e0d0b1479f14afef3948443
   token :: GHC.Base.String -> PatternCompiler.Token
   {- Arity: 1, Strictness: <S,U> -}
-9f0d1062f35690179ddd430b1ef8d951
+65a9e40173c95a6c9c35fceaac4feb1c
   tokenize :: GHC.Base.String -> [PatternCompiler.Token]
   {- Arity: 1, Strictness: <L,U>,
      Unfolding: (\ x :: GHC.Base.String ->

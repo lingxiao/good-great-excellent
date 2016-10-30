@@ -1,11 +1,11 @@
 
 ==================== FINAL INTERFACE ====================
-2016-09-22 00:33:39.238075 UTC
+2016-10-30 01:49:09.911337 UTC
 
-interface goodg_DmvfzrsRlTTEG4TgbQ9uXe:Lib 7103
-  interface hash: 223553329e6651e9bccc4daa0a4795e8
-  ABI hash: 435630b921b9e9ad09b3a3837271c8da
-  export-list hash: 1d16a7513deda5a5737aadc079a1bef7
+interface goodg_7yTcpPp20HH7TrsrNkfgsn:Lib 7103
+  interface hash: 8f0dfba2a9685a55336381c04a838134
+  ABI hash: 0301c5700e9448ef902e2e513359fbd2
+  export-list hash: 705d1911506c24158f8ebb630c840e5a
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: 34a9291488a30a90b4883f399a0708a5
   sig of: Nothing
@@ -177,63 +177,63 @@ family instance modules: adjunctions-4.3@adjun_HUA1si0oygHIohE6wWvtj8:Data.Funct
                          vector-0.11.0.0@vecto_LmZ3LQW4ivu8MsQuVgukln:Data.Vector.Unboxed.Base
                          zlib-0.6.1.1@zlib_7LjT7TSHX8U3VTy3t378Vu:Codec.Compression.Zlib.Stream
 import  -/  base-4.8.2.0:Prelude 694dcaf039efe62df1c44834e2dbd2fb
-import  -/  Conduits 1600df16aeaac8e823f4f457d091ceee
-  exports: ea420d2693eefe012ce157b03a67ec06
-  FileOp 45dfb867f45c64f2df43920ed47ba070
-  FileOpS bf52de68f605b29c5eca7b3534f48c1f
-  Op ad0f51756a8eaf1e4bfe0cd2e304b730
-  cap 3110b757e7c4085419a43f8e34687a0b
-  eval 5453cdaad44bf15d656011b778ec03c6
-  logi a4e875d67b3ab32ccc0491fa0bf93065
-  logm 877de59b0797d998f106dbef72b7e991
-  openFile 03642a150d016eb8c85f6b07cf03dd8b
-  run eb118562ed79eccffbf2459a5c290a21
-  shardFile 2a45221f0e7507344765a1321251d4a7
-  sourceDirectories 340d235998aaeefc8c8abd10cba62a5c
-  untarSaveAs 7ee9693e3cab68e25787055edeb6bfdf
-import  -/  NormalizeText 16397df33f83e98e17ee96b6f949e96e
-  exports: 331d31477300d82cf936991ca526786d
-  normalize 4d36cb2f75be77adf7226b9580c6911f
-import  -/  Parsers e7eaf91e7ec3f61bb5a8390cf68530a3
-  exports: 2896c53312aff025ace80f8ad93ff852
-  <** d93cb7457c892ffb267245e6b2837f51
-  <**? da634ca78078923b9f6b341840a0fe4e
-  <+> 668d7c8b1fecffe257ac8125341eca20
-  <||> 9c2b0c7b51e07fa277ada32c4c1f9804
-  anyWord b9c2f16278f595faf01bbabba1125e40
-  echo f84d0813230f45b5ba1a06213be98aa1
-  eow e2d64f51f61bedaaf6e17f18f049ad82
-  notAlphaDigitSpace 1084b1b2f1457ac222fd515bb4b0d9d0
-  opt f0d318952da5fd3a62e853dab23cd86d
-  pzero fc88de5bbded84660dd35fb06c6d914e
-  spaces 611e7d298580127f628f88586d2a19b1
-  spaces1 65e7fe2f9cf20ad68ee1b1a2dc1f16ea
-  star 15708442f21f7fd0f28dfa1516a2b401
-  word f78a3ea18df7944d95d3363b5fde27d4
-import  -/  PatternCompiler 5f864c3f64cd4818252cf8308fa404dd
-  exports: 3864c875e5fad417e42b9b9568cb52cf
-  Hole c913421fbf49883b4fd405231b661243
-  Opt 49af847fbdff088843a17cda49f03a3c
-  Or faec14bf6caa6720426c516e37fbecad
-  PInput 02c4fbacac07f46e9a9bb4ade990e047
-  Pattern 5205c6767090e8d1a1a2e3b48ebc3f42
-  S 5a3bc958428e3f949a548492e05837ab
-  Star d3e009d4a7ebc76e4f84e75554dae914
-  Token bc5e76db49c1742dc6ff7ee80e8d29df
-  Word 2f662cba0a21ae609efcca7e83392f86
-  compile e4f87ef65dd67b86571bde5f2620a7e9
-  compile' c90145efd1cdcf08899c9b08ab43c6b4
-  token 47f848736775757dd43bf891931d704c
-  tokenize 9f0d1062f35690179ddd430b1ef8d951
-import  -/  Utils f84541065ef656839c57fc95f7765007
-  exports: 4e3bde9a9cf18d662ae609c3093bd4a8
-  concatFiles d7fff1165a38bad9f5a75bca660b14a4
-  cutFiles a1b6c8fbfec221869f77062ae0e21dc4
-  makeDirUnder df3335fd8639539352d39c4cbfc8aceb
-  shardFiles b75b697ae3f2715fbde27bd69a92bb37
-  sourceDirs 5d3693b9369c8f9859cf5f05f21d1e18
-  takeN 2fa8e11bbf7ccf1c5fae84097830f7a0
-  untarFiles 3bd7f632f711790c2f56482f42384387
+import  -/  Conduits 186358285b66430c4cdb21257f00d570
+  exports: 5b4b5259b8d4bd189dddf5a447807be2
+  FileOp 4dd241287adb8fc69146bc4415b27ae4
+  FileOpS cec501fce2fac4a4a52b82f7fa08dab8
+  Op 12ae312ed42f4dc1e55d3de844cb1ca2
+  cap 4ab12da15104da61bcfbdfb6238a8832
+  eval 6360e7372e637a1decfd40b6cdae57da
+  logi c4cab8bfd7f2e1d7c85b170ca8dc7eaf
+  logm e2b5f630e8ea36fe8225773c395a6abd
+  openFile b454842380fad1ac5c0da6850a392ecd
+  run 1ddfa201ccacbff9183c6f28e7dbcba7
+  shardFile 22c89b9490b5a1550e298b49e48410e4
+  sourceDirectories 81c4685d926b09256c0f87ea9bc4249c
+  untarSaveAs 8abfef71f2d88584724354b8f4d0e039
+import  -/  NormalizeText 87092a5ea1298c521f2cc025556ad54c
+  exports: b3324c27d1917f73562e92125fa8fd3e
+  normalize ec29f841ec323ec90681d78172bdad35
+import  -/  Parsers 619f8c136d77b0de416587332ff6b144
+  exports: 61b04e9cda02b57fb5b43b9629112fba
+  <** 4a6ab45fe463bf987b14ea01294a3193
+  <**? 25225c0d92922b320bd296fecd4d6d3f
+  <+> 151005781fdd0af4f6b5f7b893d8ebc8
+  <||> bd4cac8e4265cf4caf69de14be30f3cb
+  anyWord 7fad749842ac167f0304c24649c780ba
+  echo f8aee999bb699cf4f4a30ff69ed80013
+  eow 2ee228911e6045a1316b05579d77235f
+  notAlphaDigitSpace 210c0ae0317c9834275ce65f43fc94db
+  opt 5f60c2ebc226173968e4978af0b110f0
+  pzero 1cc6f5e132ca1d3bcc021354218410d3
+  spaces bb94d47f2ef71edd8b03daaed8cb4f2d
+  spaces1 4e40db7b536b248cc2cf01ceb6f1e40c
+  star e79cd4b9fc336675db7e4b1dd5852bc7
+  word 5d800484aa251b3ca6a4ddfe37a41935
+import  -/  PatternCompiler e0d3a6e5343a3af0764473ef3303a071
+  exports: 42ab6d0472f38de3d1fe6285391d435b
+  Hole 348998f83f04d20a48d633e60395f541
+  Opt 9038a5d0eb0803fc32d378e41af50c0c
+  Or 56a8c1e9487cd3dc1579723fd7fa086b
+  PInput f1ccc551297aa88d64ce873657e71a38
+  Pattern 86a8a08507814e90542c2d64387a5184
+  S cf3c2e9a8cceb71802301e62fdcd8c65
+  Star ad5a22dc9a0d43f7a7b3033aec2abd6f
+  Token 5127f9b2fe75859435ff29ee8446f81e
+  Word 8a9e6bd8553f9fdeb4a608a3b3529b22
+  compile 6679e83c5252deb7006ae438cd1a515f
+  compile' 58d52ebf96960186e3063a792defa10b
+  token 39faf47d7e0d0b1479f14afef3948443
+  tokenize 65a9e40173c95a6c9c35fceaac4feb1c
+import  -/  Utils 2a0ebfd94b3b7e62a5b74800ceb4d2af
+  exports: 97205225f89e7370e8715934299ec5a5
+  concatFiles 3d51a58be40f8e4e900723301c5426eb
+  cutFiles c7b11aed26eb40d4313e838ec6665a32
+  makeDirUnder c9f91bd1dd1cba1fedf4f3e74fa728b0
+  shardFiles b2ac573f588d010067b502fb729aa0f3
+  sourceDirs d35dbf8ac609e03eecb3a8b39f66f0fd
+  takeN 065707624b1e6ae53a0e39a508fb66a2
+  untarFiles 7b0e456c1405777b5ee201791230378b
 vectorised variables:
 vectorised tycons:
 vectorised reused tycons:

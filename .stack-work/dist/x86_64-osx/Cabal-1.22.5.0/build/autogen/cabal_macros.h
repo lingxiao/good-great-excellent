@@ -49,6 +49,13 @@
   (major1) == 1 && (major2) <  1 || \
   (major1) == 1 && (major2) == 1 && (minor) <= 13)
 
+/* package containers-0.5.6.2 */
+#define VERSION_containers "0.5.6.2"
+#define MIN_VERSION_containers(major1,major2,minor) (\
+  (major1) <  0 || \
+  (major1) == 0 && (major2) <  5 || \
+  (major1) == 0 && (major2) == 5 && (minor) <= 6)
+
 /* package directory-1.2.2.0 */
 #define VERSION_directory "1.2.2.0"
 #define MIN_VERSION_directory(major1,major2,minor) (\
@@ -189,5 +196,5 @@
   (major1) == 0 && (major2) <  28 || \
   (major1) == 0 && (major2) == 28 && (minor) <= 0)
 
-#define CURRENT_PACKAGE_KEY "goodg_DmvfzrsRlTTEG4TgbQ9uXe"
+#define CURRENT_PACKAGE_KEY "goodg_7yTcpPp20HH7TrsrNkfgsn"
 
