@@ -4,6 +4,7 @@
 # Source  : https://pythonhosted.org/PuLP/CaseStudies/a_blending_problem.html
 ############################################################
 
+import milp
 import pulp
 
 ############################################################
@@ -17,13 +18,6 @@ scores = {'1_2'  :  1,
           '3_1'  : -2,
           '2_3'  :  3,
           '3_2'  : -3}
-
-wscores = {'good_great'      :  1, 
-          'great_good'       : -1,
-          'good_excellent'   :  2,
-          'excellent_good'   : -2,
-          'great_excellent'  :  3,
-          'excellent_great'  : -3}
 
 scores3 = {'1_2'  :  1, 
            '2_1'  : -1,
@@ -44,7 +38,7 @@ scores3 = {'1_2'  :  1,
 
 # fourvar  = milp.solve(milp.solve(scores3))
 
-fourvar = milp.solve(milp.milp(scores))
+# fourvar = milp.solve(milp.milp(scores))
 
 
 ############################################################

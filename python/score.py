@@ -9,6 +9,26 @@
 # Score Function
 ############################################################
 
+# @Use    : Given DataReader Object and a list of words `ws`, 
+# @Output : score(ai,aj) for each i j in ws, 
+#           normalized by min score
+
+# scores :: DataReader -> [String] -> Error String (Dict String Float)
+def scores(O,ws):
+	pws  = [(u,v) for u in ws for v in ws]
+	d    = dict()
+	minv = 1e10
+
+	for (u,v) in pws:
+		n = score(O,u,v)
+		if n and abs(n) < minv: minv = abs(n)
+		d[u + "_" + v] = n
+
+	for uv in d:
+		d[uv] = d[uv]/minv
+
+	return d
+
 # @Use   : Given DataReader Object and words ai aj, output:
 # @Output: score(ai,ak) where:
 # 
@@ -48,10 +68,10 @@ def score(O,ai,ak):
 def goScores(count,strong,weak,P1,P2,ai,ak):
 
 	if ai in count and ak in count:
-		w1 = sumcnt(weak   , ai,ak)
-		w2 = sumcnt(weak   , ak,ai)
-		s1 = sumcnt(strong , ai,ak)
-		s2 = sumcnt(strong , ak,ai)
+		w1 = sumcnt(weak   , ai , ak)
+		w2 = sumcnt(weak   , ak , ai)
+		s1 = sumcnt(strong , ai , ak)
+		s2 = sumcnt(strong , ak , ai)
 
 		top = (w1/P1 - s1/P2) - (w2/P1 - s2/P2)
 		bot = count[ai] * count[ak]

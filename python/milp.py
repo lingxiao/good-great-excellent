@@ -3,7 +3,7 @@
 # Date    : Oct. 23rd
 ############################################################
 
-import pulp
+from pulp import *
 import math
 
 ############################################################
@@ -15,8 +15,8 @@ import math
 
 # @Example: milp({"good_great": 1, "great_good": -1})
 
-# milp :: Dict String Int -> MilpProblem
-def milp(scores):
+# paperMilp :: Dict String Int -> MilpProblem
+def paperMilp(scores):
 
   ######################################
   # compute constants and get words

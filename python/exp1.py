@@ -6,6 +6,8 @@
 ############################################################
 
 import readData
+import score
+import milp
 
 
 ############################################################
@@ -28,15 +30,15 @@ reader = DataReader(pattern_dir \
 # words
 ############################################################
 
-# good_bad =   [ "good"           \
-#              , "better"         \
-#              , "best"           \
-#              , "acceptable"     \
-#              , "satisfactory"   \
-#              , "great"          \
-#              , "solid"          \
-#              , "superb"]
-good_bad   = ["good", "better", "best"]
+good_bad =   [ "good"           \
+             , "better"         \
+             , "best"           \
+             , "acceptable"     \
+             , "satisfactory"   \
+             , "great"          \
+             , "solid"          \
+             , "superb"]
+# good_bad   = ["good", "better", "great"]
 
 ############################################################
 # counts and scores
@@ -46,6 +48,10 @@ good_bad   = ["good", "better", "best"]
 good_bad_count  = reader.count (good_bad)
 good_bad_strong = reader.strong(good_bad)
 good_bad_weak   = reader.weak  (good_bad)
+
+good_bad_scores = score.scores(reader,good_bad)
+
+rank            = solve(paperMilp(good_bad_scores))
 
 
 
