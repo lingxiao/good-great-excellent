@@ -88,7 +88,7 @@ char_unchar = ["characteristic"
               ]
 
 -- * query for word frequence of every word in here
-main :: IO ()
+main :: IO [String]
 main = do
   con <- sysConfig
   let inpath = corpus con ++ "vocab.txt"
@@ -96,8 +96,7 @@ main = do
              $ fromList good_bad `union` fromList good_bad'
 
   count_words inpath "out" xs
-  --count_words inpath "out" wet_dry
-  --count_words inpath "out" char_unchar
+  return xs
 
 {-----------------------------------------------------------------------------
   Paths
