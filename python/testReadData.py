@@ -15,6 +15,7 @@ def main():
 
     tweakOver  ()
     tstrongOver()
+    twordCount ()
 
     print "============================="
     print "passed all tests"
@@ -24,15 +25,27 @@ def main():
 # tests
 ############################################################
 
+# adhoc tests
 patternDir    = "/Users/lingxiao/Documents/research/code/good-great-excellent/inputs/"
 strongWeakDir = "/Users/lingxiao/Documents/research/code/good-great-excellent/out/strong-weak-words"
 weakStrongDir = "/Users/lingxiao/Documents/research/code/good-great-excellent/out/weak-strong-words"
-CON           = config(patternDir, weakStrongDir, strongWeakDir)
+wordDir       = "/Users/lingxiao/Documents/research/code/good-great-excellent/out/words"
 words         = ["good","better","best"]
+
+def twordCount():
+  gold = {"good":89827779, "better":157090854, "best":371880036}
+  test = wordCount(CON,words)
+
+  for aij in gold:
+    assert gold[aij] == test[aij]
+
+  print "passed wordCount"
+  return True
+
 
 # @Read: Functions are tested against manally compiled data
 def tweakOver():
-    P_ws = {"good-better"  : [970 ,66445,0 ,0,13139,0,0,0],
+    gold = {"good-better"  : [970 ,66445,0 ,0,13139,0,0,0],
             "good-best"    : [3057,249  ,46,0,137  ,0,0,0],
             "better-good"  : [1745,0    ,0 ,0,52   ,0,0,0],
             "better-best"  : [147 ,539  ,0 ,0,0    ,0,0,0],
@@ -45,14 +58,14 @@ def tweakOver():
 
     test = weakOver(CON,words)
 
-    for aij in P_ws:
-        assert P_ws[aij] == test[aij]
+    for aij in gold:
+        assert gold[aij] == test[aij]
 
     print "passed weakOver"
     return True
 
 def tstrongOver():
-    P_sw    = {"good-better"  : [0,0,0,0,0,0,0],
+    gold    = {"good-better"  : [0,0,0,0,0,0,0],
                "good-best"    : [0,0,0,0,0,0,0],
                "better-good"  : [0,0,0,0,0,0,0],
                "better-best"  : [0,0,0,0,0,0,0],
@@ -65,8 +78,8 @@ def tstrongOver():
 
     test = strongOver(CON,words)
 
-    for aij in P_sw:
-        assert P_sw[aij] == test[aij]
+    for aij in gold:
+        assert gold[aij] == test[aij]
 
     print "passed strongOver"
     return True

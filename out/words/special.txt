@@ -1,0 +1,20 @@
+2016-10-30 02:38:54.731018 UTC
+--------------------------------------------------
+cumulative occurrences : 140011654
+--------------------------------------------------
+--------------------------------------------------
+special
+total: 140011654
+special . 1940
+special 120210430
+special 1053
+special 383
+special 225
+special 295
+special 1145
+special 418
+special 211
+special 2188
+special 932
+special 402
+special 19792032

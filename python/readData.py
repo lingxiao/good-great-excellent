@@ -25,13 +25,12 @@ import os
 #        -> Eff [IO, Error String] (Dict String DirectoryPath)
 def config(pattern, words, weakStrong, strongWeak):
 
-    if  os.path.isdir(patternDir) \
-    and os.path.isdir(words)      \
+    if  os.path.isdir(pattern   ) \
+    and os.path.isdir(words     ) \
     and os.path.isdir(weakStrong) \
     and os.path.isdir(strongWeak):
-
-        return { "patterns"    : patternDir \
-               , "words"       : words
+        return { "patterns"    : pattern      \
+               , "words"       : words         \
                , "weak-strong" : weakStrongDir \
                , "strong-weak" : strongWeakDir}
     else:
@@ -44,10 +43,23 @@ def config(pattern, words, weakStrong, strongWeak):
 # @Use: Given list of words [..ai,..]
 #       output occurences of `ai` for each i
 
-# wordCount :: CON -> [String] -> Eff IO (Dict String Float)
+# wordCount :: CON 
+#           -> [String] 
+#           -> Eff [IO, Error String] (Dict String Float)
 def wordCount(CON,words):
-    p = readFile(CON['words'], words[0])
-    return p 
+    out = dict()
+    for word in words:
+        out[word] = go(CON,word)
+    return out
+
+def go(CON,word):
+    xxs  = readFile(CON['words'],word)
+    nxs  = [x for x in xxs if  "total" in x]
+    if nxs:
+        n    = float(nxs[0].replace("total: ", ""))
+        return n
+    else:
+        raise NameError("malformed string: ", xxs)
 
 # @Use: Given list of adjectives `ws = [.. ai,..,aj,...]`
 #       output number of times "R ai aj" appear in corpus
@@ -150,4 +162,7 @@ def readFile(path,name):
         return ps.split("\n")
     else:
         raise NameError("no file found at: ", path)
+
+
+
 

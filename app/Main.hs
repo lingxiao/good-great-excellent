@@ -92,10 +92,12 @@ main :: IO ()
 main = do
   con <- sysConfig
   let inpath = corpus con ++ "vocab.txt"
-  let xs = toList $ fromList good_bad `union` fromList good_bad'
+  let xs     = toList 
+             $ fromList good_bad `union` fromList good_bad'
+
   count_words inpath "out" xs
-  count_words inpath "out" wet_dry
-  count_words inpath "out" char_unchar
+  --count_words inpath "out" wet_dry
+  --count_words inpath "out" char_unchar
 
 {-----------------------------------------------------------------------------
   Paths
