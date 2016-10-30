@@ -25,12 +25,13 @@ def main():
 # tests
 ############################################################
 
-# adhoc tests
-patternDir    = "/Users/lingxiao/Documents/research/code/good-great-excellent/inputs/"
-strongWeakDir = "/Users/lingxiao/Documents/research/code/good-great-excellent/out/strong-weak-words"
-weakStrongDir = "/Users/lingxiao/Documents/research/code/good-great-excellent/out/weak-strong-words"
-wordDir       = "/Users/lingxiao/Documents/research/code/good-great-excellent/out/words"
-words         = ["good","better","best"]
+pattern_dir = "/Users/lingxiao/Documents/research/code/good-great-excellent/inputs/"
+word_dir    = "/Users/lingxiao/Documents/research/code/good-great-excellent/out/words"
+total_dir   = "/Users/lingxiao/Documents/research/code/good-great-excellent/out/total-freq.txt"
+strong_dir  = "/Users/lingxiao/Documents/research/code/good-great-excellent/out/strong-weak-words"
+weak_dir    = "/Users/lingxiao/Documents/research/code/good-great-excellent/out/weak-strong-words"
+CON         = config(pattern_dir,word_dir,total_dir,weak_dir,strong_dir)
+words       = ["good","better","best"]
 
 def twordCount():
   gold = {"good":89827779, "better":157090854, "best":371880036}

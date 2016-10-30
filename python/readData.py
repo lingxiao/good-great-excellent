@@ -1,10 +1,14 @@
 ############################################################
-# Module  : Read linguistic data
-# Date    : Oct. 28th
+# Module  : Read data
+#           Note code here is #tightly# coupled with
+#           assumed structure of the data files
+# Date    : Oct. 29th
 # Author  : Xiao Ling
 ############################################################
 
 import os
+
+path = "/Users/lingxiao/Documents/research/code/good-great-excellent/out/total-freq.txt"
 
 ############################################################
 # Class 
@@ -12,12 +16,15 @@ import os
 
 class DataReader(object):
 
-    def __init__(self, pattern_dir, word_dir, weak_dir, strong_dir):
+    def __init__(self, pattern_dir, word_dir, total_dir, weak_dir, strong_dir):
         self.Config = config(pattern_dir \
                             ,word_dir    \
+                            ,total_dir   \
                             ,weak_dir    \
                             ,strong_dir  )
 
+    def total(self):
+        return totalNorm(self.Config['total'])
 
     def count(self, words):
         return wordCount(self.Config,words)
@@ -44,19 +51,68 @@ class DataReader(object):
 #        -> DirectoryPath
 #        -> DirectoryPath
 #        -> DirectoryPath
+#        -> DirectoryPath
 #        -> Eff [IO, Error String] (Dict String DirectoryPath)
-def config(pattern, words, weakStrong, strongWeak):
+def config(pattern, words, total, weak, strong):
 
-    if  os.path.isdir(pattern   ) \
-    and os.path.isdir(words     ) \
-    and os.path.isdir(weakStrong) \
-    and os.path.isdir(strongWeak):
-        return { "patterns"    : pattern      \
-               , "words"       : words         \
-               , "weak-strong" : weakStrongDir \
-               , "strong-weak" : strongWeakDir}
+    if  os.path.isdir  (pattern ) \
+    and os.path.isdir  (words   ) \
+    and os.path.exists (total   ) \
+    and os.path.isdir  (weak    ) \
+    and os.path.isdir  (strong  ):
+        return { "patterns"    : pattern  \
+               , "words"       : words    \
+               , "total"       : total
+               , "weak-strong" : weak     \
+               , "strong-weak" : strong   }
     else:
-        raise NameError("invalid directory: ", pattern, weakStrong, strongWeak)
+        raise NameError( "invalid directory: " \
+                       , pattern    \
+                       , words      \
+                       , total      \
+                       , weakStrong \
+                       , strongWeak )
+
+############################################################
+# Populate Pattern Statistics
+############################################################
+
+# @Input:  given path to file with cumulative counts of all patterns
+#          over the corpus over all words
+# @Output: dictonary mapping weak-strong and strong-weak pattern
+#          to their respective counts
+
+# totalNorm :: FileDirectory -> Error String (Dict String Float)
+def totalNorm(path):
+    if os.path.exists(path):
+
+        h     = open(path,'r')
+        xxs   = h.read()
+        xxs   = xxs.split("\n")
+        weak  = parsePatternTotal("weak-total"  ,xxs)
+        strng = parsePatternTotal("strong-total",xxs)
+        return { "weak-strong-normalization": weak \
+               , "strong-weak-normalization": strng}
+    else:
+        raise NameError("Path not valid: " + path)
+
+
+# parsePatternTotal :: String -> [String] 
+#                   -> Error String (Dict String Float)
+def parsePatternTotal(key,xxs):
+
+    total = [xs for xs in xxs if key in xs]
+
+    if total:
+        total = total[0].split("\t")
+        if len(total) >= 3:
+            return float(total[2])
+        else:
+            raise NameError("malformed text")
+    else:
+        raise NameError("malformed text")
+
+
 
 ############################################################
 # Populate word statistics
@@ -123,20 +179,20 @@ def counts(con,ws,toPattern,count):
 #           -> Eff [IO, Error String] Float
 def countWeak(con,patterns,aij):
     xs  = readFile(con['weak-strong'], aij)
-    return [total(p,xs) for p in patterns]
+    return [parseTotal(p,xs) for p in patterns]
     
 
 # countStrong :: FilePath -> [String] -> String
 #           -> Eff [IO, Error String] Float
 def countStrong(con,patterns,aij):
     xs  = readFile(con['strong-weak'], aij)
-    return [total(p,xs) for p in patterns]
+    return [parseTotal(p,xs) for p in patterns]
 
 # @USE: find occurences of `pattern` in list of strings `xxs`
 #       and output `total: ####` associated with pattern
 #       Note if string malformed, we throw error
-# total :: String -> [String] -> Error String Float
-def total(pattern,xxs):
+# parseTotal :: String -> [String] -> Error String Float
+def parseTotal(pattern,xxs):
     k  = xxs.index(pattern)
     xs = xxs[k+2]
     if xs and "total: " in xs:

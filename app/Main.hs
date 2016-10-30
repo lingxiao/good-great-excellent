@@ -26,8 +26,6 @@ import Scripts
   Main
 ------------------------------------------------------------------------------}
 
-
-
 good_bad =   [ "good"
              , "bad"
              , "better"
@@ -50,7 +48,7 @@ wet_dry = [ "wet"
           , "steamy"
           , "wet"
           , "drippy"
-          , "watery"
+          , "watery"  
           , "boggy"
           , "soggy"
           , "rainy"
