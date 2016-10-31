@@ -86,8 +86,7 @@ main = do
   let weak   = weakStrong con
   let strong = strongWeak con
 
-  --count_phrase strong inpath "temp-strong" ("unique"    ,"characteristic")
-  --count_phrase strong inpath "temp-strong" ("watery"    ,"wet"           )
+  --count_phrase strong inpath "temp-strong" ("boggy"    ,"wet"           )
 
   --count_phrase weak   inpath "temp-weak"   `mapM` pset bad
   --count_phrase strong inpath "temp-strong" `mapM` pset bad
@@ -100,13 +99,10 @@ main = do
 
   count_phrase weak   inpath "rtemp-weak"   `mapM` pset wet
   count_phrase strong inpath "rtemp-strong" `mapM` pset wet
-
-
-
   return ()
 
 pset :: Eq a => [a] -> [(a,a)]
-pset xs = [(u,v) | u <- xs, v <- xs, u == v]
+pset xs = [(u,v) | u <- xs, v <- xs]
 
 -- * query for word frequence of every word in here
 main_count_words :: IO ()
