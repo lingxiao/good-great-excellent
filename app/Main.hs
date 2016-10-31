@@ -26,7 +26,7 @@ import Scripts
   Main
 ------------------------------------------------------------------------------}
 
-good_bad =   [ "good"
+good =   [ "good"
              , "bad"
              , "better"
              , "best"
@@ -37,7 +37,7 @@ good_bad =   [ "good"
              , "superb"
              ]
 
-wet_dry = [ "wet"
+wet = [ "wet"
           , "dry"
           , "muddy"
           , "sticky"
@@ -56,7 +56,7 @@ wet_dry = [ "wet"
           ]
 
 
-good_bad' = [ "good"
+bad = [ "good"
             , "bad"
             , "evil"
             , "negative"
@@ -69,13 +69,13 @@ good_bad' = [ "good"
             , "terrible"
             ]
 
-soph_naif =  [ "innocent"
+simple =  [ "innocent"
              , "simple"
              , "naive"
              , "childlike"
              , "naif"]
 
-char_unchar = ["characteristic"
+special = ["characteristic"
               , "limited"
               , "special"
               , "peculiar"
@@ -86,8 +86,8 @@ char_unchar = ["characteristic"
               ]
 
 -- * query for word frequence of every word in here
-main :: IO [String]
-main = do
+wordFreq :: IO [String]
+wordFreq = do
   con <- sysConfig
   let inpath = corpus con ++ "vocab.txt"
   let xs     = toList 

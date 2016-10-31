@@ -20,7 +20,7 @@ def scores(O,ws):
 	minv = 1e10
 
 	for (u,v) in pws:
-		n = score(O,u,v)
+		n = toScore(O,u,v)
 		if n and abs(n) < minv: minv = abs(n)
 		d[u + "_" + v] = n
 
@@ -41,8 +41,8 @@ def scores(O,ws):
 #          where S1 = 1/P2 * s1 = 1/P2 * sum_{p in P_sw} cnt(p(ai,ak))
 #          where W2 = 1/P2 * s2 = 1/P2 * sum_{p in P_sw} cnt(p(ak,ai))
 
-# score :: DataReader -> String -> String -> Error String Float
-def score(O,ai,ak):
+# toScore :: DataReader -> String -> String -> Error String Float
+def toScore(O,ai,ak):
 	ws = [ai,ak]
 	d  = O.total()
 	P1 = d['weak-strong-normalization']
