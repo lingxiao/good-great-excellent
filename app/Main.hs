@@ -27,7 +27,7 @@ import Scripts
 ------------------------------------------------------------------------------}
 
 good = [ "good"
-       , "bad"
+       --, "bad"
        , "better"
        , "best"
        , "acceptable"
@@ -54,13 +54,11 @@ wet = [ "wet"
       , "waterlogged"]
 
 
-bad = [ "good"
-      , "bad"
+bad = [ "bad"
       , "evil"
       , "negative"
       , "mediocre"
       , "poor"
-      , "bad"
       , "worse"
       , "awful"
       , "worst"
@@ -83,29 +81,32 @@ special = ["characteristic"
 
 main :: IO ()
 main = do
-  con <- sysConfig
+  con        <- sysConfig
   let inpath = corpus con
   let weak   = weakStrong con
   let strong = strongWeak con
 
-  count_phrase weak   inpath "temp-weak"   `mapM` pset special
-  count_phrase strong inpath "temp-strong" `mapM` pset special
+  --count_phrase strong inpath "temp-strong" ("unique"    ,"characteristic")
+  --count_phrase strong inpath "temp-strong" ("watery"    ,"wet"           )
 
-  count_phrase weak   inpath "temp-weak"   `mapM` pset wet
-  count_phrase strong inpath "temp-strong" `mapM` pset wet
+  --count_phrase weak   inpath "temp-weak"   `mapM` pset bad
+  --count_phrase strong inpath "temp-strong" `mapM` pset bad
 
-  count_phrase weak   inpath "temp-weak"   `mapM` pset simple
-  count_phrase strong inpath "temp-strong" `mapM` pset simple
+  --count_phrase weak   inpath "temp-weak"   `mapM` pset simple
+  --count_phrase strong inpath "temp-strong" `mapM` pset simple
 
-  count_phrase weak   inpath "temp-weak"   `mapM` pset bad
-  count_phrase strong inpath "temp-strong" `mapM` pset bad
+  count_phrase weak   inpath "rtemp-weak"   `mapM` pset special
+  count_phrase strong inpath "rtemp-strong" `mapM` pset special
+
+  count_phrase weak   inpath "rtemp-weak"   `mapM` pset wet
+  count_phrase strong inpath "rtemp-strong" `mapM` pset wet
 
 
 
   return ()
 
-pset :: [a] -> [(a,a)]
-pset xs = [(u,v) | u <- xs, v <- xs ]
+pset :: Eq a => [a] -> [(a,a)]
+pset xs = [(u,v) | u <- xs, v <- xs, u == v]
 
 -- * query for word frequence of every word in here
 main_count_words :: IO ()

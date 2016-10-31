@@ -193,10 +193,17 @@ def countStrong(con,patterns,aij):
 #       Note if string malformed, we throw error
 # parseTotal :: String -> [String] -> Error String Float
 def parseTotal(pattern,xxs):
-    k  = xxs.index(pattern)
-    xs = xxs[k+2]
-    if xs and "total: " in xs:
-        ys = xs.replace("total: ", "")
+    
+    k   = xxs.index(pattern)
+    # Note: due to change in format, 
+    # searching through multiple lines is now necessary
+    xs1 = xxs[k+1]
+    xs2 = xxs[k+2]
+    if xs1 and "total: " in xs1:
+        ys = xs1.replace("total: ", "")
+        return float(ys)
+    elif xs2 and "total: " in xs2:
+        ys = xs2.replace("total: ", "")
         return float(ys)
     else:
         raise NameError("`total` failed: string malformed")

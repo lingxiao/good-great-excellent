@@ -18,7 +18,7 @@ from numpy import matrix
 
 pattern_dir = "/Users/lingxiao/Documents/research/code/good-great-excellent/inputs/"
 word_dir    = "/Users/lingxiao/Documents/research/code/good-great-excellent/out/words"
-total_dir   = "/Users/lingxiao/Documents/research/code/good-great-excellent/out/total-freq.txt"
+total_dir   = "/Users/lingxiao/Documents/research/code/good-great-excellent/out/normalization/total-freq.txt"
 strong_dir  = "/Users/lingxiao/Documents/research/code/good-great-excellent/out/strong-weak-words"
 weak_dir    = "/Users/lingxiao/Documents/research/code/good-great-excellent/out/weak-strong-words"
 
@@ -51,7 +51,6 @@ wet  = [ "wet"     \
 bad  = [ "bad"      \
        , "mediocre" \
        , "poor"     \
-       , "bad"      \
        , "worse"    \
        , "awful"    \
        , "worst"    \
@@ -78,22 +77,26 @@ reader = DataReader(pattern_dir \
 	               ,weak_dir    \
 	               ,strong_dir  )
 
-good_scores   = scores(reader,good      )
-# wet_scores    = scores(reader,wet     )
-# bad_scores    = scores(reader,bad     )
-# simple_scores = scores(reader,simple  )
+good_scores   = scores(reader,good    )
+bad_scores    = scores(reader,bad     )
+simple_scores = scores(reader,simple  )
+wet_scores    = scores(reader,wet     )
 # char_scores   = scores(reader,special )
 
 ############################################################
 # rank
 ############################################################
 
-good_rank    = PaperMilp(good_scores  )
+good_milp    = PaperMilp(good_scores  )
+bad_milp     = PaperMilp(bad_scores   )
+simple_milp  = PaperMilp(simple_scores)
 # wet_rank     = PaperMilp(wet_scores   )
-# bad_rank     = PaperMilp(bad_scores   )
-# simple_rank  = PaperMilp(simple_scores)
 # char_rank    = PaperMilp(char_scores  )
 
+
+good_milp.solve().prettyPrint(good)
+bad_milp.solve().prettyPrint(bad)
+simple_milp.solve().prettyPrint(simple)
 
 
 

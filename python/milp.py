@@ -20,15 +20,19 @@ class PaperMilp(object):
     self.Scores = scores
     self.Raw    = paperMilp(scores)
 
-  def scores(self):
+  def score(self):
     return self.Scores
 
   def solve(self):
     self.Raw.solve()
     return self
 
-  def rank(self,words):
-    return rankAll(self.Raw,words)
+  def prettyPrint(self,words):
+    print ("ranking words: ")
+    rs = rankAll(self.Raw,words)
+    print rs
+    print "=====================\n"
+    return rs
 
   def show(self):
     prettyPrint(self.Raw)
