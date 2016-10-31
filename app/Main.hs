@@ -88,17 +88,19 @@ main = do
   let weak   = weakStrong con
   let strong = strongWeak con
 
-  count_phrase weak   inpath "temp" `mapM` pset special
-  count_phrase strong inpath "temp" `mapM` pset special
+  count_phrase weak   inpath "temp-weak"   `mapM` pset special
+  count_phrase strong inpath "temp-strong" `mapM` pset special
 
-  count_phrase weak   inpath "temp" `mapM` pset wet
-  count_phrase strong inpath "temp" `mapM` pset wet
+  count_phrase weak   inpath "temp-weak"   `mapM` pset wet
+  count_phrase strong inpath "temp-strong" `mapM` pset wet
 
-  count_phrase weak   inpath "temp" `mapM` pset bad
-  count_phrase strong inpath "temp" `mapM` pset bad
+  count_phrase weak   inpath "temp-weak"   `mapM` pset simple
+  count_phrase strong inpath "temp-strong" `mapM` pset simple
 
-  count_phrase weak   inpath "temp" `mapM` pset simple
-  count_phrase strong inpath "temp" `mapM` pset simple
+  count_phrase weak   inpath "temp-weak"   `mapM` pset bad
+  count_phrase strong inpath "temp-strong" `mapM` pset bad
+
+
 
   return ()
 

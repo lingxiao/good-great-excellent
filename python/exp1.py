@@ -78,29 +78,22 @@ reader = DataReader(pattern_dir \
 	               ,weak_dir    \
 	               ,strong_dir  )
 
-
-good_scores   = scores(reader,good          )
-# wet_scores    = scores(reader,wet           )
-# bad_scores    = scores(reader,bad           )
-# simple_scores = scores(reader,simple        )
-char_scores   = scores(reader,characteristic)
+good_scores   = scores(reader,good      )
+# wet_scores    = scores(reader,wet     )
+# bad_scores    = scores(reader,bad     )
+# simple_scores = scores(reader,simple  )
+# char_scores   = scores(reader,special )
 
 ############################################################
 # rank
 ############################################################
 
-good_rank = PaperMilp(good_scores)
+good_rank    = PaperMilp(good_scores  )
+# wet_rank     = PaperMilp(wet_scores   )
+# bad_rank     = PaperMilp(bad_scores   )
+# simple_rank  = PaperMilp(simple_scores)
+# char_rank    = PaperMilp(char_scores  )
 
-
-# good_bad_count, good_bad_weak, good_bad_strong :: Dict String Float
-# good_bad_count  = reader.count (good_bad)
-# good_bad_strong = reader.strong(good_bad)
-# good_bad_weak   = reader.weak  (good_bad)
-
-# good_bad_scores = score.scores(reader,good_bad)
-
-# paper = PaperMilp(good_bad_scores)
-# paper.solve()
 
 
 
