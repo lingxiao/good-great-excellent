@@ -14,6 +14,7 @@ module Scripts (
 
     count_phrase
   , count_words
+
   , main_prep_data
   , main_normalize
   , main_normalize_words
@@ -23,7 +24,6 @@ module Scripts (
 
   , pattern_freq
   , total_freq
-
 
 
   ) where
@@ -49,7 +49,7 @@ import Lib
 ------------------------------------------------------------------------------}
 
 count_phrase :: [PatternExpr] 
-           -> FilePath 
+           -> DirectoryPath 
            -> String
            -> (String,String) 
            -> IO (Integer,[Output])
