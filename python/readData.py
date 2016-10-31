@@ -8,8 +8,6 @@
 
 import os
 
-path = "/Users/lingxiao/Documents/research/code/good-great-excellent/out/total-freq.txt"
-
 ############################################################
 # Class 
 ############################################################

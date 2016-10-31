@@ -33,6 +33,20 @@ good = [ "good"           \
        , "solid"          \
        , "superb"]
 
+wet  = [ "wet"     \
+       , "humid"   \
+       , "tacky"   \
+       , "moist"   \
+       , "damp"    \
+       , "steamy"  \
+       , "wet"     \
+       , "drippy"  \
+       , "watery"  \
+       , "boggy"   \
+       , "soggy"   \
+       , "rainy"   \
+       , "waterlogged"]
+
 
 bad  = [ "bad"      \
        , "mediocre" \
@@ -46,6 +60,13 @@ simple = [ "simple"   \
          , "naive"    \
          , "childlike"]
 
+special = ["characteristic" \
+          , "special"       \
+          , "peculiar"      \
+          , "specific"      \
+          , "particular"    \
+          , "unique"        ]   
+
 ############################################################
 # reader and scores
 ############################################################
@@ -56,23 +77,17 @@ reader = DataReader(pattern_dir \
 	               ,weak_dir    \
 	               ,strong_dir  )
 
-good_scores   = scores(reader,good    )
-bad_scores    = scores(reader,bad     )
-simple_scores = scores(reader,simple  )
 
+wet_scores    = scores(reader,wet     )
+# char_scores   = scores(reader,special )
 
 ############################################################
 # rank
 ############################################################
 
-good_milp    = PaperMilp(good_scores  )
-bad_milp     = PaperMilp(bad_scores   )
-simple_milp  = PaperMilp(simple_scores)
 
-
-good_milp.solve().prettyPrint(good)
-bad_milp.solve().prettyPrint(bad)
-simple_milp.solve().prettyPrint(simple)
+# wet_rank     = PaperMilp(wet_scores   )
+# char_rank    = PaperMilp(char_scores  )
 
 
 
