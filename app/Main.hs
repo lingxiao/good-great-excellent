@@ -23,15 +23,29 @@ import Lib
 import Scripts
 
 {-----------------------------------------------------------------------------
-  Main
+  words
 ------------------------------------------------------------------------------}
 
-first = ["first", "second", "third", "fourth", "fifth", "sixth", "seventh", "eighth"]
-known = ["known","famous","legendary"]
-dim   = ["dim","gloomy","dark","black"]
-close = ["close","near","intimate"]
-near  = ["nearby", "near","close","adjacent"]
-suffi = ["sufficient","good", "wide","full"]
+--suffi = ["sufficient","good", "wide","full"]
+--near  = ["nearby", "near","close","adjacent"]
+--dim   = ["dim","gloomy","dark","black"]
+--known = ["known","famous","legendary"]
+--first = ["first", "second", "third", "fourth", "fifth", "sixth", "seventh", "eighth"]
+--close = ["close","near","intimate"]
+
+
+real        = ["real","solemn","serious","grave"]
+interesting = ["interesting","intriguing","amusing", "entertaining","fascinating", "exciting"]
+far         = ["far","further", "farther","removed"]
+acceptable  = ["acceptable", "okay", "alright","right"]
+cracked     = ["cracked","broken","crushed"]
+full        = ["full","stuffed","overloaded","overflowing"]
+flavorful   = ["flavorful","zesty","hot", "spicy"]
+unstable    = ["unstable","crazy","insane"]
+good        = ["good","real","authentic"]
+clean       = ["clean","spotless", "immaculate"]
+possible    = ["possible","realistic","feasible","practical"]
+sick        = ["sick", "ill","impaired","disabled"]
 
 {-----------------------------------------------------------------------------
   Main
@@ -39,12 +53,21 @@ suffi = ["sufficient","good", "wide","full"]
 
 main :: IO ()
 main = do
-  collect suffi
-  collect near
-  collect dim
-  collect known
-  collect first
-  collect close
+
+  print "start collecting statistics\n"
+
+  collect real
+  collect interesting
+  collect far
+  collect acceptable
+  collect cracked
+  collect full
+  collect flavorful
+  collect unstable
+  collect good
+  collect clean
+  collect possible
+  collect sick
 
 {-----------------------------------------------------------------------------
   routine
@@ -57,9 +80,13 @@ collect wrds = do
   let weak   = weakStrong con
   let strong = strongWeak con
 
-  main_count_words wrds
   count_phrase strong inpath "strong" `mapM` pset wrds
   count_phrase weak   inpath "weak"   `mapM` pset wrds
+  main_count_words wrds
+
+  print $ "collected statistics over words : "
+  mapM print wrds
+
   return ()
 
 

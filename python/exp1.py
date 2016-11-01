@@ -26,11 +26,11 @@ weak_dir    = "/Users/lingxiao/Documents/research/code/good-great-excellent/out/
 # word set
 ############################################################
 
-good = [ "good"           \
-       , "acceptable"     \
-       , "satisfactory"   \
-       , "great"          \
-       , "solid"          \
+good = [ "good"          \
+       , "acceptable"    \
+       , "satisfactory"  \
+       , "great"         \
+       , "solid"         \
        , "superb"]
 
 
@@ -40,7 +40,7 @@ bad  = [ "bad"      \
        , "worse"    \
        , "awful"    \
        , "worst"    \
-       , "terrible"]
+       , "terrible" ]
 
 simple = [ "simple"   \
          , "naive"    \
