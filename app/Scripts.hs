@@ -28,7 +28,6 @@ module Scripts (
 
   ) where
 
-
 import System.IO
 import System.Directory
 import System.FilePath.Posix
@@ -44,49 +43,51 @@ import Src
 import Lib 
 
 
+
 {-----------------------------------------------------------------------------
   Count and save for occurences of specific patterns
 ------------------------------------------------------------------------------}
 
-count_phrase :: [PatternExpr] 
+count_phrase :: 
+              [PatternExpr] 
            -> DirectoryPath 
-           -> String
+           -> DirectoryPath
            -> (String,String) 
            -> IO (Integer,[Output])
-count_phrase ps fin dirname (u,v) = do
-  root     <- makeDirUnder "good-great-excellent" dirname
-  let pats = (\p -> compile p (S u) (S v)) <$> ps
-  os       <- mapM (\p -> query p fin) pats
+count_phrase patterns dir_in dir_out (u,v) = do
+  createDirectoryIfMissing False dir_out
+  let pats = (\p -> compile p (S u) (S v)) <$> patterns
+  os       <- mapM (\p -> query p dir_in) pats
   let tot  = foldr (+) 0 $ fst <$> os
-  let rs   = zip ps os
-  let path = root ++ u ++ "-" ++ v ++ ".txt"
+  let rs   = zip patterns os
+  let path = dir_out ++ u ++ "-" ++ v ++ ".txt"
   save_queries path tot rs
   return (tot,os)
-
 
 
 count_words :: FilePath 
            -> FilePath
            -> [PatternExpr] 
            -> IO ()
-count_words inpath outdir ws = do 
-  count_word inpath outdir `mapM` ws
+count_words path_in dir_out ws = do 
+  count_word path_in dir_out `mapM` ws
   return ()
   
 count_word :: FilePath 
            -> FilePath
            -> PatternExpr
            -> IO Output
-count_word inpath outdir word = do
+count_word path_in dir_out word = do
   
-  root     <- makeDirUnder "good-great-excellent" outdir
-  (tot,os) <- query_at (compile' word) inpath
+  createDirectoryIfMissing False dir_out
+
+  (tot,os) <- query_at (compile' word) path_in
 
   let ps      = compile' word
-  let outpath = root ++ word ++ ".txt"
-
+  let outpath = dir_out ++ word ++ ".txt"
   save_queries outpath tot [(word,(tot,os))]
   return (tot,os)
+
 
 
 

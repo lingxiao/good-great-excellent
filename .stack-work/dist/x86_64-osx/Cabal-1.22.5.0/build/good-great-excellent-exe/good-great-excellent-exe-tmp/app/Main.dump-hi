@@ -1,34 +1,49 @@
 
 ==================== FINAL INTERFACE ====================
-2016-10-31 16:42:22.836345 UTC
+2016-11-03 17:33:50.662048 UTC
 
 interface main@main:Main 7103
-  interface hash: 941d4a9fb85287053a905189c4973183
-  ABI hash: ad8fa6ec76280f9215c0409d34224330
-  export-list hash: f0a994587f60ce74c105a26e505c6ad0
+  interface hash: 0b955c5fa7a11c3332f879d425df656d
+  ABI hash: 7b8d493d01522e3c4569504a3d1f1000
+  export-list hash: 4df93d0b9731ed19a914527192578039
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: f8c694548b2debe1f8faf3f9ee47371f
   sig of: Nothing
   used TH splices: False
   where
 exports:
-  Main.close
+  Main.attractive
+  Main.bright
+  Main.closed
   Main.collect
   Main.config_l
   Main.config_r
   Main.corpus_l
   Main.corpus_r
-  Main.dim
-  Main.first
-  Main.known
+  Main.creepy
+  Main.dual
+  Main.harmful
+  Main.high
+  Main.humbled
+  Main.impractical
+  Main.indecent
   Main.main
   Main.main_count_words
-  Main.near
+  Main.mature
+  Main.necessary
+  Main.neglected
+  Main.old
+  Main.overweight
   Main.patterns_l
   Main.patterns_r
+  Main.personal
   Main.pset
-  Main.suffi
+  Main.sexy
+  Main.small
+  Main.some
   Main.sysConfig
+  Main.unexpected
+  Main.violent
 module dependencies: Core Query Score Scripts ScrubData Src
 package dependencies: StateVar-1.1.0.4@State_IOvB80WkYNkEizdt0JVpzy
                       adjunctions-4.3@adjun_HUA1si0oygHIohE6wWvtj8
@@ -199,44 +214,134 @@ import  -/  text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text b53ae191632883b10
                           go1 w }
                  } in
                  go w) -}
-e58ab1f0362240f84a625fede53b409f
-  close :: [[GHC.Types.Char]]
+c2cf9f5669c67dca60e9533561d14e45
+  attractive :: [[GHC.Types.Char]]
   {- Strictness: m2,
      Unfolding: (GHC.Types.:
                    @ [GHC.Types.Char]
-                   Main.close5
-                   Main.close1) -}
-842ae5ae12e422a89a1f4c53b4cb72b5
-  close1 :: [[GHC.Types.Char]]
+                   Main.attractive7
+                   Main.attractive1) -}
+9b39ebbd03166483268a0bb594e20f72
+  attractive1 :: [[GHC.Types.Char]]
   {- Strictness: m2,
      Unfolding: (GHC.Types.:
                    @ [GHC.Types.Char]
-                   Main.close4
-                   Main.close2) -}
-661e3cc6c476714f8a9ae8b455829967
-  close2 :: [[GHC.Types.Char]]
+                   Main.attractive6
+                   Main.attractive2) -}
+8a8c06e6570216e6d883d6c8def9aa2a
+  attractive2 :: [[GHC.Types.Char]]
   {- Strictness: m2,
      Unfolding: (GHC.Types.:
                    @ [GHC.Types.Char]
-                   Main.close3
+                   Main.attractive5
+                   Main.attractive3) -}
+77acf0984f7a966cb6ecaf27378e9789
+  attractive3 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Main.attractive4
                    (GHC.Types.[] @ [GHC.Types.Char])) -}
-5a7d9f3569a81267b6209e6ffc2bf89b
-  close3 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString# "intimate"#) -}
-d83fd6ef6ce563221cbaa26ec01a5ff8
-  close4 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString# "near"#) -}
-e90e744efab1fce72646fa4f27f7edd5
-  close5 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString# "close"#) -}
-7ff9ed0956b0531214e9b3415f3914ff
+2327212bf3574e2eb1f918adf39f2b77
+  attractive4 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "seductive"#) -}
+7f7f74a9ebe45174a2deed921412b0cb
+  attractive5 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "mesmerizing"#) -}
+576be29b744048256ba50326fc55f2b7
+  attractive6 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "beautiful"#) -}
+5f6230ff0d00167eab9f9a743ad37d98
+  attractive7 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "attractive"#) -}
+8394002498830e0da1e329776d493c53
+  bright :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Main.bright9
+                   Main.bright1) -}
+397dcae7b590f1b0cc970b7c2755e13a
+  bright1 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Main.bright8
+                   Main.bright2) -}
+22c59a1414339c55adf463f1869fb118
+  bright2 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Main.bright7
+                   Main.bright3) -}
+5259cae676bce936e1cb116fd95763e4
+  bright3 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Main.bright6
+                   Main.bright4) -}
+34fc24827bc244ae23bba5bbc7e3f2b3
+  bright4 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Main.bright5
+                   (GHC.Types.[] @ [GHC.Types.Char])) -}
+3f6b658bddc347345deacea2af29ef25
+  bright5 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "brilliant"#) -}
+0978dc9070aceb5ae651e6d0009713f8
+  bright6 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "clever"#) -}
+60b776946c8405a66f6c67232eca930d
+  bright7 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "smart"#) -}
+4329d13ba14ee275f3c057b09bc32def
+  bright8 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "intelligent"#) -}
+dfe778d9374c44f4e00286c071a8d9d9
+  bright9 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "bright"#) -}
+7fedfb315c8d4333686b7b64c5e8fddb
+  closed :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Main.closed5
+                   Main.closed1) -}
+575819fde897779b08c1346f802593a0
+  closed1 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Main.closed4
+                   Main.closed2) -}
+c527d25aff4a3ed9f0fa37b3d248bfca
+  closed2 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Main.closed3
+                   (GHC.Types.[] @ [GHC.Types.Char])) -}
+75dd690741458762187675881ca19344
+  closed3 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "sealed"#) -}
+d4c6285e31217b423c5ce23ba562f276
+  closed4 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "shut"#) -}
+6a4fcff233ac59f95573b228932dbe19
+  closed5 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "closed"#) -}
+075bf0856c12d581c76c0289974447d8
   collect :: [GHC.Base.String] -> GHC.Types.IO ()
   {- Arity: 2, Strictness: <L,U><L,U>,
      Unfolding: InlineRule (0, True, True)
                 Main.collect1
                   `cast`
                 (<[GHC.Base.String]>_R ->_R Sym (GHC.Types.NTCo:IO[0] <()>_R)) -}
-40ee84009a0319ecd2c63b40fb64a87d
+a4e220b7ca15674e928d397a18b82edc
   collect1 ::
     [GHC.Base.String]
     -> GHC.Prim.State# GHC.Prim.RealWorld
@@ -246,20 +351,52 @@ e90e744efab1fce72646fa4f27f7edd5
                    eta :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
                  case System.Posix.Directory.getWorkingDirectory1
                         eta of ds { (#,#) ipv ipv1 ->
-                 case Main.collect7
+                 case Main.collect10
                         (GHC.List.$wunsafeTake @ GHC.Types.Char 6 ipv1)
                         ipv of ds1 { (#,#) ipv2 ipv3 ->
-                 case Main.collect4 wrds ipv2 of ds2 { (#,#) ipv4 ipv5 ->
                  let {
                    inpath :: Core.DirectoryPath
-                   = case ipv3 of wild { Core.Con ds3 ds4 ds5 -> ds3 }
+                   = case ipv3 of wild { Core.Con ds2 ds3 ds4 -> ds2 }
                  } in
                  let {
                    a1 :: [Core.PatternExpr]
-                   = case ipv3 of wild { Core.Con ds3 ds4 ds5 -> ds5 }
+                   = case ipv3 of wild { Core.Con ds2 ds3 ds4 -> ds4 }
                  } in
                  letrec {
                    a2 :: [(GHC.Base.String, GHC.Base.String)]
+                         -> GHC.Prim.State# GHC.Prim.RealWorld
+                         -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+                               [(GHC.Integer.Type.Integer, [Core.Output])] #)
+                     {- Arity: 2, Strictness: <S,1*U><L,U> -}
+                   = \ ds2 :: [(GHC.Base.String, GHC.Base.String)]
+                       eta1 :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
+                     case ds2 of wild {
+                       []
+                       -> (# eta1,
+                             GHC.Types.[] @ (GHC.Integer.Type.Integer, [Core.Output]) #)
+                       : y ys
+                       -> case y of ww { (,) ww1 ww2 ->
+                          case Scripts.$wa
+                                 a1
+                                 inpath
+                                 Main.collect17
+                                 ww1
+                                 ww2
+                                 eta1 of ds3 { (#,#) ipv4 ipv5 ->
+                          case a2 ys ipv4 of ds4 { (#,#) ipv6 ipv7 ->
+                          (# ipv6,
+                             GHC.Types.:
+                               @ (GHC.Integer.Type.Integer, [Core.Output])
+                               ipv5
+                               ipv7 #) } } } }
+                 } in
+                 case a2 (Main.collect_$spset wrds) ipv2 of ds2 { (#,#) ipv4 ipv5 ->
+                 let {
+                   a3 :: [Core.PatternExpr]
+                   = case ipv3 of wild { Core.Con ds3 ds4 ds5 -> ds4 }
+                 } in
+                 letrec {
+                   a4 :: [(GHC.Base.String, GHC.Base.String)]
                          -> GHC.Prim.State# GHC.Prim.RealWorld
                          -> (# GHC.Prim.State# GHC.Prim.RealWorld,
                                [(GHC.Integer.Type.Integer, [Core.Output])] #)
@@ -273,56 +410,51 @@ e90e744efab1fce72646fa4f27f7edd5
                        : y ys
                        -> case y of ww { (,) ww1 ww2 ->
                           case Scripts.$wa
-                                 a1
+                                 a3
                                  inpath
-                                 Main.collect3
+                                 Main.collect16
                                  ww1
                                  ww2
                                  eta1 of ds4 { (#,#) ipv6 ipv7 ->
-                          case a2 ys ipv6 of ds5 { (#,#) ipv8 ipv9 ->
+                          case a4 ys ipv6 of ds5 { (#,#) ipv8 ipv9 ->
                           (# ipv8,
                              GHC.Types.:
                                @ (GHC.Integer.Type.Integer, [Core.Output])
                                ipv7
                                ipv9 #) } } } }
                  } in
-                 case a2 (Main.collect_$spset wrds) ipv4 of ds3 { (#,#) ipv6 ipv7 ->
-                 let {
-                   a3 :: [Core.PatternExpr]
-                   = case ipv3 of wild { Core.Con ds4 ds5 ds6 -> ds5 }
-                 } in
-                 letrec {
-                   a4 :: [(GHC.Base.String, GHC.Base.String)]
-                         -> GHC.Prim.State# GHC.Prim.RealWorld
-                         -> (# GHC.Prim.State# GHC.Prim.RealWorld,
-                               [(GHC.Integer.Type.Integer, [Core.Output])] #)
-                     {- Arity: 2, Strictness: <S,1*U><L,U> -}
-                   = \ ds4 :: [(GHC.Base.String, GHC.Base.String)]
-                       eta1 :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
-                     case ds4 of wild {
-                       []
-                       -> (# eta1,
-                             GHC.Types.[] @ (GHC.Integer.Type.Integer, [Core.Output]) #)
-                       : y ys
-                       -> case y of ww { (,) ww1 ww2 ->
-                          case Scripts.$wa
-                                 a3
-                                 inpath
-                                 Main.collect2
-                                 ww1
-                                 ww2
-                                 eta1 of ds5 { (#,#) ipv8 ipv9 ->
-                          case a4 ys ipv8 of ds6 { (#,#) ipv10 ipv11 ->
-                          (# ipv10,
-                             GHC.Types.:
-                               @ (GHC.Integer.Type.Integer, [Core.Output])
-                               ipv9
-                               ipv11 #) } } } }
-                 } in
-                 case a4 (Main.collect_$spset wrds) ipv6 of ds4 { (#,#) ipv8 ipv9 ->
-                 (# ipv8, GHC.Tuple.() #) } } } } }) -}
-253772902f3ceb9e3f9aac929c193101
+                 case a4 (Main.collect_$spset wrds) ipv4 of ds3 { (#,#) ipv6 ipv7 ->
+                 case Main.collect7 wrds ipv6 of ds4 { (#,#) ipv8 ipv9 ->
+                 case GHC.IO.Handle.Text.hPutStr2
+                        GHC.IO.Handle.FD.stdout
+                        Main.collect3
+                        GHC.Types.True
+                        ipv8 of ds5 { (#,#) ipv10 ipv11 ->
+                 case Main.collect2 wrds ipv10 of ds6 { (#,#) ipv12 ipv13 ->
+                 (# ipv12, GHC.Tuple.() #) } } } } } } }) -}
+89f123f569326c102228c978196562f8
   collect10 ::
+    [GHC.Types.Char]
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, Core.Config #)
+  {- Arity: 2, Strictness: <S,1*U><L,U>,
+     Unfolding: (\ d :: [GHC.Types.Char]
+                   eta :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
+                 case GHC.Base.eqString d Main.collect15 of wild {
+                   GHC.Types.False
+                   -> case Core.config1
+                             Main.corpus_r
+                             Main.patterns_r
+                             eta of ds1 { (#,#) ipv ipv1 ->
+                      Main.collect13 ipv1 ipv }
+                   GHC.Types.True
+                   -> case Core.config1
+                             Main.corpus_l
+                             Main.patterns_l
+                             eta of ds1 { (#,#) ipv ipv1 ->
+                      Main.collect11 ipv1 ipv } }) -}
+5ac755426331d18867138e9bc50d08b1
+  collect11 ::
     GHC.Base.Maybe Core.Config
     -> GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, Core.Config #)
@@ -331,23 +463,67 @@ e90e744efab1fce72646fa4f27f7edd5
                 (\ ds :: GHC.Base.Maybe Core.Config
                    eta :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
                  case ds of wild {
-                   GHC.Base.Nothing -> GHC.IO.failIO1 @ Core.Config Main.collect11 eta
+                   GHC.Base.Nothing -> GHC.IO.failIO1 @ Core.Config Main.collect12 eta
                    GHC.Base.Just con -> (# eta, con #) }) -}
-497e8a9478052910a4466fab2434f082
-  collect11 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString#
-                   "Pattern match failure in do expression at app/Main.hs:95:5-12"#) -}
-3761a8c269d6247514bfbccd9699a81d
+369314659990b4fc0293a2ca6d2f22b2
   collect12 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "Pattern match failure in do expression at app/Main.hs:181:5-12"#) -}
+9b057ed69c9040b8a9ecb515f2de9c82
+  collect13 ::
+    GHC.Base.Maybe Core.Config
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, Core.Config #)
+  {- Arity: 2, Strictness: <S,1*U><L,U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ ds :: GHC.Base.Maybe Core.Config
+                   eta :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
+                 case ds of wild {
+                   GHC.Base.Nothing -> GHC.IO.failIO1 @ Core.Config Main.collect14 eta
+                   GHC.Base.Just con -> (# eta, con #) }) -}
+158f638d9b522503f60969cb3271b8a1
+  collect14 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "Pattern match failure in do expression at app/Main.hs:186:5-12"#) -}
+b076416240cf98b2f9908fb377de9693
+  collect15 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "/Users"#) -}
-0aec6c824f69cb9ae02b441256359d67
-  collect2 :: [GHC.Types.Char]
+a6c75b81f91c3b107a8d1d34028c19de
+  collect16 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "weak"#) -}
-eb08ceb7c439cab2e517a1c6e2e15568
-  collect3 :: [GHC.Types.Char]
+5d061777f5385983eca9dfd057b12b60
+  collect17 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "strong"#) -}
-1d3497b9249bd5e3478d687b7960fa52
-  collect4 ::
+a0a00397014c971c9162626f12717113
+  collect2 ::
+    [GHC.Base.String]
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, [()] #)
+  {- Arity: 2, Strictness: <S,1*U><L,U> -}
+94fe48af9206c51d65c4707eda66f81f
+  collect3 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.Types.:
+                   @ GHC.Types.Char
+                   GHC.Show.shows6
+                   Main.collect4) -}
+fcdf933a70d82269d63336ea14eba9ce
+  collect4 :: GHC.Base.String
+  {- Unfolding: (GHC.Show.showLitString
+                   Main.collect6
+                   Main.collect5) -}
+dd3e1f5657e3f887d9d5f4978e9ac017
+  collect5 :: [GHC.Types.Char]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ GHC.Types.Char
+                   GHC.Show.shows6
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+95ef160e11902b7adac09e317495072f
+  collect6 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "collected statistics over words : "#) -}
+faf0e90b6a53ddb87a519505e1844ca2
+  collect7 ::
     [GHC.Base.String]
     -> GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
@@ -356,59 +532,22 @@ eb08ceb7c439cab2e517a1c6e2e15568
                    eta :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
                  case System.Posix.Directory.getWorkingDirectory1
                         eta of ds { (#,#) ipv ipv1 ->
-                 case Main.collect7
+                 case Main.collect10
                         (GHC.List.$wunsafeTake @ GHC.Types.Char 6 ipv1)
                         ipv of ds1 { (#,#) ipv2 ipv3 ->
                  case Scripts.count_words1
                         (case ipv3 of wild { Core.Con ds2 ds3 ds4 ->
-                         GHC.Base.++ @ GHC.Types.Char ds2 Main.collect6 })
-                        Main.collect5
+                         GHC.Base.++ @ GHC.Types.Char ds2 Main.collect9 })
+                        Main.collect8
                         xs
                         ipv2 of ds2 { (#,#) ipv4 ipv5 ->
                  (# ipv4, GHC.Tuple.() #) } } }) -}
-f61d107091c56de0f403833758f26104
-  collect5 :: [GHC.Types.Char]
+277b8efc75665a741c0e67921d506c74
+  collect8 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "words"#) -}
-7b7fcd0fe64ae711cfa8ea04a0652c38
-  collect6 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString# "vocab.txt"#) -}
-2e3ed23b0307f74273c5d2ca48e14fd5
-  collect7 ::
-    [GHC.Types.Char]
-    -> GHC.Prim.State# GHC.Prim.RealWorld
-    -> (# GHC.Prim.State# GHC.Prim.RealWorld, Core.Config #)
-  {- Arity: 2, Strictness: <S,1*U><L,U>,
-     Unfolding: (\ d :: [GHC.Types.Char]
-                   eta :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
-                 case GHC.Base.eqString d Main.collect12 of wild {
-                   GHC.Types.False
-                   -> case Core.config1
-                             Main.corpus_r
-                             Main.patterns_r
-                             eta of ds1 { (#,#) ipv ipv1 ->
-                      Main.collect10 ipv1 ipv }
-                   GHC.Types.True
-                   -> case Core.config1
-                             Main.corpus_l
-                             Main.patterns_l
-                             eta of ds1 { (#,#) ipv ipv1 ->
-                      Main.collect8 ipv1 ipv } }) -}
-2b7f1eeb97d06332e258d478195c969f
-  collect8 ::
-    GHC.Base.Maybe Core.Config
-    -> GHC.Prim.State# GHC.Prim.RealWorld
-    -> (# GHC.Prim.State# GHC.Prim.RealWorld, Core.Config #)
-  {- Arity: 2, Strictness: <S,1*U><L,U>,
-     Unfolding: InlineRule (2, True, False)
-                (\ ds :: GHC.Base.Maybe Core.Config
-                   eta :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
-                 case ds of wild {
-                   GHC.Base.Nothing -> GHC.IO.failIO1 @ Core.Config Main.collect9 eta
-                   GHC.Base.Just con -> (# eta, con #) }) -}
-3d4b94d95d6d8f3543303f43092e0f76
+e61e0609a297068dcc930f742409123d
   collect9 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString#
-                   "Pattern match failure in do expression at app/Main.hs:90:5-12"#) -}
+  {- Unfolding: (GHC.CString.unpackCString# "vocab.txt"#) -}
 99dcaf80550d8acda518d5f11f39471c
   collect_$spset ::
     [GHC.Base.String] -> [(GHC.Base.String, GHC.Base.String)]
@@ -439,14 +578,14 @@ f61d107091c56de0f403833758f26104
                           go1 xs }
                  } in
                  go xs) -}
-d1bef858e6b4243cf4c8f7b4070ddb14
+55d62df79fe7a30952f38e77c2c49c9e
   config_l :: GHC.Types.IO Core.Config
   {- Arity: 1, Strictness: <L,U>,
      Unfolding: InlineRule (0, True, True)
                 Main.config_l1
                   `cast`
                 (Sym (GHC.Types.NTCo:IO[0] <Core.Config>_R)) -}
-fb680735a28ca7d47865b615d2d61459
+ae0cf3e19e3901e6d05289c8c5fff754
   config_l1 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, Core.Config #)
@@ -457,15 +596,15 @@ fb680735a28ca7d47865b615d2d61459
                         Main.corpus_l
                         Main.patterns_l
                         s of ds1 { (#,#) ipv ipv1 ->
-                 Main.collect8 ipv1 ipv }) -}
-d233929a41e720c2a3eecf6b93a4f22a
+                 Main.collect11 ipv1 ipv }) -}
+774d0bc6242f7a6474aeb928983250ab
   config_r :: GHC.Types.IO Core.Config
   {- Arity: 1, Strictness: <L,U>,
      Unfolding: InlineRule (0, True, True)
                 Main.config_r1
                   `cast`
                 (Sym (GHC.Types.NTCo:IO[0] <Core.Config>_R)) -}
-fb3e3e05bb7b230d1c8114c0da4398b3
+1a00b41173c090e3316d99b6ceef4f6d
   config_r1 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, Core.Config #)
@@ -476,7 +615,7 @@ fb3e3e05bb7b230d1c8114c0da4398b3
                         Main.corpus_r
                         Main.patterns_r
                         s of ds1 { (#,#) ipv ipv1 ->
-                 Main.collect10 ipv1 ipv }) -}
+                 Main.collect13 ipv1 ipv }) -}
 b070e8e1fafb2201d1dcbb1532abe25d
   corpus_l :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString#
@@ -485,213 +624,527 @@ d5242c98aa66dab1055f401dc042c638
   corpus_r :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString#
                    "/nlp/data/xiao/ngrams/corpus/"#) -}
-4a1b4ac4da85d3cf5de52dd97d04b7a1
-  dim :: [[GHC.Types.Char]]
-  {- Strictness: m2,
-     Unfolding: (GHC.Types.: @ [GHC.Types.Char] Main.dim7 Main.dim1) -}
-a5942bcddd2356b77f8d17a06424de15
-  dim1 :: [[GHC.Types.Char]]
-  {- Strictness: m2,
-     Unfolding: (GHC.Types.: @ [GHC.Types.Char] Main.dim6 Main.dim2) -}
-90bf2576adada40e501110c4164d1255
-  dim2 :: [[GHC.Types.Char]]
-  {- Strictness: m2,
-     Unfolding: (GHC.Types.: @ [GHC.Types.Char] Main.dim5 Main.dim3) -}
-25e51b019056e99d3acfa1c7367d7e92
-  dim3 :: [[GHC.Types.Char]]
+402cc6f5a1b3a4cd05207411c65d8da9
+  creepy :: [[GHC.Types.Char]]
   {- Strictness: m2,
      Unfolding: (GHC.Types.:
                    @ [GHC.Types.Char]
-                   Main.dim4
+                   Main.creepy9
+                   Main.creepy1) -}
+6b9e02e2e1f2becd6d3fe2211b9a14f4
+  creepy1 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Main.creepy8
+                   Main.creepy2) -}
+454b367f87b026438956fc1cc9caaec2
+  creepy2 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Main.creepy7
+                   Main.creepy3) -}
+e2fb7074273035508400f3e5cefaf525
+  creepy3 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Main.creepy6
+                   Main.creepy4) -}
+99ffb9ef44e7c1ef3f92c32ef0092d75
+  creepy4 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Main.creepy5
                    (GHC.Types.[] @ [GHC.Types.Char])) -}
-64ed937c42635000c77f57d89b8e47e7
-  dim4 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString# "black"#) -}
-9e3c927f03a54982627e4316b546fa43
-  dim5 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString# "dark"#) -}
-ceb7e0f4b4784874984ec28d41d3b9c2
-  dim6 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString# "gloomy"#) -}
-269cb1a744724c64cbf69ec98da96784
-  dim7 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString# "dim"#) -}
-9148f49e857f7f4d8f5fcfc48cc678a5
-  first :: [[GHC.Types.Char]]
+46d2e01abbf198938d3214c1a00c811e
+  creepy5 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "sinister"#) -}
+92e9300ce36aa6549c7afa9f68ad5a6c
+  creepy6 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "terrifying"#) -}
+d9bb56b92b1811290e9e1469b22254a1
+  creepy7 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "frightening"#) -}
+680e941aa26800fa9513914f7601fecb
+  creepy8 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "scary"#) -}
+9d6d818d2b71994e32a33354068bc20f
+  creepy9 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "creepy"#) -}
+2c74d3c388e919d7965c9d568e7af987
+  dual :: [[GHC.Types.Char]]
   {- Strictness: m2,
      Unfolding: (GHC.Types.:
                    @ [GHC.Types.Char]
-                   Main.first15
-                   Main.first1) -}
-a2d9d5e4b25f5bcc932fe5bf33ac5127
-  first1 :: [[GHC.Types.Char]]
+                   Main.dual11
+                   Main.dual1) -}
+85f5ea087aa8db024a49eaba2007f8fa
+  dual1 :: [[GHC.Types.Char]]
   {- Strictness: m2,
      Unfolding: (GHC.Types.:
                    @ [GHC.Types.Char]
-                   Main.first14
-                   Main.first2) -}
-e785d35a6fdf6b46683c6e3e6ce9159f
-  first10 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString# "sixth"#) -}
-57ffa6b30bfe786c8ccaf0428b167cea
-  first11 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString# "fifth"#) -}
-a8fbea348a960e63732b5fc38f1e9aac
-  first12 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString# "fourth"#) -}
-a331f6e2db136a1ed0391f279962193d
-  first13 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString# "third"#) -}
-3b8287ba5742d07c2a4419c70722b00d
-  first14 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString# "second"#) -}
-b8fce03e679265090aad5ebb1a1df2dc
-  first15 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString# "first"#) -}
-05bf1bb189ff92434eec19971833f113
-  first2 :: [[GHC.Types.Char]]
+                   Main.dual10
+                   Main.dual2) -}
+c1396c7a1d587a262e65121986b7fd05
+  dual10 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "double"#) -}
+3a09a7516081a4a7d575af51ff4bdf5a
+  dual11 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "dual"#) -}
+9a0c66bcd684f81ab83d6d24d81509f6
+  dual2 :: [[GHC.Types.Char]]
   {- Strictness: m2,
      Unfolding: (GHC.Types.:
                    @ [GHC.Types.Char]
-                   Main.first13
-                   Main.first3) -}
-6e88b1c92c7ef87ea8d5d317669a071d
-  first3 :: [[GHC.Types.Char]]
+                   Main.dual9
+                   Main.dual3) -}
+4dd1b02abc9a3806066603da077cd573
+  dual3 :: [[GHC.Types.Char]]
   {- Strictness: m2,
      Unfolding: (GHC.Types.:
                    @ [GHC.Types.Char]
-                   Main.first12
-                   Main.first4) -}
-48cfb491afdc3129c0f7f6ac7918ed86
-  first4 :: [[GHC.Types.Char]]
+                   Main.dual8
+                   Main.dual4) -}
+5e04a682f800c815a08e299fa902a153
+  dual4 :: [[GHC.Types.Char]]
   {- Strictness: m2,
      Unfolding: (GHC.Types.:
                    @ [GHC.Types.Char]
-                   Main.first11
-                   Main.first5) -}
-cb018eb35e123aa8b8dc6fec37147afc
-  first5 :: [[GHC.Types.Char]]
+                   Main.dual7
+                   Main.dual5) -}
+f274754f33d2048bc230fcdd8a95598a
+  dual5 :: [[GHC.Types.Char]]
   {- Strictness: m2,
      Unfolding: (GHC.Types.:
                    @ [GHC.Types.Char]
-                   Main.first10
-                   Main.first6) -}
-56b393f34fc3ddf698266399d1feefa0
-  first6 :: [[GHC.Types.Char]]
-  {- Strictness: m2,
-     Unfolding: (GHC.Types.:
-                   @ [GHC.Types.Char]
-                   Main.first9
-                   Main.first7) -}
-244c196969b79d908962f89c7414ed12
-  first7 :: [[GHC.Types.Char]]
-  {- Strictness: m2,
-     Unfolding: (GHC.Types.:
-                   @ [GHC.Types.Char]
-                   Main.first8
+                   Main.dual6
                    (GHC.Types.[] @ [GHC.Types.Char])) -}
-4abe8297bd31d9960f8d9cd6cb48bffd
-  first8 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString# "eighth"#) -}
-13323cfbc2a5a13d966965e979b9068e
-  first9 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString# "seventh"#) -}
-2d3c49dfdfe3db21781ce390f04578ca
-  known :: [[GHC.Types.Char]]
+e8119a3055dec84d93f73e1ff2dc83b3
+  dual6 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "quadruple"#) -}
+35837f4f9e05a0250fb8aef0196255d6
+  dual7 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "treble"#) -}
+860fb943d812e640fb4ffdff2d2867ca
+  dual8 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "triple"#) -}
+6486962e354b5975986d4e2ccf1ad34b
+  dual9 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "doubled"#) -}
+635c3061e3a64f5548fb6b826aa16322
+  harmful :: [[GHC.Types.Char]]
   {- Strictness: m2,
      Unfolding: (GHC.Types.:
                    @ [GHC.Types.Char]
-                   Main.known5
-                   Main.known1) -}
-b3245e5869f12bb1f2bd7dc9f2facea3
-  known1 :: [[GHC.Types.Char]]
+                   Main.harmful5
+                   Main.harmful1) -}
+40ef7141c64e514bc014afac01bdc254
+  harmful1 :: [[GHC.Types.Char]]
   {- Strictness: m2,
      Unfolding: (GHC.Types.:
                    @ [GHC.Types.Char]
-                   Main.known4
-                   Main.known2) -}
-fbbad016a72cb2e4c52cd4ddbb24d6b9
-  known2 :: [[GHC.Types.Char]]
+                   Main.harmful4
+                   Main.harmful2) -}
+f2709436b06a3fdb876b79b0ea4e5412
+  harmful2 :: [[GHC.Types.Char]]
   {- Strictness: m2,
      Unfolding: (GHC.Types.:
                    @ [GHC.Types.Char]
-                   Main.known3
+                   Main.harmful3
                    (GHC.Types.[] @ [GHC.Types.Char])) -}
-e99f271cc7283920b3f80ac48604066b
-  known3 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString# "legendary"#) -}
-17304c493dc76840449aa4c7d29f332e
-  known4 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString# "famous"#) -}
-9904205406f7b6afcaff6c698fbeec12
-  known5 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString# "known"#) -}
-6b0903853b68a53f14c515f855841ebf
+c01e5e5b006edc8a435916c0bd68ff1a
+  harmful3 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "deadly"#) -}
+87c02574ec8c84f5ea532c5c19a69493
+  harmful4 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "toxic"#) -}
+81e9d2acd97e53ecff9eb615a9913f5b
+  harmful5 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "harmful"#) -}
+5bd47d5f963222d93e9e4a2070553f2f
+  high :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Main.high5
+                   Main.high1) -}
+a88502ae69e2f29b52a72251b163f908
+  high1 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Main.high4
+                   Main.high2) -}
+d0225e7547c394ff82dec52089ad8363
+  high2 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Main.high3
+                   (GHC.Types.[] @ [GHC.Types.Char])) -}
+b6f581a80b94a595d799a4748c8cfffe
+  high3 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "soaring"#) -}
+5e48db9919905a11145b5d843b171539
+  high4 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "higher"#) -}
+0e6cdd8b4a60841e42bd5b6eff362362
+  high5 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "high"#) -}
+dd1d7fafd731b9f6918304976a7a51f3
+  humbled :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Main.humbled5
+                   Main.humbled1) -}
+48d1eb0a86d3dadeae84e99ced47b39c
+  humbled1 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Main.humbled4
+                   Main.humbled2) -}
+382100a19fc10f975e15a0d9aa4c2ca5
+  humbled2 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Main.humbled3
+                   (GHC.Types.[] @ [GHC.Types.Char])) -}
+e4837fbc0cef7efc55c9d4495545f6a0
+  humbled3 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "crushed"#) -}
+34e2b20b7e8c817ce2b4962291782f6f
+  humbled4 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "humiliated"#) -}
+95e27db2d8f3d63963a5d2a2b4ebfb98
+  humbled5 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "humbled"#) -}
+45cf731d44d4adefca27fc13783554c0
+  impractical :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Main.impractical9
+                   Main.impractical1) -}
+556b2d14749dd0ea71d0645c330daf09
+  impractical1 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Main.impractical8
+                   Main.impractical2) -}
+c2ac9a205862158aae77a9e383814f52
+  impractical2 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Main.impractical7
+                   Main.impractical3) -}
+2424f9d1ce3752b4c2781e80b0d59e74
+  impractical3 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Main.impractical6
+                   Main.impractical4) -}
+86a02f2f9068f52c4d54bd774e0ba87a
+  impractical4 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Main.impractical5
+                   (GHC.Types.[] @ [GHC.Types.Char])) -}
+00ff4c3304ab51c8179a385a4187e694
+  impractical5 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "impossible"#) -}
+5081bebc497e7facdb79fd2f189981c7
+  impractical6 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "infeasible"#) -}
+15dee815c881cfc8f39b5f6653f7d711
+  impractical7 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "unrealistic"#) -}
+892aa6abe98d504374f521cd9bf1a319
+  impractical8 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "impracticable"#) -}
+78d339141ca975f6c844657480382511
+  impractical9 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "impractical"#) -}
+06cd24cad910fef80cfe1a800bba8ecd
+  indecent :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Main.indecent5
+                   Main.indecent1) -}
+863a94cf3aa99a5c6cdd76142dad250b
+  indecent1 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Main.indecent4
+                   Main.indecent2) -}
+d1047cbf6ef6794244dd78ed12b81d90
+  indecent2 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Main.indecent3
+                   (GHC.Types.[] @ [GHC.Types.Char])) -}
+5708a518876ab4e6260cc704a1558ade
+  indecent3 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "obscene"#) -}
+adf4618ee6cf87068f7ea4a01f4f3efe
+  indecent4 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "profane"#) -}
+fc12bd424cbdabc3b2eb95725c5315b3
+  indecent5 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "indecent"#) -}
+64f6d4077d7afb98c98d3abce74ea192
   main :: GHC.Types.IO ()
   {- Arity: 1, Strictness: <L,U>,
      Unfolding: InlineRule (0, True, True)
                 Main.main1 `cast` (Sym (GHC.Types.NTCo:IO[0] <()>_R)) -}
-748dd4d357adbd7a280acc88d743954d
+c80f3720f0ef4f494a4f7e02367fe291
   main1 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
   {- Arity: 1, Strictness: <L,U>,
      Unfolding: (\ s :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
-                 case Main.collect1 Main.suffi s of ds1 { (#,#) ipv ipv1 ->
-                 case Main.collect1 Main.near ipv of ds2 { (#,#) ipv2 ipv3 ->
-                 case Main.collect1 Main.dim ipv2 of ds3 { (#,#) ipv4 ipv5 ->
-                 case Main.collect1 Main.known ipv4 of ds4 { (#,#) ipv6 ipv7 ->
-                 case Main.collect1 Main.first ipv6 of ds5 { (#,#) ipv8 ipv9 ->
-                 Main.collect1 Main.close ipv8 } } } } }) -}
-6a51505122478af579f87d3d16e93694
-  main2 ::
+                 case GHC.IO.Handle.Text.hPutStr2
+                        GHC.IO.Handle.FD.stdout
+                        Main.main2
+                        GHC.Types.True
+                        s of ds1 { (#,#) ipv ipv1 ->
+                 case Main.collect1 Main.attractive ipv of ds2 { (#,#) ipv2 ipv3 ->
+                 case Main.collect1 Main.closed ipv2 of ds3 { (#,#) ipv4 ipv5 ->
+                 case Main.collect1 Main.unexpected ipv4 of ds4 { (#,#) ipv6 ipv7 ->
+                 case Main.collect1 Main.indecent ipv6 of ds5 { (#,#) ipv8 ipv9 ->
+                 case Main.collect1 Main.sexy ipv8 of ds6 { (#,#) ipv10 ipv11 ->
+                 case Main.collect1 Main.humbled ipv10 of ds7 { (#,#) ipv12 ipv13 ->
+                 case Main.collect1 Main.bright ipv12 of ds8 { (#,#) ipv14 ipv15 ->
+                 case Main.collect1 Main.violent ipv14 of ds9 { (#,#) ipv16 ipv17 ->
+                 case Main.collect1
+                        Main.personal
+                        ipv16 of ds10 { (#,#) ipv18 ipv19 ->
+                 case Main.collect1 Main.high ipv18 of ds11 { (#,#) ipv20 ipv21 ->
+                 case Main.collect1
+                        Main.harmful
+                        ipv20 of ds12 { (#,#) ipv22 ipv23 ->
+                 case Main.collect1 Main.small ipv22 of ds13 { (#,#) ipv24 ipv25 ->
+                 case Main.collect1
+                        Main.impractical
+                        ipv24 of ds14 { (#,#) ipv26 ipv27 ->
+                 case Main.collect1 Main.mature ipv26 of ds15 { (#,#) ipv28 ipv29 ->
+                 Main.collect1
+                   Main.overweight
+                   ipv28 } } } } } } } } } } } } } } }) -}
+6a5f2ab6f6ba009d38f108fd86c1d556
+  main2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.Types.:
+                   @ GHC.Types.Char
+                   GHC.Show.shows6
+                   Main.main3) -}
+c75554334cd0ed7a5c18c8e61632d21e
+  main3 :: GHC.Base.String
+  {- Unfolding: (GHC.Show.showLitString Main.main4 Main.collect5) -}
+6fecc0b662404aae69b3e71de5a92a35
+  main4 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "start collecting statistics [dual..."#) -}
+87e4c6650692debb4134c99fb7a6fdcc
+  main5 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
   {- Arity: 1,
      Unfolding: (GHC.TopHandler.runMainIO1
                    @ ()
                    Main.main1 `cast` (Sym (GHC.Types.NTCo:IO[0] <()>_R))) -}
-50ca1cffd173d8bedb96cb2902b2cd1a
+aaed25ca34f99a5a0c6356a50892c0e6
   main_count_words :: [GHC.Base.String] -> GHC.Types.IO ()
   {- Arity: 2, Strictness: <L,1*U><L,U>,
      Unfolding: InlineRule (0, True, True)
-                Main.collect4
+                Main.collect7
                   `cast`
                 (<[GHC.Base.String]>_R ->_R Sym (GHC.Types.NTCo:IO[0] <()>_R)) -}
-ec135a329f954dcf321b641b71553e93
-  near :: [[GHC.Types.Char]]
+03352c2686729543dc431008649209bd
+  mature :: [[GHC.Types.Char]]
   {- Strictness: m2,
      Unfolding: (GHC.Types.:
                    @ [GHC.Types.Char]
-                   Main.near5
-                   Main.near1) -}
-73def5b325df5d7cb057d12022a4be51
-  near1 :: [[GHC.Types.Char]]
+                   Main.mature5
+                   Main.mature1) -}
+0bfb840d12a7dff656627ffba5ee378e
+  mature1 :: [[GHC.Types.Char]]
   {- Strictness: m2,
      Unfolding: (GHC.Types.:
                    @ [GHC.Types.Char]
-                   Main.close4
-                   Main.near2) -}
-b779daab0150e79cbc04a68363706fde
-  near2 :: [[GHC.Types.Char]]
+                   Main.mature4
+                   Main.mature2) -}
+b3551dae9b4e4c045a72f2171fba99db
+  mature2 :: [[GHC.Types.Char]]
   {- Strictness: m2,
      Unfolding: (GHC.Types.:
                    @ [GHC.Types.Char]
-                   Main.close5
-                   Main.near3) -}
-47734d0b5b1a2cbe6e56784e67d7be12
-  near3 :: [[GHC.Types.Char]]
-  {- Strictness: m2,
-     Unfolding: (GHC.Types.:
-                   @ [GHC.Types.Char]
-                   Main.near4
+                   Main.mature3
                    (GHC.Types.[] @ [GHC.Types.Char])) -}
-4b448d4f7cf4a0a2416200d73141b9c5
-  near4 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString# "adjacent"#) -}
-0fe33f38a8d90ae53c117cb926cf4b28
-  near5 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString# "nearby"#) -}
+a85363ec26ccdf3d5dd04a7f807310cd
+  mature3 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "overripe"#) -}
+e0060953df9f1566ec48a078aab91f01
+  mature4 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "ripe"#) -}
+174efaab32d5c30a0189471bd3febfb2
+  mature5 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "mature"#) -}
+e5f914bcae0948f1cd71faf6fb61fac5
+  necessary :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Main.necessary7
+                   Main.necessary1) -}
+0734b8ffb84dda59f5f96dbe5cb22b96
+  necessary1 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Main.necessary6
+                   Main.necessary2) -}
+0c076bdafab3906855cdd4524174a489
+  necessary2 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Main.necessary5
+                   Main.necessary3) -}
+7bf2b0bdf6c1185766e826bb1515b2c8
+  necessary3 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Main.necessary4
+                   (GHC.Types.[] @ [GHC.Types.Char])) -}
+eb0e42f868d3e85e3908e58bee4eb792
+  necessary4 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "critical"#) -}
+423177a84e5ce71c18d43ff93e9c9706
+  necessary5 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "indispensable"#) -}
+ecf32d64e194468ca8ec71a157767113
+  necessary6 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "vital"#) -}
+fe232718e5e1674b7e4851e0aa01b1ba
+  necessary7 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "necessary"#) -}
+eb937f5f2e688dcefdee72b84970f532
+  neglected :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Main.neglected7
+                   Main.neglected1) -}
+ba3329f88485921f00ebb167ad039b5d
+  neglected1 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Main.neglected6
+                   Main.neglected2) -}
+6b745705e68b8827fffe23ccea04cc9c
+  neglected2 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Main.neglected5
+                   Main.neglected3) -}
+aa29123acca9856a5e1720c8dfcd2600
+  neglected3 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Main.neglected4
+                   (GHC.Types.[] @ [GHC.Types.Char])) -}
+d3baa8be7405868d2667593f3df70838
+  neglected4 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "forgotten"#) -}
+7308b687f2dfc4d78e07996dd8bec1f7
+  neglected5 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "overlooked"#) -}
+977942c672aaeda2b716375a83bc59ec
+  neglected6 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "ignored"#) -}
+bb35f6ee7c66a2876998a1efacd3dbe7
+  neglected7 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "neglected"#) -}
+573cc29e30eabc088afa0cbcfa7c633f
+  old :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.: @ [GHC.Types.Char] Main.old5 Main.old1) -}
+0b025f7cfafdc6e5598c6d9d7fd3c56e
+  old1 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.: @ [GHC.Types.Char] Main.old4 Main.old2) -}
+4e9b444e6f32735f5a1921b5ee8873d9
+  old2 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Main.old3
+                   (GHC.Types.[] @ [GHC.Types.Char])) -}
+93bfc4e0969108786772987fedc05d28
+  old3 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "outdated"#) -}
+5025e138218e3cc7a28e4aed271fbad7
+  old4 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "obsolete"#) -}
+cab9b01e4c5aacdf088a6e07623d44e7
+  old5 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "old"#) -}
+26a9a74dbfda637d4faf8826b3c85450
+  overweight :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Main.overweight7
+                   Main.overweight1) -}
+9caac2470b6c0dc00dea2e41f407e5d7
+  overweight1 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Main.overweight6
+                   Main.overweight2) -}
+db5b462b573da0891cfce395f91a8d66
+  overweight2 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Main.overweight5
+                   Main.overweight3) -}
+4459b5b92ded2796ddddb6bf756056ac
+  overweight3 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Main.overweight4
+                   (GHC.Types.[] @ [GHC.Types.Char])) -}
+a4e246d39f8c804e82338c6680b66740
+  overweight4 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "obese"#) -}
+57c1e2b851fe98fe7744a7e19e07da79
+  overweight5 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "fat"#) -}
+51a88a87ffcac3178d8b6bbb3797c408
+  overweight6 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "chubby"#) -}
+c89e0cde449338bc8c9b09ad7a0d2874
+  overweight7 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "overweight"#) -}
 a81752fcc002b5300e62729a5f732bc5
   patterns_l :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString#
@@ -700,6 +1153,36 @@ ac5de24987aefe51211b1a7ed175ebac
   patterns_r :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString#
                    "/home1/l/lingxiao/xiao/good-great-excellent/inputs/"#) -}
+7c66065f513e070d97a8ea8a483b4f13
+  personal :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Main.personal5
+                   Main.personal1) -}
+e5300213cda7995bfa30d1bb68364b7d
+  personal1 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Main.personal4
+                   Main.personal2) -}
+c12765d25b10157051eb1ed699b8f537
+  personal2 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Main.personal3
+                   (GHC.Types.[] @ [GHC.Types.Char])) -}
+2c39a8d96c353b530fa9718b6cd6d545
+  personal3 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "secret"#) -}
+41a4844fdb7bf57c8c35f63dcf816d47
+  personal4 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "private"#) -}
+c8451eee45b7743d33fb79aef0d8020e
+  personal5 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "personal"#) -}
 94440b3ecd30295bd09e3686c1d618bd
   pset :: GHC.Classes.Eq a => [a] -> [(a, a)]
   {- Arity: 2, HasNoCafRefs, Strictness: <L,A><S,U>,
@@ -707,54 +1190,141 @@ ac5de24987aefe51211b1a7ed175ebac
      Unfolding: InlineRule (2, True, True)
                 (\ @ a1 w :: GHC.Classes.Eq a1 w1 :: [a1] ->
                  Main.$wpset @ a1 w1) -}
-dc804e63543609c4060785f04ae7820f
-  suffi :: [[GHC.Types.Char]]
+e8a854979c0eab9e1c26dd6feba11c32
+  sexy :: [[GHC.Types.Char]]
   {- Strictness: m2,
      Unfolding: (GHC.Types.:
                    @ [GHC.Types.Char]
-                   Main.suffi7
-                   Main.suffi1) -}
-d4252f891ef25683c8fc6ec3a0546af4
-  suffi1 :: [[GHC.Types.Char]]
+                   Main.attractive7
+                   Main.sexy1) -}
+7511a168c20c863f1ea5744c495ba188
+  sexy1 :: [[GHC.Types.Char]]
   {- Strictness: m2,
      Unfolding: (GHC.Types.:
                    @ [GHC.Types.Char]
-                   Main.suffi6
-                   Main.suffi2) -}
-934c261bcacc9db04870110149bd0b1a
-  suffi2 :: [[GHC.Types.Char]]
+                   Main.sexy2
+                   Main.attractive3) -}
+6e1aabc8f2c327f9f99a79f4d1ba6e30
+  sexy2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "sexy"#) -}
+6d8ded0d82e8de448873e18a1668f47e
+  small :: [[GHC.Types.Char]]
   {- Strictness: m2,
      Unfolding: (GHC.Types.:
                    @ [GHC.Types.Char]
-                   Main.suffi5
-                   Main.suffi3) -}
-a91a68bf5deb5921f53af1a8651c8a4a
-  suffi3 :: [[GHC.Types.Char]]
+                   Main.small15
+                   Main.small1) -}
+e90490ca500793dde337abf319205f47
+  small1 :: [[GHC.Types.Char]]
   {- Strictness: m2,
      Unfolding: (GHC.Types.:
                    @ [GHC.Types.Char]
-                   Main.suffi4
+                   Main.small14
+                   Main.small2) -}
+67f10cdd7798fbb9fa89f62e89d4bad1
+  small10 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "minuscule"#) -}
+de89ecd2cd64c05e6f818cac9df5262c
+  small11 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "tiny"#) -}
+153f35c6945590d35fbbd2f1e8c65d31
+  small12 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "minute"#) -}
+1dd860ee05f53b4660d328fb6e307355
+  small13 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "midget"#) -}
+18a3040ed90de10a05595a86aa25a566
+  small14 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "smaller"#) -}
+973c2e04f1e3602829b8c51636fe9caf
+  small15 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "small"#) -}
+c628b3c0cdb62dc555e50b21b3822716
+  small2 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Main.small13
+                   Main.small3) -}
+aad3427de98917de1b5a454a316081c6
+  small3 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Main.small12
+                   Main.small4) -}
+d8e728c7d0851e1f8476a9d88f616333
+  small4 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Main.small11
+                   Main.small5) -}
+9939996d8af4f6c9f34d3057fc5e8880
+  small5 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Main.small10
+                   Main.small6) -}
+3e9555886f511ea66b74f5f4d9ac272b
+  small6 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Main.small9
+                   Main.small7) -}
+a713c90a4468bef394bdc492d21c803c
+  small7 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Main.small8
                    (GHC.Types.[] @ [GHC.Types.Char])) -}
-de7d41b62a7c5e9251e2d4c8f5d2ae1e
-  suffi4 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString# "full"#) -}
-30f628cc9aca74c91036af2312e4e1b8
-  suffi5 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString# "wide"#) -}
-15676343c0b0e5f654100d70f41cc67e
-  suffi6 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString# "good"#) -}
-39fc68a51ca7cbc9175f7ac02da06460
-  suffi7 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString# "sufficient"#) -}
-ebd304d3d792de5fa3e68a724f80e10f
+3be64e9ece637881bbdb0dc857f1157d
+  small8 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "microscopic"#) -}
+b6b3156ebc7bee4c6427e2aa01374ce6
+  small9 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "micro"#) -}
+6424e2e6e3719fea89fdd4806541311b
+  some :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Main.some5
+                   Main.some1) -}
+9494c157806f06761864a0fadd869b68
+  some1 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Main.some4
+                   Main.some2) -}
+6cbb4faa8a056599e864c641b6a8b358
+  some2 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Main.some3
+                   (GHC.Types.[] @ [GHC.Types.Char])) -}
+84f54100a72f08e46b4d1b5c211852b5
+  some3 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "fewer"#) -}
+a80de3bbfdb53e72329b8f0052e1f683
+  some4 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "few"#) -}
+11b1b9f4bbffd2815c3795ff4841f546
+  some5 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "some"#) -}
+cdf21e3be911c1dfc4b93699db2e1f03
   sysConfig :: GHC.Types.IO Core.Config
   {- Arity: 1, Strictness: <L,U>,
      Unfolding: InlineRule (0, True, True)
                 Main.sysConfig1
                   `cast`
                 (Sym (GHC.Types.NTCo:IO[0] <Core.Config>_R)) -}
-ced21482ae8921e520613af3aadd0a3b
+07235378737cca850a7809dce1cc46c2
   sysConfig1 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, Core.Config #)
@@ -763,9 +1333,69 @@ ced21482ae8921e520613af3aadd0a3b
                 (\ s :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
                  case System.Posix.Directory.getWorkingDirectory1
                         s of ds { (#,#) ipv ipv1 ->
-                 Main.collect7
+                 Main.collect10
                    (GHC.List.$wunsafeTake @ GHC.Types.Char 6 ipv1)
                    ipv }) -}
+da7321f25c3b15e96ef0320d52ed117b
+  unexpected :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Main.unexpected5
+                   Main.unexpected1) -}
+b023bb5628571afc43267985de947b91
+  unexpected1 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Main.unexpected4
+                   Main.unexpected2) -}
+f1551124e3d1d1bbaca5bd04013d8cb5
+  unexpected2 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Main.unexpected3
+                   (GHC.Types.[] @ [GHC.Types.Char])) -}
+32714f317248398b6e63ea39a2671402
+  unexpected3 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "stunning"#) -}
+f74433ea654914f2c1fe999e710c1211
+  unexpected4 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "astonishing"#) -}
+254a5af17a724ac7d0239479c8654405
+  unexpected5 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "unexpected"#) -}
+112d44bb60aed467611fa414ebeef636
+  violent :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Main.violent5
+                   Main.violent1) -}
+43598808523b5bb73aed307ce86639b5
+  violent1 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Main.violent4
+                   Main.violent2) -}
+216d05556c95351720c15d4c42fdc2bf
+  violent2 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Main.violent3
+                   (GHC.Types.[] @ [GHC.Types.Char])) -}
+a515c311de38abe27a853dee4ce08ce1
+  violent3 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "murderous"#) -}
+d347304b5a204fd9651a75ea897dfa33
+  violent4 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "homicidal"#) -}
+9c8af95b92f75d5fef62992c622aba32
+  violent5 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "violent"#) -}
 "SPEC pset @ String" [ALWAYS] forall $dEq :: GHC.Classes.Eq
                                                GHC.Base.String
   Main.pset @ [GHC.Types.Char] $dEq = Main.collect_$spset

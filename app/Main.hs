@@ -34,18 +34,80 @@ import Scripts
 --close = ["close","near","intimate"]
 
 
-real        = ["real","solemn","serious","grave"]
-interesting = ["interesting","intriguing","amusing", "entertaining","fascinating", "exciting"]
-far         = ["far","further", "farther","removed"]
-acceptable  = ["acceptable", "okay", "alright","right"]
-cracked     = ["cracked","broken","crushed"]
-full        = ["full","stuffed","overloaded","overflowing"]
-flavorful   = ["flavorful","zesty","hot", "spicy"]
-unstable    = ["unstable","crazy","insane"]
-good        = ["good","real","authentic"]
-clean       = ["clean","spotless", "immaculate"]
-possible    = ["possible","realistic","feasible","practical"]
-sick        = ["sick", "ill","impaired","disabled"]
+--real        = ["real","solemn","serious","grave"]
+--interesting = ["interesting","intriguing","amusing", "entertaining","fascinating", "exciting"]
+--far         = ["far","further", "farther","removed"]
+--acceptable  = ["acceptable", "okay", "alright","right"]
+--cracked     = ["cracked","broken","crushed"]
+--full        = ["full","stuffed","overloaded","overflowing"]
+--flavorful   = ["flavorful","zesty","hot", "spicy"]
+--unstable    = ["unstable","crazy","insane"]
+--good        = ["good","real","authentic"]
+--clean       = ["clean","spotless", "immaculate"]
+--possible    = ["possible","realistic","feasible","practical"]
+--sick        = ["sick", "ill","impaired","disabled"]
+
+--uncommon    = ["uncommon","unusual","rare","extraordinary","exceptional"]
+--impractical =["impractical","unrealistic","impossible"]
+--global      = ["transnational","international","global"]
+--concerned   = ["concerned","preoccupied","obsessed"]
+--interesting = ["interesting","moving","exciting","thrilling"]
+
+
+--low         = ["low","subdued","quiet"]
+--sweet       = ["sweet","sugary","syrupy"]
+--strong      = ["strong","intense","terrible","overwhelming","violent"]
+--bleak       = ["bleak", "desperate","hopeless"]
+--unfortunate = ["unfortunate","disastrous","fatal"]
+--negligent   = ["negligent","careless","reckless"]
+--strange     = ["strange", "funny","unusual","weird","eerie"]
+--reasonable  = ["reasonable","valid","sound"]
+--affordable  = ["affordable","inexpensive","cheap"]
+--available   = ["available","accessible","visible"]
+--cool        = ["cool", "refrigerated", "chilly","cold","frigid","icy", "frozen"]
+--content     = ["content", "satisfied","pleased", "happy"]
+
+--misleading  = ["misleading","deceptive", "fraudulent","false"]
+--needed    = ["needed","necessary","required", "essential","indispensable"]
+--some      = ["some","many","numerous","galore"]
+--quiet     = ["quiet","inaudible", "imperceptible","silent"]
+--wrong     = ["wrong","immoral","sinful","evil"]
+--lean      = ["lean","slim","thin","skinny","gaunt","emaciated","skeletal"]
+--statewide = ["statewide","nationwide","worldwide"]
+--warm      = ["warm","hot","overheated","stifling", "sultry"]
+--easy      = ["easy", "simple", "smooth","painless","effortless"]
+--plain     = ["plain","unattractive","ugly"]
+--like      = ["like","equal","same"]
+--broad     = ["broad", "widespread","general","universal"]
+--cheap     = ["cheap", "mediocre","bad","worst"]
+--handsome  = ["handsome", "lovely", "gorgeous","beautiful", "pretty", "attractive"]
+--thick     = ["thick","dense","impenetrable"]
+--soft      = ["soft","quiet","inaudible","silent"]
+--cool      = ["cool", "chilly","unfriendly","hostile"]
+--sizeable  = ["sizeable","big", "large","huge","colossal"]
+
+--dual       = ["dual", "double", "doubled","triple", "treble","quadruple"]
+--creepy     = ["creepy","scary", "frightening","terrifying","sinister"]
+--some       = ["some","few","fewer"]
+--neglected  = ["neglected","ignored", "overlooked","forgotten"]
+--old        = ["old","obsolete", "outdated"]
+--necessary  = ["necessary","vital","indispensable","critical"]
+--attractive = ["attractive","beautiful","mesmerizing", "seductive"]
+--closed     = ["closed","shut","sealed"]
+--unexpected = ["unexpected","astonishing", "stunning"]
+--indecent   = ["indecent","profane","obscene"]
+--sexy       = ["attractive","sexy","seductive"]
+--humbled    = ["humbled","humiliated","crushed"]
+--bright     = ["bright", "intelligent", "smart", "clever","brilliant"]
+
+violent    = ["violent","homicidal", "murderous"]
+personal   = ["personal","private","secret"]
+high       = ["high","higher","soaring"]
+harmful    = ["harmful","toxic","deadly"]
+small       = ["small","smaller","midget","minute","tiny", "minuscule","micro", "microscopic"]
+impractical = ["impractical", "impracticable","unrealistic","infeasible","impossible"]
+mature      = ["mature","ripe","overripe"]
+overweight  = ["overweight","chubby","fat","obese"]
 
 {-----------------------------------------------------------------------------
   Main
@@ -53,21 +115,16 @@ sick        = ["sick", "ill","impaired","disabled"]
 
 main :: IO ()
 main = do
+  print "start collecting statistics [violent..."
 
-  print "start collecting statistics\n"
-
-  collect real
-  collect interesting
-  collect far
-  collect acceptable
-  collect cracked
-  collect full
-  collect flavorful
-  collect unstable
-  collect good
-  collect clean
-  collect possible
-  collect sick
+  collect violent
+  collect personal
+  collect high
+  collect harmful
+  collect small
+  collect impractical
+  collect mature
+  collect overweight
 
 {-----------------------------------------------------------------------------
   routine
@@ -76,13 +133,18 @@ main = do
 collect :: [String] -> IO ()
 collect wrds = do
   con        <- sysConfig
-  let inpath = corpus con
-  let weak   = weakStrong con
-  let strong = strongWeak con
+  let inpath    = corpus con
+  let weakin    = weakStrong con
+  let strongin  = strongWeak con
+  let wordin    = corpus con ++ "vocab.txt"
+  let weakout   = dir_out_l ++ "weak"
+  let strongout = dir_out_l ++ "strong"
+  let wordout   = dir_out_l ++ "words"
 
-  count_phrase strong inpath "strong" `mapM` pset wrds
-  count_phrase weak   inpath "weak"   `mapM` pset wrds
-  main_count_words wrds
+
+  count_phrase strongin inpath strongout `mapM` pset wrds
+  count_phrase weakin   inpath weakout   `mapM` pset wrds
+  count_words wordin wordout wrds
 
   print $ "collected statistics over words : "
   mapM print wrds
@@ -90,16 +152,10 @@ collect wrds = do
   return ()
 
 
--- * query for word frequence of every word in here
-main_count_words :: [String] -> IO ()
-main_count_words xs = do
-  con <- sysConfig
-  let inpath = corpus con ++ "vocab.txt"
-  count_words inpath "words" xs
-  return ()
-
 pset :: Eq a => [a] -> [(a,a)]
 pset xs = [(u,v) | u <- xs, v <- xs]
+
+
 
 {-----------------------------------------------------------------------------
   Paths
@@ -124,6 +180,7 @@ config_r = do
 
 -- * local
 
+dir_out_l  = "/Users/lingxiao/Documents/research/data/good-great-outputs/"
 corpus_l   = "/Users/lingxiao/Documents/research/data/ngrams/corpus/"
 patterns_l = "/Users/lingxiao/Documents/research/code/good-great-excellent/inputs/"
 
